@@ -1,1 +1,0 @@
-Witamy w naszym projekcie!
