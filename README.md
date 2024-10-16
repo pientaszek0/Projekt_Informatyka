@@ -20,4 +20,4 @@ Założenia:
  -kredyty  
  -konta walutowe  
  -lokaty  
- -Proste GUI w konsoli
+ -Proste GUI w konsoli  
