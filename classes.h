@@ -6,7 +6,7 @@ class User {
     private:
         int id;
         string first_name, last_name, login, password;
-        bool admin; // Jeśli 1 to użytkownik jest adminem
+        bool admin; // Jeśli 1 to użytkownik jest administratorem
 };
 
 // Klasa kont należących do użytkowników
