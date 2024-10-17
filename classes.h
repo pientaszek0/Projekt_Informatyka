@@ -30,11 +30,11 @@ class Loan_Type {
     private:
         int id;
         double interest;  // Stopa procentowa
-        string name;
+        string loan_type;
 
     public:
         // Konstruktor
-        Loan_Type(int id_, double interest_, string name_) : id(id_), interest(interest_), name(name_) {}
+        Loan_Type(int id_, double interest_, string loan_type_) : id(id_), interest(interest_), loan_type(loan_type_) {}
 
         // Funkcja zwracająca stopę procentową
         double getInterest() const {
@@ -42,13 +42,8 @@ class Loan_Type {
         }
 
         // Funkcja zwracająca nazwę typu kredytu
-        string getName() const {
-            return name;
-        }
-
-        // Funkcja ustawiająca nową stopę procentową
-        void setInterest(double newInterest) {
-            interest = newInterest;
+        string getLoanTypeName() const {
+            return loan_type;
         }
 
         // Funkcja obliczająca całkowite odsetki na podstawie kwoty kredytu i lat
@@ -60,13 +55,14 @@ class Loan_Type {
 // Klasa kredytów zaciągniętych przez użytkowników
 class Loan {
     private:
-        int id, owner_id, loan_type_id, currency_id;
+        int owner_id, currency_id;
+        string loan_type;
         double balance_left; // Ile jeszcze zostało do spłacenia kredytu
 
     public:
         // Konstruktor
-        Loan(int id_, int owner_id_, int loan_type_id_, int currency_id_, double balance_left_) :
-            id(id_), owner_id(owner_id_), loan_type_id(loan_type_id_), currency_id(currency_id_), balance_left(balance_left_) {}
+        Loan(int owner_id_, string loan_type_, int currency_id_, double balance_left_) :
+            owner_id(owner_id_), loan_type(loan_type_), currency_id(currency_id_), balance_left(balance_left_) {}
 
         // Funkcja do spłaty części kredytu
         void makePayment(double payment) {
@@ -89,7 +85,7 @@ class Loan {
         }
         
         // Funkcja zwracająca ID typu kredytu
-        int getLoanTypeId() const {
-            return loan_type_id;
+        int getLoanType() const {
+            return loan_type;
         }
 };
