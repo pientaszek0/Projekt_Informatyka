@@ -28,9 +28,20 @@ using namespace std;
 
 
 
+// Funkcje klasy Currency
 
+//Konstruktor
+Currency(int id, string name) : id(id), name(name)
 
+// Funkcja zwracająca ID
+int getId() const;{
+    return id;
+}
 
+// Funkcja zwracająca ID właściciela
+string getName() const{
+    return name;
+}
 
 
 
