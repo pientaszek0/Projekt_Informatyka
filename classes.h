@@ -1,3 +1,6 @@
+#ifndef CLASSES_H
+#define CLASSES_H
+
 #include <iostream>
 using namespace std;
 
@@ -50,17 +53,20 @@ class Loan_Type {
 // Klasa kredytów zaciągniętych przez użytkowników
 class Loan {
     private:
-        int owner_id, currency_id;
+        int owner_id;
+        int currency_id;
         Loan_Type loan_type;
         double balance_left; // Ile jeszcze zostało do spłacenia kredytu
 
     public:
         // Konstruktor
-        Loan(int owner_id, Loan_Type loan_type, int currency_id, double balance_left);
+        Loan(int owner_id, int currency_id, Loan_Type loan_type,  double balance_left);
 
         // Funkcje
         void makePayment(double payment);
         double getBalanceLeft() const;
         int getOwnerId() const;
-        string getLoanType() const;
+        string getLoanTypeName() const;
 };
+
+#endif
