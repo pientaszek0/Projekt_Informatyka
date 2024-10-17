@@ -70,8 +70,8 @@ double Loan_Type::calcInterest(double loanAmount, int years) const {
 // Funkcji klasy Loan
 
 // Konstruktor
-Loan::Loan(int owner_id, Loan_Type loan_type, int currency_id, double balance_left) :
-    owner_id(owner_id), loan_type(loan_type), currency_id(currency_id), balance_left(balance_left) {}
+Loan::Loan(int owner_id, int currency_id, Loan_Type loan_type, double balance_left) :
+    owner_id(owner_id), currency_id(currency_id), loan_type(loan_type), balance_left(balance_left) {}
 
 // Funkcja do spłaty kredytu     loan.makePayment(wartość spłaty)
 void Loan::makePayment(double payment) {
