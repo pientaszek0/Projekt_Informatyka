@@ -21,6 +21,11 @@ class Currency {
     private:
         int id;
         string name;
+
+    public:
+        Currency(int id, string name);
+        int getId() const;
+        string getName() const;
 };
 
 
