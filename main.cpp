@@ -6,7 +6,7 @@ using namespace std;
 
 
 int main() {
-    cout<<"sshgs";
+    cout<<"Msz wiadomosc";
     return 0;
 }
 
