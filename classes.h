@@ -51,7 +51,7 @@ class Loan_Type {
 class Loan {
     private:
         int owner_id, currency_id;
-        Lone_type loan_type;
+        Loan_type loan_type;
         double balance_left; // Ile jeszcze zostało do spłacenia kredytu
 
     public:
