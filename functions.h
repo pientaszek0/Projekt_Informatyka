@@ -2,6 +2,38 @@
 #include "classes.h"
 using namespace std;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Funkcji klasy Loan_Type
 
 // Konstruktor
@@ -17,7 +49,7 @@ string Loan_Type::getLoanTypeName() const {
     return loan_type;
 }
 
-// Funkcja obliczająca odsetki
+// Funkcja obliczająca odsetki     loan_type.calcInterest(wartość kredytu, liczba lat)
 double Loan_Type::calcInterest(double loanAmount, int years) const {
     return loanAmount * interest * years / 100;
 }
@@ -30,7 +62,7 @@ double Loan_Type::calcInterest(double loanAmount, int years) const {
 Loan::Loan(int owner_id, Loan_Type loan_type, int currency_id, double balance_left) :
     owner_id(owner_id), loan_type(loan_type), currency_id(currency_id), balance_left(balance_left) {}
 
-// Funkcja do spłaty kredytu
+// Funkcja do spłaty kredytu     loan.makePayment(wartość spłaty)
 void Loan::makePayment(double payment) {
     if (payment > 0 && payment <= balance_left) {
         balance_left -= payment;
