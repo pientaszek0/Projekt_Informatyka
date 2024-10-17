@@ -34,12 +34,12 @@ using namespace std;
 Currency(int id, string name) : id(id), name(name)
 
 // Funkcja zwracająca ID
-int getId() const;{
+int Currency::getId() const {
     return id;
 }
 
 // Funkcja zwracająca ID właściciela
-string getName() const{
+string Currency::getName() const {
     return name;
 }
 
