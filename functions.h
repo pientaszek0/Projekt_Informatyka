@@ -31,7 +31,7 @@ using namespace std;
 // Funkcje klasy Currency
 
 //Konstruktor
-Currency(int id, string name) : id(id), name(name)
+Currency::Currency(int id, string name) : id(id), name(name) {}
 
 // Funkcja zwracająca ID
 int Currency::getId() const {
