@@ -56,7 +56,7 @@ class Loan {
 
     public:
         // Konstruktor
-        Loan(int owner_id, Lone_type loane_type, int currency_id, double balance_left);
+        Loan(int owner_id, Loan_type loan_type, int currency_id, double balance_left);
 
         // Funkcje
         void makePayment(double payment);
