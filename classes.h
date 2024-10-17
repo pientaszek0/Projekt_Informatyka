@@ -51,12 +51,12 @@ class Loan_Type {
 class Loan {
     private:
         int owner_id, currency_id;
-        Loan_type loan_type;
+        Loan_Type loan_type;
         double balance_left; // Ile jeszcze zostało do spłacenia kredytu
 
     public:
         // Konstruktor
-        Loan(int owner_id, Loan_type loan_type, int currency_id, double balance_left);
+        Loan(int owner_id, Loan_Type loan_type, int currency_id, double balance_left);
 
         // Funkcje
         void makePayment(double payment);
