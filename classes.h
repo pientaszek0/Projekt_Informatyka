@@ -23,17 +23,39 @@ class Currency {
         string name;
 };
 
+
+
 // klasa typów kredytów
 class Loan_Type {
     private:
         int id;
-        double intrest;
-        string name;
+        double interest;  // Stopa procentowa
+        string loan_type;
+
+    public:
+        // Konstruktor
+        Loan_Type(int id, double interest, string loan_type);
+
+        //Funkcje
+        double getInterest() const;
+        string getLoanTypeName() const;
+        double calcInterest(double loanAmount, int years) const;
 };
 
-// Klasa kredytów zaciągnietych przez użytkowników
+// Klasa kredytów zaciągniętych przez użytkowników
 class Loan {
     private:
-        int id, owner_id, loan_type_id, currency_id;
+        int owner_id, currency_id;
+        Lone_type loan_type;
         double balance_left; // Ile jeszcze zostało do spłacenia kredytu
+
+    public:
+        // Konstruktor
+        Loan(int owner_id, Lone_type loane_type, int currency_id, double balance_left);
+
+        // Funkcje
+        void makePayment(double payment);
+        double getBalanceLeft() const;
+        int getOwnerId() const;
+        string getLoanType() const;
 };
