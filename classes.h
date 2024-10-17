@@ -34,7 +34,7 @@ class Loan_Type {
 
     public:
         // Konstruktor
-        Loan_Type(int id_, double interest_, string loan_type_) : id(id_), interest(interest_), loan_type(loan_type_) {}
+        Loan_Type(int id, double interest, string loan_type) : id(id), interest(interest), loan_type(loan_type) {}
 
         // Funkcja zwracająca stopę procentową
         double getInterest() const {
@@ -56,13 +56,13 @@ class Loan_Type {
 class Loan {
     private:
         int owner_id, currency_id;
-        string loan_type;
+        Lone_type loan_type;
         double balance_left; // Ile jeszcze zostało do spłacenia kredytu
 
     public:
         // Konstruktor
-        Loan(int owner_id_, string loan_type_, int currency_id_, double balance_left_) :
-            owner_id(owner_id_), loan_type(loan_type_), currency_id(currency_id_), balance_left(balance_left_) {}
+        Loan(int owner_id, Lone_type loane_type, int currency_id, double balance_left) :
+            owner_id(owner_id), loan_type(loan_type), currency_id(currency_id), balance_left(balance_left) {}
 
         // Funkcja do spłaty części kredytu
         void makePayment(double payment) {
@@ -84,8 +84,8 @@ class Loan {
             return owner_id;
         }
         
-        // Funkcja zwracająca ID typu kredytu
-        int getLoanType() const {
-            return loan_type;
+        // Funkcja zwracająca typ kredytu
+        string getLoanType() const {
+            return loan_type.getLoanTypeName();
         }
 };
