@@ -10,30 +10,9 @@ using namespace std;
 // Funkcje klasy Currency
 
 
-// Funkcja zwracająca ID
-int Currency::getId() const {
-    return id;
-}
-
-// Funkcja zwracająca ID właściciela
-string Currency::getName() const {
-    return name;
-}
-
-
 
 // Funkcji klasy Loan_Type
 
-
-// Funkcja zwracająca stopę procentową
-double Loan_Type::getInterest() const {
-    return interest;
-}
-
-// Funkcja zwracająca nazwę typu kredytu
-string Loan_Type::getLoanTypeName() const {
-    return loan_type;
-}
 
 // Funkcja obliczająca odsetki     loan_type.calcInterest(wartość kredytu, liczba lat)
 double Loan_Type::calcInterest(double loanAmount, int years) const {
@@ -53,16 +32,6 @@ void Loan::makePayment(double payment) {
     } else {
         cout << "Nieprawidłowa kwota płatności." << endl;
     }
-}
-
-// Funkcja zwracająca pozostałą kwotę kredytu
-double Loan::getBalanceLeft() const {
-    return balance_left;
-}
-
-// Funkcja zwracająca ID właściciela
-int Loan::getOwnerId() const {
-    return owner_id;
 }
 
 // Funkcja zwracająca nazwę typu kredytu

@@ -74,12 +74,19 @@ class Currency {
         string name;
 
     public:
-        // Konstruktor
-        Currency(int id, string name) : id(id), name(name) {}
-
-        //Funkcje
-        int getId() const;
-        string getName() const;
+        // Konstruktor metody Currency currency1(id, nazwa waluty)
+        Currency(int id, string name) : id(id), name(name) {
+            this->id = id;
+            this->name = name;
+        }
+        // Funkcja zwracająca ID
+        int getId() const {
+            return this->id;
+        }
+        // Funkcja zwracająca ID właściciela
+        string getName() const {
+            return this->name;
+        }
 };
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -92,12 +99,26 @@ class Loan_Type {
         string loan_type;
 
     public:
-        // Konstruktor
-        Loan_Type(int id, double interest, string loan_type) : id(id), interest(interest), loan_type(loan_type) {};
+        // Konstruktor metody Loan_Type morgage1(id, stopa procentowa, nazwa typu kredytu)
+        Loan_Type(int id, double interest, string loan_type) : id(id), interest(interest), loan_type(loan_type) {
+            this->id = id;
+            this->interest = interest;
+            this->loan_type = loan_type;
+        }
+        // Funkcja zwracająca ID
+        int getId() {
+            return this->id;
+        }
+        // Funkcja zwracająca stopę procentową
+        double getInterest() const {
+            return this->interest;
+        }
 
+        // Funkcja zwracająca nazwę typu kredytu
+        string getLoanTypeName() const {
+            return this->loan_type;
+        }
         //Funkcje
-        double getInterest() const;
-        string getLoanTypeName() const;
         double calcInterest(double loanAmount, int years) const;
 };
 
@@ -112,13 +133,26 @@ class Loan {
         double balance_left; // Ile jeszcze zostało do spłacenia kredytu
 
     public:
-        // Konstruktor
-        Loan(int owner_id, int currency_id, Loan_Type loan_type, double balance_left) : owner_id(owner_id), currency_id(currency_id), loan_type(loan_type), balance_left(balance_left) {}
-
+        // Konstruktor metody Loan loan1(id_właściciela, waluta, typ kredytu, ile zostało do spłaty)
+        Loan(int owner_id, int currency_id, Loan_Type loan_type, double balance_left) : owner_id(owner_id), currency_id(currency_id), loan_type(loan_type), balance_left(balance_left) {
+            this->owner_id = owner_id;
+            this->currency_id = currency_id;
+            this->balance_left = balance_left;
+        }
+        // Funkcja zwracająca ID właściciela
+        int getOwnerId() const {
+            return this->owner_id;
+        }
+        // Funkcja zwracająca CurrencyID
+        int getCurrencyId() const {
+            return this->currency_id;
+        }
+        // Funkcja zwracająca pozostałą kwotę kredytu
+        double Loan::getBalanceLeft() const {
+            return this->balance_left;
+        }
         // Funkcje
         void makePayment(double payment);
-        double getBalanceLeft() const;
-        int getOwnerId() const;
         string getLoanTypeName() const;
 };
 
