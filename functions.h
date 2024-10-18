@@ -15,7 +15,7 @@ int Currency::getId() const {
     return id;
 }
 
-// Funkcja zwracająca ID wlasciciela
+// Funkcja zwracająca ID właściciela
 string Currency::getName() const {
     return name;
 }
@@ -25,12 +25,12 @@ string Currency::getName() const {
 // Funkcji klasy Loan_Type
 
 
-// Funkcja zwracająca stope procentową
+// Funkcja zwracająca stopę procentową
 double Loan_Type::getInterest() const {
     return interest;
 }
 
-// Funkcja zwracająca nazwe typu kredytu
+// Funkcja zwracająca nazwę typu kredytu
 string Loan_Type::getLoanTypeName() const {
     return loan_type;
 }
@@ -42,8 +42,9 @@ double Loan_Type::calcInterest(double loanAmount, int years) const {
 
 
 
-// Funkcji klasy Loan
-
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ====== Funkcje klasy kredytów zaciągniętych przez użytkowników ======
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // Funkcja do splaty kredytu     loan.makePayment(wartosc splaty)
 void Loan::makePayment(double payment) {
@@ -55,12 +56,12 @@ void Loan::makePayment(double payment) {
     }
 }
 
-// Funkcja zwracająca pozostalą kwote kredytu
+// Funkcja zwracająca pozostałą kwotę kredytu
 double Loan::getBalanceLeft() const {
     return balance_left;
 }
 
-// Funkcja zwracająca ID wlasciciela
+// Funkcja zwracająca ID właściciela
 int Loan::getOwnerId() const {
     return owner_id;
 }
@@ -70,8 +71,8 @@ string Loan::getLoanTypeName() const {
     return loan_type.getLoanTypeName();
 }
 
-// Jan Pietka
-// Funkcja logowania urzytkownika (nie dziala jeszcze)
+
+// Funkcja logowania urzytkownika (nie działa jeszcze)
 void sign_in() {
     string login;
     string password;
