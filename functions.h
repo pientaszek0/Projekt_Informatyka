@@ -6,34 +6,27 @@
 
 using namespace std;
 
-
-// Funkcje klasy Currency
-
-
-// Funkcja zwracająca ID
-int Currency::getId() const {
-    return id;
-}
-
-// Funkcja zwracająca ID właściciela
-string Currency::getName() const {
-    return name;
-}
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ==================== Funkcje klasy użytkowników ===================
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 
-// Funkcji klasy Loan_Type
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ========== Funkcje klasy kont należących do użytkowników ==========
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-// Funkcja zwracająca stopę procentową
-double Loan_Type::getInterest() const {
-    return interest;
-}
 
-// Funkcja zwracająca nazwę typu kredytu
-string Loan_Type::getLoanTypeName() const {
-    return loan_type;
-}
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ================== Funkcje klasy typów walut ======================
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ================ Funkcje klasy typów kredytów ====================
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // Funkcja obliczająca odsetki     loan_type.calcInterest(wartosc kredytu, liczba lat)
 double Loan_Type::calcInterest(double loanAmount, int years) const {
@@ -56,21 +49,16 @@ void Loan::makePayment(double payment) {
     }
 }
 
-// Funkcja zwracająca pozostałą kwotę kredytu
-double Loan::getBalanceLeft() const {
-    return balance_left;
-}
-
-// Funkcja zwracająca ID właściciela
-int Loan::getOwnerId() const {
-    return owner_id;
-}
-
 // Funkcja zwracająca nazwe typu kredytu
 string Loan::getLoanTypeName() const {
     return loan_type.getLoanTypeName();
 }
 
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ========================= Pozostałe funkcje =========================
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // Funkcja logowania urzytkownika (nie działa jeszcze)
 void sign_in() {
