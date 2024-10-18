@@ -148,7 +148,7 @@ class Loan {
             return this->currency_id;
         }
         // Funkcja zwracająca pozostałą kwotę kredytu
-        double Loan::getBalanceLeft() const {
+        double getBalanceLeft() const {
             return this->balance_left;
         }
         // Funkcje
