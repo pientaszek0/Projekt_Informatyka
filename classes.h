@@ -51,7 +51,7 @@ class User {
 };
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// ============ Klasa kont należących do użytkowników ================
+// ============== Klasa kont należących do użytkowników ==============
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Account {
     private:
@@ -67,7 +67,9 @@ class Account {
         }
 };
 
-// Klasa typów walut
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ======================== Klasa typów walut ========================
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Currency {
     private:
         int id;
@@ -79,18 +81,18 @@ class Currency {
             this->id = id;
             this->name = name;
         }
-        // Funkcja zwracająca ID
+        // Metoda zwracająca ID
         int getId() const {
             return this->id;
         }
-        // Funkcja zwracająca ID właściciela
+        // Metoda zwracająca ID właściciela
         string getName() const {
             return this->name;
         }
 };
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// ====================== klasa typów kredytów =======================
+// ====================== Klasa typów kredytów =======================
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Loan_Type {
     private:
@@ -105,16 +107,16 @@ class Loan_Type {
             this->interest = interest;
             this->loan_type = loan_type;
         }
-        // Funkcja zwracająca ID
+        // Metoda zwracająca ID
         int getId() {
             return this->id;
         }
-        // Funkcja zwracająca stopę procentową
+        // Metoda zwracająca stopę procentową
         double getInterest() const {
             return this->interest;
         }
 
-        // Funkcja zwracająca nazwę typu kredytu
+        // Metoda zwracająca nazwę typu kredytu
         string getLoanTypeName() const {
             return this->loan_type;
         }
@@ -123,7 +125,7 @@ class Loan_Type {
 };
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// ======= Klasa kredytów zaciągniętych przez użytkowników ===========
+// ========= Klasa kredytów zaciągniętych przez użytkowników =========
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Loan {
     private:
@@ -139,15 +141,15 @@ class Loan {
             this->currency_id = currency_id;
             this->balance_left = balance_left;
         }
-        // Funkcja zwracająca ID właściciela
+        // Metoda zwracająca ID właściciela
         int getOwnerId() const {
             return this->owner_id;
         }
-        // Funkcja zwracająca CurrencyID
+        // Metoda zwracająca CurrencyID
         int getCurrencyId() const {
             return this->currency_id;
         }
-        // Funkcja zwracająca pozostałą kwotę kredytu
+        // Metoda zwracająca pozostałą kwotę kredytu
         double getBalanceLeft() const {
             return this->balance_left;
         }

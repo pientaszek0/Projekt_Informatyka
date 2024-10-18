@@ -6,13 +6,27 @@
 
 using namespace std;
 
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ==================== Funkcje klasy użytkowników ===================
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// Funkcje klasy Currency
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ========== Funkcje klasy kont należących do użytkowników ==========
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 
-// Funkcji klasy Loan_Type
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ================== Funkcje klasy typów walut ======================
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ================ Funkcje klasy typów kredytów ====================
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // Funkcja obliczająca odsetki     loan_type.calcInterest(wartość kredytu, liczba lat)
 double Loan_Type::calcInterest(double loanAmount, int years) const {
@@ -21,8 +35,9 @@ double Loan_Type::calcInterest(double loanAmount, int years) const {
 
 
 
-// Funkcji klasy Loan
-
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ====== Funkcje klasy kredytów zaciągniętych przez użytkowników ======
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // Funkcja do spłaty kredytu     loan.makePayment(wartość spłaty)
 void Loan::makePayment(double payment) {
@@ -39,6 +54,11 @@ string Loan::getLoanTypeName() const {
     return loan_type.getLoanTypeName();
 }
 
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ========================= Pozostałe funkcje =========================
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // Funkcja logowania urzytkownika (nie działa jeszcze)
 void sign_in() {
