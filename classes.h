@@ -26,7 +26,10 @@ class Currency {
         string name;
 
     public:
-        Currency(int id, string name);
+        // Konstruktor
+        Currency(int id, string name) : id(id), name(name) {}
+
+        //Funkcje
         int getId() const;
         string getName() const;
 };
@@ -42,7 +45,7 @@ class Loan_Type {
 
     public:
         // Konstruktor
-        Loan_Type(int id, double interest, string loan_type);
+        Loan_Type(int id, double interest, string loan_type) : id(id), interest(interest), loan_type(loan_type) {};
 
         //Funkcje
         double getInterest() const;
@@ -60,7 +63,7 @@ class Loan {
 
     public:
         // Konstruktor
-        Loan(int owner_id, int currency_id, Loan_Type loan_type,  double balance_left);
+        Loan(int owner_id, int currency_id, Loan_Type loan_type, double balance_left) : owner_id(owner_id), currency_id(currency_id), loan_type(loan_type), balance_left(balance_left) {}
 
         // Funkcje
         void makePayment(double payment);

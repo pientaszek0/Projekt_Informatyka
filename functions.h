@@ -30,8 +30,6 @@ using namespace std;
 
 // Funkcje klasy Currency
 
-//Konstruktor
-Currency::Currency(int id, string name) : id(id), name(name) {}
 
 // Funkcja zwracająca ID
 int Currency::getId() const {
@@ -47,8 +45,6 @@ string Currency::getName() const {
 
 // Funkcji klasy Loan_Type
 
-// Konstruktor
-Loan_Type::Loan_Type(int id, double interest, string loan_type) : id(id), interest(interest), loan_type(loan_type) {}
 
 // Funkcja zwracająca stopę procentową
 double Loan_Type::getInterest() const {
@@ -69,9 +65,6 @@ double Loan_Type::calcInterest(double loanAmount, int years) const {
 
 // Funkcji klasy Loan
 
-// Konstruktor
-Loan::Loan(int owner_id, int currency_id, Loan_Type loan_type, double balance_left) :
-    owner_id(owner_id), currency_id(currency_id), loan_type(loan_type), balance_left(balance_left) {}
 
 // Funkcja do spłaty kredytu     loan.makePayment(wartość spłaty)
 void Loan::makePayment(double payment) {
