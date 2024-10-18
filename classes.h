@@ -144,8 +144,10 @@ class Loan_Type {
         string getLoanTypeName() const {
             return this->loan_type;
         }
-        //Funkcje
-        double calcInterest(double loanAmount, int years) const;
+        // Funkcja do splaty kredytu   loan.makePayment(wartosc splaty)
+        double calcInterest(double loanAmount, int years) const {
+            return loanAmount * interest * years / 100;
+        }
 };
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -177,9 +179,19 @@ class Loan {
         double getBalanceLeft() const {
             return this->balance_left;
         }
-        // Funkcje
-        void makePayment(double payment);
-        string getLoanTypeName() const;
+        // Funkcja do splaty kredytu   loan.makePayment(wartosc splaty)
+        void makePayment(double payment) {
+            if (payment > 0 && payment <= balance_left) {
+                balance_left -= payment;
+                cout << "Splacono " << payment << ". Pozostalo do splaty: " << balance_left << endl;
+            } else {
+                cout << "Nieprawidlowa kwota platnosci." << endl;
+            }
+        }
+        // Funkcja zwracająca nazwe typu kredytu
+        string getLoanTypeName() const {
+            return loan_type.getLoanTypeName();
+        }
 };
 
 #endif
