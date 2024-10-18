@@ -65,6 +65,30 @@ class Account {
             this->currency_id = currency_id;
             this->balance = balance;
         }
+        // Metoda zwracająca id konta
+        int getId() {
+            return this->id;
+        }
+        // Metoda zwracająca id właściciela konta
+        int getOwner_id() {
+            return this->owner_id;
+        }
+        // Metoda zwracająca id waluty konta
+        int getCurrency_id() {
+            return this->currency_id;
+        }
+        // Metoda zwracająca stan konta
+        double getBalance() {
+            return this->balance;
+        }
+        // Metoda zwiększająca stan konta   account1.increaseBalance(o ile zwiększyć stan konta)
+        void increaseBalance(double amount) {
+            this->balance += amount;
+        }
+        // Metoda zmniejszająca stan konta   account1.decreaseBalance(o ile zmniejszyć stan konta)
+        void decreaseBalance(double amount) {
+            this->balance -= amount;
+        }
 };
 
 // Klasa typów walut
