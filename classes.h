@@ -17,7 +17,7 @@ class User {
         vector<bool> admin; // Jeśli 1 to użytkownik jest administratorem
     public:
         // Konstruktor metody  User user1(id, imie, nazwisko, login, hasło, 1 lub 0 )
-        User(vector<int> id, vector<string> vector<first_name>, vector<string> last_name, vector<string> login, vector<string> password, vector<bool> admin) {
+        User(vector<int> id, vector<string> first_name, vector<string> last_name, vector<string> login, vector<string> password, vector<bool> admin) {
             this->id = id;
             this->first_name = first_name;
             this->last_name = last_name;
