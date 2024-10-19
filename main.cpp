@@ -11,7 +11,7 @@ using namespace std;
 int main() 
 {
     User user; // Gloablny obeikt
-    //cout << "test Prymasa";
+    cout << "test Prymasa";
     temprrary_data(user); // Wywołanie funkcji dodającej tymczasowe dane do testów
     xml_chf(user);
     sign_in(user); // Wywolanie funkcji logowania

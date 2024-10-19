@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Users>
+  <User>
+<id>
+20
+</id>
+ <first_name>
+Jan
+</first_name>
+<last_name>
+Kowalski</last_name>
+<login>
+admin
+</login>
+<password>
+admin
+</password>
+<admin>
+true
+</admin>
+</User>
+  <User>
+<id>
+43
+</id>
+ <first_name>
+Adrian
+</first_name>
+<last_name>
+Prymas</last_name>
+<login>
+user1
+</login>
+<password>
+user1
+</password>
+<admin>
+false
+</admin>
+</User>
+  <User>
+<id>
+25
+</id>
+ <first_name>
+Jan
+</first_name>
+<last_name>
+Pietka</last_name>
+<login>
+user2
+</login>
+<password>
+user2
+</password>
+<admin>
+false
+</admin>
+</User>
+  <User>
+<id>
+21
+</id>
+ <first_name>
+Andrzej
+</first_name>
+<last_name>
+Nowak</last_name>
+<login>
+user3
+</login>
+<password>
+user3
+</password>
+<admin>
+false
+</admin>
+</User>
+  <User>
+<id>
+53
+</id>
+ <first_name>
+Michal
+</first_name>
+<last_name>
+Ryba</last_name>
+<login>
+user4
+</login>
+<password>
+user4
+</password>
+<admin>
+false
+</admin>
+</User>
+</Users>

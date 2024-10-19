@@ -117,22 +117,22 @@ class Account {
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Currency {
     private:
-        int id;
-        string name;
+        vector<int> id;
+        vector<string> name;
 
     public:
         // Konstruktor metody Currency currency1(id, nazwa waluty)
-        Currency(int id, string name) : id(id), name(name) {
+        Currency(vector<int> id, vector<string> name) {
             this->id = id;
             this->name = name;
         }
         // Metoda zwracająca ID
-        int getId() const {
-            return this->id;
+        int getId(int index) {
+            return this->id[index];
         }
         // Metoda zwracająca ID właściciela
-        string getName() const {
-            return this->name;
+        string getName(int index) {
+            return this->name[index];
         }
 };
 
@@ -141,33 +141,32 @@ class Currency {
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Loan_Type {
     private:
-        int id;
-        double interest;  // Stopa procentowa
-        string loan_type;
+        vector<int> id;
+        vector<double> interest;  // Stopa procentowa
+        vector<string> loan_type;
 
     public:
         // Konstruktor metody Loan_Type morgage1(id, stopa procentowa, nazwa typu kredytu)
-        Loan_Type(int id, double interest, string loan_type) : id(id), interest(interest), loan_type(loan_type) {
+        Loan_Type(vector<int> id, vector<double> interest, vector<string> loan_type) {
             this->id = id;
             this->interest = interest;
             this->loan_type = loan_type;
         }
         // Metoda zwracająca ID
-        int getId() {
-            return this->id;
+        int getId(int index) {
+            return this->id[index];
         }
         // Metoda zwracająca stopę procentową
-        double getInterest() const {
-            return this->interest;
+        double getInterest(int index) {
+            return this->interest[index];
         }
-
         // Metoda zwracająca nazwę typu kredytu
-        string getLoanTypeName() const {
-            return this->loan_type;
+        string getLoanTypeName(int index) {
+            return this->loan_type[index];
         }
         // Funkcja do splaty kredytu   loan.makePayment(wartosc splaty)
-        double calcInterest(double loanAmount, int years) const {
-            return loanAmount * interest * years / 100;
+        double calcInterest(int index,double loanAmount, int years) {
+            return loanAmount * (interest[index] / 100) * years ;
         }
 };
 
@@ -176,53 +175,56 @@ class Loan_Type {
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Loan {
     private:
-        int owner_id;
-        Currency currency_name;
-        Loan_Type loan_type;
-        double balance_left; // Ile jeszcze zostało do spłacenia kredytu
+        vector<int> owner_id;
+        vector<Currency> currency_name;
+        vector<Loan_Type> loan_type;
+        vector<double> balance_left; // Ile jeszcze zostało do spłacenia kredytu
 
     public:
         // Konstruktor metody Loan loan1(id_właściciela, waluta, typ kredytu, ile zostało do spłaty)
-        Loan(int owner_id, Currency currency_name, Loan_Type loan_type, double balance_left) : owner_id(owner_id), currency_name(currency_name), loan_type(loan_type), balance_left(balance_left) {
+        Loan(vector<int> owner_id, vector<Currency> currency_name, vector<Loan_Type> loan_type, vector<double> balance_left) {
             this->owner_id = owner_id;
+            this->currency_name = currency_name;
+            this->loan_type = loan_type;
             this->balance_left = balance_left;
         }
         // Metoda zwracająca ID właściciela
-        int getOwnerId() const {
-            return this->owner_id;
-        }
-        // Metoda zwracająca nazwe waluty
-        string getCurrencyName() const {
-            return currency_name.getName();
+        int getOwnerId(int index) {
+            return this->owner_id[index];
         }
         // Metoda zwracająca pozostałą kwotę kredytu
-        double getBalanceLeft() const {
-            return this->balance_left;
+        double getBalanceLeft(int index) {
+            return this->balance_left[index];
         }
-        // Funkcja do splaty kredytu   loan.makePayment(wartosc splaty)
-        void makePayment(double payment) {
-            if (payment > 0 && payment <= balance_left) {
-                balance_left -= payment;
-                cout << "Splacono " << payment << ". Pozostalo do splaty: " << balance_left << endl;
+        // Metoda zwracająca nazwe waluty
+        string getCurrencyName(int index) {
+            return currency_name[index].getName(0); // Use 0 if there's only one loan type
+        }
+        // Funkcja zwracająca nazwe typu kredytu
+        string getLoanTypeName(int index) {
+            return loan_type[index].getLoanTypeName(0); // Use 0 if there's only one currency name
+        }
+        // Funkcja do splaty kredytu   loan.makePayment(index, wartosc splaty)
+        void makePayment(int index, double payment) {
+            if (payment > 0 && payment <= balance_left[index]) {
+                balance_left[index] -= payment;
+                cout << "Splacono " << payment << ". Pozostalo do splaty: " << balance_left[index] << endl;
             } else {
                 cout << "Nieprawidlowa kwota platnosci." << endl;
             }
         }
-        // Funkcja zwracająca nazwe typu kredytu
-        string getLoanTypeName() const {
-            return loan_type.getLoanTypeName();
-        }
+
         // Funkcja zaciągania kredytu loan.takeLoan(wartosc kredytu, typ kredytu, nazwa waluty);
-        void takeLoan(double loanAmount, Loan_Type loanType, Currency currencyName) {
+        void takeLoan(int index, double loanAmount, Loan_Type loanType, Currency currencyName) {
             // Warunki: Sprawdzenie, czy kwota jest poprawna (wieksza niz 0)
             if (loanAmount > 0) {
-                this->balance_left = loanAmount;
-                this->loan_type = loanType;
-                this->currency_name = currencyName;
+                balance_left[index] += loanAmount;
+                loan_type[index] = loanType;
+                currency_name[index] = currencyName;
 
                 cout << "Zaciągnięto kredyt w wysokosci: " << loanAmount << endl;
-                cout << "Typ kredytu: " << loanType.getLoanTypeName() << endl;
-                cout << "Waluta: " << currencyName.getName() << endl;
+                cout << "Typ kredytu: " << loanType.getLoanTypeName(0) << endl;        // Use 0 if there's only one loan type
+                cout << "Waluta: " << currencyName.getName(0) << endl;      // Use 0 if there's only one currency name
             } else {
                 cout << "Nie spelniasz warunkow aby zaciagnac kredyt." << endl;
         }
