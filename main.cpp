@@ -10,11 +10,10 @@ using namespace std;
 
 int main() 
 {
-    User user;
-    cout << "test Prymasa";
-    xml_chf();
+    User user; // Gloablny obeikt
+    //cout << "test Prymasa";
     temprrary_data(user); // Wywołanie funkcji dodającej tymczasowe dane do testów
-
+    xml_chf(user);
     sign_in(user); // Wywolanie funkcji logowania
 
     // Oczekuje na wejście żeby konsola się nie zamykała

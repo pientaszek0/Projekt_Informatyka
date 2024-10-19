@@ -25,7 +25,6 @@ void temprrary_data(User &user)
     user.addUser(21, "Andrzej", "Nowak", "user3", "user3", false);
     user.addUser(53, "Michal", "Ryba", "user4", "user4", false);
 
-    user.xmlUser();
 
     return; 
 }

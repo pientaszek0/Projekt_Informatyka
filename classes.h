@@ -26,7 +26,7 @@ class User {
             this->admin = admin;
         }
 
-       User() {}; //Jest to domyślny konstruktor :-)
+       User() {}; //Jest to domyślny konstruktor Potrzebny do vectorów bo bez tego nie działa XD
 
         // Metoda do zwracania ilości elemntów
         size_t getElementUser()
@@ -69,14 +69,6 @@ class User {
             login.emplace_back(u_login);
             password.emplace_back(u_password);
             admin.emplace_back(u_admin);
-        }
-        // Metoda do XML
-        void xmlUser()
-        {
-            for(size_t i = 0; i < getElementUser(); i++)
-            {
-                cout << i << "ID: " << id[i] << ", Name: " << first_name[i] << " " << last_name[i] << ", Login: " << login[i] << "Pass:  " << password[i] << "Admin: " << (admin[i] ? "Yes" : "No") << endl;
-            }
         }
 };
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
