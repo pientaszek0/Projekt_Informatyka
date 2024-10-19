@@ -15,6 +15,7 @@ void sign_in() {
     system("cls");
     cout << "Witaj w Banku PWP!" << endl;
 
+    // Mała edycja tej funckji dostosowanej do vectorów
     do {
         cout << "Podaj login: ";
         cin >> login;
@@ -22,11 +23,11 @@ void sign_in() {
         cin >> password;
 
         for (int i = 0; i < users.size(); i++) {
-            if (login == users[i].getLogin() && password == users[i].getPassword()) {
+            if (login == users.getLogin(i) && password == users.getPassword(i)) {
                 courent_user = i;
                 system("cls");
                 loged_in = 1;
-                cout << "Zalogowano jako: " << users[i].getFirst_name() << " " << users[i].getLast_name();
+                cout << "Zalogowano jako: " << users.getFirst_name(i) << " " << users.getLast_name(i);
                 return;
             }
         }
@@ -39,7 +40,7 @@ void sign_in() {
 
 // Funkcja dodająca tymczasowe przykladowe dane do testowania aplikacji
 void temprrary_data() {
-    User user1(20, "Jan", "Kowalski", "admin", "admin", 1);
+   /* User user1(20, "Jan", "Kowalski", "admin", "admin", 1);
     users.push_back(user1);
     User user2(43, "Adrian", "Prymas", "user1", "user1", 0);
     users.push_back(user2);
@@ -48,6 +49,15 @@ void temprrary_data() {
     User user4(21, "Andrzej", "Nowak", "user3", "user3", 0);
     users.push_back(user4);
     User user5(53, "Michal", "Ryba", "user4", "user4", 0);
-    users.push_back(user5);
-    return;
+    users.push_back(user5);*/
+
+    User user; // Tworzymy Obiekt
+
+    user.addUser(20, "Jan", "Kowalski", "admin", "admin", 1);
+    user.addUser(43, "Adrian", "Prymas", "user1", "user1", 0);
+    user.addUser(25, "Jan", "Pietka", "user2", "user2", 0);
+    user.addUser(21, "Andrzej", "Nowak", "user3", "user3", 0);
+    user.addUser(53, "Michal", "Ryba", "user4", "user4", 0);
+
+    return; 
 }

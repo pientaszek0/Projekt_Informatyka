@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -11,12 +12,12 @@ using namespace std;
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class User {
     private:
-        int id;
-        string first_name, last_name, login, password;
-        bool admin; // Jeśli 1 to użytkownik jest administratorem
+        vector<int> id;
+        vector<string> first_name, last_name, login, password;
+        vector<bool> admin; // Jeśli 1 to użytkownik jest administratorem
     public:
         // Konstruktor metody  User user1(id, imie, nazwisko, login, hasło, 1 lub 0 )
-        User(int id, string first_name, string last_name, string login, string password, bool admin) {
+        User(vector<int> id, vector<string> vector<first_name>, vector<string> last_name, vector<string> login, vector<string> password, vector<bool> admin) {
             this->id = id;
             this->first_name = first_name;
             this->last_name = last_name;
@@ -24,29 +25,42 @@ class User {
             this->password = password;
             this->admin = admin;
         }
-        // Metoda zwracająca id użytkownika
-        int getId() {
-            return this->id;
+       
+        // do każdej metody jest zmiena index
+
+         // Metoda zwracająca id użytkownika
+        int getId(int index) {
+            return this->id[index];
         }
         // Metoda zwracająca imie urzytkownika
-        string getFirst_name() {
-            return this->first_name;
+        string getFirst_name(int index) {
+            return this->first_name[index];
         }
         // Metoda zwracająca nazwisko urzytkownika
-        string getLast_name() {
-            return this->last_name;
+        string getLast_name(int index) {
+            return this->last_name[index];
         }
         // Metoda zwracająca login urzytkownika
-        string getLogin() {
-            return this->login;
+        string getLogin(int index) {
+            return this->login[index];
         }
         // Metoda zwracająca hasło urzytkownika
-        string getPassword() {
-            return this->password;
+        string getPassword(int index) {
+            return this->password[index];
         }
         // Metoda zwracająca 1 jeśli użytkownik jest adminem i 0 jeśli nie jest
-        bool isAdmin() {
-            return this->admin;
+        bool isAdmin(int index) {
+            return this->admin[index];
+        }
+        // Metoda do dodawania użytkowników za pomocą vectora
+        void addUser(int u_id, string u_first_name, string u_last_name, string u_login, string u_password, bool u_admin)
+        {
+            id.emplace_back(u_id);
+            first_name.emplace_back(u_first_name);
+            last_name.emplace_back(u_last_name);
+            login.emplace_back(u_login);
+            password.emplace_back(u_password);
+            admin.emplace_back(u_password);
         }
 };
 

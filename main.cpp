@@ -17,7 +17,7 @@ int main()
     // Oczekuje na wejście żeby konsola się nie zamykała
     int zatrzymanie;
     cin >> zatrzymanie;
-
+    
     //cout << users[4].getId(); // Testowe odczytanie id użytkownika
 
     return 0;
