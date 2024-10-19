@@ -192,6 +192,21 @@ class Loan {
         string getLoanTypeName() const {
             return loan_type.getLoanTypeName();
         }
+        // Funkcja zaciągania kredytu loan.takeLoan(wartosc kredytu, typ kredytu, ID waluty);
+        void takeLoan(double loanAmount, Loan_Type loanType, int currencyId) {
+            // Warunki: Sprawdzenie, czy kwota jest poprawna (wieksza niz 0)
+            if (loanAmount > 0) {
+                balance_left = loanAmount;
+                loan_type = loanType;
+                currency_id = currencyId;
+
+                cout << "Zaciągnięto kredyt w wysokosci: " << loanAmount << endl;
+                cout << "Typ kredytu: " << loanType.getLoanTypeName() << endl;
+                cout << "Waluta: " << currencyId << endl;
+            } else {
+                cout << "Nie spelniasz warunkow aby zaciagnac kredyt." << endl;
+        }
+}
 };
 
 #endif
