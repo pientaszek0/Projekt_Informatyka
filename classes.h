@@ -17,13 +17,21 @@ class User {
         vector<bool> admin; // Jeśli 1 to użytkownik jest administratorem
     public:
         // Konstruktor metody  User user1(id, imie, nazwisko, login, hasło, 1 lub 0 )
-        User(vector<int> id, vector<string> first_name, vector<string> last_name, vector<string> login, vector<string> password, vector<bool> admin) {
+       User(vector<int> id, vector<string> first_name, vector<string> last_name, vector<string> login, vector<string> password, vector<bool> admin) {
             this->id = id;
             this->first_name = first_name;
             this->last_name = last_name;
             this->login = login;
             this->password = password;
             this->admin = admin;
+        }
+
+       User() {}; //Jest to domyślny konstruktor :-)
+
+        // Metoda do zwracania ilości elemntów
+        size_t getElementUser()
+        {
+            return id.size();
         }
        
         // do każdej metody jest zmiena index
@@ -60,10 +68,9 @@ class User {
             last_name.emplace_back(u_last_name);
             login.emplace_back(u_login);
             password.emplace_back(u_password);
-            admin.emplace_back(u_password);
+            admin.emplace_back(u_admin);
         }
 };
-
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ============== Klasa kont należących do użytkowników ==============
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

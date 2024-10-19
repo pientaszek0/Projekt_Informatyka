@@ -10,6 +10,7 @@ using namespace std;
 
 int main() 
 {
+   // cout << "test Prymasa";
     temprrary_data(); // Wywołanie funkcji dodającej tymczasowe dane do testów
 
     sign_in(); // Wywolanie funkcji logowania
