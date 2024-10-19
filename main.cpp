@@ -10,16 +10,18 @@ using namespace std;
 
 int main() 
 {
-   // cout << "test Prymasa";
-    temprrary_data(); // Wywołanie funkcji dodającej tymczasowe dane do testów
+    User user;
+    cout << "test Prymasa";
+    xml_chf();
+    temprrary_data(user); // Wywołanie funkcji dodającej tymczasowe dane do testów
 
-    sign_in(); // Wywolanie funkcji logowania
+    sign_in(user); // Wywolanie funkcji logowania
 
     // Oczekuje na wejście żeby konsola się nie zamykała
     int zatrzymanie;
     cin >> zatrzymanie;
     
-    //cout << users[4].getId(); // Testowe odczytanie id użytkownika
+    //cout << users[4].getId(); // Testowe oduserczytanie id użytkownika
 
     return 0;
 }

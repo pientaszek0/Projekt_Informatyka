@@ -70,6 +70,14 @@ class User {
             password.emplace_back(u_password);
             admin.emplace_back(u_admin);
         }
+        // Metoda do XML
+        void xmlUser()
+        {
+            for(size_t i = 0; i < getElementUser(); i++)
+            {
+                cout << i << "ID: " << id[i] << ", Name: " << first_name[i] << " " << last_name[i] << ", Login: " << login[i] << "Pass:  " << password[i] << "Admin: " << (admin[i] ? "Yes" : "No") << endl;
+            }
+        }
 };
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ============== Klasa kont należących do użytkowników ==============
