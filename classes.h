@@ -156,24 +156,23 @@ class Loan_Type {
 class Loan {
     private:
         int owner_id;
-        int currency_id;
+        Currency currency_name;
         Loan_Type loan_type;
         double balance_left; // Ile jeszcze zostało do spłacenia kredytu
 
     public:
         // Konstruktor metody Loan loan1(id_właściciela, waluta, typ kredytu, ile zostało do spłaty)
-        Loan(int owner_id, int currency_id, Loan_Type loan_type, double balance_left) : owner_id(owner_id), currency_id(currency_id), loan_type(loan_type), balance_left(balance_left) {
+        Loan(int owner_id, Currency currency_name, Loan_Type loan_type, double balance_left) : owner_id(owner_id), currency_name(currency_name), loan_type(loan_type), balance_left(balance_left) {
             this->owner_id = owner_id;
-            this->currency_id = currency_id;
             this->balance_left = balance_left;
         }
         // Metoda zwracająca ID właściciela
         int getOwnerId() const {
             return this->owner_id;
         }
-        // Metoda zwracająca CurrencyID
-        int getCurrencyId() const {
-            return this->currency_id;
+        // Metoda zwracająca Currency name
+        string getCurrencyName() const {
+            return currency_name.getName();
         }
         // Metoda zwracająca pozostałą kwotę kredytu
         double getBalanceLeft() const {
@@ -193,16 +192,16 @@ class Loan {
             return loan_type.getLoanTypeName();
         }
         // Funkcja zaciągania kredytu loan.takeLoan(wartosc kredytu, typ kredytu, ID waluty);
-        void takeLoan(double loanAmount, Loan_Type loanType, int currencyId) {
+        void takeLoan(double loanAmount, Loan_Type loanType, Currency currencyName) {
             // Warunki: Sprawdzenie, czy kwota jest poprawna (wieksza niz 0)
             if (loanAmount > 0) {
-                balance_left = loanAmount;
-                loan_type = loanType;
-                currency_id = currencyId;
+                this->balance_left = loanAmount;
+                this->loan_type = loanType;
+                this->currency_name = currencyName;
 
                 cout << "Zaciągnięto kredyt w wysokosci: " << loanAmount << endl;
                 cout << "Typ kredytu: " << loanType.getLoanTypeName() << endl;
-                cout << "Waluta: " << currencyId << endl;
+                cout << "Waluta: " << currencyName.getName() << endl;
             } else {
                 cout << "Nie spelniasz warunkow aby zaciagnac kredyt." << endl;
         }
