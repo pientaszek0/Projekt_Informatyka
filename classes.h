@@ -170,7 +170,7 @@ class Loan {
         int getOwnerId() const {
             return this->owner_id;
         }
-        // Metoda zwracająca Currency name
+        // Metoda zwracająca nazwe waluty
         string getCurrencyName() const {
             return currency_name.getName();
         }
@@ -191,7 +191,7 @@ class Loan {
         string getLoanTypeName() const {
             return loan_type.getLoanTypeName();
         }
-        // Funkcja zaciągania kredytu loan.takeLoan(wartosc kredytu, typ kredytu, ID waluty);
+        // Funkcja zaciągania kredytu loan.takeLoan(wartosc kredytu, typ kredytu, nazwa waluty);
         void takeLoan(double loanAmount, Loan_Type loanType, Currency currencyName) {
             // Warunki: Sprawdzenie, czy kwota jest poprawna (wieksza niz 0)
             if (loanAmount > 0) {
