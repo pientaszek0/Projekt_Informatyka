@@ -10,10 +10,15 @@ using namespace std;
 
 int main() 
 {
-    temprrary_data(user); // Wywołanie funkcji dodającej tymczasowe dane do testów
-    xml_chf(user);
+    xml_chf(user); // Wywołanie funkcji do odczytu pliku xml 
+
+    //!UWAGA Wczytuje dane tylko klasy "User"!!!!
+    xml_giveData(user); // Wywołanie funkcja która wczytuje dane z XML
+    xml_chd(user); // Wywołanie funkcji sparwdza poprawność czy dane zostały dobrze wczytane !!TYLKO "User!!"
+
     sign_in(user); // Wywolanie funkcji logowania
-    //desktop(user, courent_user); // Wywolanie funkcji pokazujacej pulpit uzytkownika
+
+    desktop(user, courent_user); // Wywolanie funkcji pokazujacej pulpit uzytkownika
 
     // Oczekuje na wejście żeby konsola się nie zamykała
     int zatrzymanie;
