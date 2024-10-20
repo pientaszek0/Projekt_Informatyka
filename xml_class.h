@@ -3,130 +3,154 @@
 #include "variables.h"
 #include <fstream>
 #include <string>
-//#include <sstream>
 
 using namespace std;
 
 string db_name = "classes.xml";
 
-//funkcja która usuwa biale znaki
 
-
-void xml_save(User user) // funkcja która sluszy do zapisu
+// Funkcja zapisująca dane do pliku XML
+void xml_save(User user) 
 {
 	ofstream db(db_name);
 
-	if (db.is_open()) //spradzanie czy plik jest ptwraty poprawnie
+    // Warunek który sprawdza czy plik jest utowrzony. Jeżeli utowrzony (True) to zapisuje klasę do pliku XML
+	if (db.is_open())
 	{
-
-		db << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"; //nagłówek pliku xml
-	
-		 db << "<Users>\n"; // Rozpoczęcie znacznika "Users"
-
-        for(int i = 0; i < user.getElementUser(); i++) // Iteracja po użytkownikach
+        //nagłówek pliku xml
+		db << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n";
+        
+		// Nazwa klasy w liczbie mnogiej
+        db << "<Users>\n"; 
+        // Pętla która służy do zpaisu Klasy "User"
+        for(int i = 0; i < user.getElementUser(); i++)
         {
-            db << "  <User>\n"; // Każdy użytkownik otoczony własnym znacznikiem <User>
-            db << "<id>\n" << user.getId(i) <<endl << "</id>\n";
-            db << " <first_name>\n" << user.getFirst_name(i) << endl << "</first_name>\n";
-            db << "<last_name>\n" << user.getLast_name(i) << "</last_name>\n";
-            db << "<login>\n" << user.getLogin(i) << endl <<"</login>\n";
-            db << "<password>\n" << user.getPassword(i) << endl << "</password>\n";
-            db << "<admin>\n" << (user.isAdmin(i) ? "true" : "false") << endl << "</admin>\n";
-            db << "</User>\n"; // Zamknięcie znacznika "User"
+            // Otwarcie obiektu
+            db << "\t<User>\n"; 
+            db << "\t\t<id>" << user.getId(i) << "</id>\n";
+            db << "\t\t<first_name>" << user.getFirst_name(i) <<"</first_name>\n";
+            db << "\t\t<last_name>" << user.getLast_name(i) << "</last_name>\n";
+            db << "\t\t<login>" << user.getLogin(i) << "</login>\n";
+            db << "\t\t<password>" << user.getPassword(i) << "</password>\n";
+            db << "\t\t<admin>" << (user.isAdmin(i) ? "true" : "false") << "</admin>\n";
+            // Zamknięcie obiektu
+            db << "\t</User>\n";
         }
-
-        db << "</Users>"; // Zamknięcie znacznika "Users"
+        // Zamknięcie całej klasy
+        db << "</Users>";
 
 		db.close();
-		cout << "Dane zostały zapisane do pliku XML!\n" << std::endl;
+
+		cout << "---KLASY ZOSTAŁY ZAPISE DO PLIKU XML" << endl;
 	}
 	else
 	{
-		cout << "Plik dziala niepoprawnie\n";
+		cout << error02 << endl;
 	}
 }
 
-void xml_chd(User user) //Funkcja do sparwdzania spójnosci XML i  classy
+// Funkcja która sprawdza spójnośc danych XML a danymi w programie.
+void xml_chd(User user)
 {
 	ifstream db(db_name);
 	
-	if (db.is_open())
-	{
-		cout <<"\n----\nSPrawdzanie plków\n-----\n";
-		string line; //zmienna do odczytu linjki xml
+	if (!db.is_open()) {
+        cout << error01 << endl;
+        return;
+    }
 
-		int i = 0;
+    cout << "\n----SPRAWDZANIE SPOJNOSCI KLAS(y User)-----\n";
+    // Zmienne lokalne stworzone na porzeby dzilania tej funkcji
+    int xml_id = -1;
+    string xml_first_name, xml_last_name, xml_login, xml_password;
+    bool xml_admin = false;
+	int count_element = 0;
+    string line;
+    int user_count = -1; // Licznik użytkowników od -1 ponieważ dlaej jest iterator który i tak zmieni wartosc na 0
 
-		while(getline(db, line)) //Odczytuje linijke jezeli true dziala dalej a jak sie skonczy plik konczy z wartoscia falase;
-		{
-			int i;
-			bool id = 0;
-			bool first_name = 0;
-			bool last_naem = 0;
-			bool login = 0;
-			bool password = 0;
-			bool admin = 0;
-			bool zgodnosc = 0;
+   while (getline(db, line)) 
+    {
+        // Ignorowanie linijek XML
+        if (line.find("<?xml") != string::npos || line.find("<Users>") != string::npos ||
+            line.find("</Users>") != string::npos) 
+        {
+            continue;
+        }
+        if (line.find("<User>") != string::npos)
+        {
+            // Przechodzimy do kolejnego użytkownika
+            user_count++;
+            // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
+            xml_id = -1;
+            xml_first_name = "";
+            xml_last_name = "";
+            xml_login = "";
+            xml_password = "";
+            xml_admin = false;
+            continue;
+        }
 
-			//ignorowanie linijek xml;
-			if(line.find("<?xml version=\"1.0\" encoding=\"UTF-8\"?>") != string::npos) continue;
-			if(line.find("<Users>") != string::npos) continue;
-			if(line.find("</Users>") != string::npos) continue;
-			if(line.find("<User>") != string::npos) continue;
-			if(line.find("</User>") != string::npos) continue;
-			if(line.find("</id>") != string::npos) continue;
-			if(line.find("</first_name>") != string::npos) continue;
-			if(line.find("</last_name>") != string::npos) continue;
-			if(line.find("</login>") != string::npos) continue;
-			if(line.find("</password>") != string::npos) continue;
-			if(line.find("</admin>") != string::npos) continue;
-			if(line.find("</User>") != string::npos) continue;
+        // Sprawdzenie wartości pliku XML
+        if (line.find("<id>") != string::npos) 
+        {
+            string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+            xml_id = stoi(id_str);  // Konwersja na int
+        }
+        if (line.find("<first_name>") != string::npos) 
+        {
+            xml_first_name = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+        } 
+        if (line.find("<last_name>") != string::npos) 
+        {
+            xml_last_name = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+        } 
+        if (line.find("<login>") != string::npos) 
+        {
+            xml_login = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+        } 
+        if (line.find("<password>") != string::npos) 
+        {
+            xml_password = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
 
-			// Sprawdzenie wartosci pliku xml
+        }
+        if (line.find("<admin>") != string::npos) 
+        {
+            string admin_value = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+            xml_admin = (admin_value == "true");
+        }
 
-			if(line.find("<first_name>") != string::npos) continue;
-			if(line.find("<last_name>") != string::npos) continue;
-			if(line.find("<id>") != string::npos) continue;
-			if(line.find("<password>") != string::npos) continue;
-			if(line.find("<admin>") != string::npos) continue;
-
-			if(line.find("<id>") != string::npos)
-			{
-				i++;
-				cout << i << endl;
-				continue;
-			}
-			if(line.find("<login>") !=string::npos) 
-			{
-				login = 1;
-				continue;
-			}
-			if(login == 1)
-			{
-
-			}
-		}
-		db.close();
-	}
-	else
-	{
-		cout << "ERROR";
-	}
+         if (line.find("</User>") != string::npos) 
+        {
+            if (xml_id == user.getId(user_count) &&
+                xml_first_name == user.getFirst_name(user_count) &&
+                xml_last_name == user.getLast_name(user_count) &&
+                xml_login == user.getLogin(user_count) &&
+                xml_password == user.getPassword(user_count) &&
+                xml_admin == user.isAdmin(user_count)) 
+            {
+                cout << xml_id << "\tTEST PASSED" << endl;
+            } else {
+                cout << xml_id << "\tTEST FAILED" << endl;
+            }
+        }
+    }
+    db.close();
+	
 }
 
-
-void xml_chf(User user) //sprawdzanie czy plik istenieje
+// Funkcja która tworzy lub sprawdza czy plik został utowrzony. Jeżeli plik istenieje zostaje wywołana funkcja odpoedzialna za sparwdzanie spójności plików
+void xml_chf(User user)
 {
 	ifstream db(db_name);
 	if (db)
 	{
-		cout << "Plik istenieje, czyli działa to poprawnie\n";
+		cout << "---PLIK XML ZOSTAL ODNALEZIONY---" << endl;
 		xml_chd(user);
 	}
 	else
 	{
-		cout << "Plik został utworzony\n" << endl;
-		xml_save(user);// Wywołanie funckji do zapisu;
+		cout << "---PLIK XML ZOSTAL UTWORZONY---" << endl;
+		xml_save(user);
 		db.close();
 	}
 }

@@ -13,4 +13,11 @@ Currency currency; // Obiekt przechowujący wektory z wszystkimi walutami pobran
 Loan_Type loan_type; // Obiekt przechowujący wektory z wszystkimi typami kredyto pobranymi z pliku xml
 Loan loan; // Obiekt przechowujący wektory z wszystkimi kredytami pobranymi z pliku xml
 
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ======================== STALŁE BLEDOW ===========================
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+const string error01 = "ERROR-01 -> Nie mozna utworzyc pliku";
+const string error02 = "ERROR-02 -> Plik nie został poprawnie otworzony lub nieistnieje";
+
 #endif
