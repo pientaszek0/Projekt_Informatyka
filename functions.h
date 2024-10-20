@@ -26,36 +26,96 @@ void sign_in(User &user)
     system("cls");
     cout << "Witaj w Banku PWP!" << endl;
 
-
-    // Mała edycja tej funckji dostosowanej do vectorów
     do {
         cout << "Podaj login: ";
         cin >> login;
         cout << "Podaj haslo: ";
         cin >> password;
-        int i = 0;
-        cout << i <<endl;
 
-        for (i =0 ; i < user.getElementUser(); i++) {
+        for (int i = 0 ; i < user.getElementUser(); i++) {
             cout << i;
             if (login == user.getLogin(i) && password == user.getPassword(i)) {
                 courent_user = i;
                 system("cls");
                 loged_in = 1;
-                cout << "Zalogowano jako: " << user.getFirst_name(i) << " " << user.getLast_name(i);
                 return;
             }
         }
-        cout << i;
-       //system("cls");
-       // cout << "Nieprawidlowy login lub haslo." << endl;
+        system("cls");
+        cout << "Nieprawidlowy login lub haslo." << endl;
 
     } while (!loged_in);
 }
 
 // Jan Piętka
-// Funkcja wyświetlajaca pupit aktualnie zalogowanego uzytkownika
-void showDesktop() {
-    
+// Funkcja wyświetlajaca i obslugujaca pupit aktualnie zalogowanego uzytkownika  destop(obiekt z wektorami, numer w wektorze zalogowanego uzytkownika)
+void desktop(User user, int courent_user) {
+    int menu;
+    system("cls");
+
+    while (true) {
+        cout << "Zalogowano jako: " << user.getFirst_name(courent_user) << " " << user.getLast_name(courent_user) << endl;
+        cout << "1 - Konta" << endl;
+        cout << "2 - Kredyty" << endl;
+        cout << "3 - Lokaty" << endl;
+        if (user.isAdmin(courent_user)) {
+            cout << "10 - Menu Administratora" << endl;
+        }
+        cout << "Wybierz opcje przez wpisanie jej numeru: ";
+        cin >> menu;
+
+        switch (menu) {
+        case 1: {
+            system("cls");
+            cout << "Twoje Konta:" << endl;
+            break;
+        }
+        case 2: {
+            system("cls");
+            cout << "Twoje Kredyty:" << endl;
+            break;
+        }
+        case 3: {
+            system("cls");
+            cout << "Twoje Lokaty:" << endl;
+            break;
+        }
+        case 10: {
+            system("cls");
+            cout << "Panel Administratora:" << endl;
+            cout << "Wybierz opcje przez wpisanie jej numeru: ";
+
+
+
+            cin >> menu;
+            break;
+        }
+        default:
+            system("cls");
+            cout << "Nieprawidlowy numer opcji." << endl;
+            break;
+        }
+    }
+
+    return;
+}
+
+void accountsMenu() {
+
+    return;
+}
+
+void loansMenu() {
+
+    return;
+}
+
+void depositsMenu() {
+
+    return;
+}
+
+void adminMenu() {
+
     return;
 }

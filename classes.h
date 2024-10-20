@@ -31,8 +31,7 @@ class User {
         // Nie potrzeba pisac konstruktora bo wystarczy ten pisany przez kompilator
 
         // Metoda do zwracania ilości elemntów
-        size_t getElementUser()
-        {
+        size_t getElementUser() {
             return id.size();
         }
        
@@ -142,6 +141,7 @@ class Currency {
             this->id = id;
             this->name = name;
         } */
+        // Nie potrzeba pisac konstruktora bo wystarczy ten pisany przez kompilator
         // Metoda zwracająca ID
         int getId(int index) {
             return this->id[index];
@@ -247,6 +247,12 @@ class Loan {
                 cout << "Nie spelniasz warunkow aby zaciagnac kredyt." << endl;
         }
 }
+};
+
+class Deposit {
+    private:
+
+    public:
 };
 
 #endif
