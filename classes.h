@@ -16,17 +16,19 @@ class User {
         vector<string> first_name, last_name, login, password;
         vector<bool> admin; // Jeśli 1 to użytkownik jest administratorem
     public:
-        // Konstruktor metody  User user1(id, imie, nazwisko, login, hasło, 1 lub 0 )
-       User(vector<int> id, vector<string> first_name, vector<string> last_name, vector<string> login, vector<string> password, vector<bool> admin) {
+        /*/ Konstruktor metody  User user1(id, imie, nazwisko, login, hasło, 1 lub 0 )
+        User(vector<int> id, vector<string> first_name, vector<string> last_name, vector<string> login, vector<string> password, vector<bool> admin) {
             this->id = id;
             this->first_name = first_name;
             this->last_name = last_name;
             this->login = login;
             this->password = password;
             this->admin = admin;
-        }
+        }*/
+        
+        //User() {}; //Jest to domyślny konstruktor Potrzebny do vectorów bo bez tego nie działa XD
 
-       User() {}; //Jest to domyślny konstruktor Potrzebny do vectorów bo bez tego nie działa XD
+        // Nie potrzeba pisac konstruktora bo wystarczy ten pisany przez kompilator
 
         // Metoda do zwracania ilości elemntów
         size_t getElementUser()
@@ -61,8 +63,7 @@ class User {
             return this->admin[index];
         }
         // Metoda do dodawania użytkowników za pomocą vectora
-        void addUser(int u_id, string u_first_name, string u_last_name, string u_login, string u_password, bool u_admin)
-        {
+        void addUser(int u_id, string u_first_name, string u_last_name, string u_login, string u_password, bool u_admin) {
             id.emplace_back(u_id);
             first_name.emplace_back(u_first_name);
             last_name.emplace_back(u_last_name);
@@ -71,44 +72,59 @@ class User {
             admin.emplace_back(u_admin);
         }
 };
+
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ============== Klasa kont należących do użytkowników ==============
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Account {
     private:
-        int id, owner_id, currency_id;
-        double balance;
+        vector<int> id, owner_id, currency_id;
+        vector<string> account_number;
+        vector<double> balance;
     public:
-        // Konstruktor klasy Account account1(id, id_właściciela, id_waluty, stan_konta)
-        Account(int id, int owner_id, int currency_id, double balance) {
+        /*/ Konstruktor klasy Account account1(id, id_właściciela, id_waluty, stan_konta)
+        Account(vector<int> id, vector<int> owner_id, vector<int> currency_id, vector<string> account_number, vector<double> balance) {
             this->id = id;
             this->owner_id = owner_id;
             this->currency_id = currency_id;
+            this->account_number = account_number;
             this->balance = balance;
-        }
+        } */
+        // Nie potrzeba pisac konstruktora bo wystarczy ten pisany przez kompilator
         // Metoda zwracająca id konta
-        int getId() {
-            return this->id;
+        int getId(int index) {
+            return this->id[index];
         }
         // Metoda zwracająca id właściciela konta
-        int getOwner_id() {
-            return this->owner_id;
+        int getOwner_id(int index) {
+            return this->owner_id[index];
         }
         // Metoda zwracająca id waluty konta
-        int getCurrency_id() {
-            return this->currency_id;
+        int getCurrency_id(int index) {
+            return this->currency_id[index];
         }
         // Metoda zwracająca stan konta
-        double getBalance() {
-            return this->balance;
+        double getBalance(int index) {
+            return this->balance[index];
         }
-        // Metoda zwiększająca stan konta   account1.increaseBalance(o ile zwiększyć stan konta)
-        void increaseBalance(double amount) {
-            this->balance += amount;
+        // Metoda zwiększająca stan konta   account1.increaseBalance(numer konta w wektorze, o ile zwiększyć stan konta)
+        void increaseBalance(int index, double amount) {
+            this->balance[index] += amount;
+            return;
         }
-        // Metoda zmniejszająca stan konta   account1.decreaseBalance(o ile zmniejszyć stan konta)
-        void decreaseBalance(double amount) {
-            this->balance -= amount;
+        // Metoda zmniejszająca stan konta   account1.decreaseBalance(numer konta w wektorze, o ile zmniejszyć stan konta)
+        void decreaseBalance(int index, double amount) {
+            this->balance[index] -= amount;
+            return;
+        }
+        // Metoda dodajaca nowe konto  account.addAccount(id_konta, id_wlasciciela, id_waluty_konta, numer_konta, stan_konta)
+        void addAccount(int a_id, int a_owner_id, int a_currency_id, string a_account_number, double a_balance) {
+            id.emplace_back(a_id);
+            owner_id.emplace_back(a_owner_id);
+            currency_id.emplace_back(a_currency_id);
+            account_number.emplace_back(a_account_number);
+            balance.emplace_back(a_balance);
+            return;
         }
 };
 
@@ -121,11 +137,11 @@ class Currency {
         vector<string> name;
 
     public:
-        // Konstruktor metody Currency currency1(id, nazwa waluty)
+        /*/ Konstruktor metody Currency currency1(id, nazwa waluty)
         Currency(vector<int> id, vector<string> name) {
             this->id = id;
             this->name = name;
-        }
+        } */
         // Metoda zwracająca ID
         int getId(int index) {
             return this->id[index];
@@ -146,12 +162,13 @@ class Loan_Type {
         vector<string> loan_type;
 
     public:
-        // Konstruktor metody Loan_Type morgage1(id, stopa procentowa, nazwa typu kredytu)
+        /*/ Konstruktor metody Loan_Type morgage1(id, stopa procentowa, nazwa typu kredytu)
         Loan_Type(vector<int> id, vector<double> interest, vector<string> loan_type) {
             this->id = id;
             this->interest = interest;
             this->loan_type = loan_type;
-        }
+        }*/
+        // Nie potrzeba pisac konstruktora bo wystarczy ten pisany przez kompilator
         // Metoda zwracająca ID
         int getId(int index) {
             return this->id[index];
@@ -181,13 +198,14 @@ class Loan {
         vector<double> balance_left; // Ile jeszcze zostało do spłacenia kredytu
 
     public:
-        // Konstruktor metody Loan loan1(id_właściciela, waluta, typ kredytu, ile zostało do spłaty)
+        /*/ Konstruktor metody Loan loan1(id_właściciela, waluta, typ kredytu, ile zostało do spłaty)
         Loan(vector<int> owner_id, vector<Currency> currency_name, vector<Loan_Type> loan_type, vector<double> balance_left) {
             this->owner_id = owner_id;
             this->currency_name = currency_name;
             this->loan_type = loan_type;
             this->balance_left = balance_left;
-        }
+        } */
+        // Nie potrzeba pisac konstruktora bo wystarczy ten pisany przez kompilator
         // Metoda zwracająca ID właściciela
         int getOwnerId(int index) {
             return this->owner_id[index];

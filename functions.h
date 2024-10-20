@@ -7,27 +7,15 @@
 using namespace std;
 
 // Funkcja dodająca tymczasowe przykladowe dane do testowania aplikacji
-void temprrary_data(User &user) 
-{
-   /* User user1(20, "Jan", "Kowalski", "admin", "admin", 1);
-    users.push_back(user1);
-    User user2(43, "Adrian", "Prymas", "user1", "user1", 0);
-    users.push_back(user2);
-    User user3(25, "Jan", "Pietka", "user2", "user2", 0);
-    users.push_back(user3);
-    User user4(21, "Andrzej", "Nowak", "user3", "user3", 0);
-    users.push_back(user4);
-    User user5(53, "Michal", "Ryba", "user4", "user4", 0);
-    users.push_back(user5);*/
+void temprrary_data(User &user) {
     user.addUser(20, "Jan", "Kowalski", "admin", "admin", true);
     user.addUser(43, "Adrian", "Prymas", "user1", "user1", false);
     user.addUser(25, "Jan", "Pietka", "user2", "user2", false);
     user.addUser(21, "Andrzej", "Nowak", "user3", "user3", false);
     user.addUser(53, "Michal", "Ryba", "user4", "user4", false);
-
-
     return; 
 }
+
 // Jan Piętka
 // Funkcja logowania urzytkownika
 void sign_in(User &user) 
@@ -65,3 +53,9 @@ void sign_in(User &user)
     } while (!loged_in);
 }
 
+// Jan Piętka
+// Funkcja wyświetlajaca pupit aktualnie zalogowanego uzytkownika
+void showDesktop() {
+    
+    return;
+}
