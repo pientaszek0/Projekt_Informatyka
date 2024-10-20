@@ -6,11 +6,11 @@
 
 using namespace std;
 
-int courent_user; // Zmienna przechowująca numer w wektorze aktualnie zalogowanego użytkownika
-vector<User> users; // Wektor przechowujący wszystkich użytkowników pobranych z pliku xml
-//vector<Account> accounts; // Wektor przechowujący wszystkie konta pobrane z pliku xml
-//vector<Currency> currencys; // Wektor przechowujący wszystkie waluty pobrane z pliku xml
-//vector<Loan_Type> loan_types; // Wektor przechowujący wszystkie typy kredytów pobrane z pliku xml
-//vector<Loan> loans; // Wektor przechowujący wszystkie kredyty pobrane z pliku xml
+int courent_user; // Zmienna przechowująca numer w wektorach aktualnie zalogowanego użytkownika
+User user; // Obiekt przechowujący wektory z wszystkimi użytkownnikami pobranymi z pliku xml
+//Account account; // Obiekt przechowujący wektory z wszystkimi kontami pobranymi z pliku xml
+//Currency currency; // Obiekt przechowujący wektory z wszystkimi walutami pobranymi z pliku xml
+//Loan_Type loan_type; // Obiekt przechowujący wektory z wszystkimi typami kredyto pobranymi z pliku xml
+//Loan loan; // Obiekt przechowujący wektory z wszystkimi kredytami pobranymi z pliku xml
 
 #endif
