@@ -10,7 +10,7 @@ using namespace std;
 
 int main() 
 {
-    //temprrary_data(user, account, currency);
+    temprrary_data(user, account, currency);
     //xml_chf(user); // Wywołanie funkcji do odczytu pliku xml 
     //!UWAGA Wczytuje dane tylko klasy "User"!!!!
     //xml_giveData(user); // Wywołanie funkcja która wczytuje dane z XML

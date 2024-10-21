@@ -18,9 +18,9 @@ void temprrary_data(User &user, Account &account, Currency &currency) {
     account.addAccount(66, 25, 2, "EU12 3456 7890 1234 5678 9012 3456", 21.37);
     account.addAccount(21, 21, 0, "PL12 3456 7890 1234 5678 9012 2137", 21.37);
     account.addAccount(37, 43, 1, "US12 3456 7890 1234 5678 9012 3456", 21.37);
-    currency.addCurrency(0, "Zloty");
-    currency.addCurrency(1, "Dolar Amerykanski");
-    currency.addCurrency(2, "Euro");
+    currency.addCurrency(0, "PLN");
+    currency.addCurrency(1, "USD");
+    currency.addCurrency(2, "EUR");
     return; 
 }
 
@@ -126,7 +126,12 @@ void desktop(User user, int courent_user) {
             break;
         }
         case 10: {
-            adminMenu(user, courent_user);
+            if (user.isAdmin(courent_user)) {
+                adminMenu(user, courent_user);
+            } else {
+                system("cls");
+                cout << "Nieprawidlowy numer opcji." << endl;
+            }
             break;
         }
         default:
