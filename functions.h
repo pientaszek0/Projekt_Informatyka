@@ -48,16 +48,50 @@ void sign_in(User &user)
 }
 
 // Jan Piętka
+// Funkcja obslugujaca menu kont
+void accountsMenu(User user, int courent_user) {
+    system("cls");
+    cout << "Twoje Konta:" << endl;
+    
+    return;
+}
+
+// Jan Piętka
+// Funkcja obslugujaca menu kredytow
+void loansMenu(User user, int courent_user) {
+
+    return;
+}
+
+// Jan Piętka
+// Funkcja obslugujaca menu lokat
+void depositsMenu(User user, int courent_user) {
+
+    return;
+}
+
+// Jan Piętka
+// Funkcja obslugujaca menu administratora
+void adminMenu(User user, int courent_user) {
+    system("cls");
+    cout << "Panel Administratora:" << endl;
+    cout << "Wybierz opcje przez wpisanie jej numeru: ";
+    return;
+}
+
+// Jan Piętka
 // Funkcja wyświetlajaca i obslugujaca pupit aktualnie zalogowanego uzytkownika  destop(obiekt z wektorami, numer w wektorze zalogowanego uzytkownika)
 void desktop(User user, int courent_user) {
     int menu;
     system("cls");
+    int log_out = 1;
 
-    while (true) {
+    while (log_out) {
         cout << "Zalogowano jako: " << user.getFirst_name(courent_user) << " " << user.getLast_name(courent_user) << endl;
         cout << "1 - Konta" << endl;
         cout << "2 - Kredyty" << endl;
         cout << "3 - Lokaty" << endl;
+        cout << "4 - Wyloguj i zapisz zmiany" << endl;
         if (user.isAdmin(courent_user)) {
             cout << "10 - Menu Administratora" << endl;
         }
@@ -66,28 +100,24 @@ void desktop(User user, int courent_user) {
 
         switch (menu) {
         case 1: {
-            system("cls");
-            cout << "Twoje Konta:" << endl;
+            accountsMenu(user, courent_user);
             break;
         }
         case 2: {
-            system("cls");
-            cout << "Twoje Kredyty:" << endl;
+            loansMenu(user, courent_user);
             break;
         }
         case 3: {
-            system("cls");
-            cout << "Twoje Lokaty:" << endl;
+            depositsMenu(user, courent_user);
+            break;
+        }
+        case 4: {
+            log_out = 0;
+            // Tutaj Wywolac funkcje zapisujaca do xml
             break;
         }
         case 10: {
-            system("cls");
-            cout << "Panel Administratora:" << endl;
-            cout << "Wybierz opcje przez wpisanie jej numeru: ";
-
-
-
-            cin >> menu;
+            adminMenu(user, courent_user);
             break;
         }
         default:
@@ -96,26 +126,6 @@ void desktop(User user, int courent_user) {
             break;
         }
     }
-
-    return;
-}
-
-void accountsMenu() {
-
-    return;
-}
-
-void loansMenu() {
-
-    return;
-}
-
-void depositsMenu() {
-
-    return;
-}
-
-void adminMenu() {
 
     return;
 }

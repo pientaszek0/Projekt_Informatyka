@@ -17,8 +17,12 @@ int main()
 
     //xml_addData(user);
 
-    sign_in(user); // Wywolanie funkcji logowania
-    desktop(user, courent_user); // Wywolanie funkcji pokazujacej pulpit uzytkownika
+    while (true) { // Nieskonczona petla zeby mozna bylo sie wylogowac i zalogowac na innego uzytkownika
+        sign_in(user); // Wywolanie funkcji logowania
+        desktop(user, courent_user); // Wywolanie funkcji pokazujacej pulpit uzytkownika
+    }
+    
+    
 
     // Oczekuje na wejście żeby konsola się nie zamykała
     int zatrzymanie;
