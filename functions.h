@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <ctime>
 
 #include "classes.h"
 #include "variables.h"
@@ -216,4 +218,18 @@ void desktop(User user, int courent_user) {
     }
 
     return;
+}
+// Funkcja do Logów txt
+void txt_log(string logs)
+{
+    ofstream log("logs.txt", ios::app); // Otwarcie w trypie nadpisu
+    if(log)  cout << "---PLIK ISTNIEJE---";
+    else cout << "---PLIK ZOSTAL UTWORZONY---";
+
+    if (!log.is_open())
+	{
+        cout << error02 << endl;
+        return;
+    }
+    log << logs << endl;
 }
