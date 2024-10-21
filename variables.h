@@ -28,10 +28,17 @@ const string error02 = "ERROR-02 -> Plik nie został poprawnie otworzony lub nie
 string db_name = "classes.xml";
 // Zmienne lokalne stworzone na porzeby dzilania tej funkcji
 int xml_id = -1;
+//Dotyczy klasy user
 string xml_first_name, xml_last_name, xml_login, xml_password;
 bool xml_admin = false;
+//Dotyczy klasy Account
+int xml_owner_id, xml_currency_id;
+string xml_account_number;
+double xml_balance;
+
 int count_element = 0;
 string line;
 int user_count; // Licznik użytkowników od -1 ponieważ dlaej jest iterator który i tak zmieni wartosc na 0
 bool xml_isUser = 0;
+bool xml_isAccount =0;
 #endif
