@@ -349,7 +349,7 @@ void xml_save(User user, Account account, Currency currency)
     }
      //nagłówek pliku xml
 	db << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n";
-    db << "<Data>";
+    db << "<Data>\n";
 	// Nazwa klasy w liczbie mnogiej
     db << "\t<Users>\n"; 
     // Pętla która służy do zpaisu Klasy "User"
