@@ -90,6 +90,11 @@ class Account {
             this->balance = balance;
         } */
         // Nie potrzeba pisac konstruktora bo wystarczy ten pisany przez kompilator
+        // Metoda wzracają ilość kont
+        int getElemenAccount()
+        {
+            return id.size();
+        }
         // Metoda zwracająca id konta
         int getId(int index) {
             return this->id[index];
@@ -101,6 +106,10 @@ class Account {
         // Metoda zwracająca id waluty konta
         int getCurrency_id(int index) {
             return this->currency_id[index];
+        }
+        // Metoda zwracająca numer konta
+        string getAccountNumber(int index) {
+            return this->account_number[index];
         }
         // Metoda zwracająca stan konta
         double getBalance(int index) {
@@ -142,6 +151,16 @@ class Currency {
             this->name = name;
         } */
         // Nie potrzeba pisac konstruktora bo wystarczy ten pisany przez kompilator
+        //Metoda zwracająca ilosc walut
+        int getElementCurrency() {
+            return id.size();
+        }
+        // Tymczasowa Metoda na potrzeby XML - zapsuje waluty;
+         void addCurrency(int c_id, string c_name) {
+            id.emplace_back(c_id);
+            name.emplace_back(c_name);
+            return;
+        }
         // Metoda zwracająca ID
         int getId(int index) {
             return this->id[index];

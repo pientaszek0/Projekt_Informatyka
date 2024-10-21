@@ -20,7 +20,9 @@ void xml_giveData(User &user)
     while(getline(db, line)) 
     {
         // Ignorowanie linijek XML
-        if (line.find("<?xml") != string::npos || line.find("</Users>") != string::npos) continue;
+        if (line.find("<?xml") != string::npos || line.find("</Users>") != string::npos ||
+        line.find("</Accounts>") != string::npos)  continue;
+
         if (line.find("<Users>") != string::npos) user_count = -1; // Reste licznika
         if (line.find("<User>") != string::npos)
         {
@@ -28,6 +30,7 @@ void xml_giveData(User &user)
             user_count++;
             // Ustawienie Flagi;
             xml_isUser = 1;
+            xml_isAccount = 0;
             // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
             xml_id = -1;
             xml_first_name = "";
@@ -41,7 +44,29 @@ void xml_giveData(User &user)
         {
                 user.addUser(xml_id, xml_first_name, xml_last_name, xml_login, xml_password, xml_admin);
                 cout << "---dane zostaly wczytane---\n";
-        } 
+        }
+
+        if (line.find("<Accounts>") != string::npos) user_count = -1;
+        if (line.find("<Account>") != string::npos)
+        {
+            // Przechodzimy do kolejnego użytkownika
+            user_count++;
+            // Ustawienie Flagi;
+            xml_isUser = 0;
+            xml_isAccount = 1;
+            // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
+            xml_id = -1;
+            xml_owner_id = -1;
+            xml_currency_id =1;
+            xml_account_number ="";
+            xml_balance = 0.00;
+            continue;
+        }
+        else if (line.find("</Account>") != string::npos) 
+        {
+            //currency.addCurrency(xml_id, xml_owner_id, xml_currency_id, xml);
+            cout << "---dane zostaly wczytane---\n";   
+        }
 
         // Sprawdzenie wartości pliku XML
         if(xml_isUser)
@@ -72,6 +97,34 @@ void xml_giveData(User &user)
             {
                 string admin_value = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
                 xml_admin = (admin_value == "true");
+            }
+        }
+
+        if(xml_isAccount)
+        {
+            if (line.find("<id>") != string::npos) 
+            {
+                string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_id = stoi(id_str);  // Konwersja na int
+            }
+            if (line.find("<owner_id>") != string::npos) 
+            {
+                string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_owner_id = stoi(id_str);  // Konwersja na int
+            } 
+            if (line.find("<currency_id>") != string::npos) 
+            {
+                string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_currency_id = stoi(id_str);  // Konwersja na int
+            } 
+            if (line.find("<account_number>") != string::npos) 
+            {
+                xml_account_number = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+            } 
+            if (line.find("<balance>") != string::npos) 
+            {
+                string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_balance = stod(id_str); // Konwersja na double
             }
         }
     }
@@ -155,7 +208,7 @@ void xml_checkData(User user)
 
 
 // Funkcja zapisująca dane do pliku XML
-void xml_save(User user) 
+void xml_save(User user, Account account, Currency currency) 
 {
 	ofstream db(db_name);
 
@@ -186,24 +239,38 @@ void xml_save(User user)
     }
     // Zamknięcie całej klasy User
     db << "</Users>\n";
-/*
+
     // Otwracie klasy Account
     db << "<Accounts>\n";
-    // Pętla która służy do zpaisu Klasy "User"
-    for(int i = 0; i < user.getElementUser(); i++)
+    // Pętla która służy do zpaisu Klasy "Account"
+    for(int i = 0; i < account.getElemenAccount(); i++)
     {
         // Otwarcie obiektu
         db << "\t<Account>\n"; 
-        db << "\t\t<id>" /*<< account.getId(i) << "</id>\n";
-        db << "\t\t<owner_id>" << account.getOwner_id(i)  <<"</owner_id>\n";
+        db << "\t\t<id>" << account.getId(i) << "</id>\n";
+        db << "\t\t<owner_id>" << account.getOwner_id(i) << "</owner_id>\n";
         db << "\t\t<currency_id>" << account.getCurrency_id(i) << "</currency_id>\n";
-        db << "\t\t<account_number>" << account.get << "</account_number>\n";
-        db << "\t\t<balance>" <<account.getBalance(i) << "</balance>\n"; 
+        db << "\t\t<account_number>" << account.getAccountNumber(i) << "</account_number>\n";
+        db << "\t\t<balance>" << account.getBalance(i) << "</balance>\n"; 
         // Zamknięcie obiektu
         db << "\t</Account>\n";
     }
     // Zmkanięcie klasy Account
-    db << "<Accounts>\n"; */
+    db << "</Accounts>\n"; 
+
+    db << "<Currencys>\n";
+
+         for(int i = 0; i < currency.getElementCurrency(); i++)
+    {
+        // Otwarcie obiektu
+        db << "\t<Currency>\n"; 
+        db << "\t\t<id>" << currency.getId(i) << "</id>\n";
+        db << "\t\t<name>" << currency.getName(i) << "</name>\n";
+        // Zamknięcie obiektu
+        db << "\t</Currency>\n";
+    }
+
+    db << "</Currencys>";
     db.close();
     cout << "---KLASY ZOSTAŁY ZAPISE DO PLIKU XML" << endl;
 }

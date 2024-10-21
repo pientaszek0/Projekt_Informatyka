@@ -7,14 +7,23 @@
 using namespace std;
 
 // Funkcja dodająca tymczasowe przykladowe dane do testowania aplikacji
-void temprrary_data(User &user) {
+void temprrary_data(User &user, Account &account, Currency &currency) {
     user.addUser(20, "Jan", "Kowalski", "admin", "admin", true);
     user.addUser(43, "Adrian", "Prymas", "user1", "user1", false);
     user.addUser(25, "Jan", "Pietka", "user2", "user2", false);
     user.addUser(21, "Andrzej", "Nowak", "user3", "user3", false);
     user.addUser(53, "Michal", "Ryba", "user4", "user4", false);
+    account.addAccount(34, 20, 0, "PL12 3456 7890 1234 5678 9012 3456", 21.37);
+    account.addAccount(42, 43, 0, "PL21 3700 7890 1234 5678 9012 3456", 21.37);
+    account.addAccount(66, 25, 2, "EU12 3456 7890 1234 5678 9012 3456", 21.37);
+    account.addAccount(21, 21, 0, "PL12 3456 7890 1234 5678 9012 2137", 21.37);
+    account.addAccount(37, 43, 1, "US12 3456 7890 1234 5678 9012 3456", 21.37);
+    currency.addCurrency(0, "Zloty");
+    currency.addCurrency(1, "Dolar Amerykanski");
+    currency.addCurrency(2, "Euro");
     return; 
 }
+
 
 // Jan Piętka
 // Funkcja logowania urzytkownika
