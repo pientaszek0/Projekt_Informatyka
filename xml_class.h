@@ -21,7 +21,8 @@ void xml_giveData(User &user, Account &account, Currency &currency)
     {
         // Ignorowanie linijek XML
         if (line.find("<?xml") != string::npos || line.find("</Users>") != string::npos ||
-        line.find("</Accounts>") != string::npos || line.find("</Currencys>") != string::npos)  continue;
+        line.find("</Accounts>") != string::npos || line.find("</Currencys>") != string::npos ||
+        line.find("<Data>") != string::npos || line.find("</Data>") != string::npos)  continue;
         //Dodawanie klasy User
         if (line.find("<User>") != string::npos)
         {
@@ -348,22 +349,22 @@ void xml_save(User user, Account account, Currency currency)
     }
      //nagłówek pliku xml
 	db << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n";
-        
+    db << "<Data>";
 	// Nazwa klasy w liczbie mnogiej
-    db << "<Users>\n"; 
+    db << "\t<Users>\n"; 
     // Pętla która służy do zpaisu Klasy "User"
     for(int i = 0; i < user.getElementUser(); i++)
     {
         // Otwarcie obiektu
-        db << "\t<User>\n"; 
-        db << "\t\t<id>" << user.getId(i) << "</id>\n";
-        db << "\t\t<first_name>" << user.getFirst_name(i) <<"</first_name>\n";
-        db << "\t\t<last_name>" << user.getLast_name(i) << "</last_name>\n";
-        db << "\t\t<login>" << user.getLogin(i) << "</login>\n";
-        db << "\t\t<password>" << user.getPassword(i) << "</password>\n";
-        db << "\t\t<admin>" << (user.isAdmin(i) ? "true" : "false") << "</admin>\n";
+        db << "\t\t<User>\n"; 
+        db << "\t\t\t<id>" << user.getId(i) << "</id>\n";
+        db << "\t\t\t<first_name>" << user.getFirst_name(i) <<"</first_name>\n";
+        db << "\t\t\t<last_name>" << user.getLast_name(i) << "</last_name>\n";
+        db << "\t\t\t<login>" << user.getLogin(i) << "</login>\n";
+        db << "\t\t\t<password>" << user.getPassword(i) << "</password>\n";
+        db << "\t\t\t<admin>" << (user.isAdmin(i) ? "true" : "false") << "</admin>\n";
         // Zamknięcie obiektu
-        db << "\t</User>\n";
+        db << "\t\t</User>\n";
     }
     // Zamknięcie całej klasy User
     db << "</Users>\n";
@@ -374,31 +375,32 @@ void xml_save(User user, Account account, Currency currency)
     for(int i = 0; i < account.getElemenAccount(); i++)
     {
         // Otwarcie obiektu
-        db << "\t<Account>\n"; 
-        db << "\t\t<id>" << account.getId(i) << "</id>\n";
-        db << "\t\t<owner_id>" << account.getOwner_id(i) << "</owner_id>\n";
-        db << "\t\t<currency_id>" << account.getCurrency_id(i) << "</currency_id>\n";
-        db << "\t\t<account_number>" << account.getAccountNumber(i) << "</account_number>\n";
-        db << "\t\t<balance>" << account.getBalance(i) << "</balance>\n"; 
+        db << "\t\t<Account>\n"; 
+        db << "\t\t\t<id>" << account.getId(i) << "</id>\n";
+        db << "\t\t\t<owner_id>" << account.getOwner_id(i) << "</owner_id>\n";
+        db << "\t\t\t<currency_id>" << account.getCurrency_id(i) << "</currency_id>\n";
+        db << "\t\t\t<account_number>" << account.getAccountNumber(i) << "</account_number>\n";
+        db << "\t\t\t<balance>" << account.getBalance(i) << "</balance>\n"; 
         // Zamknięcie obiektu
-        db << "\t</Account>\n";
+        db << "\t\t</Account>\n";
     }
     // Zmkanięcie klasy Account
-    db << "</Accounts>\n"; 
+    db << "\t</Accounts>\n"; 
 
-    db << "<Currencys>\n";
+    db << "\t<Currencys>\n";
 
          for(int i = 0; i < currency.getElementCurrency(); i++)
     {
         // Otwarcie obiektu
-        db << "\t<Currency>\n"; 
-        db << "\t\t<id>" << currency.getId(i) << "</id>\n";
-        db << "\t\t<name>" << currency.getName(i) << "</name>\n";
+        db << "\t\t<Currency>\n"; 
+        db << "\t\t\t<id>" << currency.getId(i) << "</id>\n";
+        db << "\t\t\t<name>" << currency.getName(i) << "</name>\n";
         // Zamknięcie obiektu
-        db << "\t</Currency>\n";
+        db << "\t\t</Currency>\n";
     }
 
-    db << "</Currencys>";
+    db << "\t</Currencys>";
+    db << "</Data>";
     db.close();
     cout << "---KLASY ZOSTAŁY ZAPISE DO PLIKU XML" << endl;
 }

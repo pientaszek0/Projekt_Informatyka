@@ -1,95 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<Users>
-	<User>
-		<id>20</id>
-		<first_name>Jan</first_name>
-		<last_name>Kowalski</last_name>
-		<login>admin</login>
-		<password>admin</password>
-		<admin>true</admin>
-	</User>
-	<User>
-		<id>43</id>
-		<first_name>Adrian</first_name>
-		<last_name>Prymas</last_name>
-		<login>user1</login>
-		<password>user1</password>
-		<admin>false</admin>
-	</User>
-	<User>
-		<id>25</id>
-		<first_name>Jan</first_name>
-		<last_name>Pietka</last_name>
-		<login>user2</login>
-		<password>user2</password>
-		<admin>false</admin>
-	</User>
-	<User>
-		<id>21</id>
-		<first_name>Andrzej</first_name>
-		<last_name>Nowak</last_name>
-		<login>user3</login>
-		<password>user3</password>
-		<admin>false</admin>
-	</User>
-	<User>
-		<id>53</id>
-		<first_name>Michal</first_name>
-		<last_name>Ryba</last_name>
-		<login>user4</login>
-		<password>user4</password>
-		<admin>false</admin>
-	</User>
-</Users>
-<Accounts>
-	<Account>
-		<id>34</id>
-		<owner_id>20</owner_id>
-		<currency_id>0</currency_id>
-		<account_number>PL12 3456 7890 1234 5678 9012 3456</account_number>
-		<balance>21.37</balance>
-	</Account>
-	<Account>
-		<id>42</id>
-		<owner_id>43</owner_id>
-		<currency_id>0</currency_id>
-		<account_number>PL21 3700 7890 1234 5678 9012 3456</account_number>
-		<balance>21.37</balance>
-	</Account>
-	<Account>
-		<id>66</id>
-		<owner_id>25</owner_id>
-		<currency_id>2</currency_id>
-		<account_number>EU12 3456 7890 1234 5678 9012 3456</account_number>
-		<balance>21.37</balance>
-	</Account>
-	<Account>
-		<id>21</id>
-		<owner_id>21</owner_id>
-		<currency_id>0</currency_id>
-		<account_number>PL12 3456 7890 1234 5678 9012 2137</account_number>
-		<balance>21.37</balance>
-	</Account>
-	<Account>
-		<id>37</id>
-		<owner_id>43</owner_id>
-		<currency_id>1</currency_id>
-		<account_number>US12 3456 7890 1234 5678 9012 3456</account_number>
-		<balance>21.37</balance>
-	</Account>
-</Accounts>
-<Currencys>
-	<Currency>
-		<id>0</id>
-		<name>Zloty</name>
-	</Currency>
-	<Currency>
-		<id>1</id>
-		<name>Dolar Amerykanski</name>
-	</Currency>
-	<Currency>
-		<id>2</id>
-		<name>Euro</name>
-	</Currency>
-</Currencys>
+<Data>
+	<Users>
+		<User>
+			<id>20</id>
+			<first_name>Jan</first_name>
+			<last_name>Kowalski</last_name>
+			<login>admin</login>
+			<password>admin</password>
+			<admin>true</admin>
+		</User>
+		<User>
+			<id>43</id>
+			<first_name>Adrian</first_name>
+			<last_name>Prymas</last_name>
+			<login>user1</login>
+			<password>user1</password>
+			<admin>false</admin>
+		</User>
+		<User>
+			<id>25</id>
+			<first_name>Jan</first_name>
+			<last_name>Pietka</last_name>
+			<login>user2</login>
+			<password>user2</password>
+			<admin>false</admin>
+		</User>
+		<User>
+			<id>21</id>
+			<first_name>Andrzej</first_name>
+			<last_name>Nowak</last_name>
+			<login>user3</login>
+			<password>user3</password>
+			<admin>false</admin>
+		</User>
+		<User>
+			<id>53</id>
+			<first_name>Michal</first_name>
+			<last_name>Ryba</last_name>
+			<login>user4</login>
+			<password>user4</password>
+			<admin>false</admin>
+		</User>
+	</Users>
+	<Accounts>
+		<Account>
+			<id>34</id>
+			<owner_id>20</owner_id>
+			<currency_id>0</currency_id>
+			<account_number>PL12 3456 7890 1234 5678 9012 3456</account_number>
+			<balance>21.37</balance>
+		</Account>
+		<Account>
+			<id>42</id>
+			<owner_id>43</owner_id>
+			<currency_id>0</currency_id>
+			<account_number>PL21 3700 7890 1234 5678 9012 3456</account_number>
+			<balance>21.37</balance>
+		</Account>
+		<Account>
+			<id>66</id>
+			<owner_id>25</owner_id>
+			<currency_id>2</currency_id>
+			<account_number>EU12 3456 7890 1234 5678 9012 3456</account_number>
+			<balance>21.37</balance>
+		</Account>
+		<Account>
+			<id>21</id>
+			<owner_id>21</owner_id>
+			<currency_id>0</currency_id>
+			<account_number>PL12 3456 7890 1234 5678 9012 2137</account_number>
+			<balance>21.37</balance>
+		</Account>
+		<Account>
+			<id>37</id>
+			<owner_id>43</owner_id>
+			<currency_id>1</currency_id>
+			<account_number>US12 3456 7890 1234 5678 9012 3456</account_number>
+			<balance>21.37</balance>
+		</Account>
+	</Accounts>
+	<Currencys>
+		<Currency>
+			<id>0</id>
+			<name>Zloty</name>
+		</Currency>
+		<Currency>
+			<id>1</id>
+			<name>Dolar Amerykanski</name>
+		</Currency>
+		<Currency>
+			<id>2</id>
+			<name>Euro</name>
+		</Currency>
+	</Currencys>
+</Data>
