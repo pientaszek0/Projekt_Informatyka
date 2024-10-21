@@ -814,1129 +814,1115 @@
         <Account>
             <id>1</id>
             <owner_id>1</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL79 8048 3588 6442 7444</account_number>
-            <balance>2434.63</balance>
+            <currency_id>0</currency_id>
+            <account_number>PL498717336042458441</account_number>
+            <balance>8833.90</balance>
         </Account>
         <Account>
             <id>2</id>
-            <owner_id>2</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL45 2499 9097 6937 6337</account_number>
-            <balance>5048.45</balance>
+            <owner_id>1</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL825048435027999316</account_number>
+            <balance>1837.78</balance>
         </Account>
         <Account>
             <id>3</id>
-            <owner_id>3</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL20 9691 9855 6212 8283</account_number>
-            <balance>8898.70</balance>
+            <owner_id>1</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL326641667478163912</account_number>
+            <balance>785.27</balance>
         </Account>
         <Account>
             <id>4</id>
-            <owner_id>4</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL66 9843 4271 3427 3465</account_number>
-            <balance>3570.62</balance>
+            <owner_id>2</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL592644280932139152</account_number>
+            <balance>1540.30</balance>
         </Account>
         <Account>
             <id>5</id>
-            <owner_id>4</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL73 9828 4925 2851 3388</account_number>
-            <balance>5886.59</balance>
+            <owner_id>3</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL866980662182365638</account_number>
+            <balance>7984.21</balance>
         </Account>
         <Account>
             <id>6</id>
-            <owner_id>5</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL58 9635 1993 7949 5010</account_number>
-            <balance>2667.74</balance>
+            <owner_id>4</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL465802570185769283</account_number>
+            <balance>4224.44</balance>
         </Account>
         <Account>
             <id>7</id>
-            <owner_id>6</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL58 2301 5501 4712 1747</account_number>
-            <balance>9408.76</balance>
+            <owner_id>5</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL939817292883379580</account_number>
+            <balance>2155.53</balance>
         </Account>
         <Account>
             <id>8</id>
-            <owner_id>7</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL15 7249 4339 1165 3241</account_number>
-            <balance>9385.05</balance>
+            <owner_id>5</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL826441267564048065</account_number>
+            <balance>3435.33</balance>
         </Account>
         <Account>
             <id>9</id>
-            <owner_id>8</owner_id>
+            <owner_id>6</owner_id>
             <currency_id>1</currency_id>
-            <account_number>PL22 5948 9075 5620 8053</account_number>
-            <balance>765.79</balance>
+            <account_number>PL168781178460506386</account_number>
+            <balance>2303.38</balance>
         </Account>
         <Account>
             <id>10</id>
-            <owner_id>9</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL51 9025 7296 3655 1832</account_number>
-            <balance>4624.24</balance>
+            <owner_id>6</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL384076810241941449</account_number>
+            <balance>933.48</balance>
         </Account>
         <Account>
             <id>11</id>
-            <owner_id>10</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL82 3617 4887 9971 2724</account_number>
-            <balance>6100.88</balance>
+            <owner_id>6</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL232575718461933482</account_number>
+            <balance>335.64</balance>
         </Account>
         <Account>
             <id>12</id>
-            <owner_id>11</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL28 4039 6564 2056 1618</account_number>
-            <balance>8080.66</balance>
+            <owner_id>7</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL949959615615124341</account_number>
+            <balance>2096.74</balance>
         </Account>
         <Account>
             <id>13</id>
-            <owner_id>12</owner_id>
+            <owner_id>8</owner_id>
             <currency_id>2</currency_id>
-            <account_number>PL69 6483 6393 3877 9851</account_number>
-            <balance>7310.02</balance>
+            <account_number>PL731269176695639039</account_number>
+            <balance>9762.07</balance>
         </Account>
         <Account>
             <id>14</id>
-            <owner_id>12</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL27 9356 3581 7083 6007</account_number>
-            <balance>7783.18</balance>
+            <owner_id>8</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL518780590324791172</account_number>
+            <balance>4324.51</balance>
         </Account>
         <Account>
             <id>15</id>
-            <owner_id>13</owner_id>
+            <owner_id>9</owner_id>
             <currency_id>2</currency_id>
-            <account_number>PL16 7916 4214 2027 6733</account_number>
-            <balance>7162.32</balance>
+            <account_number>PL766464641249384739</account_number>
+            <balance>2695.19</balance>
         </Account>
         <Account>
             <id>16</id>
-            <owner_id>13</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL46 4457 6025 8211 6388</account_number>
-            <balance>1073.32</balance>
+            <owner_id>10</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL255994272599636438</account_number>
+            <balance>2583.17</balance>
         </Account>
         <Account>
             <id>17</id>
-            <owner_id>14</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL86 7015 7054 5989 5434</account_number>
-            <balance>4664.73</balance>
+            <owner_id>11</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL478367350678695802</account_number>
+            <balance>2516.08</balance>
         </Account>
         <Account>
             <id>18</id>
-            <owner_id>14</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL25 2670 6069 2726 9221</account_number>
-            <balance>5292.03</balance>
+            <owner_id>12</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL758730844519186497</account_number>
+            <balance>272.59</balance>
         </Account>
         <Account>
             <id>19</id>
-            <owner_id>15</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL57 3711 3093 2748 7131</account_number>
-            <balance>8256.00</balance>
+            <owner_id>12</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL522761605232359689</account_number>
+            <balance>1526.19</balance>
         </Account>
         <Account>
             <id>20</id>
-            <owner_id>15</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL59 7085 5986 3178 2132</account_number>
-            <balance>2579.91</balance>
+            <owner_id>12</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL923208613464237334</account_number>
+            <balance>1168.37</balance>
         </Account>
         <Account>
             <id>21</id>
-            <owner_id>16</owner_id>
+            <owner_id>12</owner_id>
             <currency_id>1</currency_id>
-            <account_number>PL59 1317 5062 7044 9013</account_number>
-            <balance>5978.93</balance>
+            <account_number>PL735955439125126028</account_number>
+            <balance>8013.94</balance>
         </Account>
         <Account>
             <id>22</id>
-            <owner_id>17</owner_id>
+            <owner_id>12</owner_id>
             <currency_id>3</currency_id>
-            <account_number>PL84 1500 9172 4468 2096</account_number>
-            <balance>1348.85</balance>
+            <account_number>PL845143359775601523</account_number>
+            <balance>2068.92</balance>
         </Account>
         <Account>
             <id>23</id>
-            <owner_id>18</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL61 6229 7052 5248 9253</account_number>
-            <balance>427.43</balance>
+            <owner_id>13</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL691423255596472352</account_number>
+            <balance>3601.05</balance>
         </Account>
         <Account>
             <id>24</id>
-            <owner_id>18</owner_id>
+            <owner_id>14</owner_id>
             <currency_id>2</currency_id>
-            <account_number>PL26 7057 3422 4741 1940</account_number>
-            <balance>7686.74</balance>
+            <account_number>PL503438894671785900</account_number>
+            <balance>4137.21</balance>
         </Account>
         <Account>
             <id>25</id>
-            <owner_id>19</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL66 5172 4773 4016 3148</account_number>
-            <balance>7315.64</balance>
+            <owner_id>15</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL949839984263426024</account_number>
+            <balance>198.97</balance>
         </Account>
         <Account>
             <id>26</id>
-            <owner_id>20</owner_id>
+            <owner_id>15</owner_id>
             <currency_id>4</currency_id>
-            <account_number>PL20 7082 3292 3429 7274</account_number>
-            <balance>7957.92</balance>
+            <account_number>PL303110824799393584</account_number>
+            <balance>6306.45</balance>
         </Account>
         <Account>
             <id>27</id>
-            <owner_id>20</owner_id>
+            <owner_id>16</owner_id>
             <currency_id>0</currency_id>
-            <account_number>PL94 7803 7574 3161 3182</account_number>
-            <balance>389.35</balance>
+            <account_number>PL151233544370504432</account_number>
+            <balance>6568.29</balance>
         </Account>
         <Account>
             <id>28</id>
-            <owner_id>21</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL37 9800 3651 7548 1848</account_number>
-            <balance>6699.96</balance>
+            <owner_id>17</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL488887719863229711</account_number>
+            <balance>4393.57</balance>
         </Account>
         <Account>
             <id>29</id>
-            <owner_id>21</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL25 6021 1687 9567 2533</account_number>
-            <balance>2979.39</balance>
+            <owner_id>17</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL993892579439783218</account_number>
+            <balance>3098.88</balance>
         </Account>
         <Account>
             <id>30</id>
-            <owner_id>22</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL97 2960 8266 4419 6071</account_number>
-            <balance>2330.53</balance>
+            <owner_id>18</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL499673533575536522</account_number>
+            <balance>9859.37</balance>
         </Account>
         <Account>
             <id>31</id>
-            <owner_id>23</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL28 2647 5987 7338 2772</account_number>
-            <balance>5451.32</balance>
+            <owner_id>19</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL628046586354766334</account_number>
+            <balance>6426.26</balance>
         </Account>
         <Account>
             <id>32</id>
-            <owner_id>24</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL61 3818 4391 5651 9921</account_number>
-            <balance>5701.61</balance>
+            <owner_id>20</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL682771126143875262</account_number>
+            <balance>3590.79</balance>
         </Account>
         <Account>
             <id>33</id>
-            <owner_id>24</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL96 5609 2048 8881 5779</account_number>
-            <balance>6513.64</balance>
+            <owner_id>21</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL462942860072371969</account_number>
+            <balance>6345.53</balance>
         </Account>
         <Account>
             <id>34</id>
-            <owner_id>24</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL89 9841 7494 6668 8367</account_number>
-            <balance>5820.36</balance>
+            <owner_id>22</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL297544954620895758</account_number>
+            <balance>3838.57</balance>
         </Account>
         <Account>
             <id>35</id>
-            <owner_id>25</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL78 7697 5098 2666 7056</account_number>
-            <balance>2525.56</balance>
+            <owner_id>22</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL985057951616628405</account_number>
+            <balance>9814.66</balance>
         </Account>
         <Account>
             <id>36</id>
-            <owner_id>25</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL61 3989 3868 6660 8835</account_number>
-            <balance>6707.23</balance>
+            <owner_id>23</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL193396807791852630</account_number>
+            <balance>2310.48</balance>
         </Account>
         <Account>
             <id>37</id>
-            <owner_id>25</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL91 1078 4491 3018 4925</account_number>
-            <balance>5524.39</balance>
+            <owner_id>24</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL127584483768922198</account_number>
+            <balance>8898.43</balance>
         </Account>
         <Account>
             <id>38</id>
             <owner_id>25</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL35 1825 8247 3558 5798</account_number>
-            <balance>8692.53</balance>
+            <currency_id>0</currency_id>
+            <account_number>PL502988938525834751</account_number>
+            <balance>3323.32</balance>
         </Account>
         <Account>
             <id>39</id>
             <owner_id>26</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL50 2364 2524 3157 8337</account_number>
-            <balance>6149.06</balance>
+            <currency_id>0</currency_id>
+            <account_number>PL882644726560752568</account_number>
+            <balance>2445.00</balance>
         </Account>
         <Account>
             <id>40</id>
-            <owner_id>26</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL86 6073 7134 4421 5593</account_number>
-            <balance>9559.07</balance>
+            <owner_id>27</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL318126424312827279</account_number>
+            <balance>7633.89</balance>
         </Account>
         <Account>
             <id>41</id>
-            <owner_id>27</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL83 9353 8309 4926 1221</account_number>
-            <balance>7291.16</balance>
+            <owner_id>28</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL155277701151306817</account_number>
+            <balance>841.43</balance>
         </Account>
         <Account>
             <id>42</id>
             <owner_id>28</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL66 4697 8523 6195 3383</account_number>
-            <balance>3104.25</balance>
+            <currency_id>1</currency_id>
+            <account_number>PL855975912354401168</account_number>
+            <balance>8369.95</balance>
         </Account>
         <Account>
             <id>43</id>
-            <owner_id>28</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL63 1773 7844 3713 1179</account_number>
-            <balance>5290.22</balance>
+            <owner_id>29</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL958467850524926990</account_number>
+            <balance>1312.89</balance>
         </Account>
         <Account>
             <id>44</id>
-            <owner_id>28</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL14 7570 8242 3339 7891</account_number>
-            <balance>5006.77</balance>
+            <owner_id>30</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL773274709789421033</account_number>
+            <balance>1740.96</balance>
         </Account>
         <Account>
             <id>45</id>
-            <owner_id>28</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL89 9027 8523 2554 4239</account_number>
-            <balance>1195.09</balance>
+            <owner_id>31</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL343949584836865940</account_number>
+            <balance>9871.94</balance>
         </Account>
         <Account>
             <id>46</id>
-            <owner_id>28</owner_id>
+            <owner_id>31</owner_id>
             <currency_id>0</currency_id>
-            <account_number>PL40 1151 5146 8318 3215</account_number>
-            <balance>4578.31</balance>
+            <account_number>PL336128953120241478</account_number>
+            <balance>2792.76</balance>
         </Account>
         <Account>
             <id>47</id>
-            <owner_id>29</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL66 8829 5322 4681 2449</account_number>
-            <balance>2835.98</balance>
+            <owner_id>32</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL342211263644371275</account_number>
+            <balance>2253.31</balance>
         </Account>
         <Account>
             <id>48</id>
-            <owner_id>29</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL61 7897 8139 4980 5742</account_number>
-            <balance>9373.29</balance>
+            <owner_id>32</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL878239498242422995</account_number>
+            <balance>1527.46</balance>
         </Account>
         <Account>
             <id>49</id>
-            <owner_id>29</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL28 1737 1595 9767 8053</account_number>
-            <balance>5663.82</balance>
+            <owner_id>33</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL795548986544111910</account_number>
+            <balance>1140.99</balance>
         </Account>
         <Account>
             <id>50</id>
-            <owner_id>29</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL54 6196 2680 5281 3991</account_number>
-            <balance>1894.17</balance>
+            <owner_id>33</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL837722446732209315</account_number>
+            <balance>4496.63</balance>
         </Account>
         <Account>
             <id>51</id>
-            <owner_id>30</owner_id>
+            <owner_id>34</owner_id>
             <currency_id>0</currency_id>
-            <account_number>PL79 1028 6434 2298 9641</account_number>
-            <balance>6538.95</balance>
+            <account_number>PL335631745961577983</account_number>
+            <balance>1445.91</balance>
         </Account>
         <Account>
             <id>52</id>
-            <owner_id>31</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL60 2077 5287 8041 6297</account_number>
-            <balance>9537.79</balance>
+            <owner_id>35</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL349614727767602637</account_number>
+            <balance>4305.50</balance>
         </Account>
         <Account>
             <id>53</id>
-            <owner_id>32</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL35 4982 5435 4122 5701</account_number>
-            <balance>1599.40</balance>
+            <owner_id>35</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL292580655693415262</account_number>
+            <balance>6605.78</balance>
         </Account>
         <Account>
             <id>54</id>
-            <owner_id>33</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL40 3418 8833 3687 3714</account_number>
-            <balance>5395.59</balance>
+            <owner_id>36</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL779268230789008801</account_number>
+            <balance>2998.95</balance>
         </Account>
         <Account>
             <id>55</id>
-            <owner_id>34</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL85 1172 4546 7347 5029</account_number>
-            <balance>835.09</balance>
+            <owner_id>36</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL398751323140791066</account_number>
+            <balance>9959.26</balance>
         </Account>
         <Account>
             <id>56</id>
-            <owner_id>34</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL51 4500 1798 7058 9718</account_number>
-            <balance>4481.74</balance>
+            <owner_id>37</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL425752679919408036</account_number>
+            <balance>9167.15</balance>
         </Account>
         <Account>
             <id>57</id>
-            <owner_id>35</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL21 9635 1116 9108 8253</account_number>
-            <balance>5227.17</balance>
+            <owner_id>38</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL609638654269989415</account_number>
+            <balance>4604.88</balance>
         </Account>
         <Account>
             <id>58</id>
-            <owner_id>36</owner_id>
+            <owner_id>39</owner_id>
             <currency_id>3</currency_id>
-            <account_number>PL54 4106 4039 1537 5293</account_number>
-            <balance>3894.36</balance>
+            <account_number>PL107623525037333267</account_number>
+            <balance>6373.17</balance>
         </Account>
         <Account>
             <id>59</id>
-            <owner_id>37</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL18 3081 2756 2950 2813</account_number>
-            <balance>2694.78</balance>
+            <owner_id>40</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL144624127120612077</account_number>
+            <balance>2430.17</balance>
         </Account>
         <Account>
             <id>60</id>
-            <owner_id>37</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL36 2471 9931 5022 2729</account_number>
-            <balance>8190.97</balance>
+            <owner_id>41</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL312491876513432013</account_number>
+            <balance>7346.71</balance>
         </Account>
         <Account>
             <id>61</id>
-            <owner_id>38</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL92 4751 9284 9497 9339</account_number>
-            <balance>3105.40</balance>
+            <owner_id>41</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL747769498961782912</account_number>
+            <balance>118.47</balance>
         </Account>
         <Account>
             <id>62</id>
-            <owner_id>38</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL81 3258 1971 8308 2236</account_number>
-            <balance>2251.47</balance>
+            <owner_id>42</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL561063693984051777</account_number>
+            <balance>6881.11</balance>
         </Account>
         <Account>
             <id>63</id>
-            <owner_id>39</owner_id>
+            <owner_id>43</owner_id>
             <currency_id>0</currency_id>
-            <account_number>PL39 8804 4984 5138 9584</account_number>
-            <balance>7990.42</balance>
+            <account_number>PL206397725436161980</account_number>
+            <balance>1206.51</balance>
         </Account>
         <Account>
             <id>64</id>
-            <owner_id>40</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL80 1855 3718 9647 9418</account_number>
-            <balance>9505.89</balance>
+            <owner_id>44</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL985139701137382719</account_number>
+            <balance>7136.85</balance>
         </Account>
         <Account>
             <id>65</id>
-            <owner_id>40</owner_id>
+            <owner_id>45</owner_id>
             <currency_id>1</currency_id>
-            <account_number>PL13 6149 3017 6832 4995</account_number>
-            <balance>7759.68</balance>
+            <account_number>PL719263973344768152</account_number>
+            <balance>9178.02</balance>
         </Account>
         <Account>
             <id>66</id>
-            <owner_id>41</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL41 2934 2221 7231 2283</account_number>
-            <balance>4887.99</balance>
+            <owner_id>46</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL238513224168458334</account_number>
+            <balance>9444.94</balance>
         </Account>
         <Account>
             <id>67</id>
-            <owner_id>42</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL15 5949 3117 7837 1977</account_number>
-            <balance>504.71</balance>
+            <owner_id>47</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL855428102613059131</account_number>
+            <balance>1091.24</balance>
         </Account>
         <Account>
             <id>68</id>
-            <owner_id>42</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL21 5845 9719 6143 3414</account_number>
-            <balance>6735.15</balance>
+            <owner_id>48</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL185786840224591445</account_number>
+            <balance>9614.72</balance>
         </Account>
         <Account>
             <id>69</id>
-            <owner_id>43</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL69 7593 6598 3963 8108</account_number>
-            <balance>7593.98</balance>
+            <owner_id>49</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL251550377093234800</account_number>
+            <balance>1804.16</balance>
         </Account>
         <Account>
             <id>70</id>
-            <owner_id>44</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL86 1902 5345 4227 6597</account_number>
-            <balance>5567.91</balance>
+            <owner_id>50</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL284337288598725530</account_number>
+            <balance>8859.83</balance>
         </Account>
         <Account>
             <id>71</id>
-            <owner_id>45</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL35 9691 1090 6569 2901</account_number>
-            <balance>2213.75</balance>
+            <owner_id>51</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL662075280664012057</account_number>
+            <balance>8629.86</balance>
         </Account>
         <Account>
             <id>72</id>
-            <owner_id>46</owner_id>
+            <owner_id>51</owner_id>
             <currency_id>3</currency_id>
-            <account_number>PL10 6593 3968 7070 3837</account_number>
-            <balance>2643.36</balance>
+            <account_number>PL409603846590845399</account_number>
+            <balance>8048.28</balance>
         </Account>
         <Account>
             <id>73</id>
-            <owner_id>47</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL68 2499 2066 5313 3537</account_number>
-            <balance>4060.78</balance>
+            <owner_id>52</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL631429771286601849</account_number>
+            <balance>512.35</balance>
         </Account>
         <Account>
             <id>74</id>
-            <owner_id>48</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL96 3315 1570 7008 7718</account_number>
-            <balance>646.79</balance>
+            <owner_id>52</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL272295944046848759</account_number>
+            <balance>9588.43</balance>
         </Account>
         <Account>
             <id>75</id>
-            <owner_id>48</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL35 1493 5820 3496 6122</account_number>
-            <balance>7939.01</balance>
+            <owner_id>52</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL505568256648587661</account_number>
+            <balance>8890.37</balance>
         </Account>
         <Account>
             <id>76</id>
-            <owner_id>49</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL89 5565 2140 1594 1346</account_number>
-            <balance>6656.85</balance>
+            <owner_id>52</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL778326546073556481</account_number>
+            <balance>2470.71</balance>
         </Account>
         <Account>
             <id>77</id>
-            <owner_id>50</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL18 8289 2445 4440 4138</account_number>
-            <balance>6915.71</balance>
+            <owner_id>52</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL474148649116481396</account_number>
+            <balance>979.14</balance>
         </Account>
         <Account>
             <id>78</id>
-            <owner_id>50</owner_id>
+            <owner_id>53</owner_id>
             <currency_id>0</currency_id>
-            <account_number>PL31 9446 9927 3896 6721</account_number>
-            <balance>8457.67</balance>
+            <account_number>PL182028162687944120</account_number>
+            <balance>3958.57</balance>
         </Account>
         <Account>
             <id>79</id>
-            <owner_id>50</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL96 1329 9625 2806 8071</account_number>
-            <balance>6937.75</balance>
+            <owner_id>54</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL692286761330603515</account_number>
+            <balance>2758.04</balance>
         </Account>
         <Account>
             <id>80</id>
-            <owner_id>50</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL89 6084 8172 2087 4016</account_number>
-            <balance>9624.78</balance>
+            <owner_id>55</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL415257130427787574</account_number>
+            <balance>1253.12</balance>
         </Account>
         <Account>
             <id>81</id>
-            <owner_id>51</owner_id>
+            <owner_id>56</owner_id>
             <currency_id>0</currency_id>
-            <account_number>PL81 2978 1828 5570 7055</account_number>
-            <balance>3631.72</balance>
+            <account_number>PL458653746640617941</account_number>
+            <balance>332.81</balance>
         </Account>
         <Account>
             <id>82</id>
-            <owner_id>52</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL90 3311 3977 4048 3602</account_number>
-            <balance>4349.89</balance>
+            <owner_id>57</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL721535818337862889</account_number>
+            <balance>4146.04</balance>
         </Account>
         <Account>
             <id>83</id>
-            <owner_id>53</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL63 6181 1938 3491 2927</account_number>
-            <balance>9753.54</balance>
+            <owner_id>57</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL537686253267935679</account_number>
+            <balance>5888.14</balance>
         </Account>
         <Account>
             <id>84</id>
-            <owner_id>53</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL31 6358 1025 5672 3786</account_number>
-            <balance>2182.40</balance>
+            <owner_id>58</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL578930101558072070</account_number>
+            <balance>5451.18</balance>
         </Account>
         <Account>
             <id>85</id>
-            <owner_id>54</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL40 1091 4764 8402 3895</account_number>
-            <balance>8691.78</balance>
+            <owner_id>58</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL429848835685286976</account_number>
+            <balance>9992.09</balance>
         </Account>
         <Account>
             <id>86</id>
-            <owner_id>55</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL89 2358 7095 3377 1145</account_number>
-            <balance>1622.63</balance>
+            <owner_id>59</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL999773700368942954</account_number>
+            <balance>2063.88</balance>
         </Account>
         <Account>
             <id>87</id>
-            <owner_id>56</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL68 4773 4535 1729 9703</account_number>
-            <balance>7414.35</balance>
+            <owner_id>59</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL464571698315034751</account_number>
+            <balance>1086.11</balance>
         </Account>
         <Account>
             <id>88</id>
-            <owner_id>56</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL71 4297 4214 8211 1600</account_number>
-            <balance>9321.74</balance>
+            <owner_id>60</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL731333482221503323</account_number>
+            <balance>1952.72</balance>
         </Account>
         <Account>
             <id>89</id>
-            <owner_id>57</owner_id>
+            <owner_id>61</owner_id>
             <currency_id>1</currency_id>
-            <account_number>PL82 6623 4458 1167 5105</account_number>
-            <balance>8548.81</balance>
+            <account_number>PL918879358450519074</account_number>
+            <balance>9112.98</balance>
         </Account>
         <Account>
             <id>90</id>
-            <owner_id>58</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL43 7316 6345 2004 8204</account_number>
-            <balance>3304.90</balance>
+            <owner_id>61</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL151866497795367594</account_number>
+            <balance>8579.27</balance>
         </Account>
         <Account>
             <id>91</id>
-            <owner_id>58</owner_id>
+            <owner_id>61</owner_id>
             <currency_id>4</currency_id>
-            <account_number>PL84 3947 6675 8626 4929</account_number>
-            <balance>4422.53</balance>
+            <account_number>PL173261443672689997</account_number>
+            <balance>3762.38</balance>
         </Account>
         <Account>
             <id>92</id>
-            <owner_id>59</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL37 1371 6484 7448 8853</account_number>
-            <balance>9045.81</balance>
+            <owner_id>61</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL261442507170578253</account_number>
+            <balance>189.24</balance>
         </Account>
         <Account>
             <id>93</id>
-            <owner_id>60</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL97 6289 9331 6855 6704</account_number>
-            <balance>4155.25</balance>
+            <owner_id>62</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL432155867821794618</account_number>
+            <balance>7615.92</balance>
         </Account>
         <Account>
             <id>94</id>
-            <owner_id>61</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL82 9662 9009 6313 1063</account_number>
-            <balance>3575.50</balance>
+            <owner_id>62</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL295086666561905647</account_number>
+            <balance>7609.49</balance>
         </Account>
         <Account>
             <id>95</id>
-            <owner_id>62</owner_id>
+            <owner_id>63</owner_id>
             <currency_id>3</currency_id>
-            <account_number>PL69 9887 4624 4914 8630</account_number>
-            <balance>6121.78</balance>
+            <account_number>PL983557220847854733</account_number>
+            <balance>3649.00</balance>
         </Account>
         <Account>
             <id>96</id>
-            <owner_id>63</owner_id>
+            <owner_id>64</owner_id>
             <currency_id>0</currency_id>
-            <account_number>PL43 7025 1888 9113 8355</account_number>
-            <balance>1645.75</balance>
+            <account_number>PL188048570571893310</account_number>
+            <balance>4018.05</balance>
         </Account>
         <Account>
             <id>97</id>
-            <owner_id>63</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL53 3351 5789 9597 5976</account_number>
-            <balance>9604.46</balance>
+            <owner_id>64</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL773537498590775085</account_number>
+            <balance>3036.64</balance>
         </Account>
         <Account>
             <id>98</id>
-            <owner_id>63</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL23 8255 8390 4225 4905</account_number>
-            <balance>847.32</balance>
+            <owner_id>65</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL735864419686534985</account_number>
+            <balance>5167.78</balance>
         </Account>
         <Account>
             <id>99</id>
-            <owner_id>63</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL14 8823 5094 3211 7393</account_number>
-            <balance>4845.79</balance>
+            <owner_id>66</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL425489320811126015</account_number>
+            <balance>5036.00</balance>
         </Account>
         <Account>
             <id>100</id>
-            <owner_id>63</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL76 9984 8014 7361 9130</account_number>
-            <balance>6193.24</balance>
+            <owner_id>66</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL752059485638414905</account_number>
+            <balance>8294.55</balance>
         </Account>
         <Account>
             <id>101</id>
-            <owner_id>64</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL91 4243 4694 5283 3919</account_number>
-            <balance>8746.93</balance>
+            <owner_id>66</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL209032666030368159</account_number>
+            <balance>859.21</balance>
         </Account>
         <Account>
             <id>102</id>
-            <owner_id>65</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL14 9133 5552 4751 1980</account_number>
-            <balance>3270.89</balance>
+            <owner_id>66</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL185128915936175626</account_number>
+            <balance>3755.17</balance>
         </Account>
         <Account>
             <id>103</id>
             <owner_id>66</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL59 1752 7897 7464 5918</account_number>
-            <balance>4056.83</balance>
+            <currency_id>0</currency_id>
+            <account_number>PL574430308160086586</account_number>
+            <balance>1791.05</balance>
         </Account>
         <Account>
             <id>104</id>
             <owner_id>67</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL67 9546 9451 8089 5306</account_number>
-            <balance>7917.01</balance>
+            <currency_id>1</currency_id>
+            <account_number>PL786160346654041166</account_number>
+            <balance>2960.87</balance>
         </Account>
         <Account>
             <id>105</id>
             <owner_id>67</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL66 6558 6850 4447 1128</account_number>
-            <balance>2127.87</balance>
+            <currency_id>0</currency_id>
+            <account_number>PL594934171880482435</account_number>
+            <balance>1220.48</balance>
         </Account>
         <Account>
             <id>106</id>
-            <owner_id>68</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL29 2215 8880 3913 8735</account_number>
-            <balance>5805.66</balance>
+            <owner_id>67</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL467454641959009533</account_number>
+            <balance>3572.96</balance>
         </Account>
         <Account>
             <id>107</id>
-            <owner_id>69</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL58 4983 5493 1429 7018</account_number>
-            <balance>939.76</balance>
+            <owner_id>68</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL418299904159205705</account_number>
+            <balance>3448.98</balance>
         </Account>
         <Account>
             <id>108</id>
             <owner_id>69</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL98 3336 7273 5311 4119</account_number>
-            <balance>6546.47</balance>
+            <currency_id>2</currency_id>
+            <account_number>PL745539652938124495</account_number>
+            <balance>7194.52</balance>
         </Account>
         <Account>
             <id>109</id>
-            <owner_id>69</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL50 7811 8530 3705 4802</account_number>
-            <balance>9367.46</balance>
+            <owner_id>70</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL378231132389984110</account_number>
+            <balance>2898.17</balance>
         </Account>
         <Account>
             <id>110</id>
             <owner_id>70</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL33 2560 1911 9671 3689</account_number>
-            <balance>6218.63</balance>
+            <currency_id>3</currency_id>
+            <account_number>PL634756525990834896</account_number>
+            <balance>8118.96</balance>
         </Account>
         <Account>
             <id>111</id>
-            <owner_id>70</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL32 7624 3450 9925 5078</account_number>
-            <balance>5274.41</balance>
+            <owner_id>71</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL286720911035133044</account_number>
+            <balance>8833.14</balance>
         </Account>
         <Account>
             <id>112</id>
-            <owner_id>71</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL17 6161 3747 2464 5716</account_number>
-            <balance>726.42</balance>
+            <owner_id>72</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL479453856765095204</account_number>
+            <balance>9016.29</balance>
         </Account>
         <Account>
             <id>113</id>
-            <owner_id>71</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL54 7411 8554 8435 6363</account_number>
-            <balance>9717.66</balance>
+            <owner_id>73</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL348375599960856778</account_number>
+            <balance>5370.17</balance>
         </Account>
         <Account>
             <id>114</id>
-            <owner_id>72</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL71 8923 7995 7670 6977</account_number>
-            <balance>1701.92</balance>
+            <owner_id>74</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL738326815982737143</account_number>
+            <balance>9403.14</balance>
         </Account>
         <Account>
             <id>115</id>
-            <owner_id>72</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL25 8903 5029 9683 9261</account_number>
-            <balance>9211.35</balance>
+            <owner_id>75</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL174557290932055348</account_number>
+            <balance>8219.18</balance>
         </Account>
         <Account>
             <id>116</id>
-            <owner_id>73</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL33 3535 9744 9526 9269</account_number>
-            <balance>5397.95</balance>
+            <owner_id>76</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL949812901836496583</account_number>
+            <balance>9055.54</balance>
         </Account>
         <Account>
             <id>117</id>
-            <owner_id>74</owner_id>
+            <owner_id>76</owner_id>
             <currency_id>1</currency_id>
-            <account_number>PL79 7395 3025 1566 5623</account_number>
-            <balance>7053.26</balance>
+            <account_number>PL265576489523338509</account_number>
+            <balance>6436.71</balance>
         </Account>
         <Account>
             <id>118</id>
-            <owner_id>74</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL90 3926 8982 3618 8199</account_number>
-            <balance>7183.64</balance>
+            <owner_id>77</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL706867843119662905</account_number>
+            <balance>8557.57</balance>
         </Account>
         <Account>
             <id>119</id>
-            <owner_id>75</owner_id>
+            <owner_id>78</owner_id>
             <currency_id>2</currency_id>
-            <account_number>PL68 3936 3752 4428 7951</account_number>
-            <balance>8179.99</balance>
+            <account_number>PL324025779944699551</account_number>
+            <balance>4095.86</balance>
         </Account>
         <Account>
             <id>120</id>
-            <owner_id>75</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL97 6128 2968 5585 9110</account_number>
-            <balance>6652.36</balance>
+            <owner_id>79</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL313280802642954485</account_number>
+            <balance>9112.33</balance>
         </Account>
         <Account>
             <id>121</id>
-            <owner_id>76</owner_id>
+            <owner_id>79</owner_id>
             <currency_id>4</currency_id>
-            <account_number>PL38 3541 4817 4814 7433</account_number>
-            <balance>8183.08</balance>
+            <account_number>PL359306166144915165</account_number>
+            <balance>7216.24</balance>
         </Account>
         <Account>
             <id>122</id>
-            <owner_id>77</owner_id>
+            <owner_id>80</owner_id>
             <currency_id>2</currency_id>
-            <account_number>PL50 8412 3786 9136 6695</account_number>
-            <balance>8278.36</balance>
+            <account_number>PL577172970591401553</account_number>
+            <balance>2575.27</balance>
         </Account>
         <Account>
             <id>123</id>
-            <owner_id>77</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL16 6479 6317 1487 2942</account_number>
-            <balance>7527.12</balance>
+            <owner_id>80</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL284942376664535727</account_number>
+            <balance>3045.05</balance>
         </Account>
         <Account>
             <id>124</id>
-            <owner_id>77</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL79 6022 1118 9295 3314</account_number>
-            <balance>8682.81</balance>
+            <owner_id>80</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL524433303282901438</account_number>
+            <balance>7433.29</balance>
         </Account>
         <Account>
             <id>125</id>
-            <owner_id>77</owner_id>
+            <owner_id>81</owner_id>
             <currency_id>0</currency_id>
-            <account_number>PL33 5506 2050 9340 3950</account_number>
-            <balance>9586.76</balance>
+            <account_number>PL721411194327089737</account_number>
+            <balance>317.90</balance>
         </Account>
         <Account>
             <id>126</id>
-            <owner_id>78</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL97 8020 5447 6615 3453</account_number>
-            <balance>587.48</balance>
+            <owner_id>82</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL127065977750727871</account_number>
+            <balance>142.91</balance>
         </Account>
         <Account>
             <id>127</id>
-            <owner_id>79</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL20 7983 9182 2931 9837</account_number>
-            <balance>7684.57</balance>
+            <owner_id>83</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL957894109454298574</account_number>
+            <balance>3040.85</balance>
         </Account>
         <Account>
             <id>128</id>
-            <owner_id>80</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL86 8999 1387 1892 3693</account_number>
-            <balance>4809.29</balance>
+            <owner_id>84</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL992189957796945040</account_number>
+            <balance>552.44</balance>
         </Account>
         <Account>
             <id>129</id>
-            <owner_id>80</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL23 8520 5257 8577 4361</account_number>
-            <balance>8027.45</balance>
+            <owner_id>85</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL525305915836316386</account_number>
+            <balance>225.39</balance>
         </Account>
         <Account>
             <id>130</id>
-            <owner_id>81</owner_id>
+            <owner_id>86</owner_id>
             <currency_id>0</currency_id>
-            <account_number>PL71 5860 1987 9624 9675</account_number>
-            <balance>1097.27</balance>
+            <account_number>PL559963100770351145</account_number>
+            <balance>7961.28</balance>
         </Account>
         <Account>
             <id>131</id>
-            <owner_id>81</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL98 6969 5221 9522 1469</account_number>
-            <balance>9057.12</balance>
+            <owner_id>87</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL968315335159715742</account_number>
+            <balance>2459.01</balance>
         </Account>
         <Account>
             <id>132</id>
-            <owner_id>82</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL22 9249 5105 6980 1926</account_number>
-            <balance>8742.17</balance>
+            <owner_id>87</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL773936168325145467</account_number>
+            <balance>8556.04</balance>
         </Account>
         <Account>
             <id>133</id>
-            <owner_id>82</owner_id>
+            <owner_id>87</owner_id>
             <currency_id>2</currency_id>
-            <account_number>PL81 5627 8565 5059 4795</account_number>
-            <balance>1271.06</balance>
+            <account_number>PL402118231364219877</account_number>
+            <balance>7631.46</balance>
         </Account>
         <Account>
             <id>134</id>
-            <owner_id>83</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL69 4250 3567 4152 3262</account_number>
-            <balance>911.94</balance>
+            <owner_id>87</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL126597539992693685</account_number>
+            <balance>9925.11</balance>
         </Account>
         <Account>
             <id>135</id>
-            <owner_id>84</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL13 2535 4862 5997 4101</account_number>
-            <balance>1981.16</balance>
+            <owner_id>88</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL372741599543775424</account_number>
+            <balance>726.55</balance>
         </Account>
         <Account>
             <id>136</id>
-            <owner_id>85</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL86 5772 5108 3085 2619</account_number>
-            <balance>9369.29</balance>
+            <owner_id>89</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL395508739786897368</account_number>
+            <balance>4572.94</balance>
         </Account>
         <Account>
             <id>137</id>
-            <owner_id>86</owner_id>
+            <owner_id>89</owner_id>
             <currency_id>0</currency_id>
-            <account_number>PL18 3937 5020 2237 2187</account_number>
-            <balance>788.65</balance>
+            <account_number>PL935647187357816298</account_number>
+            <balance>4833.52</balance>
         </Account>
         <Account>
             <id>138</id>
-            <owner_id>86</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL38 9014 7607 1754 4908</account_number>
-            <balance>3289.62</balance>
+            <owner_id>90</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL141474636449813105</account_number>
+            <balance>1065.76</balance>
         </Account>
         <Account>
             <id>139</id>
-            <owner_id>86</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL40 6762 1142 1699 5254</account_number>
-            <balance>943.12</balance>
+            <owner_id>91</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL872843266222963820</account_number>
+            <balance>9795.81</balance>
         </Account>
         <Account>
             <id>140</id>
-            <owner_id>86</owner_id>
+            <owner_id>92</owner_id>
             <currency_id>4</currency_id>
-            <account_number>PL27 7807 9056 7246 1278</account_number>
-            <balance>1783.52</balance>
+            <account_number>PL947242601770183500</account_number>
+            <balance>4178.69</balance>
         </Account>
         <Account>
             <id>141</id>
-            <owner_id>86</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL59 3125 4509 2864 6618</account_number>
-            <balance>787.02</balance>
+            <owner_id>92</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL203601594089023039</account_number>
+            <balance>7448.64</balance>
         </Account>
         <Account>
             <id>142</id>
-            <owner_id>87</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL38 9096 4690 4881 4398</account_number>
-            <balance>4074.60</balance>
+            <owner_id>92</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL687800136628427279</account_number>
+            <balance>6077.72</balance>
         </Account>
         <Account>
             <id>143</id>
-            <owner_id>88</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL29 4949 8320 3930 1401</account_number>
-            <balance>646.63</balance>
+            <owner_id>92</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL719927209868348402</account_number>
+            <balance>8874.13</balance>
         </Account>
         <Account>
             <id>144</id>
-            <owner_id>88</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL77 9341 5906 5408 9920</account_number>
-            <balance>4047.42</balance>
+            <owner_id>93</owner_id>
+            <currency_id>1</currency_id>
+            <account_number>PL348334750698596382</account_number>
+            <balance>8982.51</balance>
         </Account>
         <Account>
             <id>145</id>
-            <owner_id>89</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL60 9965 5835 3093 8387</account_number>
-            <balance>2825.62</balance>
+            <owner_id>93</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL831543615076276016</account_number>
+            <balance>8904.30</balance>
         </Account>
         <Account>
             <id>146</id>
-            <owner_id>89</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL78 5714 9771 4173 2698</account_number>
-            <balance>7678.03</balance>
+            <owner_id>93</owner_id>
+            <currency_id>4</currency_id>
+            <account_number>PL823414390585573694</account_number>
+            <balance>3268.94</balance>
         </Account>
         <Account>
             <id>147</id>
-            <owner_id>90</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL64 7125 5192 4807 2289</account_number>
-            <balance>5555.30</balance>
+            <owner_id>93</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL514951769992678394</account_number>
+            <balance>4153.97</balance>
         </Account>
         <Account>
             <id>148</id>
-            <owner_id>91</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL77 8000 9483 1533 5638</account_number>
-            <balance>8030.32</balance>
+            <owner_id>94</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL491923501244638351</account_number>
+            <balance>5537.26</balance>
         </Account>
         <Account>
             <id>149</id>
-            <owner_id>92</owner_id>
+            <owner_id>94</owner_id>
             <currency_id>4</currency_id>
-            <account_number>PL98 6777 6938 7957 7315</account_number>
-            <balance>4701.77</balance>
+            <account_number>PL278800920689131646</account_number>
+            <balance>6446.28</balance>
         </Account>
         <Account>
             <id>150</id>
-            <owner_id>92</owner_id>
-            <currency_id>3</currency_id>
-            <account_number>PL58 9841 1120 4213 7150</account_number>
-            <balance>5841.91</balance>
+            <owner_id>95</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL992396430228062608</account_number>
+            <balance>8345.00</balance>
         </Account>
         <Account>
             <id>151</id>
-            <owner_id>93</owner_id>
+            <owner_id>96</owner_id>
             <currency_id>2</currency_id>
-            <account_number>PL65 6474 3692 1281 6481</account_number>
-            <balance>4458.32</balance>
+            <account_number>PL214620639010778956</account_number>
+            <balance>9672.96</balance>
         </Account>
         <Account>
             <id>152</id>
-            <owner_id>94</owner_id>
+            <owner_id>96</owner_id>
             <currency_id>3</currency_id>
-            <account_number>PL23 5694 8750 1097 2508</account_number>
-            <balance>3635.36</balance>
+            <account_number>PL964076574674199287</account_number>
+            <balance>4541.88</balance>
         </Account>
         <Account>
             <id>153</id>
-            <owner_id>94</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL31 9094 6745 4537 6847</account_number>
-            <balance>3823.23</balance>
+            <owner_id>96</owner_id>
+            <currency_id>3</currency_id>
+            <account_number>PL311775789345664068</account_number>
+            <balance>2498.46</balance>
         </Account>
         <Account>
             <id>154</id>
-            <owner_id>95</owner_id>
+            <owner_id>97</owner_id>
             <currency_id>3</currency_id>
-            <account_number>PL39 2917 1109 7050 7424</account_number>
-            <balance>2646.42</balance>
+            <account_number>PL356502438846228716</account_number>
+            <balance>7034.79</balance>
         </Account>
         <Account>
             <id>155</id>
-            <owner_id>96</owner_id>
-            <currency_id>0</currency_id>
-            <account_number>PL51 8533 3104 8375 7060</account_number>
-            <balance>5712.21</balance>
+            <owner_id>98</owner_id>
+            <currency_id>2</currency_id>
+            <account_number>PL569368511796184676</account_number>
+            <balance>9404.05</balance>
         </Account>
         <Account>
             <id>156</id>
-            <owner_id>96</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL66 2622 1079 7715 5061</account_number>
-            <balance>2238.90</balance>
+            <owner_id>99</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL252941468969898017</account_number>
+            <balance>3162.37</balance>
         </Account>
         <Account>
             <id>157</id>
-            <owner_id>97</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL62 3587 7140 1157 7713</account_number>
-            <balance>5639.97</balance>
+            <owner_id>99</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL819771177931079991</account_number>
+            <balance>2506.57</balance>
         </Account>
         <Account>
             <id>158</id>
-            <owner_id>97</owner_id>
-            <currency_id>4</currency_id>
-            <account_number>PL55 2764 4349 1580 4328</account_number>
-            <balance>2177.71</balance>
+            <owner_id>100</owner_id>
+            <currency_id>0</currency_id>
+            <account_number>PL488001378132866755</account_number>
+            <balance>6234.65</balance>
         </Account>
         <Account>
             <id>159</id>
-            <owner_id>98</owner_id>
-            <currency_id>2</currency_id>
-            <account_number>PL13 5045 1117 2001 5081</account_number>
-            <balance>2117.91</balance>
-        </Account>
-        <Account>
-            <id>160</id>
-            <owner_id>99</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL74 3526 3533 3710 3430</account_number>
-            <balance>1974.12</balance>
-        </Account>
-        <Account>
-            <id>161</id>
             <owner_id>100</owner_id>
-            <currency_id>1</currency_id>
-            <account_number>PL13 4664 6524 7917 1378</account_number>
-            <balance>5143.48</balance>
+            <currency_id>2</currency_id>
+            <account_number>PL749171121990975156</account_number>
+            <balance>8794.65</balance>
         </Account>
     </Accounts>
     <Currencys>
