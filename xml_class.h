@@ -7,7 +7,7 @@
 using namespace std;
 
 // Funkjca która wczytyje dane z XML do klasy
-void xml_giveData(User &user)
+void xml_giveData(User &user, Account &account, Currency &currency)
 {
 	ifstream db(db_name);
 	
@@ -21,16 +21,14 @@ void xml_giveData(User &user)
     {
         // Ignorowanie linijek XML
         if (line.find("<?xml") != string::npos || line.find("</Users>") != string::npos ||
-        line.find("</Accounts>") != string::npos)  continue;
-
-        if (line.find("<Users>") != string::npos) user_count = -1; // Reste licznika
+        line.find("</Accounts>") != string::npos || line.find("</Currencys>") != string::npos)  continue;
+        //Dodawanie klasy User
         if (line.find("<User>") != string::npos)
         {
-            // Przechodzimy do kolejnego użytkownika
-            user_count++;
             // Ustawienie Flagi;
             xml_isUser = 1;
             xml_isAccount = 0;
+            xml_isCurrency = 0;
             // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
             xml_id = -1;
             xml_first_name = "";
@@ -42,18 +40,16 @@ void xml_giveData(User &user)
         }
         else if (line.find("</User>") != string::npos) 
         {
-                user.addUser(xml_id, xml_first_name, xml_last_name, xml_login, xml_password, xml_admin);
-                cout << "---dane zostaly wczytane---\n";
+            user.addUser(xml_id, xml_first_name, xml_last_name, xml_login, xml_password, xml_admin);
+            cout << "---Dane zostałt wczytane dla klasy: \"User\"---\n";
         }
-
-        if (line.find("<Accounts>") != string::npos) user_count = -1;
+        // Dodawania klasy Account
         if (line.find("<Account>") != string::npos)
         {
-            // Przechodzimy do kolejnego użytkownika
-            user_count++;
             // Ustawienie Flagi;
             xml_isUser = 0;
             xml_isAccount = 1;
+            xml_isCurrency = 0;
             // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
             xml_id = -1;
             xml_owner_id = -1;
@@ -64,8 +60,25 @@ void xml_giveData(User &user)
         }
         else if (line.find("</Account>") != string::npos) 
         {
-            //currency.addCurrency(xml_id, xml_owner_id, xml_currency_id, xml);
-            cout << "---dane zostaly wczytane---\n";   
+            account.addAccount(xml_id, xml_owner_id, xml_currency_id, xml_account_number, xml_balance);
+            cout << "---Dane zostałt wczytane dla klasy: \"Account\"---\n"; 
+        }
+        // Dodawanie klasy Currency
+        if (line.find("<Currency>") != string::npos)
+        {
+            // Ustawienie Flagi;
+            xml_isUser = 0;
+            xml_isAccount = 0;
+            xml_isCurrency = 1;
+            // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
+            xml_id = -1;
+            xml_cName = "";
+            continue;
+        }
+        else if (line.find("</Currency>") != string::npos) 
+        {
+            currency.addCurrency(xml_id, xml_cName);
+            cout << "---Dane zostałt wczytane dla klasy: \"Currency\"---\n"; 
         }
 
         // Sprawdzenie wartości pliku XML
@@ -109,13 +122,13 @@ void xml_giveData(User &user)
             }
             if (line.find("<owner_id>") != string::npos) 
             {
-                string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
-                xml_owner_id = stoi(id_str);  // Konwersja na int
+                string ow_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_owner_id = stoi(ow_str);  // Konwersja na int
             } 
             if (line.find("<currency_id>") != string::npos) 
             {
-                string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
-                xml_currency_id = stoi(id_str);  // Konwersja na int
+                string cr_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_currency_id = stoi(cr_str);  // Konwersja na int
             } 
             if (line.find("<account_number>") != string::npos) 
             {
@@ -123,16 +136,28 @@ void xml_giveData(User &user)
             } 
             if (line.find("<balance>") != string::npos) 
             {
-                string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
-                xml_balance = stod(id_str); // Konwersja na double
+                string bl_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_balance = stod(bl_str); // Konwersja na double
             }
+        }
+        if(xml_isCurrency)
+        {
+            if (line.find("<id>") != string::npos) 
+            {
+                string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_id = stoi(id_str);  // Konwersja na int
+            }
+            if (line.find("<name>") != string::npos) 
+            {
+                xml_cName = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+            } 
         }
     }
     db.close();
 }
 
 // Funkcja która sprawdza spójnośc danych XML a danymi w programie.
-void xml_checkData(User user)
+void xml_checkData(User &user, Account &account, Currency &currency)
 {
 	ifstream db(db_name);
 	if (!db.is_open()) 
@@ -144,12 +169,18 @@ void xml_checkData(User user)
     while (getline(db, line)) 
     {
         // Ignorowanie linijek XML
-        if (line.find("<?xml") != string::npos || line.find("</Users>") != string::npos) continue;
-        if (line.find("<Users>") != string::npos) user_count = -1; // Reset licznika
+        if (line.find("<?xml") != string::npos || line.find("</Users>") != string::npos ||
+        line.find("</Accounts>") != string::npos || line.find("</Currencys>") != string::npos)  continue;
+        // Sprawdzanie klasy User
+        if (line.find("<Users>") != string::npos) licznik = -1; // Reset licznika
         if (line.find("<User>") != string::npos)
         {
             // Przechodzimy do kolejnego użytkownika
-            user_count++;
+            licznik++;
+             // Ustawienie Flagi;
+            xml_isUser = 1;
+            xml_isAccount = 0;
+            xml_isCurrency = 0;
             // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
             xml_id = -1;
             xml_first_name = "";
@@ -159,48 +190,145 @@ void xml_checkData(User user)
             xml_admin = false;
             continue;
         }
-
-        // Sprawdzenie wartości pliku XML
-        if (line.find("<id>") != string::npos) 
+        if(xml_isUser)
         {
-            string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
-            xml_id = stoi(id_str);  // Konwersja na int
-        }
-        if (line.find("<first_name>") != string::npos) 
-        {
-            xml_first_name = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
-        } 
-        if (line.find("<last_name>") != string::npos) 
-        {
-            xml_last_name = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
-        } 
-        if (line.find("<login>") != string::npos) 
-        {
-            xml_login = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
-        } 
-        if (line.find("<password>") != string::npos) 
-        {
-            xml_password = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
-
-        }
-        if (line.find("<admin>") != string::npos) 
-        {
-            string admin_value = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
-            xml_admin = (admin_value == "true");
-        }
-
-         if (line.find("</User>") != string::npos) 
-        {
-            if (xml_id == user.getId(user_count) &&
-                xml_first_name == user.getFirst_name(user_count) &&
-                xml_last_name == user.getLast_name(user_count) &&
-                xml_login == user.getLogin(user_count) &&
-                xml_password == user.getPassword(user_count) &&
-                xml_admin == user.isAdmin(user_count)) 
+            // Sprawdzenie wartości pliku XML
+            if (line.find("<id>") != string::npos) 
             {
-                cout << xml_id << "\tTEST PASSED" << endl;
+                string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_id = stoi(id_str);  // Konwersja na int
+            }
+            if (line.find("<first_name>") != string::npos) 
+            {
+                xml_first_name = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
             } 
-            else cout << xml_id << "\tTEST FAILED" << endl;
+            if (line.find("<last_name>") != string::npos) 
+            {
+                xml_last_name = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+            } 
+            if (line.find("<login>") != string::npos) 
+            {
+                xml_login = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+            } 
+            if (line.find("<password>") != string::npos) 
+            {
+                xml_password = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+
+            }
+            if (line.find("<admin>") != string::npos) 
+            {
+                string admin_value = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_admin = (admin_value == "true");
+            }
+
+            if (line.find("</User>") != string::npos) 
+            {
+                if (xml_id == user.getId(licznik) &&
+                    xml_first_name == user.getFirst_name(licznik) &&
+                    xml_last_name == user.getLast_name(licznik) &&
+                    xml_login == user.getLogin(licznik) &&
+                    xml_password == user.getPassword(licznik) &&
+                    xml_admin == user.isAdmin(licznik)) 
+                {
+                    cout << xml_id << "\tTEST PASSED: \"User\"" << endl;
+                } 
+                else cout << xml_id << "\tTEST FAILED: \"User\"" << endl;
+            }
+        }
+
+        // Sprawdzanie klasy Account
+        if (line.find("<Accounts>") != string::npos) licznik = -1; // Reset licznika
+        if (line.find("<Account>") != string::npos)
+        {
+            // Przechodzimy do kolejnego użytkownika
+            licznik++;
+            // Ustawienie Flagi;
+            xml_isUser = 0;
+            xml_isAccount = 1;
+            xml_isCurrency = 0;
+            // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
+            xml_id = -1;
+            xml_owner_id = -1;
+            xml_currency_id =1;
+            xml_account_number ="";
+            xml_balance = 0.00;
+            continue;
+        }
+        if(xml_isAccount)
+        {
+            // Sprawdzenie wartości pliku XML
+            if (line.find("<id>") != string::npos) 
+            {
+                string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_id = stoi(id_str);  // Konwersja na int
+            }
+            if (line.find("<owner_id>") != string::npos) 
+            {
+                string ow_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_owner_id = stoi(ow_str);  // Konwersja na int
+            } 
+            if (line.find("<currency_id>") != string::npos) 
+            {
+                string cr_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_currency_id = stoi(cr_str);  // Konwersja na int
+            } 
+            if (line.find("<account_number>") != string::npos) 
+            {
+                xml_account_number = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+            } 
+            if (line.find("<balance>") != string::npos) 
+            {
+                string bl_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_balance = stod(bl_str); // Konwersja na double
+            }
+            if (line.find("</Account>") != string::npos) 
+            {
+                if (xml_id == account.getId(licznik) &&
+                    xml_owner_id == account.getOwner_id(licznik) &&
+                    xml_currency_id == account.getCurrency_id(licznik) &&
+                    xml_account_number == account.getAccountNumber(licznik) &&
+                    xml_balance == account.getBalance(licznik))
+                {
+                    cout << xml_id << "\tTEST PASSED: \"Account\"" << endl;
+                } 
+                else cout << xml_id << "\tTEST FAILED: \"Account\"" << endl;
+            }
+        }
+        // Sprawdzanie klasy Currency
+        if (line.find("<Currencys>") != string::npos) licznik = -1; // Reset licznika
+        if (line.find("<Currency>") != string::npos)
+        {
+            // Przechodzimy do kolejnego użytkownika
+            licznik++;
+            // Ustawienie Flagi;
+            xml_isUser = 0;
+            xml_isAccount = 0;
+            xml_isCurrency = 1;
+            // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
+            xml_id = -1;
+            xml_cName = "";
+            continue;
+        }
+        if(xml_isCurrency)
+        {
+            // Sprawdzenie wartości pliku XML
+           if (line.find("<id>") != string::npos) 
+            {
+                string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_id = stoi(id_str);  // Konwersja na int
+            }
+            if (line.find("<name>") != string::npos) 
+            {
+                xml_cName = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+            } 
+            if (line.find("</Currency>") != string::npos) 
+            {
+                if (xml_id == currency.getId(licznik) && xml_cName == currency.getName(licznik))
+                {
+                    cout << xml_id << "\tTEST PASSED: \"Currency\"" << endl;
+                } 
+                else cout << xml_id << "\tTEST FAILED: \"Currency\"" << endl;
+            }
         }
     }
     db.close();

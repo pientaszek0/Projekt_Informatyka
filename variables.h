@@ -35,10 +35,13 @@ bool xml_admin = false;
 int xml_owner_id, xml_currency_id;
 string xml_account_number;
 double xml_balance;
+//Dotyczy klasy Currency
+string xml_cName;
+string line; // Zapis lini XML
+int licznik; // Licznik od -1 ponieważ dlaej jest iterator który i tak zmieni wartosc na 0
+// Flagi
+bool xml_isUser = 0; // Flaga dla klasy User
+bool xml_isAccount = 0;  // Flaga dla klasy Accoutn
+bool xml_isCurrency = 0;  // Flaga dla klasy Currency
 
-int count_element = 0;
-string line;
-int user_count; // Licznik użytkowników od -1 ponieważ dlaej jest iterator który i tak zmieni wartosc na 0
-bool xml_isUser = 0;
-bool xml_isAccount =0;
 #endif
