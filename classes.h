@@ -16,20 +16,6 @@ class User {
         vector<string> first_name, last_name, login, password;
         vector<bool> admin; // Jeśli 1 to użytkownik jest administratorem
     public:
-        /*/ Konstruktor metody  User user1(id, imie, nazwisko, login, hasło, 1 lub 0 )
-        User(vector<int> id, vector<string> first_name, vector<string> last_name, vector<string> login, vector<string> password, vector<bool> admin) {
-            this->id = id;
-            this->first_name = first_name;
-            this->last_name = last_name;
-            this->login = login;
-            this->password = password;
-            this->admin = admin;
-        }*/
-        
-        //User() {}; //Jest to domyślny konstruktor Potrzebny do vectorów bo bez tego nie działa XD
-
-        // Nie potrzeba pisac konstruktora bo wystarczy ten pisany przez kompilator
-
         // Metoda do zwracania ilości elemntów
         size_t getElementUser() {
             return id.size();
@@ -135,12 +121,6 @@ class Currency {
         vector<string> name;
 
     public:
-        /*/ Konstruktor metody Currency currency1(id, nazwa waluty)
-        Currency(vector<int> id, vector<string> name) {
-            this->id = id;
-            this->name = name;
-        } */
-        // Nie potrzeba pisac konstruktora bo wystarczy ten pisany przez kompilator
         //Metoda zwracająca ilosc walut
         int getElementCurrency() {
             return id.size();
@@ -171,13 +151,6 @@ class Loan_Type {
         vector<string> loan_type;
 
     public:
-        /*/ Konstruktor metody Loan_Type morgage1(id, stopa procentowa, nazwa typu kredytu)
-        Loan_Type(vector<int> id, vector<double> interest, vector<string> loan_type) {
-            this->id = id;
-            this->interest = interest;
-            this->loan_type = loan_type;
-        }*/
-        // Nie potrzeba pisac konstruktora bo wystarczy ten pisany przez kompilator
         // Metoda zwracająca ID
         int getId(int index) {
             return this->id[index];
@@ -207,14 +180,6 @@ class Loan {
         vector<double> balance_left; // Ile jeszcze zostało do spłacenia kredytu
 
     public:
-        /*/ Konstruktor metody Loan loan1(id_właściciela, waluta, typ kredytu, ile zostało do spłaty)
-        Loan(vector<int> owner_id, vector<Currency> currency_name, vector<Loan_Type> loan_type, vector<double> balance_left) {
-            this->owner_id = owner_id;
-            this->currency_name = currency_name;
-            this->loan_type = loan_type;
-            this->balance_left = balance_left;
-        } */
-        // Nie potrzeba pisac konstruktora bo wystarczy ten pisany przez kompilator
         // Metoda zwracająca ID właściciela
         int getOwnerId(int index) {
             return this->owner_id[index];

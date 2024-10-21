@@ -8,28 +8,6 @@
 
 using namespace std;
 
-// Funkcja dodająca tymczasowe przykladowe dane do testowania aplikacji
-void temprrary_data(User &user, Account &account, Currency &currency) {
-    user.addUser(20, "Jan", "Kowalski", "admin", "admin", true);
-    user.addUser(43, "Adrian", "Prymas", "user1", "user1", false);
-    user.addUser(25, "Jan", "Pietka", "user2", "user2", false);
-    user.addUser(21, "Andrzej", "Nowak", "user3", "user3", false);
-    user.addUser(53, "Michal", "Ryba", "user4", "user4", false);
-    account.addAccount(34, 20, 0, "PL01345678901234567890123456", 1.37);
-    account.addAccount(35, 20, 0, "PL02345678901234567890123456", 2.37);
-    account.addAccount(36, 20, 1, "PL03345678901234567890123456", 3.37);
-    account.addAccount(38, 20, 2, "PL04345678901234567890123456", 4.37);
-    account.addAccount(42, 43, 0, "PL05370078901234567890123456", 21.37);
-    account.addAccount(66, 25, 2, "EU06345678901234567890123456", 21.37);
-    account.addAccount(21, 21, 0, "PL07345678901234567890122137", 21.37);
-    account.addAccount(37, 43, 1, "US08345678901234567890123456", 21.37);
-    currency.addCurrency(0, "PLN");
-    currency.addCurrency(1, "USD");
-    currency.addCurrency(2, "EUR");
-    return; 
-}
-
-
 // Jan Piętka
 // Funkcja logowania urzytkownika
 void sign_in(User &user) 
@@ -141,14 +119,12 @@ void accountsMenu(User user, int courent_user) {
     return;
 }
 
-// Jan Piętka
 // Funkcja obslugujaca menu kredytow
 void loansMenu(User user, int courent_user) {
 
     return;
 }
 
-// Jan Piętka
 // Funkcja obslugujaca menu lokat
 void depositsMenu(User user, int courent_user) {
 
@@ -219,6 +195,8 @@ void desktop(User user, int courent_user) {
 
     return;
 }
+
+// Adrian Prymas
 // Funkcja do Logów txt
 void txt_log(string logs)
 {
