@@ -119,12 +119,14 @@ void accountsMenu(User user, int courent_user) {
     return;
 }
 
+// Michal Wierzbicki
 // Funkcja obslugujaca menu kredytow
 void loansMenu(User user, int courent_user) {
 
     return;
 }
 
+// Michal Wierzbicki
 // Funkcja obslugujaca menu lokat
 void depositsMenu(User user, int courent_user) {
 

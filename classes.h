@@ -20,10 +20,7 @@ class User {
         size_t getElementUser() {
             return id.size();
         }
-       
-        // do każdej metody jest zmiena index
-
-         // Metoda zwracająca id użytkownika
+        // Metoda zwracająca id użytkownika
         int getId(int index) {
             return this->id[index];
         }
@@ -223,6 +220,9 @@ class Loan {
 }
 };
 
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ============ Klasa lokat zalozonych przez użytkowników ============
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Deposit {
     private:
 
