@@ -416,26 +416,3 @@ void xml_chf(User user)
 		db.close();
 	}
 }
-
-//Funkcja do dodawania danych, NIE DZIAŁA JESZCZE
-void xml_addData(User user)
-{
-    ifstream db(db_name);
-    ofstream dbs("temp.xml");
-
-    if(!db.is_open()) 
-    {
-        cout << error01 << endl;
-        return;
-    }
-    cout << "---DODAWANIE DANYCH---";
-    
-    while(getline(db, line)) 
-    {
-        if(line.find(user.getId(user.getElementUser() - 1)) != string::npos)
-        { 
-            cout << user.getId(user.getElementUser() - 1);
-        }
-    }
-
-}
