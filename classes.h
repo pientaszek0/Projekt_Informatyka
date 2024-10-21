@@ -81,18 +81,8 @@ class Account {
         vector<string> account_number;
         vector<double> balance;
     public:
-        /*/ Konstruktor klasy Account account1(id, id_właściciela, id_waluty, stan_konta)
-        Account(vector<int> id, vector<int> owner_id, vector<int> currency_id, vector<string> account_number, vector<double> balance) {
-            this->id = id;
-            this->owner_id = owner_id;
-            this->currency_id = currency_id;
-            this->account_number = account_number;
-            this->balance = balance;
-        } */
-        // Nie potrzeba pisac konstruktora bo wystarczy ten pisany przez kompilator
-        // Metoda wzracają ilość kont
-        int getElemenAccount()
-        {
+        // Metoda zwracają ilość kont
+        int getElemenAccount() {
             return id.size();
         }
         // Metoda zwracająca id konta

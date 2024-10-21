@@ -13,11 +13,14 @@ void temprrary_data(User &user, Account &account, Currency &currency) {
     user.addUser(25, "Jan", "Pietka", "user2", "user2", false);
     user.addUser(21, "Andrzej", "Nowak", "user3", "user3", false);
     user.addUser(53, "Michal", "Ryba", "user4", "user4", false);
-    account.addAccount(34, 20, 0, "PL12 3456 7890 1234 5678 9012 3456", 21.37);
-    account.addAccount(42, 43, 0, "PL21 3700 7890 1234 5678 9012 3456", 21.37);
-    account.addAccount(66, 25, 2, "EU12 3456 7890 1234 5678 9012 3456", 21.37);
-    account.addAccount(21, 21, 0, "PL12 3456 7890 1234 5678 9012 2137", 21.37);
-    account.addAccount(37, 43, 1, "US12 3456 7890 1234 5678 9012 3456", 21.37);
+    account.addAccount(34, 20, 0, "PL01345678901234567890123456", 1.37);
+    account.addAccount(35, 20, 0, "PL02345678901234567890123456", 2.37);
+    account.addAccount(36, 20, 1, "PL03345678901234567890123456", 3.37);
+    account.addAccount(38, 20, 2, "PL04345678901234567890123456", 4.37);
+    account.addAccount(42, 43, 0, "PL05370078901234567890123456", 21.37);
+    account.addAccount(66, 25, 2, "EU06345678901234567890123456", 21.37);
+    account.addAccount(21, 21, 0, "PL07345678901234567890122137", 21.37);
+    account.addAccount(37, 43, 1, "US08345678901234567890123456", 21.37);
     currency.addCurrency(0, "PLN");
     currency.addCurrency(1, "USD");
     currency.addCurrency(2, "EUR");
@@ -60,7 +63,78 @@ void sign_in(User &user)
 // Funkcja obslugujaca menu kont
 void accountsMenu(User user, int courent_user) {
     system("cls");
-    cout << "Twoje Konta:" << endl;
+
+    while (true) {
+        vector<int> userAccounts;
+        int accountAmount = 0;
+        
+        cout << "Twoje Konta:" << endl;
+        cout << "Lp.           Numer Konta          Stan Konta" << endl;
+
+        for (int i = 0; i < account.getElemenAccount(); i++) {
+            if (account.getOwner_id(i) == user.getId(courent_user)) {
+                userAccounts.push_back(i);
+                accountAmount++;
+                cout << accountAmount << " - " << account.getAccountNumber(i) << " - " << account.getBalance(i) << " ";
+                for (int n = 0; n < currency.getElementCurrency(); n++) {
+                    if (account.getCurrency_id(i) == currency.getId(n)) {
+                        cout << currency.getName(n) << endl;
+                    }
+                }
+            }
+        }
+
+        if (accountAmount) {
+            cout << "0 - Wyjdz do pulpitu" << endl;
+            cout << "Aby wykonac przelew wybierz konto zrodlowe wpisujac liczbe porzadkowa: ";
+            int menu;
+            cin >> menu;
+
+            if (menu == 0) {
+                system("cls");
+                return;
+            }
+            
+            if (menu<1 || menu>accountAmount) {
+                system("cls");
+                cout << "Nieprawidlowy wybor." << endl;
+            } else {
+                string accountNumber;
+                cout << "Przykladowy numer konta: PL12345678901234567890123456" << endl;
+                cout << "Numer konta docelowego: ";
+                cin >> accountNumber;
+
+                for (int i = 0; i < account.getElemenAccount(); i++) {
+                    if (account.getAccountNumber(i) == accountNumber && accountNumber != account.getAccountNumber(userAccounts[menu-1])) {
+                        double amount;
+                        cout << "Podaj kwote przelewu: ";
+                        cin >> amount;
+
+                        if ((amount*100)-int(amount*100) != 0 || amount <= 0) {
+                            system("cls");
+                            cout << "Nieprawidlowa kwota." << endl;
+                        } else if (amount > account.getBalance(userAccounts[menu-1])) {
+                            system("cls");
+                            cout << "Niewystarczajace srodki na koncie. " << endl;
+                        } else {
+                            account.decreaseBalance(userAccounts[menu-1], amount);
+                            account.increaseBalance(i, amount);
+                            system("cls");
+                            cout << "Wykonano przelew." << endl;;
+                        }
+                        break;
+                    } else if (i+1 >= account.getElemenAccount()) {
+                        system("cls");
+                        cout << "Nieprawidlowy numer konta." << endl;
+                    }
+                }
+            }
+            
+        } else {
+            cout << "Nie masz zadnych kont.";
+            // Tutaj opcja powrotu i dodawania konta
+        }
+    }
     
     return;
 }
@@ -100,7 +174,7 @@ void desktop(User user, int courent_user) {
         cout << "1 - Konta" << endl;
         cout << "2 - Kredyty" << endl;
         cout << "3 - Lokaty" << endl;
-        cout << "4 - Wyloguj i zapisz zmiany" << endl;
+        cout << "0 - Wyloguj i zapisz zmiany" << endl;
         if (user.isAdmin(courent_user)) {
             cout << "10 - Menu Administratora" << endl;
         }
@@ -120,7 +194,7 @@ void desktop(User user, int courent_user) {
             depositsMenu(user, courent_user);
             break;
         }
-        case 4: {
+        case 0: {
             log_out = 0;
             // Tutaj Wywolac funkcje zapisujaca do xml
             break;
