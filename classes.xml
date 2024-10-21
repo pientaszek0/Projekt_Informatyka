@@ -1534,14 +1534,14 @@
         </Account>
         <Account>
             <id>104</id>
-            <owner_id>67</owner_id>
+            <owner_id>0</owner_id>
             <currency_id>1</currency_id>
             <account_number>PL786160346654041166</account_number>
             <balance>2960.87</balance>
         </Account>
         <Account>
             <id>105</id>
-            <owner_id>67</owner_id>
+            <owner_id>0</owner_id>
             <currency_id>0</currency_id>
             <account_number>PL594934171880482435</account_number>
             <balance>1220.48</balance>
