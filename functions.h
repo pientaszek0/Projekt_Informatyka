@@ -27,6 +27,7 @@ string czas()
 
     return Date;
 }
+
 // Adrian Prymas
 // Funkcja do Logów txt
 void txt_log(string logs)
@@ -478,16 +479,65 @@ void adminMenu() {
 
             user.addUser(noweId, firstName, lastName, login, password, 0);
             system("cls");
-            cout << "Utworzono urzytkownika. " << user.getId(user.getElementUser()-1) << user.getFirst_name(user.getElementUser()-1) << user.getLast_name(user.getElementUser()-1) << endl;
-
+            cout << "Utworzono urzytkownika." << endl;
             break;
         }
         case 2: {
-            
+            string accountNumber;
+            double amount;
+            cout << "Przykladowy numer konta: PL12345678901234567890123456" << endl;
+            cout << "Numer konta docelowego: ";
+            cin >> accountNumber;
+
+            for (int i = 0; i < account.getElemenAccount(); i++) {
+                if (account.getAccountNumber(i) == accountNumber) {
+                    cout << "Podaj kwote wplaty: ";
+                    cin >> amount;
+
+                    if ((amount*100)-int(amount*100) != 0 || amount <= 0) {
+                        system("cls");
+                        cout << "Nieprawidlowa kwota." << endl;
+                    } else {
+                        account.increaseBalance(i, amount);
+                        system("cls");
+                        cout << "Dokonano wplaty." << endl;;
+                    }
+                    break;
+
+                } else if (i+1 >= account.getElemenAccount()) {
+                    system("cls");
+                    cout << "Nieprawidlowy numer konta." << endl;
+                }
+            }
             break;
         }
         case 3: {
-            
+            string accountNumber;
+            double amount;
+            cout << "Przykladowy numer konta: PL12345678901234567890123456" << endl;
+            cout << "Numer konta docelowego: ";
+            cin >> accountNumber;
+
+            for (int i = 0; i < account.getElemenAccount(); i++) {
+                if (account.getAccountNumber(i) == accountNumber) {
+                    cout << "Podaj kwote wyplaty: ";
+                    cin >> amount;
+
+                    if ((amount*100)-int(amount*100) != 0 || amount <= 0) {
+                        system("cls");
+                        cout << "Nieprawidlowa kwota." << endl;
+                    } else {
+                        account.decreaseBalance(i, amount);
+                        system("cls");
+                        cout << "Dokonano wyplaty." << endl;;
+                    }
+                    break;
+
+                } else if (i+1 >= account.getElemenAccount()) {
+                    system("cls");
+                    cout << "Nieprawidlowy numer konta." << endl;
+                }
+            }
             break;
         }
         case 0: {
@@ -499,7 +549,6 @@ void adminMenu() {
             cout << "Nieprawidlowy numer opcji." << endl;
             break;
         }
-    
     }
     
     return;
