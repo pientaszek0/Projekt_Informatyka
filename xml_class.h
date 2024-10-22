@@ -30,6 +30,9 @@ void xml_giveData(User &user, Account &account, Currency &currency)
             xml_isUser = 1;
             xml_isAccount = 0;
             xml_isCurrency = 0;
+            xml_isLoan_type = 0;
+            xml_isLoan = 0;
+            xml_isDeposit = 0;
             // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
             xml_id = -1;
             xml_first_name = "";
@@ -51,6 +54,9 @@ void xml_giveData(User &user, Account &account, Currency &currency)
             xml_isUser = 0;
             xml_isAccount = 1;
             xml_isCurrency = 0;
+            xml_isLoan_type = 0;
+            xml_isLoan = 0;
+            xml_isDeposit = 0;
             // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
             xml_id = -1;
             xml_owner_id = -1;
@@ -71,6 +77,9 @@ void xml_giveData(User &user, Account &account, Currency &currency)
             xml_isUser = 0;
             xml_isAccount = 0;
             xml_isCurrency = 1;
+            xml_isLoan_type = 0;
+            xml_isLoan = 0;
+            xml_isDeposit = 0;
             // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
             xml_id = -1;
             xml_cName = "";
@@ -182,6 +191,10 @@ void xml_checkData(User &user, Account &account, Currency &currency)
             xml_isUser = 1;
             xml_isAccount = 0;
             xml_isCurrency = 0;
+            xml_isLoan_type = 0;
+            xml_isLoan = 0;
+            xml_isDeposit = 0;
+
             // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
             xml_id = -1;
             xml_first_name = "";
@@ -247,6 +260,9 @@ void xml_checkData(User &user, Account &account, Currency &currency)
             xml_isUser = 0;
             xml_isAccount = 1;
             xml_isCurrency = 0;
+            xml_isLoan_type = 0;
+            xml_isLoan = 0;
+            xml_isDeposit = 0;
             // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
             xml_id = -1;
             xml_owner_id = -1;
@@ -305,6 +321,9 @@ void xml_checkData(User &user, Account &account, Currency &currency)
             xml_isUser = 0;
             xml_isAccount = 0;
             xml_isCurrency = 1;
+            xml_isLoan_type = 0;
+            xml_isLoan = 0;
+            xml_isDeposit = 0;
             // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
             xml_id = -1;
             xml_cName = "";
@@ -337,7 +356,7 @@ void xml_checkData(User &user, Account &account, Currency &currency)
 
 
 // Funkcja zapisująca dane do pliku XML
-void xml_save(User user, Account account, Currency currency) 
+void xml_save(User user, Account account, Currency currency, Loan_Type loan_type, Loan loan) 
 {
 	ofstream db(db_name);
 
@@ -387,8 +406,8 @@ void xml_save(User user, Account account, Currency currency)
     // Zmkanięcie klasy Account
     db << "\t</Accounts>\n"; 
 
+    // Dodawanie do klasy Currency
     db << "\t<Currencys>\n";
-
          for(int i = 0; i < currency.getElementCurrency(); i++)
     {
         // Otwarcie obiektu
@@ -398,8 +417,38 @@ void xml_save(User user, Account account, Currency currency)
         // Zamknięcie obiektu
         db << "\t\t</Currency>\n";
     }
+    db << "\t</Currencys>\n";
 
-    db << "\t</Currencys>";
+    // Dodawanie do klasy Loan_Type
+    db << "\t<Loan_Types>\n";
+         for(int i = 0; i < loan_type.getElementLoanType(); i++)
+    {
+        // Otwarcie obiektu
+        db << "\t\t<Loan_Type>\n"; 
+        db << "\t\t\t<id>" << loan_type.getId(i) << "</id>\n";
+        db << "\t\t\t<interest>" << loan_type.getInterest(i) << "</interest>\n";
+         db << "\t\t\t<loan_type_name>" << loan_type.getLoanTypeName(i) << "</loan_type_name>\n";
+        // Zamknięcie obiektu
+        db << "\t\t</Loan_Type>\n";
+    }
+    db << "\t</Loan_Types>\n";
+
+        // Dodawanie do klasy Loan
+    db << "\t<Loans>\n";
+         for(int i = 0; i < loan.getElementLoan(); i++)
+    {
+        // Otwarcie obiektu
+        db << "\t\t<Loan>\n"; 
+        db << "\t\t\t<id>" << loan.getId(i)<< "</id>\n";
+        db << "\t\t\t<owner_id>" << loan.getOwnerId(i) << "</owner_id>\n";
+        db << "\t\t\t<currency_name>" << loan.getCurrencyName(i) << "</currency_name>\n";
+        db << "\t\t\t<loan_type>" << loan.getLoanTypeName(i) << "</loan_type_name>\n";
+        db << "\t\t\t<balance_left>" << loan.getBalanceLeft(i) << "</loan_type_name>\n";
+        // Zamknięcie obiektu
+        db << "\t\t</Loan>\n";
+    }
+    db << "\t</Loans>\n";
+
     db << "</Data>";
     db.close();
     cout << "---KLASY ZOSTAŁY ZAPISE DO PLIKU XML" << endl;
