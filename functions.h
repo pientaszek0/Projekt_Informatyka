@@ -116,17 +116,59 @@ void accountsMenu(User user, int courent_user) {
         } else if (menu == accountAmount+1) {
             system("cls");
             cout << "Tworzenie konta." << endl;
-            // wypisac waluty i wygenerowac numer konta
+
+            for (int i = 0; i < currency.getElementCurrency(); i++) {
+                cout << i+1 << " - " << currency.getName(i) << endl;
+            }
 
             cout << "Wybierz walute konta: ";
             int waluta;
             cin >> waluta;
-        }
-        
+
+            if (waluta > currency.getElementCurrency() || waluta <= 0) {
+                system("cls");
+                cout << "NIeprawidlowy wybor waluty." << endl;
+            } else {
+                bool powtorzenie = 0;
+                string nowyNumer = "PL";
+                do {
+                    powtorzenie = 0;
+                    nowyNumer = "PL";
+                    for (int i = 0; i < 26; i++) {
+                        nowyNumer += to_string(rand()%10);
+                    }
+                    for (int i = 0; i < account.getElemenAccount(); i++) {
+                        if (nowyNumer == account.getAccountNumber(i)) {
+                            powtorzenie = 1;
+                            break;
+                        }
+                    }
+                    
+                } while (powtorzenie);
+
+                powtorzenie = 0;
+                int noweId;
+                do {
+                    powtorzenie = 0;
+                    noweId = rand();
+                    for (int i = 0; i < account.getElemenAccount(); i++) {
+                        if (noweId == account.getId(i)) {
+                            powtorzenie = 1;
+                            break;
+                        }
+                    }
+                } while (powtorzenie);
+
+                account.addAccount(noweId, user.getId(courent_user), currency.getId(waluta-1), nowyNumer, 0);
+                system("cls");
+                cout << "Utworzono nowe konto." << endl;
+            }
             
-        if (menu<1 || menu>accountAmount) {
+        } else if (menu<1 || menu>accountAmount) {
+
             system("cls");
             cout << "Nieprawidlowy wybor." << endl;
+
         } else {
             string accountNumber;
             cout << "Przykladowy numer konta: PL12345678901234567890123456" << endl;
