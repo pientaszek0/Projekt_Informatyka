@@ -25,10 +25,9 @@ string czas()
     // Zapisanie daty i godziny do zmiennej
     string Date = Time;
 
-    Date.erase(Date.length() - 1);  // Usuwa ostatni znak, czyli '\n'
-
     return Date;
 }
+
 // Adrian Prymas
 // Funkcja do Logów txt
 void txt_log(string logs)
@@ -47,7 +46,7 @@ void txt_log(string logs)
 
 // Jan Piętka
 // Funkcja logowania urzytkownika
-void sign_in(User &user) 
+void sign_in() 
 {
     string login;
     string password;
@@ -63,7 +62,7 @@ void sign_in(User &user)
 
         for (int i = 0 ; i < user.getElementUser(); i++) {
             cout << i;
-            if (login == user.getLogin(i) && password == user.getPassword(i)) { 
+            if (login == user.getLogin(i) && password == user.getPassword(i)) {
                 courent_user = i;
                 system("cls");
                 loged_in = 1;
@@ -78,7 +77,7 @@ void sign_in(User &user)
 
 // Jan Piętka
 // Funkcja obslugujaca menu kont
-void accountsMenu(User user, int courent_user) {
+void accountsMenu() {
     system("cls");
 
     while (true) {
@@ -118,17 +117,59 @@ void accountsMenu(User user, int courent_user) {
         } else if (menu == accountAmount+1) {
             system("cls");
             cout << "Tworzenie konta." << endl;
-            // wypisac waluty i wygenerowac numer konta
+
+            for (int i = 0; i < currency.getElementCurrency(); i++) {
+                cout << i+1 << " - " << currency.getName(i) << endl;
+            }
 
             cout << "Wybierz walute konta: ";
             int waluta;
             cin >> waluta;
-        }
-        
+
+            if (waluta > currency.getElementCurrency() || waluta <= 0) {
+                system("cls");
+                cout << "NIeprawidlowy wybor waluty." << endl;
+            } else {
+                bool powtorzenie = 0;
+                string nowyNumer = "PL";
+                do {
+                    powtorzenie = 0;
+                    nowyNumer = "PL";
+                    for (int i = 0; i < 26; i++) {
+                        nowyNumer += to_string(rand()%10);
+                    }
+                    for (int i = 0; i < account.getElemenAccount(); i++) {
+                        if (nowyNumer == account.getAccountNumber(i)) {
+                            powtorzenie = 1;
+                            break;
+                        }
+                    }
+                    
+                } while (powtorzenie);
+
+                powtorzenie = 0;
+                int noweId;
+                do {
+                    powtorzenie = 0;
+                    noweId = rand();
+                    for (int i = 0; i < account.getElemenAccount(); i++) {
+                        if (noweId == account.getId(i)) {
+                            powtorzenie = 1;
+                            break;
+                        }
+                    }
+                } while (powtorzenie);
+
+                account.addAccount(noweId, user.getId(courent_user), currency.getId(waluta-1), nowyNumer, 0);
+                system("cls");
+                cout << "Utworzono nowe konto." << endl;
+            }
             
-        if (menu<1 || menu>accountAmount) {
+        } else if (menu<1 || menu>accountAmount) {
+
             system("cls");
             cout << "Nieprawidlowy wybor." << endl;
+
         } else {
             string accountNumber;
             cout << "Przykladowy numer konta: PL12345678901234567890123456" << endl;
@@ -171,7 +212,7 @@ void accountsMenu(User user, int courent_user) {
 
 // Michal Wierzbicki
 // Funkcja obslugujaca menu kredytow
-void loansMenu(User user, int courent_user) {
+void loansMenu() {
     system("cls");
 
     while (true) {
@@ -285,7 +326,7 @@ void loansMenu(User user, int courent_user) {
 
 // Michal Wierzbicki
 // Funkcja obslugujaca menu lokat
-void depositsMenu(User user, int courent_user) {
+void depositsMenu() {
     system("cls");
 
     while (true) {
@@ -395,19 +436,127 @@ void depositsMenu(User user, int courent_user) {
     return;
 }
 
-
 // Jan Piętka
 // Funkcja obslugujaca menu administratora
-void adminMenu(User user, int courent_user) {
+void adminMenu() {
     system("cls");
-    cout << "Panel Administratora:" << endl;
-    cout << "Wybierz opcje przez wpisanie jej numeru: ";
+
+    while (true) {
+        cout << "Panel Administratora:" << endl;
+        cout << "1 - Dodaj urzytkownika" << endl;
+        cout << "2 - Wplac pieniadze" << endl;
+        cout << "3 - Wyplac pieniadze" << endl;
+        cout << "0 - Wyjdz do pulpitu" << endl;
+        cout << "Wybierz opcje przez wpisanie jej numeru: ";
+        int menu;
+        cin >> menu;
+        
+        switch (menu) {
+        case 1: {
+            bool powtorzenie = 0;
+            int noweId;
+            string firstName, lastName, login, password;
+
+            do {
+                powtorzenie = 0;
+                noweId = rand();
+                for (int i = 0; i < account.getElemenAccount(); i++) {
+                    if (noweId == account.getId(i)) {
+                        powtorzenie = 1;
+                        break;
+                    }
+                }
+            } while (powtorzenie);
+
+            cout << "Podaj imie: ";
+            cin >> firstName;
+            cout << "Podaj nazwisko: ";
+            cin >> lastName;
+            cout << "Podaj login: ";
+            cin >> login;
+            cout << "Podaj haslo: ";
+            cin >> password;
+
+            user.addUser(noweId, firstName, lastName, login, password, 0);
+            system("cls");
+            cout << "Utworzono urzytkownika." << endl;
+            break;
+        }
+        case 2: {
+            string accountNumber;
+            double amount;
+            cout << "Przykladowy numer konta: PL12345678901234567890123456" << endl;
+            cout << "Numer konta docelowego: ";
+            cin >> accountNumber;
+
+            for (int i = 0; i < account.getElemenAccount(); i++) {
+                if (account.getAccountNumber(i) == accountNumber) {
+                    cout << "Podaj kwote wplaty: ";
+                    cin >> amount;
+
+                    if ((amount*100)-int(amount*100) != 0 || amount <= 0) {
+                        system("cls");
+                        cout << "Nieprawidlowa kwota." << endl;
+                    } else {
+                        account.increaseBalance(i, amount);
+                        system("cls");
+                        cout << "Dokonano wplaty." << endl;;
+                    }
+                    break;
+
+                } else if (i+1 >= account.getElemenAccount()) {
+                    system("cls");
+                    cout << "Nieprawidlowy numer konta." << endl;
+                }
+            }
+            break;
+        }
+        case 3: {
+            string accountNumber;
+            double amount;
+            cout << "Przykladowy numer konta: PL12345678901234567890123456" << endl;
+            cout << "Numer konta docelowego: ";
+            cin >> accountNumber;
+
+            for (int i = 0; i < account.getElemenAccount(); i++) {
+                if (account.getAccountNumber(i) == accountNumber) {
+                    cout << "Podaj kwote wyplaty: ";
+                    cin >> amount;
+
+                    if ((amount*100)-int(amount*100) != 0 || amount <= 0) {
+                        system("cls");
+                        cout << "Nieprawidlowa kwota." << endl;
+                    } else {
+                        account.decreaseBalance(i, amount);
+                        system("cls");
+                        cout << "Dokonano wyplaty." << endl;;
+                    }
+                    break;
+
+                } else if (i+1 >= account.getElemenAccount()) {
+                    system("cls");
+                    cout << "Nieprawidlowy numer konta." << endl;
+                }
+            }
+            break;
+        }
+        case 0: {
+            system("cls");
+            return;
+        }
+        default:
+            system("cls");
+            cout << "Nieprawidlowy numer opcji." << endl;
+            break;
+        }
+    }
+    
     return;
 }
 
 // Jan Piętka
 // Funkcja wyświetlajaca i obslugujaca pupit aktualnie zalogowanego uzytkownika  destop(obiekt z wektorami, numer w wektorze zalogowanego uzytkownika)
-void desktop(User user, int courent_user) {
+void desktop() {
     int menu;
     system("cls");
     int log_out = 1;
@@ -426,25 +575,25 @@ void desktop(User user, int courent_user) {
 
         switch (menu) {
         case 1: {
-            accountsMenu(user, courent_user);
+            accountsMenu();
             break;
         }
         case 2: {
-            loansMenu(user, courent_user);
+            loansMenu();
             break;
         }
         case 3: {
-            depositsMenu(user, courent_user);
+            depositsMenu();
             break;
         }
         case 0: {
             log_out = 0;
-            xml_save(user, account, currency, loan_type, loan, deposit);
+            xml_save(user, account, currency, loan_type, loan);
             break;
         }
         case 10: {
             if (user.isAdmin(courent_user)) {
-                adminMenu(user, courent_user);
+                adminMenu();
             } else {
                 system("cls");
                 cout << "Nieprawidlowy numer opcji." << endl;

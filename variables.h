@@ -12,7 +12,7 @@ Account account; // Obiekt przechowujący wektory z wszystkimi kontami pobranymi
 Currency currency; // Obiekt przechowujący wektory z wszystkimi walutami pobranymi z pliku xml
 Loan_Type loan_type; // Obiekt przechowujący wektory z wszystkimi typami kredyto pobranymi z pliku xml
 Loan loan; // Obiekt przechowujący wektory z wszystkimi kredytami pobranymi z pliku xml
-Deposit deposit; 
+Deposit deposit;
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ======================== STALŁE BLEDOW ===========================
@@ -29,28 +29,18 @@ const string error02 = "ERROR-02 -> Plik nie został poprawnie otworzony lub nie
 string db_name = "classes.xml";
 // Zmienne lokalne stworzone na porzeby dzilania tej funkcji
 int xml_id = -1;
-// Dotyczy klasy user
-string xml_first_name, xml_last_name, xml_login;
-string xml_password;
+//Dotyczy klasy user
+string xml_first_name, xml_last_name, xml_login, xml_password;
 bool xml_admin = false;
-// Dotyczy klasy Account
+//Dotyczy klasy Account
 int xml_owner_id, xml_currency_id;
 string xml_account_number;
 double xml_balance;
-// Dotyczy klasy Currency
+//Dotyczy klasy Currency
 string xml_cName;
-// Dotyczy klasy Loan;
+//Dotyczy klasy Loan;
 double xml_interest;
 string xml_loan_type;
-// Dotyczy klasy Loan
-string xlm_currency_name;
-double xlm_balance_left;
-// Dotyczy Deposit
-double xml_deposit_amount;
-int xml_duration_months;
-double xml_interest_rate;
-string xml_start_date;
-int xml_remaing_time;
 
 string line; // Zapis lini XML
 int licznik; // Licznik od -1 ponieważ dlaej jest iterator który i tak zmieni wartosc na 0

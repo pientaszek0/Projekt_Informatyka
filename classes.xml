@@ -1978,24 +1978,5 @@
 		</Loan_Type>
 	</Loan_Types>
 	<Loans>
-		<Loan>
-			<id>2</id>
-			<owner_id>2</owner_id>
-			<currency_name>Euro</currency_name>
-			<loan_type_name>Hipoteczny</loan_type_name>
-			<balance_left>21.37</balance_left>
-		</Loan>
 	</Loans>
-	<Deposits>
-		<Deposit>
-			<id>1</id>
-			<owner_id>1</owner_id>
-			<deposit_amount>21.37</deposit_amount>
-			<currency_name>Euro</currency_name>
-			<duration_months>12</duration_months>
-			<interest_rate>37.21</interest_rate>
-			<start_date>Feb</start_date>
-			<remaining_time>3</remaining_time>
-		</Deposit>
-	</Deposits>
 </Data>
