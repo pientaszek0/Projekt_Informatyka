@@ -223,20 +223,17 @@ class Loan {
         }
         // Funkcja do splaty kredytu   loan.makePayment(index, wartosc splaty)
         void makePayment(int index, double payment) {
-            if (payment > 0 && payment <= balance_left[index]) {
                 balance_left[index] -= payment;
-                cout << "Splacono " << payment << ". Pozostalo do splaty: " << balance_left[index] << endl;
-            } else {
-                cout << "Nieprawidlowa kwota platnosci." << endl;
-            }
+                system("cls");
+                cout << "Splacono: " << payment << ". Pozostalo do splaty: " << balance_left[index] << endl;
         }
 
-        // Funkcja zaciągania kredytu loan.takeLoan(user id, wartosc kredytu, typ kredytu, nazwa waluty);
-        void takeLoan(int id, double loanAmount, string loanType, string currencyName) {
-            owner_id.emplace_back(id);
+        // Funkcja zaciągania kredytu loan.takeLoan(owner id, wartosc kredytu, typ kredytu, nazwa waluty);
+        void takeLoan(int owner_id, double loanAmount, string loanType, string currencyName) {
+            owner_id.emplace_back(owner_id);
             balance_left.emplace_back(loanAmount);
             loan_type.emplace_back(loanType);
-            balance_left.emplace_back(loanAmount);
+            currency_name.emplace_back(currencyName);
             system("cls");
             cout << "Zaciągnięto nowy kredyt w wysokości: " << loanAmount << endl;
             cout << "Typ kredytu: " << loanType << endl;
@@ -249,8 +246,74 @@ class Loan {
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Deposit {
     private:
+        vector<int> owner_id;              // ID właściciela lokaty
+        vector<double> deposit_amount;     // Kwota lokaty
+        vector<string> currency_name;      // Waluta lokaty
+        vector<int> duration_months;       // Czas trwania lokaty w miesiącach
+        vector<double> interest_rate;      // Oprocentowanie
+        vector<string> start_date;         // Data założenia lokaty
+        vector<int> remaining_time;        // Pozostały czas do zakończenia (w miesiącach)
 
     public:
+        // Metoda zwracająca ID właściciela
+        int getOwnerId(int index) {
+            return owner_id[index];
+        }
+
+        // Metoda zwracająca kwotę lokaty
+        double getDepositAmount(int index) {
+            return deposit_amount[index];
+        }
+
+        // Metoda zwracająca walutę lokaty
+        string getCurrencyName(int index) {
+            return currency_name[index];
+        }
+
+        // Metoda zwracająca czas trwania lokaty
+        int getDurationMonths(int index) {
+            return duration_months[index];
+        }
+
+        // Metoda zwracająca oprocentowanie
+        double getInterestRate(int index) {
+            return interest_rate[index];
+        }
+
+        // Metoda zwracająca datę założenia lokaty
+        string getStartDate(int index) {
+            return start_date[index];
+        }
+
+        // Metoda zwracająca pozostały czas do zakończenia lokaty
+        int getRemainingTime(int index) {
+            return remaining_time[index];
+        }
+
+        // Metoda obliczająca odsetki dla lokaty
+        double calculateInterest(int index) {
+            return deposit_amount[index] * (interest_rate[index] / 100) * (duration_months[index] / 12.0);
+        }
+
+        // Funkcja do zakończenia lokaty
+        void endDeposit(int index) {
+            system("cls");
+            cout << "Lokata zakończona. Kwota wypłacona: " << deposit_amount[index] + calculateInterest(index) << endl;
+            deposit_amount[index] = 0; // Resetowanie lokaty po zakończeniu
+        }
+        
+        // Funkcja zaciągania kredytu loan.takeLoan(owner id, wartosc kredytu, typ kredytu, nazwa waluty);
+        void addDeposit(int owner_id, double depositAmount, string currencyName,int durationMonths, double interestRate, string startDate) {
+            owner_id.emplace_back(owner_id);
+            deposit_amount.emplace_back(depositAmount);
+            currency_name.emplace_back(currencyName);
+            duration_months.emplace_back(durationMonths);
+            interest_rate.emplace_back(interestRate);
+            start_date.emplace_back(startDate);
+            
+            system("cls");
+            cout << "Założono nową lokatę." << endl;
+        }
 };
 
 #endif
