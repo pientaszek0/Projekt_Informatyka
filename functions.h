@@ -122,6 +122,117 @@ void accountsMenu(User user, int courent_user) {
 // Michal Wierzbicki
 // Funkcja obslugujaca menu kredytow
 void loansMenu(User user, int courent_user) {
+    system("cls");
+
+    while (true) {
+        vector<int> userLoans;
+        int loanAmount = 0;
+
+        cout << "Twoje Kredyty:" << endl;
+        cout << "Lp.           Typ Kredytu          Pozostała Kwota do Spłaty          Waluta" << endl;
+
+        for (int i = 0; i < loan.getElementLoan(); i++) {
+            if (loan.getOwnerId(i) == user.getId(courent_user)) {
+                userLoans.push_back(i);
+                loanAmount++;
+                cout << loanAmount << " - " << loan.getLoanTypeName(i) << " - " << loan.getBalanceLeft(i) << " ";
+                for (int n = 0; n < currency.getElementCurrency(); n++) {
+                    if (loan.getCurrencyName(i) == currency.getName(n)) {
+                        cout << currency.getName(n) << endl;
+                    }
+                }
+            }
+        }
+
+        cout << "0 - Wyjdz do pulpitu" << endl;
+        cout << "1 - Zaciągnij nowy kredyt" << endl;
+
+        if (loanAmount) {
+            cout << "Aby wykonac spłate wybierz kredyt wpisujac liczbe porzadkowa: ";
+        } else {
+            cout << "Nie masz zadnych kredytow. Aby zaciągnąć kredyt, wybierz opcję 1." << endl;
+        }
+
+        int menu;
+        cin >> menu;
+
+        if (menu == 0) {
+            system("cls");
+            return;
+        }
+
+        // Spłata kredytu
+        if (menu > 1 && menu <= loanAmount + 1) {
+            double paymentAmount;
+            cout << "Podaj kwote splaty: ";
+            cin >> paymentAmount;
+
+            if ((paymentAmount * 100) - int(paymentAmount * 100) != 0 || paymentAmount <= 0) {
+                system("cls");
+                cout << "Nieprawidlowa kwota." << endl;
+            } else if (paymentAmount > loan.getBalanceLeft(userLoans[menu - 2])) {
+                system("cls");
+                cout << "Kwota splaty przewyzsza saldo kredytu." << endl;
+            } else {
+                loan.makePayment(userLoans[menu - 2], paymentAmount);
+                system("cls");
+                cout << "Dokonano splaty." << endl;
+            }
+        }
+
+        // Zaciąganie nowego kredytu
+        else if (menu == 1) {
+            double loanAmount;
+            int loanTypeIndex, currencyIndex;
+
+            cout << "Podaj kwotę kredytu: ";
+            cin >> loanAmount;
+
+            if (loanAmount <= 0) {
+                system("cls");
+                cout << "Nieprawidłowa kwota." << endl;
+                continue;
+            }
+
+            // Wybór typu kredytu
+            cout << "Wybierz typ kredytu: " << endl;
+            for (int i = 0; i < loan_type.getElementLoanType(); i++) {
+                cout << i + 1 << " - " << loan_type.getLoanTypeName(i) << " (Stopa procentowa: " << loan_type.getInterest(i) << "%)" << endl;
+            }
+            cin >> loanTypeIndex;
+            loanTypeIndex--; // Indeksy zaczynają się od 0
+
+            if (loanTypeIndex < 0 || loanTypeIndex >= loan_type.getElementLoanType()) {
+                system("cls");
+                cout << "Nieprawidlowy wybór typu kredytu." << endl;
+                continue;
+            }
+
+            // Wybór waluty
+            cout << "Wybierz walutę kredytu: " << endl;
+            for (int i = 0; i < currency.getElementCurrency(); i++) {
+                cout << i + 1 << " - " << currency.getName(i) << endl;
+            }
+            cin >> currencyIndex;
+            currencyIndex--; // Indeksy zaczynają się od 0
+
+            if (currencyIndex < 0 || currencyIndex >= currency.getElementCurrency()) {
+                system("cls");
+                cout << "Nieprawidlowy wybór waluty." << endl;
+                continue;
+            }
+
+            // Dodanie nowego kredytu
+            loan.takeLoan(courent_user, loanAmount, loan_type.getLoanTypeName(loanTypeIndex), currency.getName(currencyIndex));
+            system("cls");
+            cout << "Zaciągnięto nowy kredyt." << endl;
+        }
+
+        else {
+            system("cls");
+            cout << "Nieprawidlowy wybor." << endl;
+        }
+    }
 
     return;
 }

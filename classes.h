@@ -136,8 +136,8 @@ class Currency {
         string getName(int index) {
             return this->name[index];
         }
-};
 
+};
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ====================== Klasa typów kredytów =======================
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -148,6 +148,10 @@ class Loan_Type {
         vector<string> loan_type;
 
     public:
+        // Metoda do zwracania ilości Loan Typow
+        int getElementLoanType() {
+            return id.size();
+        }
         // Metoda zwracająca ID
         int getId(int index) {
             return this->id[index];
@@ -171,12 +175,17 @@ class Loan_Type {
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Loan {
     private:
+        vector<int> id;
         vector<int> owner_id;
-        vector<Currency> currency_name;
-        vector<Loan_Type> loan_type;
+        vector<string> currency_name;
+        vector<string> loan_type;
         vector<double> balance_left; // Ile jeszcze zostało do spłacenia kredytu
 
     public:
+        // Metoda do zwracania ilości Loanow
+        int getElementLoan() {
+            return id.size();
+        }
         // Metoda zwracająca ID właściciela
         int getOwnerId(int index) {
             return this->owner_id[index];
@@ -187,11 +196,11 @@ class Loan {
         }
         // Metoda zwracająca nazwe waluty
         string getCurrencyName(int index) {
-            return currency_name[index].getName(0); // Use 0 if there's only one loan type
+            return this->currency_name[index];
         }
         // Funkcja zwracająca nazwe typu kredytu
         string getLoanTypeName(int index) {
-            return loan_type[index].getLoanTypeName(0); // Use 0 if there's only one currency name
+            return this->loan_type[index];
         }
         // Funkcja do splaty kredytu   loan.makePayment(index, wartosc splaty)
         void makePayment(int index, double payment) {
@@ -204,16 +213,15 @@ class Loan {
         }
 
         // Funkcja zaciągania kredytu loan.takeLoan(wartosc kredytu, typ kredytu, nazwa waluty);
-        void takeLoan(int index, double loanAmount, Loan_Type loanType, Currency currencyName) {
+        void takeLoan(int index, double loanAmount, string loanType, string currencyName) {
             // Warunki: Sprawdzenie, czy kwota jest poprawna (wieksza niz 0)
             if (loanAmount > 0) {
                 balance_left[index] += loanAmount;
                 loan_type[index] = loanType;
                 currency_name[index] = currencyName;
-
                 cout << "Zaciągnięto kredyt w wysokosci: " << loanAmount << endl;
-                cout << "Typ kredytu: " << loanType.getLoanTypeName(0) << endl;        // Use 0 if there's only one loan type
-                cout << "Waluta: " << currencyName.getName(0) << endl;      // Use 0 if there's only one currency name
+                cout << "Typ kredytu: " << loanType << endl;
+                cout << "Waluta: " << currencyName << endl;
             } else {
                 cout << "Nie spelniasz warunkow aby zaciagnac kredyt." << endl;
         }
