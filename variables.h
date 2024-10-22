@@ -43,5 +43,8 @@ int licznik; // Licznik od -1 ponieważ dlaej jest iterator który i tak zmieni 
 bool xml_isUser = 0; // Flaga dla klasy User
 bool xml_isAccount = 0;  // Flaga dla klasy Accoutn
 bool xml_isCurrency = 0;  // Flaga dla klasy Currency
+bool xml_isLoan_type = 0; // Flaga do klasy Loan_Type
+bool xml_isLoan = 0; // Flaga do klasy Loan
+bool xml_isDeposit = 0; // flaga do klasy Deposit
 
 #endif

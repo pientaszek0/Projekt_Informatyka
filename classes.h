@@ -186,6 +186,10 @@ class Loan {
         int getElementLoan() {
             return id.size();
         }
+        // Metoda zwracajaca Id
+        int getId(int index) {
+            return this->id[index];
+        }
         // Metoda zwracająca ID właściciela
         int getOwnerId(int index) {
             return this->owner_id[index];
