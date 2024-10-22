@@ -1949,6 +1949,11 @@
 		</Currency>
 	</Currencys>
 	<Loan_Types>
+    	<Loan_Type>
+       		<id>1</id>
+        	<interest>21.37</interest>
+        	<loan_type_name>Hipoteczny</loan_type_name>\
+		</Loan_Type>
 	</Loan_Types>
 	<Loans>
 	</Loans>

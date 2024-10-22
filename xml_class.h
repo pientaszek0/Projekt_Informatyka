@@ -10,7 +10,7 @@
 using namespace std;
 
 // Funkjca która wczytyje dane z XML do klasy
-void xml_giveData(User &user, Account &account, Currency &currency)
+void xml_giveData(User &user, Account &account, Currency &currency, Loan_Type &loan_type)
 {
 	ifstream db(db_name);
 	
@@ -85,12 +85,33 @@ void xml_giveData(User &user, Account &account, Currency &currency)
             xml_isDeposit = 0;
             // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
             xml_id = -1;
-            xml_cName = "";
+            xml_interest = 0.0;
+            xml_loan_type = "";
             continue;
         }
         else if (line.find("</Currency>") != string::npos) 
         {
             currency.addCurrency(xml_id, xml_cName);
+            cout << "---Dane zostałt wczytane dla klasy: \"Currency\"---\n"; 
+        }
+         // Dodawanie klasy Loan_Type
+        if (line.find("<Loan_Type>") != string::npos)
+        {
+            // Ustawienie Flagi;
+            xml_isUser = 0;
+            xml_isAccount = 0;
+            xml_isCurrency = 0;
+            xml_isLoan_type = 1;
+            xml_isLoan = 0;
+            xml_isDeposit = 0;
+            // Zerowanie wartości, bo zaczynamy nowy zestaw danych użytkownika
+            xml_id = -1;
+            xml_cName = "";
+            continue;
+        }
+        else if (line.find("</Loan_Type>") != string::npos) 
+        {
+            loan_type.addLoanType(xml_id, xml_interest, xml_loan_type);
             cout << "---Dane zostałt wczytane dla klasy: \"Currency\"---\n"; 
         }
 
@@ -165,6 +186,24 @@ void xml_giveData(User &user, Account &account, Currency &currency)
                 xml_cName = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
             } 
         }
+        if(xml_isLoan_type)
+        {
+            if (line.find("<id>") != string::npos) 
+            {
+                string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_id = stoi(id_str);  // Konwersja na int
+            }
+            if (line.find("<balance>") != string::npos) 
+            {
+                string it_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_interest = stod(it_str); // Konwersja na double
+            }
+            if (line.find("<loan_type_name>") != string::npos) 
+            {
+                xml_loan_type = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+            } 
+        }
+        
     }
     db.close();
 }
@@ -430,7 +469,7 @@ void xml_save(User user, Account account, Currency currency, Loan_Type loan_type
         db << "\t\t<Loan_Type>\n"; 
         db << "\t\t\t<id>" << loan_type.getId(i) << "</id>\n";
         db << "\t\t\t<interest>" << loan_type.getInterest(i) << "</interest>\n";
-         db << "\t\t\t<loan_type_name>" << loan_type.getLoanTypeName(i) << "</loan_type_name>\n";
+        db << "\t\t\t<loan_type_name>" << loan_type.getLoanTypeName(i) << "</loan_type_name>\n";
         // Zamknięcie obiektu
         db << "\t\t</Loan_Type>\n";
     }

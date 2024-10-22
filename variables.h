@@ -37,6 +37,10 @@ string xml_account_number;
 double xml_balance;
 //Dotyczy klasy Currency
 string xml_cName;
+//Dotyczy klasy Loan;
+double xml_interest;
+string xml_loan_type;
+
 string line; // Zapis lini XML
 int licznik; // Licznik od -1 ponieważ dlaej jest iterator który i tak zmieni wartosc na 0
 // Flagi

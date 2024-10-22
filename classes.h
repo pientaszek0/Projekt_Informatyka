@@ -123,7 +123,7 @@ class Currency {
             return id.size();
         }
         // Tymczasowa Metoda na potrzeby XML - zapsuje waluty;
-         void addCurrency(int c_id, string c_name) {
+        void addCurrency(int c_id, string c_name) {
             id.emplace_back(c_id);
             name.emplace_back(c_name);
             return;
@@ -146,8 +146,14 @@ class Loan_Type {
         vector<int> id;
         vector<double> interest;  // Stopa procentowa
         vector<string> loan_type;
-
     public:
+        // Tymczasowa Metoda na potrzeby XML - zapisuje Typy kerdytów;
+        void addLoanType(int lt_id, double lt_interest, string lt_loan_type) {
+            id.emplace_back(lt_id);
+            interest.emplace_back(lt_interest);
+            loan_type.emplace_back(lt_loan_type);
+            return;
+        }
         // Metoda do zwracania ilości Loan Typow
         int getElementLoanType() {
             return id.size();
@@ -182,6 +188,15 @@ class Loan {
         vector<double> balance_left; // Ile jeszcze zostało do spłacenia kredytu
 
     public:
+        // Metoda do zapisu xml
+        void addLoan(int l_id, int l_owner_id, string l_currency_name, string l_loan_type, double l_balance_left) {
+            id.emplace_back(l_id);
+            owner_id.emplace_back(l_owner_id);
+            currency_name.emplace_back(l_currency_name);
+            loan_type.emplace_back(l_loan_type);
+            balance_left.emplace_back(l_balance_left);
+            return;
+        }
         // Metoda do zwracania ilości Loanow
         int getElementLoan() {
             return id.size();
@@ -218,7 +233,7 @@ class Loan {
 
         // Funkcja zaciągania kredytu loan.takeLoan(user id, wartosc kredytu, typ kredytu, nazwa waluty);
         void takeLoan(int id, double loanAmount, string loanType, string currencyName) {
-            owner_id.emplace_back(ownerId);
+            owner_id.emplace_back(id);
             balance_left.emplace_back(loanAmount);
             loan_type.emplace_back(loanType);
             balance_left.emplace_back(loanAmount);
