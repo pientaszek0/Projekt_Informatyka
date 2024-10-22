@@ -15,8 +15,8 @@ int main()
     xml_checkData(user, account, currency); // Wywołanie funkcji sparwdza poprawność czy dane zostały dobrze wczytane !!TYLKO "User!!"
 
     while (true) { // Nieskonczona petla zeby mozna bylo sie wylogowac i zalogowac na innego uzytkownika
-        sign_in(user); // Wywolanie funkcji logowania
-        desktop(user, courent_user); // Wywolanie funkcji pokazujacej pulpit uzytkownika
+        sign_in(); // Wywolanie funkcji logowania
+        desktop(); // Wywolanie funkcji pokazujacej pulpit uzytkownika
     }
 
     return 0;

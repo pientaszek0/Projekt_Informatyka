@@ -45,7 +45,7 @@ void txt_log(string logs)
 
 // Jan Piętka
 // Funkcja logowania urzytkownika
-void sign_in(User &user) 
+void sign_in() 
 {
     string login;
     string password;
@@ -76,7 +76,7 @@ void sign_in(User &user)
 
 // Jan Piętka
 // Funkcja obslugujaca menu kont
-void accountsMenu(User user, int courent_user) {
+void accountsMenu() {
     system("cls");
 
     while (true) {
@@ -211,7 +211,7 @@ void accountsMenu(User user, int courent_user) {
 
 // Michal Wierzbicki
 // Funkcja obslugujaca menu kredytow
-void loansMenu(User user, int courent_user) {
+void loansMenu() {
     system("cls");
 
     while (true) {
@@ -325,7 +325,7 @@ void loansMenu(User user, int courent_user) {
 
 // Michal Wierzbicki
 // Funkcja obslugujaca menu lokat
-void depositsMenu(User user, int courent_user) {
+void depositsMenu() {
     system("cls");
 
     while (true) {
@@ -435,19 +435,79 @@ void depositsMenu(User user, int courent_user) {
     return;
 }
 
-
 // Jan Piętka
 // Funkcja obslugujaca menu administratora
-void adminMenu(User user, int courent_user) {
+void adminMenu() {
     system("cls");
-    cout << "Panel Administratora:" << endl;
-    cout << "Wybierz opcje przez wpisanie jej numeru: ";
+
+    while (true) {
+        cout << "Panel Administratora:" << endl;
+        cout << "1 - Dodaj urzytkownika" << endl;
+        cout << "2 - Wplac pieniadze" << endl;
+        cout << "3 - Wyplac pieniadze" << endl;
+        cout << "0 - Wyjdz do pulpitu" << endl;
+        cout << "Wybierz opcje przez wpisanie jej numeru: ";
+        int menu;
+        cin >> menu;
+        
+        switch (menu) {
+        case 1: {
+            bool powtorzenie = 0;
+            int noweId;
+            string firstName, lastName, login, password;
+
+            do {
+                powtorzenie = 0;
+                noweId = rand();
+                for (int i = 0; i < account.getElemenAccount(); i++) {
+                    if (noweId == account.getId(i)) {
+                        powtorzenie = 1;
+                        break;
+                    }
+                }
+            } while (powtorzenie);
+
+            cout << "Podaj imie: ";
+            cin >> firstName;
+            cout << "Podaj nazwisko: ";
+            cin >> lastName;
+            cout << "Podaj login: ";
+            cin >> login;
+            cout << "Podaj haslo: ";
+            cin >> password;
+
+            user.addUser(noweId, firstName, lastName, login, password, 0);
+            system("cls");
+            cout << "Utworzono urzytkownika. " << user.getId(user.getElementUser()-1) << user.getFirst_name(user.getElementUser()-1) << user.getLast_name(user.getElementUser()-1) << endl;
+
+            break;
+        }
+        case 2: {
+            
+            break;
+        }
+        case 3: {
+            
+            break;
+        }
+        case 0: {
+            system("cls");
+            return;
+        }
+        default:
+            system("cls");
+            cout << "Nieprawidlowy numer opcji." << endl;
+            break;
+        }
+    
+    }
+    
     return;
 }
 
 // Jan Piętka
 // Funkcja wyświetlajaca i obslugujaca pupit aktualnie zalogowanego uzytkownika  destop(obiekt z wektorami, numer w wektorze zalogowanego uzytkownika)
-void desktop(User user, int courent_user) {
+void desktop() {
     int menu;
     system("cls");
     int log_out = 1;
@@ -466,15 +526,15 @@ void desktop(User user, int courent_user) {
 
         switch (menu) {
         case 1: {
-            accountsMenu(user, courent_user);
+            accountsMenu();
             break;
         }
         case 2: {
-            loansMenu(user, courent_user);
+            loansMenu();
             break;
         }
         case 3: {
-            depositsMenu(user, courent_user);
+            depositsMenu();
             break;
         }
         case 0: {
@@ -484,7 +544,7 @@ void desktop(User user, int courent_user) {
         }
         case 10: {
             if (user.isAdmin(courent_user)) {
-                adminMenu(user, courent_user);
+                adminMenu();
             } else {
                 system("cls");
                 cout << "Nieprawidlowy numer opcji." << endl;
