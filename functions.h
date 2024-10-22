@@ -356,3 +356,5 @@ void desktop(User user, int courent_user) {
 
     return;
 }
+
+#endif
