@@ -12,6 +12,37 @@
 
 using namespace std;
 
+// Adrian Prymas
+// funckja do pobierania czasu
+string czas()
+{
+    // Pobranie aktualnego czasu
+    time_t actual_time = time(0);
+
+    // Konwersja na czytelny format
+    char* Time = ctime(&actual_time);
+
+    // Zapisanie daty i godziny do zmiennej
+    string Date = Time;
+
+    return Date;
+}
+// Adrian Prymas
+// Funkcja do Logów txt
+void txt_log(string logs)
+{
+    ofstream log("logs.txt", ios::app); // Otwarcie w trypie nadpisu
+    if(log)  cout << "---PLIK ISTNIEJE---";
+    else cout << "---PLIK ZOSTAL UTWORZONY---";
+
+    if (!log.is_open())
+	{
+        cout << error02 << endl;
+        return;
+    }
+    log << czas() << " : " << logs << endl;
+}
+
 // Jan Piętka
 // Funkcja logowania urzytkownika
 void sign_in(User &user) 
@@ -325,22 +356,3 @@ void desktop(User user, int courent_user) {
 
     return;
 }
-
-// Adrian Prymas
-// Funkcja do Logów txt
-void txt_log(string logs)
-{
-    ofstream log("logs.txt", ios::app); // Otwarcie w trypie nadpisu
-    if(log)  cout << "---PLIK ISTNIEJE---";
-    else cout << "---PLIK ZOSTAL UTWORZONY---";
-
-    if (!log.is_open())
-	{
-        cout << error02 << endl;
-        return;
-    }
-    log << logs << endl;
-}
-
-
-#endif
