@@ -233,12 +233,12 @@ void loansMenu(User user, int courent_user) {
             double loanAmount;
             int loanTypeIndex, currencyIndex;
 
-            cout << "Podaj kwotę kredytu: ";
+            cout << "Podaj kwote kredytu: ";
             cin >> loanAmount;
 
             if (loanAmount <= 0) {
                 system("cls");
-                cout << "Nieprawidłowa kwota." << endl;
+                cout << "Nieprawidlowa kwota." << endl;
                 continue;
             }
 
@@ -252,7 +252,7 @@ void loansMenu(User user, int courent_user) {
 
             if (loanTypeIndex < 0 || loanTypeIndex >= loan_type.getElementLoanType()) {
                 system("cls");
-                cout << "Nieprawidlowy wybór typu kredytu." << endl;
+                cout << "Nieprawidlowy wybor typu kredytu." << endl;
                 continue;
             }
 
