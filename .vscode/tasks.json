@@ -1,6 +1,21 @@
 {
     "tasks": [
         {
+            "label": "build my_program",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",  // Include debug information
+                "${workspaceFolder}/main.cpp",  // Replace with your source file
+                "-o", "${workspaceFolder}/main.exe"  // Output executable
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
             "type": "cppbuild",
             "label": "C/C++: g++.exe build active file",
             "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",

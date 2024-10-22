@@ -177,7 +177,7 @@ void loansMenu(User user, int courent_user) {
         int loanAmount = 0;
 
         cout << "Twoje Kredyty:" << endl;
-        cout << "Lp.           Typ Kredytu          Pozostała Kwota do Spłaty          Waluta" << endl;
+        cout << "Lp.           Typ Kredytu          Pozostala Kwota do Splaty          Waluta" << endl;
 
         for (int i = 0; i < loan.getElementLoan(); i++) {
             if (loan.getOwnerId(i) == user.getId(courent_user)) {
@@ -193,12 +193,12 @@ void loansMenu(User user, int courent_user) {
         }
 
         cout << "0 - Wyjdz do pulpitu" << endl;
-        cout << "1 - Zaciągnij nowy kredyt" << endl;
+        cout << "1 - Zaciagnij nowy kredyt" << endl;
 
         if (loanAmount) {
-            cout << "Aby wykonac spłate wybierz kredyt wpisujac liczbe porzadkowa: ";
+            cout << "Aby wykonac splate wybierz kredyt wpisujac liczbe porzadkowa: ";
         } else {
-            cout << "Nie masz zadnych kredytow. Aby zaciągnąć kredyt, wybierz opcję 1." << endl;
+            cout << "Nie masz zadnych kredytow. Aby zaciagnac kredyt, wybierz opcje 1." << endl;
         }
 
         int menu;
@@ -257,7 +257,7 @@ void loansMenu(User user, int courent_user) {
             }
 
             // Wybór waluty
-            cout << "Wybierz walutę kredytu: " << endl;
+            cout << "Wybierz walute kredytu: " << endl;
             for (int i = 0; i < currency.getElementCurrency(); i++) {
                 cout << i + 1 << " - " << currency.getName(i) << endl;
             }
@@ -266,14 +266,12 @@ void loansMenu(User user, int courent_user) {
 
             if (currencyIndex < 0 || currencyIndex >= currency.getElementCurrency()) {
                 system("cls");
-                cout << "Nieprawidlowy wybór waluty." << endl;
+                cout << "Nieprawidlowy wybor waluty." << endl;
                 continue;
             }
 
             // Dodanie nowego kredytu
             loan.takeLoan(courent_user, loanAmount, loan_type.getLoanTypeName(loanTypeIndex), currency.getName(currencyIndex));
-            system("cls");
-            cout << "Zaciągnięto nowy kredyt." << endl;
         }
 
         else {
