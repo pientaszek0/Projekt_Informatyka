@@ -271,7 +271,7 @@ void loansMenu(User user, int courent_user) {
             }
 
             // Dodanie nowego kredytu
-            loan.takeLoan(courent_user, loanAmount, loan_type.getLoanTypeName(loanTypeIndex), currency.getName(currencyIndex));
+            loan.takeLoan(user.getId(courent_user), loanAmount, loan_type.getLoanTypeName(loanTypeIndex), currency.getName(currencyIndex));
         }
 
         else {

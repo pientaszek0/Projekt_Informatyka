@@ -216,15 +216,16 @@ class Loan {
             }
         }
 
-        // Funkcja zaciągania kredytu loan.takeLoan(wartosc kredytu, typ kredytu, nazwa waluty);
-        void takeLoan(int index, double loanAmount, string loanType, string currencyName) {
-                balance_left[index] += loanAmount;
-                loan_type[index] = loanType;
-                currency_name[index] = currencyName;
-                system("cls");
-                cout << "Zaciągnięto kredyt w wysokosci: " << loanAmount << endl;
-                cout << "Typ kredytu: " << loanType << endl;
-                cout << "Waluta: " << currencyName << endl;
+        // Funkcja zaciągania kredytu loan.takeLoan(user id, wartosc kredytu, typ kredytu, nazwa waluty);
+        void takeLoan(int id, double loanAmount, string loanType, string currencyName) {
+            owner_id.emplace_back(ownerId);
+            balance_left.emplace_back(loanAmount);
+            loan_type.emplace_back(loanType);
+            balance_left.emplace_back(loanAmount);
+            system("cls");
+            cout << "Zaciągnięto nowy kredyt w wysokości: " << loanAmount << endl;
+            cout << "Typ kredytu: " << loanType << endl;
+            cout << "Waluta: " << currencyName << endl;
         }
 };
 
