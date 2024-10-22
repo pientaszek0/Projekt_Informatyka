@@ -12,6 +12,7 @@ Account account; // Obiekt przechowujący wektory z wszystkimi kontami pobranymi
 Currency currency; // Obiekt przechowujący wektory z wszystkimi walutami pobranymi z pliku xml
 Loan_Type loan_type; // Obiekt przechowujący wektory z wszystkimi typami kredyto pobranymi z pliku xml
 Loan loan; // Obiekt przechowujący wektory z wszystkimi kredytami pobranymi z pliku xml
+Deposit deposit;
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ======================== STALŁE BLEDOW ===========================
