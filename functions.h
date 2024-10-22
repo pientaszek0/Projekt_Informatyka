@@ -1,3 +1,6 @@
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
+
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -5,6 +8,7 @@
 
 #include "classes.h"
 #include "variables.h"
+#include "xml_class.h"
 
 using namespace std;
 
@@ -81,7 +85,7 @@ void accountsMenu(User user, int courent_user) {
         } else if (menu == accountAmount+1) {
             system("cls");
             cout << "Tworzenie konta." << endl;
-
+            // wypisac waluty i wygenerowac numer konta
 
             cout << "Wybierz walute konta: ";
             int waluta;
@@ -300,7 +304,7 @@ void desktop(User user, int courent_user) {
         }
         case 0: {
             log_out = 0;
-            //xml_save(user, account, currency);
+            xml_save(user, account, currency, loan_type, loan);
             break;
         }
         case 10: {
@@ -337,3 +341,6 @@ void txt_log(string logs)
     }
     log << logs << endl;
 }
+
+
+#endif

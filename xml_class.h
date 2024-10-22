@@ -1,3 +1,6 @@
+#ifndef XML_CLASS_H
+#define XML_CLASS_H
+
 #include <iostream>
 #include "classes.h"
 #include "variables.h"
@@ -465,3 +468,5 @@ void xml_chf(User user)
 		db.close();
 	}
 }
+
+#endif
