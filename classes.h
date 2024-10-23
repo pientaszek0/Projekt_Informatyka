@@ -234,7 +234,7 @@ class Loan {
             loan_type.emplace_back(loanType);
             currency_name.emplace_back(currencyName);
             system("cls");
-            cout << "Zaciagnięto nowy kredyt w wysokosci: " << loanAmount << endl;
+            cout << "Zaciagnieto nowy kredyt w wysokosci: " << loanAmount << endl;
             cout << "Typ kredytu: " << loanType << endl;
             cout << "Waluta: " << currencyName << endl;
         }

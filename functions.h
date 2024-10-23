@@ -294,7 +294,7 @@ void depositsMenu(User user, int courent_user) {
         int depositCount = 0;
 
         cout << "Twoje Lokaty:" << endl;
-        cout << "Lp.           Kwota Lokaty          Oprocentowanie          Czas Trwania          Waluta          Pozostały Czas" << endl;
+        cout << "Lp.           Kwota Lokaty          Oprocentowanie          Czas Trwania          Waluta          Pozostaly Czas" << endl;
 
         // Wyświetlanie lokat użytkownika
         for (int i = 0; i < deposit.getElementDeposit(); i++) {
