@@ -588,7 +588,7 @@ void desktop() {
         }
         case 0: {
             log_out = 0;
-            xml_save(user, account, currency, loan_type, loan);
+            xml_save(user, account, currency, loan_type, loan, deposit);
             break;
         }
         case 10: {
