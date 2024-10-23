@@ -225,7 +225,7 @@ class Loan {
         void makePayment(int index, double payment) {
                 balance_left[index] -= payment;
                 system("cls");
-                txt_log("User:"+Loan.getOwnerId[index]+" splacil:"+payment+" . -Kredyt");
+                //txt_log("User:"+Loan.getOwnerId[index]+" splacil:"+payment+" . -Kredyt");
                 cout << "Splacono: " << payment << ". Pozostalo do splaty: " << balance_left[index] << endl;
         }
         // Funkcja zaciągania kredytu loan.takeLoan(owner id, wartosc kredytu, typ kredytu, nazwa waluty);
@@ -235,7 +235,7 @@ class Loan {
             loan_type.emplace_back(loanType);
             currency_name.emplace_back(currencyName);
             system("cls");
-            txt_log("User:"+ownerId+" zaciagnal nowy kredyt "+loanType+" w wysowosci:"+loanAmount);
+            //txt_log("User:"+ownerId+" zaciagnal nowy kredyt "+loanType+" w wysowosci:"+loanAmount);
             cout << "Zaciagnieto nowy kredyt w wysokosci: " << loanAmount << endl;
             cout << "Typ kredytu: " << loanType << endl;
             cout << "Waluta: " << currencyName << endl;
@@ -314,7 +314,7 @@ class Deposit {
         void endDeposit(int index) {
             system("cls");
             cout << "Lokata zakonczona. Kwota wyplacona: " << deposit_amount[index] + calculateInterest(index) << endl;
-            txt_log("User:"+Deposit.getOwnerId[index]+" zakonczyl lokate. Wyplacono kwote w wysowosci:"+deposit_amount[index] + calculateInterest(index));
+            //txt_log("User:"+Deposit.getOwnerId[index]+" zakonczyl lokate. Wyplacono kwote w wysowosci:"+deposit_amount[index] + calculateInterest(index));
             deposit_amount[index] = 0; // Resetowanie lokaty po zakończeniu
         }
         // Funkcja zaciągania kredytu loan.takeLoan(owner id, wartosc kredytu, typ kredytu, nazwa waluty);
@@ -327,7 +327,7 @@ class Deposit {
             start_date.emplace_back(startDate);
             
             system("cls");
-            txt_log("User:"+ownerId+" zalozyl nowa lokate w wysowosci:"+depositAmount);
+            //txt_log("User:"+ownerId+" zalozyl nowa lokate w wysowosci:"+depositAmount);
             cout << "Zalozono nowa lokate." << endl;
         }
 };
