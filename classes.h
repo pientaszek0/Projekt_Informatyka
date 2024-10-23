@@ -255,6 +255,19 @@ class Deposit {
         vector<int> remaining_time;        // Pozostały czas do zakończenia (w miesiącach)
 
     public:
+        // Metoda do zapisu xml
+        void addDeposit(int d_id, int d_owner_id, double d_deposit_amount, string d_currency_name, int d_duration_months,
+         double d_interest_rate, string d_dstart_date, int d_remaining_time)
+        {
+            id.emplace_back(d_id);
+            owner_id.emplace_back(d_owner_id);
+            deposit_amount.emplace_back(d_deposit_amount);
+            currency_name.emplace_back(d_currency_name);
+            duration_months.emplace_back(d_duration_months);
+            interest_rate.emplace_back(d_interest_rate);
+            start_date.emplace_back(d_dstart_date);
+            remaining_time.emplace_back(d_remaining_time);
+        }
         // Metoda do zwracania ilości Loanow
         int getElementDeposit() {
             return id.size();
