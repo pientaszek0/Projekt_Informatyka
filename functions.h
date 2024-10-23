@@ -383,7 +383,7 @@ void depositsMenu(User user, int courent_user) {
             }
 
             // Dodanie nowej lokaty
-            deposit.addDeposit(deposit.getOwnerId(courent_user), depositAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas());
+            deposit.takeDeposit(deposit.getOwnerId(courent_user), depositAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas());
         }
 
         // Nieprawidłowy wybór

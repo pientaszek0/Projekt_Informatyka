@@ -315,7 +315,7 @@ class Deposit {
             deposit_amount[index] = 0; // Resetowanie lokaty po zakończeniu
         }
         // Funkcja zaciągania kredytu loan.takeLoan(owner id, wartosc kredytu, typ kredytu, nazwa waluty);
-        void addDeposit(int ownerId, double depositAmount, string currencyName,int durationMonths, double interestRate, string startDate) {
+        void takeDeposit(int ownerId, double depositAmount, string currencyName,int durationMonths, double interestRate, string startDate) {
             owner_id.emplace_back(ownerId);
             deposit_amount.emplace_back(depositAmount);
             currency_name.emplace_back(currencyName);
