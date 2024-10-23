@@ -29,6 +29,7 @@ string czas()
 
     return Date;
 }
+
 // Adrian Prymas
 // Funkcja do Logów txt
 void txt_log(string logs)
@@ -382,7 +383,7 @@ void depositsMenu(User user, int courent_user) {
             }
 
             // Dodanie nowej lokaty
-            deposit.addDeposit(deposit.getOwnerId(courent_user), depositAmount, currency.getName(currencyIndex), durationMonths, interestRate, "2024-10-22");
+            deposit.addDeposit(deposit.getOwnerId(courent_user), depositAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas());
         }
 
         // Nieprawidłowy wybór
