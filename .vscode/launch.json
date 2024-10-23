@@ -1,17 +1,21 @@
 {
+    "version": "2.0.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "(gdb) Launch MyApp",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "program": "${workspaceFolder}/main.exe",
+            "args": [
+                "arg1",
+                "arg2"
+            ],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": false,
+            "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "/path/to/gdb",
+            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -23,7 +27,8 @@
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
-            ]
+            ],
+            "preLaunchTask": "build my_program"
         },
         {
             "name": "C/C++: g++.exe build and debug active file",
@@ -51,6 +56,5 @@
             ],
             "preLaunchTask": "C/C++: g++.exe build active file"
         }
-    ],
-    "version": "2.0.0"
+    ]
 }
