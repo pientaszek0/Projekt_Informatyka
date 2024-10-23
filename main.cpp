@@ -11,6 +11,7 @@ using namespace std;
 
 int main() 
 {
+    //test
     xml_chf(user); // Wywołanie funkcji do odczytu pliku xml 
     xml_giveData(user, account, currency, loan_type, loan, deposit); // Wywołanie funkcja która wczytuje dane z XML
     xml_checkData(user, account, currency, loan_type, loan, deposit); // Wywołanie funkcji sparwdza poprawność czy dane zostały dobrze wczytane !!TYLKO "User!!"
