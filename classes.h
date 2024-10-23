@@ -234,7 +234,7 @@ class Loan {
             loan_type.emplace_back(loanType);
             currency_name.emplace_back(currencyName);
             system("cls");
-            cout << "Zaciągnięto nowy kredyt w wysokości: " << loanAmount << endl;
+            cout << "Zaciagnięto nowy kredyt w wysokosci: " << loanAmount << endl;
             cout << "Typ kredytu: " << loanType << endl;
             cout << "Waluta: " << currencyName << endl;
         }
@@ -311,7 +311,7 @@ class Deposit {
         // Funkcja do zakończenia lokaty
         void endDeposit(int index) {
             system("cls");
-            cout << "Lokata zakończona. Kwota wypłacona: " << deposit_amount[index] + calculateInterest(index) << endl;
+            cout << "Lokata zakonczona. Kwota wyplacona: " << deposit_amount[index] + calculateInterest(index) << endl;
             deposit_amount[index] = 0; // Resetowanie lokaty po zakończeniu
         }
         // Funkcja zaciągania kredytu loan.takeLoan(owner id, wartosc kredytu, typ kredytu, nazwa waluty);
@@ -324,7 +324,7 @@ class Deposit {
             start_date.emplace_back(startDate);
             
             system("cls");
-            cout << "Założono nową lokatę." << endl;
+            cout << "Zalozono nowa lokate." << endl;
         }
 };
 

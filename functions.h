@@ -309,12 +309,12 @@ void depositsMenu(User user, int courent_user) {
 
         // Opcje dla użytkownika
         cout << "0 - Wyjdz do pulpitu" << endl;
-        cout << "1 - Załóż nową lokatę" << endl;
+        cout << "1 - Zaloz nowa lokate" << endl;
 
         if (depositCount > 0) {
-            cout << "Aby zakończyć lokatę wybierz numer porządkowy: ";
+            cout << "Aby zakonczyc lokate wybierz numer porzadkowy: ";
         } else {
-            cout << "Nie masz żadnych lokat. Aby założyć lokatę, wybierz opcję 1." << endl;
+            cout << "Nie masz zadnych lokat. Aby zalozyc lokate, wybierz opcje 1." << endl;
         }
 
         int menu;
@@ -338,17 +338,17 @@ void depositsMenu(User user, int courent_user) {
             int currencyIndex, durationMonths;
             double interestRate;
 
-            cout << "Podaj kwotę lokaty: ";
+            cout << "Podaj kwote lokaty: ";
             cin >> depositAmount;
 
             if (depositAmount <= 0) {
                 system("cls");
-                cout << "Nieprawidłowa kwota." << endl;
+                cout << "Nieprawidlowa kwota." << endl;
                 continue;
             }
 
             // Wybór waluty
-            cout << "Wybierz walutę lokaty: " << endl;
+            cout << "Wybierz walute lokaty: " << endl;
             for (int i = 0; i < currency.getElementCurrency(); i++) {
                 cout << i + 1 << " - " << currency.getName(i) << endl;
             }
@@ -357,12 +357,12 @@ void depositsMenu(User user, int courent_user) {
 
             if (currencyIndex < 0 || currencyIndex >= currency.getElementCurrency()) {
                 system("cls");
-                cout << "Nieprawidłowy wybór waluty." << endl;
+                cout << "Nieprawidlowy wybor waluty." << endl;
                 continue;
             }
 
             // Wybór czasu trwania lokaty
-            cout << "Podaj czas trwania lokaty w miesiącach: ";
+            cout << "Podaj czas trwania lokaty w miesiacach: ";
             cin >> durationMonths;
 
             if (durationMonths <= 0) {
@@ -389,7 +389,7 @@ void depositsMenu(User user, int courent_user) {
         // Nieprawidłowy wybór
         else {
             system("cls");
-            cout << "Nieprawidłowy wybór." << endl;
+            cout << "Nieprawidlowy wybor." << endl;
         }
     }
 
