@@ -226,6 +226,7 @@ void loansMenu(User user, int courent_user) {
                 cout << "Kwota splaty przewyzsza saldo kredytu." << endl;
             } else {
                 loan.makePayment(userLoans[menu - 2], paymentAmount);
+                txt_log("User:"+to_string(loan.getOwnerId(courent_user))+" splacil:"+to_string(paymentAmount)+" . -Kredyt");
             }
         }
 
@@ -273,6 +274,7 @@ void loansMenu(User user, int courent_user) {
 
             // Dodanie nowego kredytu
             loan.takeLoan(loan.getOwnerId(courent_user), loanAmount, loan_type.getLoanTypeName(loanTypeIndex), currency.getName(currencyIndex));
+            txt_log("User:"+to_string(loan.getOwnerId(courent_user))+" zaciagnal nowy kredyt "+loan_type.getLoanTypeName(loanTypeIndex)+" w wysowosci:"+to_string(loanAmount));
         }
 
         else {
@@ -329,7 +331,8 @@ void depositsMenu(User user, int courent_user) {
         // Zakończenie lokaty
         if (menu > 1 && menu <= depositCount + 1) {
             int depositIndex = userDeposits[menu - 2]; // indeks lokaty w wektorze
-            deposit.endDeposit(depositIndex);
+            deposit.endDeposit(courent_user);
+            txt_log("User:"+to_string(deposit.getOwnerId(courent_user))+" zakonczyl lokate. Wyplacono kwote w wysowosci:"+to_string((deposit.getDepositAmount(courent_user) + deposit.calculateInterest(courent_user))));
         }
 
         // Założenie nowej lokaty
@@ -384,6 +387,7 @@ void depositsMenu(User user, int courent_user) {
 
             // Dodanie nowej lokaty
             deposit.takeDeposit(deposit.getOwnerId(courent_user), depositAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas());
+            txt_log("User:"+to_string(deposit.getOwnerId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(depositAmount));
         }
 
         // Nieprawidłowy wybór
