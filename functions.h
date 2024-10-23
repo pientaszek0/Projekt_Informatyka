@@ -25,6 +25,8 @@ string czas()
     // Zapisanie daty i godziny do zmiennej
     string Date = Time;
 
+    Date.erase(Date.length() - 1);  // Usuwa ostatni znak, czyli '\n'
+
     return Date;
 }
 // Adrian Prymas
@@ -61,7 +63,7 @@ void sign_in(User &user)
 
         for (int i = 0 ; i < user.getElementUser(); i++) {
             cout << i;
-            if (login == user.getLogin(i) && password == user.getPassword(i)) {
+            if (login == user.getLogin(i) && password == user.getPassword(i)) { 
                 courent_user = i;
                 system("cls");
                 loged_in = 1;
@@ -177,7 +179,7 @@ void loansMenu(User user, int courent_user) {
         int loanAmount = 0;
 
         cout << "Twoje Kredyty:" << endl;
-        cout << "Lp.           Typ Kredytu          Pozostała Kwota do Spłaty          Waluta" << endl;
+        cout << "Lp.           Typ Kredytu          Pozostala Kwota do Splaty          Waluta" << endl;
 
         for (int i = 0; i < loan.getElementLoan(); i++) {
             if (loan.getOwnerId(i) == user.getId(courent_user)) {
@@ -193,12 +195,12 @@ void loansMenu(User user, int courent_user) {
         }
 
         cout << "0 - Wyjdz do pulpitu" << endl;
-        cout << "1 - Zaciągnij nowy kredyt" << endl;
+        cout << "1 - Zaciagnij nowy kredyt" << endl;
 
         if (loanAmount) {
-            cout << "Aby wykonac spłate wybierz kredyt wpisujac liczbe porzadkowa: ";
+            cout << "Aby wykonac splate wybierz kredyt wpisujac liczbe porzadkowa: ";
         } else {
-            cout << "Nie masz zadnych kredytow. Aby zaciągnąć kredyt, wybierz opcję 1." << endl;
+            cout << "Nie masz zadnych kredytow. Aby zaciagnac kredyt, wybierz opcje 1." << endl;
         }
 
         int menu;
@@ -223,8 +225,6 @@ void loansMenu(User user, int courent_user) {
                 cout << "Kwota splaty przewyzsza saldo kredytu." << endl;
             } else {
                 loan.makePayment(userLoans[menu - 2], paymentAmount);
-                system("cls");
-                cout << "Dokonano splaty." << endl;
             }
         }
 
@@ -233,12 +233,12 @@ void loansMenu(User user, int courent_user) {
             double loanAmount;
             int loanTypeIndex, currencyIndex;
 
-            cout << "Podaj kwotę kredytu: ";
+            cout << "Podaj kwote kredytu: ";
             cin >> loanAmount;
 
             if (loanAmount <= 0) {
                 system("cls");
-                cout << "Nieprawidłowa kwota." << endl;
+                cout << "Nieprawidlowa kwota." << endl;
                 continue;
             }
 
@@ -252,12 +252,12 @@ void loansMenu(User user, int courent_user) {
 
             if (loanTypeIndex < 0 || loanTypeIndex >= loan_type.getElementLoanType()) {
                 system("cls");
-                cout << "Nieprawidlowy wybór typu kredytu." << endl;
+                cout << "Nieprawidlowy wybor typu kredytu." << endl;
                 continue;
             }
 
             // Wybór waluty
-            cout << "Wybierz walutę kredytu: " << endl;
+            cout << "Wybierz walute kredytu: " << endl;
             for (int i = 0; i < currency.getElementCurrency(); i++) {
                 cout << i + 1 << " - " << currency.getName(i) << endl;
             }
@@ -266,14 +266,12 @@ void loansMenu(User user, int courent_user) {
 
             if (currencyIndex < 0 || currencyIndex >= currency.getElementCurrency()) {
                 system("cls");
-                cout << "Nieprawidlowy wybór waluty." << endl;
+                cout << "Nieprawidlowy wybor waluty." << endl;
                 continue;
             }
 
             // Dodanie nowego kredytu
-            loan.takeLoan(courent_user, loanAmount, loan_type.getLoanTypeName(loanTypeIndex), currency.getName(currencyIndex));
-            system("cls");
-            cout << "Zaciągnięto nowy kredyt." << endl;
+            loan.takeLoan(loan.getOwnerId(courent_user), loanAmount, loan_type.getLoanTypeName(loanTypeIndex), currency.getName(currencyIndex));
         }
 
         else {
@@ -288,9 +286,115 @@ void loansMenu(User user, int courent_user) {
 // Michal Wierzbicki
 // Funkcja obslugujaca menu lokat
 void depositsMenu(User user, int courent_user) {
+    system("cls");
+
+    while (true) {
+        vector<int> userDeposits;
+        int depositCount = 0;
+
+        cout << "Twoje Lokaty:" << endl;
+        cout << "Lp.           Kwota Lokaty          Oprocentowanie          Czas Trwania          Waluta          Pozostały Czas" << endl;
+
+        // Wyświetlanie lokat użytkownika
+        for (int i = 0; i < deposit.getElementDeposit(); i++) {
+            if (deposit.getOwnerId(i) == user.getId(courent_user)) {
+                userDeposits.push_back(i);
+                depositCount++;
+                cout << depositCount << " - " << deposit.getDepositAmount(i) << " - " << deposit.getInterestRate(i) << "% - " 
+                     << deposit.getDurationMonths(i) << " mies. - " << deposit.getCurrencyName(i) 
+                     << " - " << deposit.getRemainingTime(i) << " mies." << endl;
+            }
+        }
+
+        // Opcje dla użytkownika
+        cout << "0 - Wyjdz do pulpitu" << endl;
+        cout << "1 - Załóż nową lokatę" << endl;
+
+        if (depositCount > 0) {
+            cout << "Aby zakończyć lokatę wybierz numer porządkowy: ";
+        } else {
+            cout << "Nie masz żadnych lokat. Aby założyć lokatę, wybierz opcję 1." << endl;
+        }
+
+        int menu;
+        cin >> menu;
+
+        // Wyjście z menu
+        if (menu == 0) {
+            system("cls");
+            return;
+        }
+
+        // Zakończenie lokaty
+        if (menu > 1 && menu <= depositCount + 1) {
+            int depositIndex = userDeposits[menu - 2]; // indeks lokaty w wektorze
+            deposit.endDeposit(depositIndex);
+        }
+
+        // Założenie nowej lokaty
+        else if (menu == 1) {
+            double depositAmount;
+            int currencyIndex, durationMonths;
+            double interestRate;
+
+            cout << "Podaj kwotę lokaty: ";
+            cin >> depositAmount;
+
+            if (depositAmount <= 0) {
+                system("cls");
+                cout << "Nieprawidłowa kwota." << endl;
+                continue;
+            }
+
+            // Wybór waluty
+            cout << "Wybierz walutę lokaty: " << endl;
+            for (int i = 0; i < currency.getElementCurrency(); i++) {
+                cout << i + 1 << " - " << currency.getName(i) << endl;
+            }
+            cin >> currencyIndex;
+            currencyIndex--; // Indeksy zaczynają się od 0
+
+            if (currencyIndex < 0 || currencyIndex >= currency.getElementCurrency()) {
+                system("cls");
+                cout << "Nieprawidłowy wybór waluty." << endl;
+                continue;
+            }
+
+            // Wybór czasu trwania lokaty
+            cout << "Podaj czas trwania lokaty w miesiącach: ";
+            cin >> durationMonths;
+
+            if (durationMonths <= 0) {
+                system("cls");
+                cout << "Nieprawidłowy czas trwania." << endl;
+                continue;
+            }
+
+            // Ustal oprocentowanie lokaty (dla przykładu ustalamy stałe oprocentowanie na podstawie czasu trwania)
+            if (durationMonths <= 6) {
+                interestRate = 2.0;
+            } else if (durationMonths <= 12) {
+                interestRate = 3.0;
+            } else if (durationMonths <= 24) {
+                interestRate = 3.5;
+            } else {
+                interestRate = 4.0;
+            }
+
+            // Dodanie nowej lokaty
+            deposit.addDeposit(deposit.getOwnerId(courent_user), depositAmount, currency.getName(currencyIndex), durationMonths, interestRate, "2024-10-22");
+        }
+
+        // Nieprawidłowy wybór
+        else {
+            system("cls");
+            cout << "Nieprawidłowy wybór." << endl;
+        }
+    }
 
     return;
 }
+
 
 // Jan Piętka
 // Funkcja obslugujaca menu administratora
@@ -335,7 +439,7 @@ void desktop(User user, int courent_user) {
         }
         case 0: {
             log_out = 0;
-            xml_save(user, account, currency, loan_type, loan);
+            xml_save(user, account, currency, loan_type, loan, deposit);
             break;
         }
         case 10: {
