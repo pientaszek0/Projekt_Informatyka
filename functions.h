@@ -177,16 +177,17 @@ void loansMenu(User user, int courent_user) {
 
     while (true) {
         vector<int> userLoans;
-        int loanAmount = 0;
+        int loanCount = 0;
 
         cout << "Twoje Kredyty:" << endl;
         cout << "Lp.           Typ Kredytu          Pozostala Kwota do Splaty          Waluta" << endl;
 
+        // Zbieranie kredytów użytkownika
         for (int i = 0; i < loan.getElementLoan(); i++) {
             if (loan.getOwnerId(i) == user.getId(courent_user)) {
                 userLoans.push_back(i);
-                loanAmount++;
-                cout << loanAmount << " - " << loan.getLoanTypeName(i) << " - " << loan.getBalanceLeft(i) << " ";
+                loanCount++;
+                cout << loanCount << " - " << loan.getLoanTypeName(i) << " - " << loan.getBalanceLeft(i) << " ";
                 for (int n = 0; n < currency.getElementCurrency(); n++) {
                     if (loan.getCurrencyName(i) == currency.getName(n)) {
                         cout << currency.getName(n) << endl;
@@ -194,11 +195,13 @@ void loansMenu(User user, int courent_user) {
                 }
             }
         }
-        cout << loanAmount+1 << " - Zaciagnij nowy kredyt" << endl;
+
+        // Opcje menu
+        cout << loanCount + 1 << " - Zaciagnij nowy kredyt" << endl;
         cout << "0 - Wyjdz do pulpitu" << endl;
 
-        if (loanAmount) {
-            cout << "Aby wykonac splate wybierz kredyt wpisujac liczbe porzadkowa: ";
+        if (loanCount) {
+            cout << "Aby wykonac splate, wybierz kredyt wpisujac liczbe porzadkowa: ";
         } else {
             cout << "Nie masz zadnych kredytow. Aby zaciagnac kredyt, wybierz opcje 1." << endl;
         }
@@ -212,7 +215,7 @@ void loansMenu(User user, int courent_user) {
         }
 
         // Spłata kredytu
-        if (menu > 0 && menu <= loanAmount) {
+        if (menu > 0 && menu <= loanCount) {
             double paymentAmount;
             cout << "Podaj kwote splaty: ";
             cin >> paymentAmount;
@@ -220,17 +223,19 @@ void loansMenu(User user, int courent_user) {
             if ((paymentAmount * 100) - int(paymentAmount * 100) != 0 || paymentAmount <= 0) {
                 system("cls");
                 cout << "Nieprawidlowa kwota." << endl;
-            } else if (paymentAmount > loan.getBalanceLeft(userLoans[menu - 2])) {
+            } else if (paymentAmount > loan.getBalanceLeft(userLoans[menu - 1])) {  // Poprawiono indeks
                 system("cls");
                 cout << "Kwota splaty przewyzsza saldo kredytu." << endl;
             } else {
-                loan.makePayment(userLoans[menu - 1], paymentAmount);
-                txt_log("User:"+to_string(user.getId(courent_user))+" splacil:"+to_string(paymentAmount)+" . -Kredyt");
+                loan.makePayment(userLoans[menu - 1], paymentAmount);  // Poprawiono indeks
+                txt_log("User:" + to_string(user.getId(courent_user)) + " splacil:" + to_string(paymentAmount) + " . -Kredyt");
+                system("cls");
+                cout << "Splacono " << paymentAmount << " z kredytu." << endl;
             }
         }
 
         // Zaciąganie nowego kredytu
-        else if (menu == loanAmount+1) {
+        else if (menu == loanCount + 1) {
             double newLoanAmount;
             int loanTypeIndex, currencyIndex;
 
@@ -273,7 +278,7 @@ void loansMenu(User user, int courent_user) {
 
             // Dodanie nowego kredytu
             loan.takeLoan(loan.getOwnerId(courent_user), newLoanAmount, loan_type.getLoanTypeName(loanTypeIndex), currency.getName(currencyIndex));
-            txt_log("User:"+to_string(user.getId(courent_user))+" zaciagnal nowy kredyt "+loan_type.getLoanTypeName(loanTypeIndex)+" w wysowosci:"+to_string(loanAmount));
+            txt_log("User:" + to_string(user.getId(courent_user)) + " zaciagnal nowy kredyt " + loan_type.getLoanTypeName(loanTypeIndex) + " w wysowosci:" + to_string(newLoanAmount));
         }
 
         else {
