@@ -329,7 +329,6 @@ void depositsMenu(User user, int courent_user) {
 
         // Zakończenie lokaty
         if (menu > 1 && menu <= depositCount + 1) {
-            int depositIndex = userDeposits[menu - 2]; // indeks lokaty w wektorze
             deposit.endDeposit(courent_user);
             txt_log("User:"+to_string(user.getId(courent_user))+" zakonczyl lokate. Wyplacono kwote w wysowosci:"+to_string((deposit.getDepositAmount(courent_user) + deposit.calculateInterest(courent_user))));
         }
