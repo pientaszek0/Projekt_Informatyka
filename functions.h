@@ -194,9 +194,8 @@ void loansMenu(User user, int courent_user) {
                 }
             }
         }
-
+        cout << loanAmount+1 << " - Zaciagnij nowy kredyt" << endl;
         cout << "0 - Wyjdz do pulpitu" << endl;
-        cout << "1 - Zaciagnij nowy kredyt" << endl;
 
         if (loanAmount) {
             cout << "Aby wykonac splate wybierz kredyt wpisujac liczbe porzadkowa: ";
@@ -231,7 +230,7 @@ void loansMenu(User user, int courent_user) {
         }
 
         // Zaciąganie nowego kredytu
-        else if (menu == 1) {
+        else if (menu == loanAmount+1) {
             double loanAmount;
             int loanTypeIndex, currencyIndex;
 
@@ -310,8 +309,8 @@ void depositsMenu(User user, int courent_user) {
         }
 
         // Opcje dla użytkownika
+        cout << depositCount+1 << " - Zaloz nowa lokate" << endl;
         cout << "0 - Wyjdz do pulpitu" << endl;
-        cout << "1 - Zaloz nowa lokate" << endl;
 
         if (depositCount > 0) {
             cout << "Aby zakonczyc lokate wybierz numer porzadkowy: ";
@@ -336,7 +335,7 @@ void depositsMenu(User user, int courent_user) {
         }
 
         // Założenie nowej lokaty
-        else if (menu == 1) {
+        else if (menu == depositCount+1) {
             double depositAmount;
             int currencyIndex, durationMonths;
             double interestRate;
