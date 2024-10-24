@@ -224,20 +224,20 @@ void loansMenu(User user, int courent_user) {
                 system("cls");
                 cout << "Kwota splaty przewyzsza saldo kredytu." << endl;
             } else {
-                loan.makePayment(userLoans[menu - 2], paymentAmount);
+                loan.makePayment(userLoans[menu - 1], paymentAmount);
                 txt_log("User:"+to_string(user.getId(courent_user))+" splacil:"+to_string(paymentAmount)+" . -Kredyt");
             }
         }
 
         // Zaciąganie nowego kredytu
         else if (menu == loanAmount+1) {
-            double loanAmount;
+            double newLoanAmount;
             int loanTypeIndex, currencyIndex;
 
             cout << "Podaj kwote kredytu: ";
-            cin >> loanAmount;
+            cin >> newLoanAmount;
 
-            if (loanAmount <= 0) {
+            if (newLoanAmount <= 0) {
                 system("cls");
                 cout << "Nieprawidlowa kwota." << endl;
                 continue;
@@ -272,7 +272,7 @@ void loansMenu(User user, int courent_user) {
             }
 
             // Dodanie nowego kredytu
-            loan.takeLoan(loan.getOwnerId(courent_user), loanAmount, loan_type.getLoanTypeName(loanTypeIndex), currency.getName(currencyIndex));
+            loan.takeLoan(loan.getOwnerId(courent_user), newLoanAmount, loan_type.getLoanTypeName(loanTypeIndex), currency.getName(currencyIndex));
             txt_log("User:"+to_string(user.getId(courent_user))+" zaciagnal nowy kredyt "+loan_type.getLoanTypeName(loanTypeIndex)+" w wysowosci:"+to_string(loanAmount));
         }
 
