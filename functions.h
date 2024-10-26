@@ -46,171 +46,6 @@ void txt_log(string logs)
     log << czas() << " : " << logs << endl;
 }
 
-// Jan Piętka
-// Funkcja logowania urzytkownika
-void sign_in() {
-    string login;
-    string password;
-    bool loged_in = 0;
-    system("cls");
-    cout << "Witaj w Banku PWP!" << endl;
-
-    do {
-        cout << "Podaj login: ";
-        cin >> login;
-        cout << "Podaj haslo: ";
-        cin >> password;
-
-        for (int i = 0 ; i < user.getElementUser(); i++) {
-            cout << i;
-            if (login == user.getLogin(i) && password == user.getPassword(i)) { 
-                courent_user = i;
-                system("cls");
-                loged_in = 1;
-                return;
-            }
-        }
-        system("cls");
-        cout << "Nieprawidlowy login lub haslo." << endl;
-
-    } while (!loged_in);
-}
-
-// Jan Piętka
-// Funkcja obslugujaca menu kont
-void accountsMenu() {
-    system("cls");
-
-    while (true) {
-        vector<int> userAccounts;
-        int accountAmount = 0;
-        
-        cout << "Twoje Konta:" << endl;
-        cout << "Lp.           Numer Konta          Stan Konta" << endl;
-
-        for (int i = 0; i < account.getElemenAccount(); i++) {
-            if (account.getOwner_id(i) == user.getId(courent_user)) {
-                userAccounts.push_back(i);
-                accountAmount++;
-                cout << accountAmount << " - " << account.getAccountNumber(i) << " - " << account.getBalance(i) << " ";
-                for (int n = 0; n < currency.getElementCurrency(); n++) {
-                    if (account.getCurrency_id(i) == currency.getId(n)) {
-                        cout << currency.getName(n) << endl;
-                    }
-                }
-            }
-        }
-
-        if (accountAmount == 0) {
-            cout << "Nie masz zadnych kont." << endl;
-        }
-        
-        cout << accountAmount+1 << " - Zaloz nowe konto" << endl;
-        cout << "0 - Wyjdz do pulpitu" << endl;
-
-        cout << "Aby wykonac przelew wybierz konto zrodlowe wpisujac liczbe porzadkowa: ";
-        int menu;
-        cin >> menu;
-
-        if (menu == 0) {
-            system("cls");
-            return;
-        } else if (menu == accountAmount+1) {
-            system("cls");
-            cout << "Tworzenie konta." << endl;
-
-            for (int i = 0; i < currency.getElementCurrency(); i++) {
-                cout << i+1 << " - " << currency.getName(i) << endl;
-            }
-
-            cout << "Wybierz walute konta: ";
-            int waluta;
-            cin >> waluta;
-
-            if (waluta > currency.getElementCurrency() || waluta <= 0) {
-                system("cls");
-                cout << "NIeprawidlowy wybor waluty." << endl;
-            } else {
-                bool powtorzenie = 0;
-                string nowyNumer = "PL";
-                do {
-                    powtorzenie = 0;
-                    nowyNumer = "PL";
-                    for (int i = 0; i < 26; i++) {
-                        nowyNumer += to_string(rand()%10);
-                    }
-                    for (int i = 0; i < account.getElemenAccount(); i++) {
-                        if (nowyNumer == account.getAccountNumber(i)) {
-                            powtorzenie = 1;
-                            break;
-                        }
-                    }
-                    
-                } while (powtorzenie);
-
-                powtorzenie = 0;
-                int noweId;
-                do {
-                    powtorzenie = 0;
-                    noweId = rand();
-                    for (int i = 0; i < account.getElemenAccount(); i++) {
-                        if (noweId == account.getId(i)) {
-                            powtorzenie = 1;
-                            break;
-                        }
-                    }
-                } while (powtorzenie);
-
-                account.addAccount(noweId, user.getId(courent_user), currency.getId(waluta-1), nowyNumer, 0);
-                system("cls");
-                cout << "Utworzono nowe konto." << endl;
-            }
-            
-        } else if (menu<1 || menu>accountAmount) {
-
-            system("cls");
-            cout << "Nieprawidlowy wybor." << endl;
-
-        } else {
-            string accountNumber;
-            cout << "Przykladowy numer konta: PL12345678901234567890123456" << endl;
-            cout << "Numer konta docelowego: ";
-            cin >> accountNumber;
-
-            for (int i = 0; i < account.getElemenAccount(); i++) {
-                if (account.getAccountNumber(i) == accountNumber && accountNumber != account.getAccountNumber(userAccounts[menu-1])) {
-                    double amount;
-                    cout << "Podaj kwote przelewu: ";
-                    cin >> amount;
-
-                    if ((amount*100)-int(amount*100) != 0 || amount <= 0) {
-                        system("cls");
-                        cout << "Nieprawidlowa kwota." << endl;
-                    } else if (amount > account.getBalance(userAccounts[menu-1])) {
-                        system("cls");
-                        cout << "Niewystarczajace srodki na koncie." << endl;
-                    } else if (account.getCurrency_id(i) != account.getCurrency_id(userAccounts[menu-1])) {
-                        system("cls");
-                        cout << "Wybrane konta sa w roznych walutach." << endl;
-                    } else {
-                        account.decreaseBalance(userAccounts[menu-1], amount);
-                        account.increaseBalance(i, amount);
-                        system("cls");
-                        cout << "Wykonano przelew." << endl;;
-                    }
-                    break;
-
-                } else if (i+1 >= account.getElemenAccount()) {
-                    system("cls");
-                    cout << "Nieprawidlowy numer konta." << endl;
-                }
-            }
-        }
-    }
-    
-    return;
-}
-
 // Michal Wierzbicki
 // Funkcja obslugujaca menu kredytow
 void loansMenu() {
@@ -444,6 +279,170 @@ void depositsMenu() {
     return;
 }
 
+// Jan Piętka
+// Funkcja logowania urzytkownika
+void sign_in() {
+    string login;
+    string password;
+    bool loged_in = 0;
+    system("cls");
+    cout << "Witaj w Banku PWP!" << endl;
+
+    do {
+        cout << "Podaj login: ";
+        cin >> login;
+        cout << "Podaj haslo: ";
+        cin >> password;
+
+        for (int i = 0 ; i < user.getElementUser(); i++) {
+            cout << i;
+            if (login == user.getLogin(i) && password == user.getPassword(i)) { 
+                courent_user = i;
+                system("cls");
+                loged_in = 1;
+                return;
+            }
+        }
+        system("cls");
+        cout << "Nieprawidlowy login lub haslo." << endl;
+
+    } while (!loged_in);
+}
+
+// Jan Piętka
+// Funkcja obslugujaca menu kont
+void accountsMenu() {
+    system("cls");
+
+    while (true) {
+        vector<int> userAccounts;
+        int accountAmount = 0;
+        
+        cout << "Twoje Konta:" << endl;
+        cout << "Lp.           Numer Konta          Stan Konta" << endl;
+
+        for (int i = 0; i < account.getElemenAccount(); i++) {
+            if (account.getOwner_id(i) == user.getId(courent_user)) {
+                userAccounts.push_back(i);
+                accountAmount++;
+                cout << accountAmount << " - " << account.getAccountNumber(i) << " - " << account.getBalance(i) << " ";
+                for (int n = 0; n < currency.getElementCurrency(); n++) {
+                    if (account.getCurrency_id(i) == currency.getId(n)) {
+                        cout << currency.getName(n) << endl;
+                    }
+                }
+            }
+        }
+
+        if (accountAmount == 0) {
+            cout << "Nie masz zadnych kont." << endl;
+        }
+        
+        cout << accountAmount+1 << " - Zaloz nowe konto" << endl;
+        cout << "0 - Wyjdz do pulpitu" << endl;
+
+        cout << "Aby wykonac przelew wybierz konto zrodlowe wpisujac liczbe porzadkowa: ";
+        int menu;
+        cin >> menu;
+
+        if (menu == 0) {
+            system("cls");
+            return;
+        } else if (menu == accountAmount+1) {
+            system("cls");
+            cout << "Tworzenie konta." << endl;
+
+            for (int i = 0; i < currency.getElementCurrency(); i++) {
+                cout << i+1 << " - " << currency.getName(i) << endl;
+            }
+
+            cout << "Wybierz walute konta: ";
+            int waluta;
+            cin >> waluta;
+
+            if (waluta > currency.getElementCurrency() || waluta <= 0) {
+                system("cls");
+                cout << "NIeprawidlowy wybor waluty." << endl;
+            } else {
+                bool powtorzenie = 0;
+                string nowyNumer = "PL";
+                do {
+                    powtorzenie = 0;
+                    nowyNumer = "PL";
+                    for (int i = 0; i < 26; i++) {
+                        nowyNumer += to_string(rand()%10);
+                    }
+                    for (int i = 0; i < account.getElemenAccount(); i++) {
+                        if (nowyNumer == account.getAccountNumber(i)) {
+                            powtorzenie = 1;
+                            break;
+                        }
+                    }
+                    
+                } while (powtorzenie);
+
+                powtorzenie = 0;
+                int noweId;
+                do {
+                    powtorzenie = 0;
+                    noweId = rand();
+                    for (int i = 0; i < account.getElemenAccount(); i++) {
+                        if (noweId == account.getId(i)) {
+                            powtorzenie = 1;
+                            break;
+                        }
+                    }
+                } while (powtorzenie);
+
+                account.addAccount(noweId, user.getId(courent_user), currency.getId(waluta-1), nowyNumer, 0);
+                system("cls");
+                cout << "Utworzono nowe konto." << endl;
+            }
+            
+        } else if (menu<1 || menu>accountAmount) {
+
+            system("cls");
+            cout << "Nieprawidlowy wybor." << endl;
+
+        } else {
+            string accountNumber;
+            cout << "Przykladowy numer konta: PL12345678901234567890123456" << endl;
+            cout << "Numer konta docelowego: ";
+            cin >> accountNumber;
+
+            for (int i = 0; i < account.getElemenAccount(); i++) {
+                if (account.getAccountNumber(i) == accountNumber && accountNumber != account.getAccountNumber(userAccounts[menu-1])) {
+                    double amount;
+                    cout << "Podaj kwote przelewu: ";
+                    cin >> amount;
+
+                    if ((amount*100)-int(amount*100) != 0 || amount <= 0) {
+                        system("cls");
+                        cout << "Nieprawidlowa kwota." << endl;
+                    } else if (amount > account.getBalance(userAccounts[menu-1])) {
+                        system("cls");
+                        cout << "Niewystarczajace srodki na koncie." << endl;
+                    } else if (account.getCurrency_id(i) != account.getCurrency_id(userAccounts[menu-1])) {
+                        system("cls");
+                        cout << "Wybrane konta sa w roznych walutach." << endl;
+                    } else {
+                        account.decreaseBalance(userAccounts[menu-1], amount);
+                        account.increaseBalance(i, amount);
+                        system("cls");
+                        cout << "Wykonano przelew." << endl;;
+                    }
+                    break;
+
+                } else if (i+1 >= account.getElemenAccount()) {
+                    system("cls");
+                    cout << "Nieprawidlowy numer konta." << endl;
+                }
+            }
+        }
+    }
+    
+    return;
+}
 
 // Jan Piętka
 // Funkcja obslugujaca menu administratora
@@ -615,7 +614,7 @@ void desktop() {
             break;
         }
     }
-
+    
     return;
 }
 
