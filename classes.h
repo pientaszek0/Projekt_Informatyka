@@ -245,7 +245,7 @@ class Deposit {
         vector<int> remaining_time;        // Pozostały czas do zakończenia (w miesiącach)
 
     public:
-        // Funkcja zaciągania kredytu loan.addDeposit(id, owner id, wartosc kredytu, nazwa waluty, dlugosc(mies), interest, data poczatkowa, data koncowa);
+        // Funkcja zaciągania lokaty loan.addDeposit(id, owner id, wartosc lokaty, nazwa waluty, dlugosc(mies), interest, data poczatkowa, data koncowa);
         void addDeposit(int d_id, int d_owner_id, double d_deposit_amount, string d_currency_name, int d_duration_months,
          double d_interest_rate, string d_dstart_date, int d_remaining_time)
         {
