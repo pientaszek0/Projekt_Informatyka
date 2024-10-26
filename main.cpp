@@ -8,6 +8,7 @@
 
 using namespace std;
 
+
 int main() {
     xml_chf(user); // Wywołanie funkcji do odczytu pliku xml 
     xml_giveData(user, account, currency, loan_type, loan, deposit); // Wywołanie funkcja która wczytuje dane z XML
@@ -15,7 +16,7 @@ int main() {
     xml_save(user, account, currency, loan_type, loan, deposit);
     //txt_log("Test");
     //cout << "Test " << checkPass("admin", user.getPassword(0));
-
+    
     while (true) { // Nieskonczona petla zeby mozna bylo sie wylogowac i zalogowac na innego uzytkownika
         sign_in(); // Wywolanie funkcji logowania
         desktop(); // Wywolanie funkcji pokazujacej pulpit uzytkownika

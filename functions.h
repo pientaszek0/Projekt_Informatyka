@@ -12,6 +12,7 @@
 
 using namespace std;
 
+
 // Adrian Prymas
 // funckja do pobierania czasu
 string czas()
@@ -45,7 +46,25 @@ void txt_log(string logs)
     }
     log << czas() << " : " << logs << endl;
 }
+// Michal Wierzbicki
+// Funkcja do liczenia pozostalego czasu
+int calculateRemainingTime(int durationMonths, const tm& startDate) {
+            time_t now = time(0);
+            tm currentDate;
+            localtime_s(&currentDate, &now);
 
+            int yearsPassed = currentDate.tm_year - startDate.tm_year;
+            int monthsPassed = yearsPassed * 12 + (currentDate.tm_mon - startDate.tm_mon);
+
+            int remainingMonths = durationMonths - monthsPassed;
+            return remainingMonths > 0 ? remainingMonths : 0;
+}
+tm getCurrentDate() {
+    time_t actual_time = time(0);
+    tm currentDate;
+    localtime_s(&currentDate, &actual_time);
+    return currentDate;
+}
 // Michal Wierzbicki
 // Funkcja obslugujaca menu kredytow
 void loansMenu() {
@@ -127,7 +146,7 @@ void loansMenu() {
             // Wybór typu kredytu
             cout << "Wybierz typ kredytu: " << endl;
             for (int i = 0; i < loan_type.getElementLoanType(); i++) {
-                cout << i + 1 << " - " << loan_type.getLoanTypeName(i) << " (Stopa procentowa: " << loan_type.getInterest(i) << "%)" << endl;
+                cout << i + 1 << " - " << loan_type.getLoanTypeName(i) << endl;
             }
             cin >> loanTypeIndex;
             loanTypeIndex--; // Indeksy zaczynają się od 0
@@ -153,8 +172,12 @@ void loansMenu() {
             }
 
             // Dodanie nowego kredytu
-            loan.takeLoan(loan.getOwnerId(courent_user), newLoanAmount, loan_type.getLoanTypeName(loanTypeIndex), currency.getName(currencyIndex));
+            loan.addLoan(loan.getId(courent_user) , loan.getOwnerId(courent_user), currency.getName(currencyIndex), loan_type.getLoanTypeName(loanTypeIndex) , newLoanAmount);
             txt_log("User:" + to_string(user.getId(courent_user)) + " zaciagnal nowy kredyt " + loan_type.getLoanTypeName(loanTypeIndex) + " w wysowosci:" + to_string(newLoanAmount));
+            system("cls");
+            cout << "Zaciagnieto nowy kredyt w wysokosci: " << newLoanAmount << endl;
+            cout << "Typ kredytu: " << loan_type.getLoanTypeName(loanTypeIndex) << endl;
+            cout << "Waluta: " << currency.getName(currencyIndex) << endl;
         }
 
         else {
@@ -264,9 +287,12 @@ void depositsMenu() {
                 interestRate = 4.0;
             }
 
+            tm startDate = getCurrentDate();
             // Dodanie nowej lokaty
-            deposit.takeDeposit(deposit.getOwnerId(courent_user), depositAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas());
+            deposit.addDeposit(deposit.getId(courent_user), deposit.getOwnerId(courent_user), depositAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
             txt_log("User:"+to_string(user.getId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(depositAmount));
+            system("cls");
+            cout << "Zalozono nowa lokate." << endl;
         }
 
         // Nieprawidłowy wybór

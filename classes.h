@@ -189,7 +189,7 @@ class Loan {
         vector<double> balance_left; // Ile jeszcze zostało do spłacenia kredytu
 
     public:
-        // Metoda do zapisu xml
+        // Funkcja zaciągania kredytu loan.takeLoan(id ,owner id,nazwa waluty, typ kredytu, wartosc kredytu);
         void addLoan(int l_id, int l_owner_id, string l_currency_name, string l_loan_type, double l_balance_left) {
             id.emplace_back(l_id);
             owner_id.emplace_back(l_owner_id);
@@ -228,17 +228,6 @@ class Loan {
                 system("cls");
                 cout << "Splacono: " << payment << ". Pozostalo do splaty: " << balance_left[index] << endl;
         }
-        // Funkcja zaciągania kredytu loan.takeLoan(owner id, wartosc kredytu, typ kredytu, nazwa waluty);
-        void takeLoan(int ownerId, double loanAmount, string loanType, string currencyName) {
-            owner_id.emplace_back(ownerId);
-            balance_left.emplace_back(loanAmount);
-            loan_type.emplace_back(loanType);
-            currency_name.emplace_back(currencyName);
-            system("cls");
-            cout << "Zaciagnieto nowy kredyt w wysokosci: " << loanAmount << endl;
-            cout << "Typ kredytu: " << loanType << endl;
-            cout << "Waluta: " << currencyName << endl;
-        }
 };
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -256,7 +245,7 @@ class Deposit {
         vector<int> remaining_time;        // Pozostały czas do zakończenia (w miesiącach)
 
     public:
-        // Metoda do zapisu xml
+        // Funkcja zaciągania kredytu loan.addDeposit(id, owner id, wartosc kredytu, nazwa waluty, dlugosc(mies), interest, data poczatkowa, data koncowa);
         void addDeposit(int d_id, int d_owner_id, double d_deposit_amount, string d_currency_name, int d_duration_months,
          double d_interest_rate, string d_dstart_date, int d_remaining_time)
         {
@@ -314,18 +303,6 @@ class Deposit {
             system("cls");
             cout << "Lokata zakonczona. Kwota wyplacona: " << deposit_amount[index] + calculateInterest(index) << endl;
             deposit_amount[index] = 0; // Resetowanie lokaty po zakończeniu
-        }
-        // Funkcja zaciągania kredytu loan.takeLoan(owner id, wartosc kredytu, typ kredytu, nazwa waluty);
-        void takeDeposit(int ownerId, double depositAmount, string currencyName,int durationMonths, double interestRate, string startDate) {
-            owner_id.emplace_back(ownerId);
-            deposit_amount.emplace_back(depositAmount);
-            currency_name.emplace_back(currencyName);
-            duration_months.emplace_back(durationMonths);
-            interest_rate.emplace_back(interestRate);
-            start_date.emplace_back(startDate);
-            
-            system("cls");
-            cout << "Zalozono nowa lokate." << endl;
         }
 };
 
