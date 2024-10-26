@@ -299,6 +299,7 @@ void sign_in() {
             if (login == user.getLogin(i) && password == user.getPassword(i)) { 
                 courent_user = i;
                 system("cls");
+                txt_log("Uzytkownik ID:" + to_string(user.getId(i))+ " - " + user.getFirst_name(i) + " " + user.getLast_name(i) + " zalogowal sie.");
                 loged_in = 1;
                 return;
             }
@@ -315,12 +316,13 @@ void accountsMenu() {
     system("cls");
 
     while (true) {
-        vector<int> userAccounts;
-        int accountAmount = 0;
-        
+        vector<int> userAccounts; // Wektor indeksow kont nalezacych do aktualnego uzytkownika
+        int accountAmount = 0; // Ilosc kont posiadanych przez aktualnego uzytkownika
+
         cout << "Twoje Konta:" << endl;
         cout << "Lp.           Numer Konta          Stan Konta" << endl;
 
+        // Wyswietlenie wszystkich kont aktualnego uzytkownika
         for (int i = 0; i < account.getElemenAccount(); i++) {
             if (account.getOwner_id(i) == user.getId(courent_user)) {
                 userAccounts.push_back(i);
@@ -345,10 +347,10 @@ void accountsMenu() {
         int menu;
         cin >> menu;
 
-        if (menu == 0) {
+        if (menu == 0) { // Wyjscie do pulpitu
             system("cls");
             return;
-        } else if (menu == accountAmount+1) {
+        } else if (menu == accountAmount+1) { // Tworzenie nowego konta
             system("cls");
             cout << "Tworzenie konta." << endl;
 
@@ -366,7 +368,7 @@ void accountsMenu() {
             } else {
                 bool powtorzenie = 0;
                 string nowyNumer = "PL";
-                do {
+                do { // Generowanie losowego numeru konta i sprawdzanie czy taki juz istnieje do skutku
                     powtorzenie = 0;
                     nowyNumer = "PL";
                     for (int i = 0; i < 26; i++) {
@@ -383,7 +385,7 @@ void accountsMenu() {
 
                 powtorzenie = 0;
                 int noweId;
-                do {
+                do { // Generowanie losowego id konta i sprawdzanie czy takie juz istnieje do skutku
                     powtorzenie = 0;
                     noweId = rand();
                     for (int i = 0; i < account.getElemenAccount(); i++) {
@@ -395,17 +397,17 @@ void accountsMenu() {
                 } while (powtorzenie);
 
                 account.addAccount(noweId, user.getId(courent_user), currency.getId(waluta-1), nowyNumer, 0);
+                txt_log("Uzytkownik ID:" + to_string(user.getId(courent_user))+ " - " + user.getFirst_name(courent_user) + " " + user.getLast_name(courent_user) + " Utworzyl konto: " + nowyNumer);
                 system("cls");
                 cout << "Utworzono nowe konto." << endl;
             }
             
-        } else if (menu<1 || menu>accountAmount) {
-
+        } else if (menu<1 || menu>accountAmount) { // Nieprawidlowy wybor w menu kont
             system("cls");
             cout << "Nieprawidlowy wybor." << endl;
 
-        } else {
-            string accountNumber;
+        } else { // Wykonywanie przelewu
+            string accountNumber; // Numer konta docelowego
             cout << "Przykladowy numer konta: PL12345678901234567890123456" << endl;
             cout << "Numer konta docelowego: ";
             cin >> accountNumber;
@@ -428,6 +430,7 @@ void accountsMenu() {
                     } else {
                         account.decreaseBalance(userAccounts[menu-1], amount);
                         account.increaseBalance(i, amount);
+                        txt_log("Uzytkownik ID:" + to_string(user.getId(courent_user))+ " - " + user.getFirst_name(courent_user) + " " + user.getLast_name(courent_user) + " Wykonal przelew z konta " + account.getAccountNumber(userAccounts[menu-1]) + " na konto " + account.getAccountNumber(i));
                         system("cls");
                         cout << "Wykonano przelew." << endl;;
                     }
@@ -460,7 +463,7 @@ void adminMenu() {
         cin >> menu;
         
         switch (menu) {
-        case 1: {
+        case 1: { // Tworzenie nowego uzytkownika
             bool powtorzenie = 0;
             int noweId;
             string firstName, lastName, login, password;
@@ -486,11 +489,12 @@ void adminMenu() {
             cin >> password;
 
             user.addUser(noweId, firstName, lastName, login, password, 0);
+            txt_log("Administrator ID:" + to_string(user.getId(courent_user))+ " - " + user.getFirst_name(courent_user) + " " + user.getLast_name(courent_user) + " Utworzyl nowego uzytkownika " + firstName + " " + lastName);
             system("cls");
             cout << "Utworzono urzytkownika." << endl;
             break;
         }
-        case 2: {
+        case 2: { // Wplacanie pieniedzy na czyjes konto
             string accountNumber;
             double amount;
             cout << "Przykladowy numer konta: PL12345678901234567890123456" << endl;
@@ -507,6 +511,7 @@ void adminMenu() {
                         cout << "Nieprawidlowa kwota." << endl;
                     } else {
                         account.increaseBalance(i, amount);
+                        txt_log("Administrator ID:" + to_string(user.getId(courent_user))+ " - " + user.getFirst_name(courent_user) + " " + user.getLast_name(courent_user) + " dokonal wplaty na konto " + account.getAccountNumber(i));
                         system("cls");
                         cout << "Dokonano wplaty." << endl;;
                     }
@@ -519,7 +524,7 @@ void adminMenu() {
             }
             break;
         }
-        case 3: {
+        case 3: { // Wyplacenie pieniedzy z czyjegos konta
             string accountNumber;
             double amount;
             cout << "Przykladowy numer konta: PL12345678901234567890123456" << endl;
@@ -536,6 +541,7 @@ void adminMenu() {
                         cout << "Nieprawidlowa kwota." << endl;
                     } else {
                         account.decreaseBalance(i, amount);
+                        txt_log("Administrator ID:" + to_string(user.getId(courent_user))+ " - " + user.getFirst_name(courent_user) + " " + user.getLast_name(courent_user) + " dokonal wuplaty z konta " + account.getAccountNumber(i));
                         system("cls");
                         cout << "Dokonano wyplaty." << endl;;
                     }
@@ -548,7 +554,7 @@ void adminMenu() {
             }
             break;
         }
-        case 0: {
+        case 0: { // Wyjscie do pulkpitu
             system("cls");
             return;
         }
@@ -594,12 +600,13 @@ void desktop() {
             depositsMenu();
             break;
         }
-        case 0: {
+        case 0: { // Wylogowanie uzytkownika i zapisanie danych
             log_out = 0;
+            txt_log("Uzytkownik ID:" + to_string(user.getId(courent_user))+ " - " + user.getFirst_name(courent_user) + " " + user.getLast_name(courent_user) + " wylogowal sie i zapisal dane.");
             xml_save(user, account, currency, loan_type, loan, deposit);
             break;
         }
-        case 10: {
+        case 10: { // wejscie do menu administratora
             if (user.isAdmin(courent_user)) {
                 adminMenu();
             } else {

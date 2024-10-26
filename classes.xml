@@ -826,6 +826,14 @@
 			<password>cos</password>
 			<admin>false</admin>
 		</User>
+		<User>
+			<id>18467</id>
+			<first_name>Jan</first_name>
+			<last_name>Pietka</last_name>
+			<login>Jan</login>
+			<password>Pietka</password>
+			<admin>false</admin>
+		</User>
 </Users>
 <Accounts>
 		<Account>
@@ -1953,7 +1961,7 @@
 			<owner_id>0</owner_id>
 			<currency_id>2</currency_id>
 			<account_number>PL17409488245517115276142322</account_number>
-			<balance>0</balance>
+			<balance>2137.32</balance>
 		</Account>
 		<Account>
 			<id>32662</id>
