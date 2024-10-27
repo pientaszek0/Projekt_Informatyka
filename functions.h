@@ -171,11 +171,24 @@ void loansMenu() {
                 continue;
             }
 
+            // Długość trwania kredytu
+            cout << "Podaj dlugosc trwania kredytu w latach: ";
+            int years;
+            cin >> years;
+
+            if (years <= 0) {
+                system("cls");
+                cout << "Nieprawidlowa ilosc lat." << endl;
+                continue;
+            }
+            // Liczenie całkowitego kwoty końcowej
+            double totalLoanAmount = newLoanAmount + loan_type.calcInterest(loanTypeIndex, newLoanAmount, years);
+
             // Dodanie nowego kredytu
-            loan.addLoan(loan.getId(courent_user) , loan.getOwnerId(courent_user), currency.getName(currencyIndex), loan_type.getLoanTypeName(loanTypeIndex) , newLoanAmount);
+            loan.addLoan(loan.getId(courent_user) , loan.getOwnerId(courent_user), currency.getName(currencyIndex), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount );
             txt_log("User:" + to_string(user.getId(courent_user)) + " zaciagnal nowy kredyt " + loan_type.getLoanTypeName(loanTypeIndex) + " w wysowosci:" + to_string(newLoanAmount));
             system("cls");
-            cout << "Zaciagnieto nowy kredyt w wysokosci: " << newLoanAmount << endl;
+            cout << "Zaciagnieto nowy kredyt w wysokosci: " << totalLoanAmount << endl;
             cout << "Typ kredytu: " << loan_type.getLoanTypeName(loanTypeIndex) << endl;
             cout << "Waluta: " << currency.getName(currencyIndex) << endl;
         }
@@ -276,7 +289,7 @@ void depositsMenu() {
                 continue;
             }
 
-            // Ustal oprocentowanie lokaty (dla przykładu ustalamy stałe oprocentowanie na podstawie czasu trwania)
+            // Ustal oprocentowanie lokaty
             if (durationMonths <= 6) {
                 interestRate = 2.0;
             } else if (durationMonths <= 12) {
@@ -287,10 +300,17 @@ void depositsMenu() {
                 interestRate = 4.0;
             }
 
+            // Liczenie całkowitego kwoty końcowej
+            double interestFactor = interestRate / 100;
+            double interestAmount = depositAmount * interestFactor;
+            double totalAmount = depositAmount + interestAmount;
+
+            // Inicjowanie daty
             tm startDate = getCurrentDate();
+
             // Dodanie nowej lokaty
-            deposit.addDeposit(deposit.getId(courent_user), deposit.getOwnerId(courent_user), depositAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
-            txt_log("User:"+to_string(user.getId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(depositAmount));
+            deposit.addDeposit(deposit.getId(courent_user), deposit.getOwnerId(courent_user), totalAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
+            txt_log("User:"+to_string(user.getId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(totalAmount));
             system("cls");
             cout << "Zalozono nowa lokate." << endl;
         }

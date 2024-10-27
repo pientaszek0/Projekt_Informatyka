@@ -172,7 +172,7 @@ class Loan_Type {
             return this->loan_type[index];
         }
         // Funkcja liczaca interest
-        double calcInterest(int index,double loanAmount, int years) {
+        double calcInterest(int index, double loanAmount, int years) {
             return loanAmount * (interest[index] / 100) * years ;
         }
 };
