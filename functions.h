@@ -82,7 +82,7 @@ void loansMenu() {
             if (loan.getOwnerId(i) == user.getId(courent_user)) {
                 userLoans.push_back(i);
                 loanCount++;
-                cout << loanCount << " - " << loan.getLoanTypeName(i) << " - " << loan.getBalanceLeft(i) << " ";
+                cout << loanCount << "      -      " << loan.getLoanTypeName(i) << "      -      " << loan.getBalanceLeft(i) << " ";
                 for (int n = 0; n < currency.getElementCurrency(); n++) {
                     if (loan.getCurrencyName(i) == currency.getName(n)) {
                         cout << currency.getName(n) << endl;
@@ -118,11 +118,11 @@ void loansMenu() {
             if ((paymentAmount * 100) - int(paymentAmount * 100) != 0 || paymentAmount <= 0) {
                 system("cls");
                 cout << "Nieprawidlowa kwota." << endl;
-            } else if (paymentAmount > loan.getBalanceLeft(userLoans[menu - 1])) {  // Poprawiono indeks
+            } else if (paymentAmount > loan.getBalanceLeft(userLoans[menu - 1])) {
                 system("cls");
                 cout << "Kwota splaty przewyzsza saldo kredytu." << endl;
             } else {
-                loan.makePayment(userLoans[menu - 1], paymentAmount);  // Poprawiono indeks
+                loan.makePayment(userLoans[menu - 1], paymentAmount);
                 txt_log("User:" + to_string(user.getId(courent_user)) + " splacil:" + to_string(paymentAmount) + " . -Kredyt");
                 system("cls");
                 cout << "Splacono " << paymentAmount << " z kredytu." << endl;
@@ -146,12 +146,11 @@ void loansMenu() {
             // Wybór typu kredytu
             cout << "Wybierz typ kredytu: " << endl;
             for (int i = 0; i < loan_type.getElementLoanType(); i++) {
-                cout << i + 1 << " - " << loan_type.getLoanTypeName(i) << endl;
+                cout << i + 1 << " - " << loan_type.getLoanTypeName(i) << " (Stopa procentowa: " << loan_type.getInterest(i) << "%)" << endl;
             }
             cin >> loanTypeIndex;
-            loanTypeIndex--; // Indeksy zaczynają się od 0
 
-            if (loanTypeIndex < 0 || loanTypeIndex >= loan_type.getElementLoanType()) {
+            if (loanTypeIndex < 1 || loanTypeIndex >= loan_type.getElementLoanType()) {
                 system("cls");
                 cout << "Nieprawidlowy wybor typu kredytu." << endl;
                 continue;
@@ -185,7 +184,7 @@ void loansMenu() {
             double totalLoanAmount = newLoanAmount + loan_type.calcInterest(loanTypeIndex, newLoanAmount, years);
 
             // Dodanie nowego kredytu
-            loan.addLoan(loan.getId(courent_user) , loan.getOwnerId(courent_user), currency.getName(currencyIndex), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount );
+            loan.addLoan(loan.getId(courent_user) , loan.getOwnerId(courent_user), currency.getName(currencyIndex), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
             txt_log("User:" + to_string(user.getId(courent_user)) + " zaciagnal nowy kredyt " + loan_type.getLoanTypeName(loanTypeIndex) + " w wysowosci:" + to_string(newLoanAmount));
             system("cls");
             cout << "Zaciagnieto nowy kredyt w wysokosci: " << totalLoanAmount << endl;
@@ -373,7 +372,7 @@ void accountsMenu() {
             if (account.getOwner_id(i) == user.getId(courent_user)) {
                 userAccounts.push_back(i);
                 accountAmount++;
-                cout << accountAmount << " - " << account.getAccountNumber(i) << " - " << account.getBalance(i) << " ";
+                cout << accountAmount << "      -      " << account.getAccountNumber(i) << "      -      " << account.getBalance(i) << " ";
                 for (int n = 0; n < currency.getElementCurrency(); n++) {
                     if (account.getCurrency_id(i) == currency.getId(n)) {
                         cout << currency.getName(n) << endl;

@@ -2003,22 +2003,22 @@
 	<Loan_Types>
 		<Loan_Type>
 			<id>1</id>
-			<interest>0</interest>
+			<interest>3.5</interest>
 			<loan_type_name>Hipoteczny</loan_type_name>
 		</Loan_Type>
 		<Loan_Type>
 			<id>2</id>
-			<interest>0</interest>
+			<interest>4.3</interest>
 			<loan_type_name>Konsumpcyjny</loan_type_name>
 		</Loan_Type>
 		<Loan_Type>
 			<id>3</id>
-			<interest>0</interest>
+			<interest>5.0</interest>
 			<loan_type_name>Samochodowy</loan_type_name>
 		</Loan_Type>
 		<Loan_Type>
 			<id>4</id>
-			<interest>0</interest>
+			<interest>1.2</interest>
 			<loan_type_name>Studencki</loan_type_name>
 		</Loan_Type>
 	</Loan_Types>
