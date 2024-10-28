@@ -111,7 +111,33 @@ void loansMenu() {
 
         // Spłata kredytu
         if (menu > 0 && menu <= loanCount) {
+            vector<int> userAccounts;
             double paymentAmount;
+            int accountAmount = 0;
+
+            // Wyswietlenie wszystkich kont aktualnego uzytkownika
+            for (int i = 0; i < account.getElemenAccount(); i++) {
+                if (account.getOwner_id(i) == user.getId(courent_user)) {
+                    userAccounts.push_back(i);
+                    accountAmount++;
+                    cout << accountAmount << "      -      " << account.getAccountNumber(i) << "      -      " << account.getBalance(i) << " ";
+                    for (int n = 0; n < currency.getElementCurrency(); n++) {
+                        if (account.getCurrency_id(i) == currency.getId(n)) {
+                            cout << currency.getName(n) << endl;
+                        }
+                    }
+                }
+            }
+            cout<<"Wybierz numer porzadkowy konta za pomoca ktorego chcesz spalcic kredyt:";
+            int konto;
+            cin>>konto;
+
+            if (konto<1 || konto>accountAmount) { // Nieprawidlowy wybor konta
+                system("cls");
+                cout << "Nieprawidlowy wybor." << endl;
+                continue;
+            }
+
             cout << "Podaj kwote splaty: ";
             cin >> paymentAmount;
 
@@ -123,6 +149,7 @@ void loansMenu() {
                 cout << "Kwota splaty przewyzsza saldo kredytu." << endl;
             } else {
                 loan.makePayment(userLoans[menu - 1], paymentAmount);
+                account.decreaseBalance(userAccounts[konto-1], paymentAmount);
                 txt_log("User:" + to_string(user.getId(courent_user)) + " splacil:" + to_string(paymentAmount) + " . -Kredyt");
                 system("cls");
                 cout << "Splacono " << paymentAmount << " z kredytu." << endl;
@@ -131,12 +158,37 @@ void loansMenu() {
 
         // Zaciąganie nowego kredytu
         else if (menu == loanCount + 1) {
+            vector<int> userAccounts;
             double newLoanAmount;
             int loanTypeIndex, currencyIndex;
+            int accountAmount = 0;
+
+            // Wyswietlenie wszystkich kont aktualnego uzytkownika
+            for (int i = 0; i < account.getElemenAccount(); i++) {
+                if (account.getOwner_id(i) == user.getId(courent_user)) {
+                    userAccounts.push_back(i);
+                    accountAmount++;
+                    cout << accountAmount << "      -      " << account.getAccountNumber(i) << "      -      " << account.getBalance(i) << " ";
+                    for (int n = 0; n < currency.getElementCurrency(); n++) {
+                        if (account.getCurrency_id(i) == currency.getId(n)) {
+                            cout << currency.getName(n) << endl;
+                        }
+                    }
+                }
+            }
+            cout<<"Wybierz numer porzadkowy konta na ktory chcesz zaciagnac kredyt:";
+            int konto;
+            cin>>konto;
+
+            if (konto<1 || konto>accountAmount) { // Nieprawidlowy wybor konta
+                system("cls");
+                cout << "Nieprawidlowy wybor." << endl;
+                continue;
+            }
 
             cout << "Podaj kwote kredytu: ";
             cin >> newLoanAmount;
-
+            
             if (newLoanAmount <= 0) {
                 system("cls");
                 cout << "Nieprawidlowa kwota." << endl;
@@ -186,6 +238,7 @@ void loansMenu() {
 
             // Dodanie nowego kredytu
             loan.addLoan(user.getId(courent_user) , user.getId(courent_user), currency.getName(currencyIndex), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
+            account.increaseBalance(userAccounts[konto-1], totalLoanAmount);
             txt_log("User:" + to_string(user.getId(courent_user)) + " zaciagnal nowy kredyt " + loan_type.getLoanTypeName(loanTypeIndex) + " w wysowosci:" + to_string(newLoanAmount));
             system("cls");
             cout << "Zaciagnieto nowy kredyt w wysokosci: " << totalLoanAmount << endl;
@@ -246,15 +299,65 @@ void depositsMenu() {
 
         // Zakończenie lokaty
         if (menu > 0 && menu <= depositCount) {
+            vector<int> userAccounts;
+            int accountAmount = 0;
+
+            // Wyswietlenie wszystkich kont aktualnego uzytkownika
+            for (int i = 0; i < account.getElemenAccount(); i++) {
+                if (account.getOwner_id(i) == user.getId(courent_user)) {
+                    userAccounts.push_back(i);
+                    accountAmount++;
+                    cout << accountAmount << "      -      " << account.getAccountNumber(i) << "      -      " << account.getBalance(i) << " ";
+                    for (int n = 0; n < currency.getElementCurrency(); n++) {
+                        if (account.getCurrency_id(i) == currency.getId(n)) {
+                            cout << currency.getName(n) << endl;
+                        }
+                    }
+                }
+            }
+            cout<<"Wybierz numer porzadkowy konta na ktory chcesz wplacic lokate:";
+            int konto;
+            cin>>konto;
+
+            if (konto<1 || konto>accountAmount) { // Nieprawidlowy wybor konta
+                system("cls");
+                cout << "Nieprawidlowy wybor." << endl;
+                continue;
+            }
             deposit.endDeposit(courent_user);
+            account.increaseBalance(userAccounts[konto-1], (deposit.getDepositAmount(courent_user) + deposit.calculateInterest(courent_user)));
             txt_log("User:"+to_string(user.getId(courent_user))+" zakonczyl lokate. Wyplacono kwote w wysowosci:"+to_string((deposit.getDepositAmount(courent_user) + deposit.calculateInterest(courent_user))));
         }
 
         // Założenie nowej lokaty
         else if (menu == depositCount+1) {
-            double depositAmount;
+            vector<int> userAccounts;
+            double depositAmount, interestRate;
             int currencyIndex, durationMonths;
-            double interestRate;
+            int accountAmount = 0;
+
+            // Wyswietlenie wszystkich kont aktualnego uzytkownika
+            for (int i = 0; i < account.getElemenAccount(); i++) {
+                if (account.getOwner_id(i) == user.getId(courent_user)) {
+                    userAccounts.push_back(i);
+                    accountAmount++;
+                    cout << accountAmount << "      -      " << account.getAccountNumber(i) << "      -      " << account.getBalance(i) << " ";
+                    for (int n = 0; n < currency.getElementCurrency(); n++) {
+                        if (account.getCurrency_id(i) == currency.getId(n)) {
+                            cout << currency.getName(n) << endl;
+                        }
+                    }
+                }
+            }
+            cout<<"Wybierz numer porzadkowy konta z ktorego chcesz wplacic na lokate:";
+            int konto;
+            cin>>konto;
+
+            if (konto<1 || konto>accountAmount) { // Nieprawidlowy wybor konta
+                system("cls");
+                cout << "Nieprawidlowy wybor." << endl;
+                continue;
+            }
 
             cout << "Podaj kwote lokaty: ";
             cin >> depositAmount;
@@ -310,6 +413,7 @@ void depositsMenu() {
 
             // Dodanie nowej lokaty
             deposit.addDeposit(deposit.getId(courent_user), deposit.getOwnerId(courent_user), totalAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
+            account.decreaseBalance(userAccounts[konto-1], totalAmount);
             txt_log("User:"+to_string(user.getId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(totalAmount));
             system("cls");
             cout << "Zalozono nowa lokate." << endl;
