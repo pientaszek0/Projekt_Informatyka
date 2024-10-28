@@ -149,8 +149,9 @@ void loansMenu() {
                 cout << i + 1 << " - " << loan_type.getLoanTypeName(i) << " (Stopa procentowa: " << loan_type.getInterest(i) << "%)" << endl;
             }
             cin >> loanTypeIndex;
-
-            if (loanTypeIndex < 1 || loanTypeIndex >= loan_type.getElementLoanType()) {
+            loanTypeIndex--;
+            
+            if (loanTypeIndex < 0 || loanTypeIndex >= loan_type.getElementLoanType()) {
                 system("cls");
                 cout << "Nieprawidlowy wybor typu kredytu." << endl;
                 continue;
