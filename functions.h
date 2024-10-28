@@ -185,7 +185,7 @@ void loansMenu() {
             double totalLoanAmount = newLoanAmount + loan_type.calcInterest(loanTypeIndex, newLoanAmount, years);
 
             // Dodanie nowego kredytu
-            loan.addLoan(loan.getId(courent_user) , loan.getOwnerId(courent_user), currency.getName(currencyIndex), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
+            loan.addLoan(user.getId(courent_user) , user.getId(courent_user), currency.getName(currencyIndex), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
             txt_log("User:" + to_string(user.getId(courent_user)) + " zaciagnal nowy kredyt " + loan_type.getLoanTypeName(loanTypeIndex) + " w wysowosci:" + to_string(newLoanAmount));
             system("cls");
             cout << "Zaciagnieto nowy kredyt w wysokosci: " << totalLoanAmount << endl;
