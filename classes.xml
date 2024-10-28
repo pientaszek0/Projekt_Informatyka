@@ -2018,8 +2018,8 @@
 		</Loan_Type>
 		<Loan_Type>
 			<id>4</id>
-			<interest>1.2</interest>
-			<loan_type_name>Studencki</loan_type_name>
+			<interest>7.2</interest>
+			<loan_type_name>Gotowkowy</loan_type_name>
 		</Loan_Type>
 	</Loan_Types>
 	<Loans>
