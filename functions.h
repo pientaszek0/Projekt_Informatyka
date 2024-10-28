@@ -233,11 +233,25 @@ void loansMenu() {
                 cout << "Nieprawidlowa ilosc lat." << endl;
                 continue;
             }
+            
+            bool powtorzenie = 0;
+            int noweId;
+            do { // Generowanie losowego id konta i sprawdzanie czy takie juz istnieje do skutku
+                powtorzenie = 0;
+                noweId = rand();
+                for (int i = 0; i < account.getElemenAccount(); i++) {
+                    if (noweId == account.getId(i)) {
+                        powtorzenie = 1;
+                        break;
+                    }
+                }
+            } while (powtorzenie);
+
             // Liczenie całkowitego kwoty końcowej
             double totalLoanAmount = newLoanAmount + loan_type.calcInterest(loanTypeIndex, newLoanAmount, years);
 
             // Dodanie nowego kredytu
-            loan.addLoan(user.getId(courent_user) , user.getId(courent_user), currency.getName(currencyIndex), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
+            loan.addLoan(noweId, user.getId(courent_user), currency.getName(currencyIndex), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
             account.increaseBalance(userAccounts[konto-1], totalLoanAmount);
             txt_log("User:" + to_string(user.getId(courent_user)) + " zaciagnal nowy kredyt " + loan_type.getLoanTypeName(loanTypeIndex) + " w wysowosci:" + to_string(newLoanAmount));
             system("cls");
@@ -403,6 +417,19 @@ void depositsMenu() {
                 interestRate = 4.0;
             }
 
+            bool powtorzenie = 0;
+            int noweId;
+            do { // Generowanie losowego id konta i sprawdzanie czy takie juz istnieje do skutku
+                powtorzenie = 0;
+                noweId = rand();
+                for (int i = 0; i < account.getElemenAccount(); i++) {
+                    if (noweId == account.getId(i)) {
+                        powtorzenie = 1;
+                        break;
+                    }
+                }
+            } while (powtorzenie);
+
             // Liczenie całkowitego kwoty końcowej
             double interestFactor = interestRate / 100;
             double interestAmount = depositAmount * interestFactor;
@@ -412,7 +439,7 @@ void depositsMenu() {
             tm startDate = getCurrentDate();
 
             // Dodanie nowej lokaty
-            deposit.addDeposit(deposit.getId(courent_user), deposit.getOwnerId(courent_user), totalAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
+            deposit.addDeposit(noweId, deposit.getOwnerId(courent_user), totalAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
             account.decreaseBalance(userAccounts[konto-1], totalAmount);
             txt_log("User:"+to_string(user.getId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(totalAmount));
             system("cls");

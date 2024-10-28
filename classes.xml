@@ -2026,27 +2026,6 @@
 		<Loan>
 			<id>0</id>
 			<owner_id>0</owner_id>
-			<currency_name>Euro</currency_name>
-			<loan_type_name>Hipoteczny</loan_type_name>
-			<balance_left>1800</balance_left>
-		</Loan>
-		<Loan>
-			<id>0</id>
-			<owner_id>0</owner_id>
-			<currency_name>Zloty</currency_name>
-			<loan_type_name>Konsumpcyjny</loan_type_name>
-			<balance_left>4000</balance_left>
-		</Loan>
-		<Loan>
-			<id>0</id>
-			<owner_id>0</owner_id>
-			<currency_name>Dolar Amerykanski</currency_name>
-			<loan_type_name>Samochodowy</loan_type_name>
-			<balance_left>50000</balance_left>
-		</Loan>
-		<Loan>
-			<id>0</id>
-			<owner_id>0</owner_id>
 			<currency_name>Funt Brytyjski</currency_name>
 			<loan_type_name>Studencki</loan_type_name>
 			<balance_left>100000</balance_left>
@@ -2190,6 +2169,27 @@
 			<currency_name>Frank Szwajcarski</currency_name>
 			<loan_type_name>Hipoteczny</loan_type_name>
 			<balance_left>250000</balance_left>
+		</Loan>
+				<Loan>
+			<id>21</id>
+			<owner_id>0</owner_id>
+			<currency_name>Euro</currency_name>
+			<loan_type_name>Hipoteczny</loan_type_name>
+			<balance_left>1800</balance_left>
+		</Loan>
+		<Loan>
+			<id>22</id>
+			<owner_id>0</owner_id>
+			<currency_name>Zloty</currency_name>
+			<loan_type_name>Konsumpcyjny</loan_type_name>
+			<balance_left>4000</balance_left>
+		</Loan>
+		<Loan>
+			<id>23</id>
+			<owner_id>0</owner_id>
+			<currency_name>Dolar Amerykanski</currency_name>
+			<loan_type_name>Samochodowy</loan_type_name>
+			<balance_left>50000</balance_left>
 		</Loan>
 	</Loans>
 	<Deposits>
