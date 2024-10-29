@@ -156,7 +156,7 @@ void loansMenu() {
                 cout << "Splacono " << paymentAmount << " z kredytu." << endl;
                 if (loan.getBalanceLeft(userLoans[menu - 1]) == 0) {
                     userLoans.erase(userLoans.begin() + (menu - 1)); // Usuwamy wskaźnik z wektora
-                    cout << "Kredyt spłacony i usunięty." << endl;
+                    cout << "Kredyt splacony i usuniety." << endl;
                 }
             }
         }
@@ -355,7 +355,7 @@ void depositsMenu() {
             // Usunięcie lokaty
             deposit.removeDeposit(depositIndex);
             userDeposits.erase(userDeposits.begin() + (menu - 1)); // Usuwamy wskaźnik z wektora
-            cout << "Deposit spłacony i usunięty." << endl;
+            cout << "Deposit splacony i usuniety." << endl;
 
             // Dodawanie logów
             txt_log("User:" + to_string(user.getId(courent_user)) + " zakonczyl lokate. Wypłacono: " + to_string(payoutAmount));
