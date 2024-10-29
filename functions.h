@@ -155,7 +155,6 @@ void loansMenu() {
                 system("cls");
                 cout << "Splacono " << paymentAmount << " z kredytu." << endl;
                 if (loan.getBalanceLeft(userLoans[menu - 1]) == 0) {
-                    delete userLoans[menu - 1];              // Usuwamy obiekt z pamięci
                     userLoans.erase(userLoans.begin() + (menu - 1)); // Usuwamy wskaźnik z wektora
                     cout << "Kredyt spłacony i usunięty." << endl;
                 }
@@ -354,7 +353,6 @@ void depositsMenu() {
             account.increaseBalance(userAccounts[konto - 1], payoutAmount);
 
             // Usunięcie lokaty
-            delete userDeposits[menu - 1];              // Usuwamy obiekt z pamięci
             userDeposits.erase(userDeposits.begin() + (menu - 1)); // Usuwamy wskaźnik z wektora
             cout << "Deposit spłacony i usunięty." << endl;
 
