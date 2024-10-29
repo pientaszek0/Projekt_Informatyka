@@ -477,6 +477,33 @@ void depositsMenu() {
 }
 
 // Jan Piętka
+// Funkcja zwracajaca zhashowany ciag znakow   ciag = hashowanie(haslo)
+string hashowanie(string haslo) {
+    string ciag = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    int dlugosc;
+    if (haslo.length() > 30) {
+        dlugosc = 30;
+    } else {
+        dlugosc = haslo.length();
+    }
+    
+    for (int n = 0, i = 0; i < 30; i++, n++) {
+        if (n == dlugosc) {
+            n = 0;
+        }
+        
+        if (haslo[n] >= 33 && haslo[n] <= 123) {
+            ciag[i] = haslo[n] + 3;
+        } else {
+            ciag[i] = haslo[n] - 91;
+        }
+    }
+
+    return ciag;
+}
+
+
+// Jan Piętka
 // Funkcja logowania urzytkownika
 void sign_in() {
     string login;

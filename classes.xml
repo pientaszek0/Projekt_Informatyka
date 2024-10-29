@@ -2013,7 +2013,7 @@
 		</Loan_Type>
 		<Loan_Type>
 			<id>3</id>
-			<interest>5.0</interest>
+			<interest>5</interest>
 			<loan_type_name>Samochodowy</loan_type_name>
 		</Loan_Type>
 		<Loan_Type>
@@ -2170,7 +2170,7 @@
 			<loan_type_name>Hipoteczny</loan_type_name>
 			<balance_left>250000</balance_left>
 		</Loan>
-				<Loan>
+		<Loan>
 			<id>21</id>
 			<owner_id>0</owner_id>
 			<currency_name>Euro</currency_name>

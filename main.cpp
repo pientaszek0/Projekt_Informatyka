@@ -14,8 +14,6 @@ int main() {
     xml_giveData(user, account, currency, loan_type, loan, deposit); // Wywołanie funkcja która wczytuje dane z XML
     xml_checkData(user, account, currency, loan_type, loan, deposit); // Wywołanie funkcji sparwdza poprawność czy dane zostały dobrze wczytane !!TYLKO "User!!"
     xml_save(user, account, currency, loan_type, loan, deposit);
-    //txt_log("Test");
-    //cout << "Test " << checkPass("admin", user.getPassword(0));
     
     while (true) { // Nieskonczona petla zeby mozna bylo sie wylogowac i zalogowac na innego uzytkownika
         sign_in(); // Wywolanie funkcji logowania
