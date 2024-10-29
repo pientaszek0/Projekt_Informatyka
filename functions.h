@@ -439,7 +439,7 @@ void depositsMenu() {
             tm startDate = getCurrentDate();
 
             // Dodanie nowej lokaty
-            deposit.addDeposit(noweId, deposit.getOwnerId(courent_user), totalAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
+            deposit.addDeposit(noweId, user.getId(courent_user), totalAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
             account.decreaseBalance(userAccounts[konto-1], totalAmount);
             txt_log("User:"+to_string(user.getId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(totalAmount));
             system("cls");
