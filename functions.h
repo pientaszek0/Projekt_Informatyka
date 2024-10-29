@@ -154,6 +154,11 @@ void loansMenu() {
                 txt_log("Z konta nr: " + account.getAccountNumber(userAccounts[konto-1]) + " pobrano: " + to_string(paymentAmount));
                 system("cls");
                 cout << "Splacono " << paymentAmount << " z kredytu." << endl;
+                if (loan.getBalanceLeft(userLoans[menu - 1]) == 0) {
+                    delete userLoans[menu - 1];              // Usuwamy obiekt z pamięci
+                    userLoans.erase(userLoans.begin() + (menu - 1)); // Usuwamy wskaźnik z wektora
+                    cout << "Kredyt spłacony i usunięty." << endl;
+                }
             }
         }
 
@@ -340,10 +345,22 @@ void depositsMenu() {
                 cout << "Nieprawidlowy wybor." << endl;
                 continue;
             }
-            deposit.endDeposit(courent_user);
-            account.increaseBalance(userAccounts[konto-1], (deposit.getDepositAmount(courent_user) + deposit.calculateInterest(courent_user)));
-            txt_log("User:"+to_string(user.getId(courent_user))+" zakonczyl lokate. Wyplacono kwote w wysowosci:"+to_string((deposit.getDepositAmount(courent_user) + deposit.calculateInterest(courent_user))));
-            txt_log("Do konta nr: " + account.getAccountNumber(userAccounts[konto-1]) + " wpłyneło: " + to_string((deposit.getDepositAmount(courent_user) + deposit.calculateInterest(courent_user))));
+            int depositIndex = userDeposits[menu - 1];
+            double interestAmount = deposit.calculateInterest(depositIndex);
+            double payoutAmount = deposit.getDepositAmount(depositIndex) + interestAmount;
+
+            // Zakończenie lokaty i przelew środków
+            deposit.endDeposit(depositIndex);
+            account.increaseBalance(userAccounts[konto - 1], payoutAmount);
+
+            // Usunięcie lokaty
+            delete userDeposits[menu - 1];              // Usuwamy obiekt z pamięci
+            userDeposits.erase(userDeposits.begin() + (menu - 1)); // Usuwamy wskaźnik z wektora
+            cout << "Deposit spłacony i usunięty." << endl;
+
+            // Dodawanie logów
+            txt_log("User:" + to_string(user.getId(courent_user)) + " zakonczyl lokate. Wypłacono: " + to_string(payoutAmount));
+            txt_log("Do konta nr: " + account.getAccountNumber(userAccounts[konto - 1]) + " wpłynęło: " + to_string(payoutAmount));
         }
 
         // Założenie nowej lokaty
