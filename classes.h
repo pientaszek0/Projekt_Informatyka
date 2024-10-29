@@ -224,9 +224,25 @@ class Loan {
         }
         // Funkcja do splaty kredytu   loan.makePayment(index, wartosc splaty)
         void makePayment(int index, double payment) {
-                balance_left[index] -= payment;
-                system("cls");
+            balance_left[index] -= payment;
+            system("cls");
+            if (balance_left[index] <= 0) {
+                cout << "Kredyt zostal calkowicie splacony." << endl;
+                removeLoan(index);
+            }else{
                 cout << "Splacono: " << payment << ". Pozostalo do splaty: " << balance_left[index] << endl;
+            }
+        }
+
+        // Funkcja do usunięcia kredytu
+        void removeLoan(int index) {
+            if (index >= 0 && index < Loan::getElementLoan()) {
+                id.erase(id.begin() + index);
+                owner_id.erase(owner_id.begin() + index);
+                currency_name.erase(currency_name.begin() + index);
+                loan_type.erase(loan_type.begin() + index);
+                balance_left.erase(balance_left.begin() + index);
+            }
         }
 };
 
@@ -303,6 +319,19 @@ class Deposit {
             system("cls");
             cout << "Lokata zakonczona. Kwota wyplacona: " << deposit_amount[index] + calculateInterest(index) << endl;
             deposit_amount[index] = 0; // Resetowanie lokaty po zakończeniu
+        }
+        // Funkcja do usunięcia lokaty
+        void removeDeposit(int index) {
+            if (index >= 0 && index < getElementDeposit()) {
+                id.erase(id.begin() + index);
+                owner_id.erase(owner_id.begin() + index);
+                deposit_amount.erase(deposit_amount.begin() + index);
+                currency_name.erase(currency_name.begin() + index);
+                duration_months.erase(duration_months.begin() + index);
+                interest_rate.erase(interest_rate.begin() + index);
+                start_date.erase(start_date.begin() + index);
+                remaining_time.erase(remaining_time.begin() + index);
+            }
         }
 };
 

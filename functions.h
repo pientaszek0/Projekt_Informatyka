@@ -353,6 +353,7 @@ void depositsMenu() {
             account.increaseBalance(userAccounts[konto - 1], payoutAmount);
 
             // Usunięcie lokaty
+            deposit.removeDeposit(depositIndex);
             userDeposits.erase(userDeposits.begin() + (menu - 1)); // Usuwamy wskaźnik z wektora
             cout << "Deposit spłacony i usunięty." << endl;
 
