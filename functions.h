@@ -151,6 +151,7 @@ void loansMenu() {
                 loan.makePayment(userLoans[menu - 1], paymentAmount);
                 account.decreaseBalance(userAccounts[konto-1], paymentAmount);
                 txt_log("User:" + to_string(user.getId(courent_user)) + " splacil:" + to_string(paymentAmount) + " . -Kredyt");
+                txt_log("Z konta nr: " + account.getAccountNumber(userAccounts[konto-1]) + " pobrano: " + to_string(paymentAmount));
                 system("cls");
                 cout << "Splacono " << paymentAmount << " z kredytu." << endl;
             }
@@ -254,6 +255,7 @@ void loansMenu() {
             loan.addLoan(noweId, user.getId(courent_user), currency.getName(currencyIndex), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
             account.increaseBalance(userAccounts[konto-1], totalLoanAmount);
             txt_log("User:" + to_string(user.getId(courent_user)) + " zaciagnal nowy kredyt " + loan_type.getLoanTypeName(loanTypeIndex) + " w wysowosci:" + to_string(newLoanAmount));
+            txt_log("Na konto nr: " + account.getAccountNumber(userAccounts[konto-1]) + " wpłyneło: " + to_string(totalLoanAmount));
             system("cls");
             cout << "Zaciagnieto nowy kredyt w wysokosci: " << totalLoanAmount << endl;
             cout << "Typ kredytu: " << loan_type.getLoanTypeName(loanTypeIndex) << endl;
@@ -341,6 +343,7 @@ void depositsMenu() {
             deposit.endDeposit(courent_user);
             account.increaseBalance(userAccounts[konto-1], (deposit.getDepositAmount(courent_user) + deposit.calculateInterest(courent_user)));
             txt_log("User:"+to_string(user.getId(courent_user))+" zakonczyl lokate. Wyplacono kwote w wysowosci:"+to_string((deposit.getDepositAmount(courent_user) + deposit.calculateInterest(courent_user))));
+            txt_log("Do konta nr: " + account.getAccountNumber(userAccounts[konto-1]) + " wpłyneło: " + to_string((deposit.getDepositAmount(courent_user) + deposit.calculateInterest(courent_user))));
         }
 
         // Założenie nowej lokaty
@@ -442,6 +445,7 @@ void depositsMenu() {
             deposit.addDeposit(noweId, user.getId(courent_user), totalAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
             account.decreaseBalance(userAccounts[konto-1], totalAmount);
             txt_log("User:"+to_string(user.getId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(totalAmount));
+            txt_log("Z konta nr: " + account.getAccountNumber(userAccounts[konto-1]) + " pobrano: " + to_string(totalAmount));
             system("cls");
             cout << "Zalozono nowa lokate." << endl;
         }
