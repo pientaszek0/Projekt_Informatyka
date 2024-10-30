@@ -284,31 +284,31 @@ class Deposit {
         }
         // Metoda zwracająca ID właściciela
         int getOwnerId(int index) {
-            return owner_id[index];
+            return this->owner_id[index];
         }
         // Metoda zwracająca kwotę lokaty
         double getDepositAmount(int index) {
-            return deposit_amount[index];
+            return this->deposit_amount[index];
         }
         // Metoda zwracająca walutę lokaty
         string getCurrencyName(int index) {
-            return currency_name[index];
+            return this->currency_name[index];
         }
         // Metoda zwracająca czas trwania lokaty
         int getDurationMonths(int index) {
-            return duration_months[index];
+            return this->duration_months[index];
         }
         // Metoda zwracająca oprocentowanie
         double getInterestRate(int index) {
-            return interest_rate[index];
+            return this->interest_rate[index];
         }
         // Metoda zwracająca datę założenia lokaty
         string getStartDate(int index) {
-            return start_date[index];
+            return this->start_date[index];
         }
         // Metoda zwracająca pozostały czas do zakończenia lokaty
         int getRemainingTime(int index) {
-            return remaining_time[index];
+            return this->remaining_time[index];
         }
         // Metoda obliczająca odsetki dla lokaty
         double calculateInterest(int index) {

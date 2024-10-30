@@ -214,20 +214,6 @@ void loansMenu() {
                 continue;
             }
 
-            // Wybór waluty
-            cout << "Wybierz walute kredytu: " << endl;
-            for (int i = 0; i < currency.getElementCurrency(); i++) {
-                cout << i + 1 << " - " << currency.getName(i) << endl;
-            }
-            cin >> currencyIndex;
-            currencyIndex--; // Indeksy zaczynają się od 0
-
-            if (currencyIndex < 0 || currencyIndex >= currency.getElementCurrency()) {
-                system("cls");
-                cout << "Nieprawidlowy wybor waluty." << endl;
-                continue;
-            }
-
             // Długość trwania kredytu
             cout << "Podaj dlugosc trwania kredytu w latach: ";
             int years;
@@ -256,14 +242,14 @@ void loansMenu() {
             double totalLoanAmount = newLoanAmount + loan_type.calcInterest(loanTypeIndex, newLoanAmount, years);
 
             // Dodanie nowego kredytu
-            loan.addLoan(noweId, user.getId(courent_user), currency.getName(currencyIndex), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
+            loan.addLoan(noweId, user.getId(courent_user), currency.getName(account.getCurrency_id(konto-1)), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
             account.increaseBalance(userAccounts[konto-1], totalLoanAmount);
             txt_log("User:" + to_string(user.getId(courent_user)) + " zaciagnal nowy kredyt " + loan_type.getLoanTypeName(loanTypeIndex) + " w wysowosci:" + to_string(newLoanAmount));
             txt_log("Na konto nr: " + account.getAccountNumber(userAccounts[konto-1]) + " wpłyneło: " + to_string(totalLoanAmount));
             system("cls");
             cout << "Zaciagnieto nowy kredyt w wysokosci: " << totalLoanAmount << endl;
             cout << "Typ kredytu: " << loan_type.getLoanTypeName(loanTypeIndex) << endl;
-            cout << "Waluta: " << currency.getName(currencyIndex) << endl;
+            cout << "Waluta: " << currency.getName(account.getCurrency_id(konto-1)) << endl;
         }
 
         else {
@@ -401,20 +387,6 @@ void depositsMenu() {
                 continue;
             }
 
-            // Wybór waluty
-            cout << "Wybierz walute lokaty: " << endl;
-            for (int i = 0; i < currency.getElementCurrency(); i++) {
-                cout << i + 1 << " - " << currency.getName(i) << endl;
-            }
-            cin >> currencyIndex;
-            currencyIndex--; // Indeksy zaczynają się od 0
-
-            if (currencyIndex < 0 || currencyIndex >= currency.getElementCurrency()) {
-                system("cls");
-                cout << "Nieprawidlowy wybor waluty." << endl;
-                continue;
-            }
-
             // Wybór czasu trwania lokaty
             cout << "Podaj czas trwania lokaty w miesiacach: ";
             cin >> durationMonths;
@@ -458,7 +430,7 @@ void depositsMenu() {
             tm startDate = getCurrentDate();
 
             // Dodanie nowej lokaty
-            deposit.addDeposit(noweId, user.getId(courent_user), totalAmount, currency.getName(currencyIndex), durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
+            deposit.addDeposit(noweId, user.getId(courent_user), totalAmount, currency.getName(account.getCurrency_id(konto-1)), durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
             account.decreaseBalance(userAccounts[konto-1], totalAmount);
             txt_log("User:"+to_string(user.getId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(totalAmount));
             txt_log("Z konta nr: " + account.getAccountNumber(userAccounts[konto-1]) + " pobrano: " + to_string(totalAmount));
