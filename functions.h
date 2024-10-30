@@ -173,7 +173,7 @@ void loansMenu() {
                 if (account.getOwner_id(i) == user.getId(courent_user)) {
                     userAccounts.push_back(i);
                     accountAmount++;
-                    cout << accountAmount << "      -      " << account.getAccountNumber(i) << "      -      " << account.getBalance(i) << " ";
+                    cout << accountAmount << "      -      " << account.getAccountNumber(i) << "      -      " << account.getBalance(i) << "       ";
                     for (int n = 0; n < currency.getElementCurrency(); n++) {
                         if (account.getCurrency_id(i) == currency.getId(n)) {
                             cout << currency.getName(n) << endl;
@@ -242,14 +242,14 @@ void loansMenu() {
             double totalLoanAmount = newLoanAmount + loan_type.calcInterest(loanTypeIndex, newLoanAmount, years);
 
             // Dodanie nowego kredytu
-            loan.addLoan(noweId, user.getId(courent_user), currency.getName(account.getCurrency_id(konto-1)), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
+            loan.addLoan(noweId, user.getId(courent_user), currency.getName(userAccounts[konto - 1]), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
             account.increaseBalance(userAccounts[konto-1], totalLoanAmount);
             txt_log("User:" + to_string(user.getId(courent_user)) + " zaciagnal nowy kredyt " + loan_type.getLoanTypeName(loanTypeIndex) + " w wysowosci:" + to_string(newLoanAmount));
             txt_log("Na konto nr: " + account.getAccountNumber(userAccounts[konto-1]) + " wpłyneło: " + to_string(totalLoanAmount));
             system("cls");
             cout << "Zaciagnieto nowy kredyt w wysokosci: " << totalLoanAmount << endl;
             cout << "Typ kredytu: " << loan_type.getLoanTypeName(loanTypeIndex) << endl;
-            cout << "Waluta: " << currency.getName(account.getCurrency_id(konto-1)) << endl;
+            cout << "Waluta: " << currency.getName(userAccounts[konto - 1]) << endl;
         }
 
         else {
@@ -278,9 +278,9 @@ void depositsMenu() {
             if (deposit.getOwnerId(i) == user.getId(courent_user)) {
                 userDeposits.push_back(i);
                 depositCount++;
-                cout << depositCount << " - " << deposit.getDepositAmount(i) << " - " << deposit.getInterestRate(i) << "% - " 
-                     << deposit.getDurationMonths(i) << " mies. - " << deposit.getCurrencyName(i) 
-                     << " - " << deposit.getRemainingTime(i) << " mies." << endl;
+                cout << depositCount << "      -      " << deposit.getDepositAmount(i) << "      -      " << deposit.getInterestRate(i) << "%      -      " 
+                     << deposit.getDurationMonths(i) << " mies.      -      " << deposit.getCurrencyName(i) 
+                     << "      -      " << deposit.getRemainingTime(i) << " mies." << endl;
             }
         }
 
@@ -430,7 +430,7 @@ void depositsMenu() {
             tm startDate = getCurrentDate();
 
             // Dodanie nowej lokaty
-            deposit.addDeposit(noweId, user.getId(courent_user), totalAmount, currency.getName(account.getCurrency_id(konto-1)), durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
+            deposit.addDeposit(noweId, user.getId(courent_user), totalAmount, currency.getName(userAccounts[konto - 1]), durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
             account.decreaseBalance(userAccounts[konto-1], totalAmount);
             txt_log("User:"+to_string(user.getId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(totalAmount));
             txt_log("Z konta nr: " + account.getAccountNumber(userAccounts[konto-1]) + " pobrano: " + to_string(totalAmount));
