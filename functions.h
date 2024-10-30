@@ -165,7 +165,7 @@ void loansMenu() {
         else if (menu == loanCount + 1) {
             vector<int> userAccounts;
             double newLoanAmount;
-            int loanTypeIndex, currencyIndex;
+            int loanTypeIndex;
             int accountAmount = 0;
 
             // Wyswietlenie wszystkich kont aktualnego uzytkownika
@@ -352,7 +352,7 @@ void depositsMenu() {
         else if (menu == depositCount+1) {
             vector<int> userAccounts;
             double depositAmount, interestRate;
-            int currencyIndex, durationMonths;
+            int durationMonths;
             int accountAmount = 0;
 
             // Wyswietlenie wszystkich kont aktualnego uzytkownika
