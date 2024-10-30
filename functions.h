@@ -151,7 +151,7 @@ void loansMenu() {
             } else if (paymentAmount > loan.getBalanceLeft(userLoans[menu - 1])) {
                 system("cls");
                 cout << "Kwota splaty przewyzsza saldo kredytu." << endl;
-            } else if (currencyName != currency.getName(userLoans[menu - 1])) {
+            } else if (currencyName != loan.getCurrencyName(userLoans[menu - 1])) {
                 system("cls");
                 cout << "Waluta konta nie zgadza sie z waluta kredytu." << endl;
             } else {
@@ -348,7 +348,7 @@ void depositsMenu() {
             int accountIndex = userAccounts[konto - 1];
             int currencyId = account.getCurrency_id(accountIndex);
             string currencyName = currency.getName(currencyId);
-            if(currencyName != currency.getName(userDeposits[menu - 1])){
+            if(currencyName != deposit.getCurrencyName(userDeposits[menu - 1])){
                 system("cls");
                 cout << "Waluta konta nie zgadza sie z waluta lokaty." << endl;
             }else{
