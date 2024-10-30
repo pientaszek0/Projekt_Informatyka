@@ -4,7 +4,7 @@
 	<Users>
 		<User>
 			<id>0</id>
-			<first_name>Jan</first_name>
+			<first_name>Jan]]</first_name>
 			<last_name>Kowalski</last_name>
 			<login>admin</login>
 			<password>admin</password>
@@ -12,7 +12,7 @@
 		</User>
 		<User>
 			<id>1</id>
-			<first_name>Piotr</first_name>
+			<first_name>Pawel</first_name>
 			<last_name>Kowalczyk</last_name>
 			<login>user1</login>
 			<password>pass1</password>
@@ -1973,7 +1973,7 @@
 	<Loan_Types>
 		<Loan_Type>
 			<id>1</id>
-			<interest>0</interest>
+			<interest>4.1</interest>
 			<loan_type_name>Hipoteczny</loan_type_name>
 		</Loan_Type>
 	</Loan_Types>

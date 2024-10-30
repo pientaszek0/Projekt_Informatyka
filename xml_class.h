@@ -115,7 +115,7 @@ void xml_giveData(User &user, Account &account, Currency &currency, Loan_Type &l
         else if(line.find("</Loan_Type>") != string::npos) 
         {
             loan_type.addLoanType(xml_id, xml_interest, xml_loan_type);
-            cout << "---Dane zostałt wczytane dla klasy: \"Currency\"---\n"; 
+            cout << "---Dane zostałt wczytane dla klasy: \"Loan_type\"---\n"; 
         }
         // Dodawanie klasy Loan
         if(line.find("<Loan>") != string::npos)
@@ -246,7 +246,7 @@ void xml_giveData(User &user, Account &account, Currency &currency, Loan_Type &l
                 string id_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
                 xml_id = stoi(id_str);  // Konwersja na int
             }
-            if(line.find("<balance>") != string::npos) 
+            if(line.find("<interest>") != string::npos) 
             {
                 string it_str = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
                 xml_interest = stod(it_str); // Konwersja na double
