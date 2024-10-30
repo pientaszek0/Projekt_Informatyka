@@ -63,3 +63,4 @@ Sat Oct 26 11:46:34 2024 : Administrator ID:0 - Jan Kowalskidokonal wplaty na ko
 Sat Oct 26 11:46:54 2024 : Administrator ID:0 - Jan Kowalskidokonal wuplaty z konta PL17409488245517115276142322
 Sat Oct 26 11:46:59 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
 >>>>>>> 5216a081adf70eae4c325300377f1f14d229c947
+Wed Oct 30 11:22:33 2024 : Uzytkownik ID:0 - Jan]] Kowalski zalogowal sie.
