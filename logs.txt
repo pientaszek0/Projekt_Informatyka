@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Tue Oct 22 19:26:25 2024
  : TestTue Oct 22 19:26:31 2024
  : TestTue Oct 22 19:27:33 2024 : Test
@@ -45,3 +46,20 @@ Mon Oct 28 17:53:14 2024 : Test
 Mon Oct 28 17:53:52 2024 : Test
 Mon Oct 28 17:58:00 2024 : Test
 Mon Oct 28 17:58:11 2024 : Test
+=======
+Sat Oct 26 10:39:07 2024 : Uzytkownik JanKowalski zalogowal sie.
+Sat Oct 26 10:41:39 2024 : Uzytkownik ID:Jan Kowalski zalogowal sie.
+Sat Oct 26 10:42:35 2024 : Uzytkownik ID:0 Jan Kowalski zalogowal sie.
+Sat Oct 26 10:45:59 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Sat Oct 26 10:46:07 2024 : Uzytkownik ID:18467 - Jan Jan zalogowal sie.
+Sat Oct 26 11:16:19 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Sat Oct 26 11:16:21 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Sat Oct 26 11:31:51 2024 : Uzytkownik ID:0 - Jan Kowalski Utworzyl konto: PL27793198650286024865090061
+Sat Oct 26 11:32:23 2024 : Uzytkownik ID:0 - Jan Kowalski Wykonal przelew z konta PL25413475623294381885982828 na konto PL27793198650286024865090061
+Sat Oct 26 11:39:53 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Sat Oct 26 11:45:43 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Sat Oct 26 11:45:59 2024 : Administrator ID:0 - Jan KowalskiUtworzyl nowego uzytkownika Jan Pietka
+Sat Oct 26 11:46:34 2024 : Administrator ID:0 - Jan Kowalskidokonal wplaty na konto PL17409488245517115276142322
+Sat Oct 26 11:46:54 2024 : Administrator ID:0 - Jan Kowalskidokonal wuplaty z konta PL17409488245517115276142322
+Sat Oct 26 11:46:59 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+>>>>>>> 5216a081adf70eae4c325300377f1f14d229c947

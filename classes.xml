@@ -818,6 +818,22 @@
 			<password>Jan</password>
 			<admin>false</admin>
 		</User>
+		<User>
+			<id>32757</id>
+			<first_name>cos</first_name>
+			<last_name>cos</last_name>
+			<login>cos</login>
+			<password>cos</password>
+			<admin>false</admin>
+		</User>
+		<User>
+			<id>18467</id>
+			<first_name>Jan</first_name>
+			<last_name>Pietka</last_name>
+			<login>Jan</login>
+			<password>Pietka</password>
+			<admin>false</admin>
+		</User>
 </Users>
 <Accounts>
 		<Account>
@@ -1553,7 +1569,7 @@
 			<owner_id>0</owner_id>
 			<currency_id>0</currency_id>
 			<account_number>PL82065675915228373650498393</account_number>
-			<balance>1010.48</balance>
+			<balance>1000.48</balance>
 		</Account>
 		<Account>
 			<id>106</id>
@@ -1938,13 +1954,27 @@
 			<owner_id>0</owner_id>
 			<currency_id>0</currency_id>
 			<account_number>PL25223606416863469595524500</account_number>
-			<balance>23.45</balance>
+			<balance>36.01</balance>
 		</Account>
 		<Account>
 			<id>18716</id>
 			<owner_id>0</owner_id>
 			<currency_id>2</currency_id>
 			<account_number>PL17409488245517115276142322</account_number>
+			<balance>2137.32</balance>
+		</Account>
+		<Account>
+			<id>32662</id>
+			<owner_id>0</owner_id>
+			<currency_id>3</currency_id>
+			<account_number>PL16857618927954312334113874</account_number>
+			<balance>0</balance>
+		</Account>
+		<Account>
+			<id>19629</id>
+			<owner_id>32757</owner_id>
+			<currency_id>0</currency_id>
+			<account_number>PL79319865028602486509006138</account_number>
 			<balance>0</balance>
 		</Account>
 	</Accounts>
@@ -1973,29 +2003,405 @@
 	<Loan_Types>
 		<Loan_Type>
 			<id>1</id>
-			<interest>4.1</interest>
+			<interest>3.5</interest>
 			<loan_type_name>Hipoteczny</loan_type_name>
+		</Loan_Type>
+		<Loan_Type>
+			<id>2</id>
+			<interest>4.3</interest>
+			<loan_type_name>Konsumpcyjny</loan_type_name>
+		</Loan_Type>
+		<Loan_Type>
+			<id>3</id>
+			<interest>5</interest>
+			<loan_type_name>Samochodowy</loan_type_name>
+		</Loan_Type>
+		<Loan_Type>
+			<id>4</id>
+			<interest>7.2</interest>
+			<loan_type_name>Gotowkowy</loan_type_name>
 		</Loan_Type>
 	</Loan_Types>
 	<Loans>
+		<Loan>
+			<id>0</id>
+			<owner_id>0</owner_id>
+			<currency_name>Funt Brytyjski</currency_name>
+			<loan_type_name>Studencki</loan_type_name>
+			<balance_left>100000</balance_left>
+		</Loan>
+		<Loan>
+			<id>1</id>
+			<owner_id>1</owner_id>
+			<currency_name>Zloty</currency_name>
+			<loan_type_name>Hipoteczny</loan_type_name>
+			<balance_left>100000</balance_left>
+		</Loan>
 		<Loan>
 			<id>2</id>
 			<owner_id>2</owner_id>
 			<currency_name>Euro</currency_name>
 			<loan_type_name>Hipoteczny</loan_type_name>
-			<balance_left>21.37</balance_left>
+			<balance_left>2137</balance_left>
+		</Loan>
+		<Loan>
+			<id>3</id>
+			<owner_id>3</owner_id>
+			<currency_name>Dolar Amerykanski</currency_name>
+			<loan_type_name>Konsumpcyjny</loan_type_name>
+			<balance_left>5000</balance_left>
+		</Loan>
+		<Loan>
+			<id>4</id>
+			<owner_id>4</owner_id>
+			<currency_name>Zloty</currency_name>
+			<loan_type_name>Samochodowy</loan_type_name>
+			<balance_left>40000</balance_left>
+		</Loan>
+		<Loan>
+			<id>5</id>
+			<owner_id>5</owner_id>
+			<currency_name>Funt Brytyjski</currency_name>
+			<loan_type_name>Studencki</loan_type_name>
+			<balance_left>1500</balance_left>
+		</Loan>
+		<Loan>
+			<id>6</id>
+			<owner_id>6</owner_id>
+			<currency_name>Frank Szwajcarski</currency_name>
+			<loan_type_name>Konsumpcyjny</loan_type_name>
+			<balance_left>2500</balance_left>
+		</Loan>
+		<Loan>
+			<id>7</id>
+			<owner_id>7</owner_id>
+			<currency_name>Zloty</currency_name>
+			<loan_type_name>Samochodowy</loan_type_name>
+			<balance_left>75000</balance_left>
+		</Loan>
+		<Loan>
+			<id>8</id>
+			<owner_id>8</owner_id>
+			<currency_name>Dolar Amerykanski</currency_name>
+			<loan_type_name>Studencki</loan_type_name>
+			<balance_left>3000</balance_left>
+		</Loan>
+		<Loan>
+			<id>9</id>
+			<owner_id>9</owner_id>
+			<currency_name>Zloty</currency_name>
+			<loan_type_name>Hipoteczny</loan_type_name>
+			<balance_left>300000</balance_left>
+		</Loan>
+		<Loan>
+			<id>10</id>
+			<owner_id>10</owner_id>
+			<currency_name>Funt Brytyjski</currency_name>
+			<loan_type_name>Konsumpcyjny</loan_type_name>
+			<balance_left>10000</balance_left>
+		</Loan>
+		<Loan>
+			<id>11</id>
+			<owner_id>11</owner_id>
+			<currency_name>Zloty</currency_name>
+			<loan_type_name>Samochodowy</loan_type_name>
+			<balance_left>45000</balance_left>
+		</Loan>
+		<Loan>
+			<id>12</id>
+			<owner_id>12</owner_id>
+			<currency_name>Dolar Amerykanski</currency_name>
+			<loan_type_name>Hipoteczny</loan_type_name>
+			<balance_left>120000</balance_left>
+		</Loan>
+		<Loan>
+			<id>13</id>
+			<owner_id>13</owner_id>
+			<currency_name>Euro</currency_name>
+			<loan_type_name>Studencki</loan_type_name>
+			<balance_left>2000</balance_left>
+		</Loan>
+		<Loan>
+			<id>14</id>
+			<owner_id>14</owner_id>
+			<currency_name>Zloty</currency_name>
+			<loan_type_name>Samochodowy</loan_type_name>
+			<balance_left>38000</balance_left>
+		</Loan>
+		<Loan>
+			<id>15</id>
+			<owner_id>15</owner_id>
+			<currency_name>Funt Brytyjski</currency_name>
+			<loan_type_name>Konsumpcyjny</loan_type_name>
+			<balance_left>6000</balance_left>
+		</Loan>
+		<Loan>
+			<id>16</id>
+			<owner_id>16</owner_id>
+			<currency_name>Dolar Amerykanski</currency_name>
+			<loan_type_name>Hipoteczny</loan_type_name>
+			<balance_left>50000</balance_left>
+		</Loan>
+		<Loan>
+			<id>17</id>
+			<owner_id>17</owner_id>
+			<currency_name>Euro</currency_name>
+			<loan_type_name>Samochodowy</loan_type_name>
+			<balance_left>20000</balance_left>
+		</Loan>
+		<Loan>
+			<id>18</id>
+			<owner_id>18</owner_id>
+			<currency_name>Zloty</currency_name>
+			<loan_type_name>Studencki</loan_type_name>
+			<balance_left>3500</balance_left>
+		</Loan>
+		<Loan>
+			<id>19</id>
+			<owner_id>19</owner_id>
+			<currency_name>Dolar Amerykanski</currency_name>
+			<loan_type_name>Konsumpcyjny</loan_type_name>
+			<balance_left>8000</balance_left>
+		</Loan>
+		<Loan>
+			<id>20</id>
+			<owner_id>20</owner_id>
+			<currency_name>Frank Szwajcarski</currency_name>
+			<loan_type_name>Hipoteczny</loan_type_name>
+			<balance_left>250000</balance_left>
+		</Loan>
+		<Loan>
+			<id>21</id>
+			<owner_id>0</owner_id>
+			<currency_name>Euro</currency_name>
+			<loan_type_name>Hipoteczny</loan_type_name>
+			<balance_left>1800</balance_left>
+		</Loan>
+		<Loan>
+			<id>22</id>
+			<owner_id>0</owner_id>
+			<currency_name>Zloty</currency_name>
+			<loan_type_name>Konsumpcyjny</loan_type_name>
+			<balance_left>4000</balance_left>
+		</Loan>
+		<Loan>
+			<id>23</id>
+			<owner_id>0</owner_id>
+			<currency_name>Dolar Amerykanski</currency_name>
+			<loan_type_name>Samochodowy</loan_type_name>
+			<balance_left>50000</balance_left>
 		</Loan>
 	</Loans>
 	<Deposits>
 		<Deposit>
-			<id>1</id>
-			<owner_id>1</owner_id>
+			<id>0</id>
+			<owner_id>0</owner_id>
 			<deposit_amount>21.37</deposit_amount>
 			<currency_name>Euro</currency_name>
 			<duration_months>12</duration_months>
 			<interest_rate>37.21</interest_rate>
 			<start_date>Feb</start_date>
 			<remaining_time>3</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>1</id>
+			<owner_id>1</owner_id>
+			<deposit_amount>2137</deposit_amount>
+			<currency_name>Zloty</currency_name>
+			<duration_months>12</duration_months>
+			<interest_rate>3.5</interest_rate>
+			<start_date>Jan</start_date>
+			<remaining_time>10</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>2</id>
+			<owner_id>2</owner_id>
+			<deposit_amount>1000</deposit_amount>
+			<currency_name>Frank Szwajcarski</currency_name>
+			<duration_months>6</duration_months>
+			<interest_rate>2</interest_rate>
+			<start_date>Feb</start_date>
+			<remaining_time>3</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>3</id>
+			<owner_id>3</owner_id>
+			<deposit_amount>5000</deposit_amount>
+			<currency_name>Dolar Amerykanski</currency_name>
+			<duration_months>24</duration_months>
+			<interest_rate>4</interest_rate>
+			<start_date>Mar</start_date>
+			<remaining_time>20</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>4</id>
+			<owner_id>4</owner_id>
+			<deposit_amount>750</deposit_amount>
+			<currency_name>Funt Brytyjski</currency_name>
+			<duration_months>12</duration_months>
+			<interest_rate>3</interest_rate>
+			<start_date>Apr</start_date>
+			<remaining_time>8</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>5</id>
+			<owner_id>5</owner_id>
+			<deposit_amount>1500</deposit_amount>
+			<currency_name>Zloty</currency_name>
+			<duration_months>6</duration_months>
+			<interest_rate>2.5</interest_rate>
+			<start_date>May</start_date>
+			<remaining_time>4</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>6</id>
+			<owner_id>6</owner_id>
+			<deposit_amount>2500</deposit_amount>
+			<currency_name>Euro</currency_name>
+			<duration_months>18</duration_months>
+			<interest_rate>3.5</interest_rate>
+			<start_date>Jun</start_date>
+			<remaining_time>15</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>7</id>
+			<owner_id>7</owner_id>
+			<deposit_amount>800</deposit_amount>
+			<currency_name>Dolar Amerykanski</currency_name>
+			<duration_months>12</duration_months>
+			<interest_rate>2.5</interest_rate>
+			<start_date>Jul</start_date>
+			<remaining_time>10</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>8</id>
+			<owner_id>8</owner_id>
+			<deposit_amount>500</deposit_amount>
+			<currency_name>Funt Brytyjski</currency_name>
+			<duration_months>6</duration_months>
+			<interest_rate>1.5</interest_rate>
+			<start_date>Aug</start_date>
+			<remaining_time>2</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>9</id>
+			<owner_id>9</owner_id>
+			<deposit_amount>1200</deposit_amount>
+			<currency_name>Zloty</currency_name>
+			<duration_months>24</duration_months>
+			<interest_rate>3.8</interest_rate>
+			<start_date>Sep</start_date>
+			<remaining_time>20</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>10</id>
+			<owner_id>10</owner_id>
+			<deposit_amount>2000</deposit_amount>
+			<currency_name>Euro</currency_name>
+			<duration_months>36</duration_months>
+			<interest_rate>4</interest_rate>
+			<start_date>Oct</start_date>
+			<remaining_time>33</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>11</id>
+			<owner_id>11</owner_id>
+			<deposit_amount>4000</deposit_amount>
+			<currency_name>Frank Szwajcarski</currency_name>
+			<duration_months>12</duration_months>
+			<interest_rate>3</interest_rate>
+			<start_date>Nov</start_date>
+			<remaining_time>11</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>12</id>
+			<owner_id>12</owner_id>
+			<deposit_amount>10000</deposit_amount>
+			<currency_name>Dolar Amerykanski</currency_name>
+			<duration_months>18</duration_months>
+			<interest_rate>4</interest_rate>
+			<start_date>Dec</start_date>
+			<remaining_time>15</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>13</id>
+			<owner_id>13</owner_id>
+			<deposit_amount>600</deposit_amount>
+			<currency_name>Funt Brytyjski</currency_name>
+			<duration_months>6</duration_months>
+			<interest_rate>2.2</interest_rate>
+			<start_date>Jan</start_date>
+			<remaining_time>4</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>14</id>
+			<owner_id>14</owner_id>
+			<deposit_amount>3200</deposit_amount>
+			<currency_name>Zloty</currency_name>
+			<duration_months>24</duration_months>
+			<interest_rate>3.7</interest_rate>
+			<start_date>Feb</start_date>
+			<remaining_time>18</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>15</id>
+			<owner_id>15</owner_id>
+			<deposit_amount>4500</deposit_amount>
+			<currency_name>Euro</currency_name>
+			<duration_months>36</duration_months>
+			<interest_rate>4</interest_rate>
+			<start_date>Mar</start_date>
+			<remaining_time>32</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>16</id>
+			<owner_id>16</owner_id>
+			<deposit_amount>7000</deposit_amount>
+			<currency_name>Dolar Amerykanski</currency_name>
+			<duration_months>24</duration_months>
+			<interest_rate>3.8</interest_rate>
+			<start_date>Apr</start_date>
+			<remaining_time>19</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>17</id>
+			<owner_id>17</owner_id>
+			<deposit_amount>550</deposit_amount>
+			<currency_name>Zloty</currency_name>
+			<duration_months>6</duration_months>
+			<interest_rate>2.5</interest_rate>
+			<start_date>May</start_date>
+			<remaining_time>4</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>18</id>
+			<owner_id>18</owner_id>
+			<deposit_amount>1500</deposit_amount>
+			<currency_name>Frank Szwajcarski</currency_name>
+			<duration_months>12</duration_months>
+			<interest_rate>3.1</interest_rate>
+			<start_date>Jun</start_date>
+			<remaining_time>8</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>19</id>
+			<owner_id>19</owner_id>
+			<deposit_amount>2400</deposit_amount>
+			<currency_name>Euro</currency_name>
+			<duration_months>18</duration_months>
+			<interest_rate>3.5</interest_rate>
+			<start_date>Jul</start_date>
+			<remaining_time>13</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>20</id>
+			<owner_id>20</owner_id>
+			<deposit_amount>3500</deposit_amount>
+			<currency_name>Zloty</currency_name>
+			<duration_months>24</duration_months>
+			<interest_rate>3.9</interest_rate>
+			<start_date>Aug</start_date>
+			<remaining_time>22</remaining_time>
 		</Deposit>
 	</Deposits>
 </Data>

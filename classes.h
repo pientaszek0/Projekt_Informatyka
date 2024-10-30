@@ -138,6 +138,7 @@ class Currency {
         }
 
 };
+
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ====================== Klasa typów kredytów =======================
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -170,8 +171,8 @@ class Loan_Type {
         string getLoanTypeName(int index) {
             return this->loan_type[index];
         }
-        // Funkcja do splaty kredytu   loan.makePayment(wartosc splaty)
-        double calcInterest(int index,double loanAmount, int years) {
+        // Funkcja liczaca interest
+        double calcInterest(int index, double loanAmount, int years) {
             return loanAmount * (interest[index] / 100) * years ;
         }
 };
@@ -188,7 +189,7 @@ class Loan {
         vector<double> balance_left; // Ile jeszcze zostało do spłacenia kredytu
 
     public:
-        // Metoda do zapisu xml
+        // Funkcja zaciągania kredytu loan.takeLoan(id ,owner id,nazwa waluty, typ kredytu, wartosc kredytu);
         void addLoan(int l_id, int l_owner_id, string l_currency_name, string l_loan_type, double l_balance_left) {
             id.emplace_back(l_id);
             owner_id.emplace_back(l_owner_id);
@@ -223,20 +224,25 @@ class Loan {
         }
         // Funkcja do splaty kredytu   loan.makePayment(index, wartosc splaty)
         void makePayment(int index, double payment) {
-                balance_left[index] -= payment;
-                system("cls");
-                cout << "Splacono: " << payment << ". Pozostalo do splaty: " << balance_left[index] << endl;
-        }
-        // Funkcja zaciągania kredytu loan.takeLoan(owner id, wartosc kredytu, typ kredytu, nazwa waluty);
-        void takeLoan(int ownerId, double loanAmount, string loanType, string currencyName) {
-            owner_id.emplace_back(ownerId);
-            balance_left.emplace_back(loanAmount);
-            loan_type.emplace_back(loanType);
-            currency_name.emplace_back(currencyName);
+            balance_left[index] -= payment;
             system("cls");
-            cout << "Zaciągnięto nowy kredyt w wysokości: " << loanAmount << endl;
-            cout << "Typ kredytu: " << loanType << endl;
-            cout << "Waluta: " << currencyName << endl;
+            if (balance_left[index] <= 0) {
+                cout << "Kredyt zostal calkowicie splacony." << endl;
+                removeLoan(index);
+            }else{
+                cout << "Splacono: " << payment << ". Pozostalo do splaty: " << balance_left[index] << endl;
+            }
+        }
+
+        // Funkcja do usunięcia kredytu
+        void removeLoan(int index) {
+            if (index >= 0 && index < Loan::getElementLoan()) {
+                id.erase(id.begin() + index);
+                owner_id.erase(owner_id.begin() + index);
+                currency_name.erase(currency_name.begin() + index);
+                loan_type.erase(loan_type.begin() + index);
+                balance_left.erase(balance_left.begin() + index);
+            }
         }
 };
 
@@ -255,7 +261,7 @@ class Deposit {
         vector<int> remaining_time;        // Pozostały czas do zakończenia (w miesiącach)
 
     public:
-        // Metoda do zapisu xml
+        // Funkcja zaciągania lokaty loan.addDeposit(id, owner id, wartosc lokaty, nazwa waluty, dlugosc(mies), interest, data poczatkowa, data koncowa);
         void addDeposit(int d_id, int d_owner_id, double d_deposit_amount, string d_currency_name, int d_duration_months,
          double d_interest_rate, string d_dstart_date, int d_remaining_time)
         {
@@ -311,20 +317,21 @@ class Deposit {
         // Funkcja do zakończenia lokaty
         void endDeposit(int index) {
             system("cls");
-            cout << "Lokata zakończona. Kwota wypłacona: " << deposit_amount[index] + calculateInterest(index) << endl;
+            cout << "Lokata zakonczona. Kwota wyplacona: " << deposit_amount[index] + calculateInterest(index) << endl;
             deposit_amount[index] = 0; // Resetowanie lokaty po zakończeniu
         }
-        // Funkcja zaciągania kredytu loan.takeLoan(owner id, wartosc kredytu, typ kredytu, nazwa waluty);
-        void addDeposit(int ownerId, double depositAmount, string currencyName,int durationMonths, double interestRate, string startDate) {
-            owner_id.emplace_back(ownerId);
-            deposit_amount.emplace_back(depositAmount);
-            currency_name.emplace_back(currencyName);
-            duration_months.emplace_back(durationMonths);
-            interest_rate.emplace_back(interestRate);
-            start_date.emplace_back(startDate);
-            
-            system("cls");
-            cout << "Założono nową lokatę." << endl;
+        // Funkcja do usunięcia lokaty
+        void removeDeposit(int index) {
+            if (index >= 0 && index < getElementDeposit()) {
+                id.erase(id.begin() + index);
+                owner_id.erase(owner_id.begin() + index);
+                deposit_amount.erase(deposit_amount.begin() + index);
+                currency_name.erase(currency_name.begin() + index);
+                duration_months.erase(duration_months.begin() + index);
+                interest_rate.erase(interest_rate.begin() + index);
+                start_date.erase(start_date.begin() + index);
+                remaining_time.erase(remaining_time.begin() + index);
+            }
         }
 };
 
