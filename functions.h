@@ -224,6 +224,10 @@ void loansMenu() {
                 cout << "Nieprawidlowa ilosc lat." << endl;
                 continue;
             }
+
+            int accountIndex = userAccounts[konto - 1];
+            int currencyId = account.getCurrency_id(accountIndex);
+            string currencyName = currency.getName(currencyId);
             
             bool powtorzenie = 0;
             int noweId;
@@ -242,14 +246,14 @@ void loansMenu() {
             double totalLoanAmount = newLoanAmount + loan_type.calcInterest(loanTypeIndex, newLoanAmount, years);
 
             // Dodanie nowego kredytu
-            loan.addLoan(noweId, user.getId(courent_user), currency.getName(account.getCurrency_id(konto - 1)), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
+            loan.addLoan(noweId, user.getId(courent_user), currencyName, loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
             account.increaseBalance(userAccounts[konto-1], totalLoanAmount);
             txt_log("User:" + to_string(user.getId(courent_user)) + " zaciagnal nowy kredyt " + loan_type.getLoanTypeName(loanTypeIndex) + " w wysowosci:" + to_string(newLoanAmount));
             txt_log("Na konto nr: " + account.getAccountNumber(userAccounts[konto-1]) + " wpłyneło: " + to_string(totalLoanAmount));
             system("cls");
             cout << "Zaciagnieto nowy kredyt w wysokosci: " << totalLoanAmount << endl;
             cout << "Typ kredytu: " << loan_type.getLoanTypeName(loanTypeIndex) << endl;
-            cout << "Waluta: " << currency.getName(account.getCurrency_id(konto - 1)) << endl;
+            cout << "Waluta: " << currencyName << endl;
         }
 
         else {
@@ -421,6 +425,11 @@ void depositsMenu() {
                 }
             } while (powtorzenie);
 
+            // Wydobywanie nazwy waluty
+            int accountIndex = userAccounts[konto - 1];
+            int currencyId = account.getCurrency_id(accountIndex);
+            string currencyName = currency.getName(currencyId);
+
             // Liczenie całkowitego kwoty końcowej
             double interestFactor = interestRate / 100;
             double interestAmount = depositAmount * interestFactor;
@@ -430,7 +439,7 @@ void depositsMenu() {
             tm startDate = getCurrentDate();
 
             // Dodanie nowej lokaty
-            deposit.addDeposit(noweId, user.getId(courent_user), totalAmount, currency.getName(userAccounts[konto - 1]), durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
+            deposit.addDeposit(noweId, user.getId(courent_user), totalAmount, currencyName, durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
             account.decreaseBalance(userAccounts[konto-1], totalAmount);
             txt_log("User:"+to_string(user.getId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(totalAmount));
             txt_log("Z konta nr: " + account.getAccountNumber(userAccounts[konto-1]) + " pobrano: " + to_string(totalAmount));
