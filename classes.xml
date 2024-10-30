@@ -2027,7 +2027,7 @@
 			<id>0</id>
 			<owner_id>0</owner_id>
 			<currency_name>Funt Brytyjski</currency_name>
-			<loan_type_name>Studencki</loan_type_name>
+			<loan_type_name>Gotowkowy</loan_type_name>
 			<balance_left>100000</balance_left>
 		</Loan>
 		<Loan>
@@ -2062,7 +2062,7 @@
 			<id>5</id>
 			<owner_id>5</owner_id>
 			<currency_name>Funt Brytyjski</currency_name>
-			<loan_type_name>Studencki</loan_type_name>
+			<loan_type_name>Gotowkowy</loan_type_name>
 			<balance_left>1500</balance_left>
 		</Loan>
 		<Loan>
@@ -2083,7 +2083,7 @@
 			<id>8</id>
 			<owner_id>8</owner_id>
 			<currency_name>Dolar Amerykanski</currency_name>
-			<loan_type_name>Studencki</loan_type_name>
+			<loan_type_name>Gotowkowy</loan_type_name>
 			<balance_left>3000</balance_left>
 		</Loan>
 		<Loan>
@@ -2118,7 +2118,7 @@
 			<id>13</id>
 			<owner_id>13</owner_id>
 			<currency_name>Euro</currency_name>
-			<loan_type_name>Studencki</loan_type_name>
+			<loan_type_name>Gotowkowy</loan_type_name>
 			<balance_left>2000</balance_left>
 		</Loan>
 		<Loan>
@@ -2153,7 +2153,7 @@
 			<id>18</id>
 			<owner_id>18</owner_id>
 			<currency_name>Zloty</currency_name>
-			<loan_type_name>Studencki</loan_type_name>
+			<loan_type_name>Gotowkowy</loan_type_name>
 			<balance_left>3500</balance_left>
 		</Loan>
 		<Loan>

@@ -242,14 +242,14 @@ void loansMenu() {
             double totalLoanAmount = newLoanAmount + loan_type.calcInterest(loanTypeIndex, newLoanAmount, years);
 
             // Dodanie nowego kredytu
-            loan.addLoan(noweId, user.getId(courent_user), currency.getName(userAccounts[konto - 1]), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
+            loan.addLoan(noweId, user.getId(courent_user), currency.getName(account.getCurrency_id(konto - 1)), loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
             account.increaseBalance(userAccounts[konto-1], totalLoanAmount);
             txt_log("User:" + to_string(user.getId(courent_user)) + " zaciagnal nowy kredyt " + loan_type.getLoanTypeName(loanTypeIndex) + " w wysowosci:" + to_string(newLoanAmount));
             txt_log("Na konto nr: " + account.getAccountNumber(userAccounts[konto-1]) + " wpłyneło: " + to_string(totalLoanAmount));
             system("cls");
             cout << "Zaciagnieto nowy kredyt w wysokosci: " << totalLoanAmount << endl;
             cout << "Typ kredytu: " << loan_type.getLoanTypeName(loanTypeIndex) << endl;
-            cout << "Waluta: " << currency.getName(userAccounts[konto - 1]) << endl;
+            cout << "Waluta: " << currency.getName(account.getCurrency_id(konto - 1)) << endl;
         }
 
         else {
