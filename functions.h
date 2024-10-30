@@ -138,6 +138,10 @@ void loansMenu() {
                 continue;
             }
 
+            int accountIndex = userAccounts[konto - 1];
+            int currencyId = account.getCurrency_id(accountIndex);
+            string currencyName = currency.getName(currencyId);
+
             cout << "Podaj kwote splaty: ";
             cin >> paymentAmount;
 
@@ -147,6 +151,9 @@ void loansMenu() {
             } else if (paymentAmount > loan.getBalanceLeft(userLoans[menu - 1])) {
                 system("cls");
                 cout << "Kwota splaty przewyzsza saldo kredytu." << endl;
+            } else if (currencyName != currency.getName(userLoans[menu - 1])) {
+                system("cls");
+                cout << "Waluta konta nie zgadza sie z waluta kredytu." << endl;
             } else {
                 loan.makePayment(userLoans[menu - 1], paymentAmount);
                 account.decreaseBalance(userAccounts[konto-1], paymentAmount);
@@ -191,6 +198,10 @@ void loansMenu() {
                 continue;
             }
 
+            int accountIndex = userAccounts[konto - 1];
+            int currencyId = account.getCurrency_id(accountIndex);
+            string currencyName = currency.getName(currencyId);
+
             cout << "Podaj kwote kredytu: ";
             cin >> newLoanAmount;
             
@@ -224,10 +235,6 @@ void loansMenu() {
                 cout << "Nieprawidlowa ilosc lat." << endl;
                 continue;
             }
-
-            int accountIndex = userAccounts[konto - 1];
-            int currencyId = account.getCurrency_id(accountIndex);
-            string currencyName = currency.getName(currencyId);
             
             bool powtorzenie = 0;
             int noweId;
@@ -338,18 +345,26 @@ void depositsMenu() {
             double interestAmount = deposit.calculateInterest(depositIndex);
             double payoutAmount = deposit.getDepositAmount(depositIndex) + interestAmount;
 
-            // Zakończenie lokaty i przelew środków
-            deposit.endDeposit(depositIndex);
-            account.increaseBalance(userAccounts[konto - 1], payoutAmount);
+            int accountIndex = userAccounts[konto - 1];
+            int currencyId = account.getCurrency_id(accountIndex);
+            string currencyName = currency.getName(currencyId);
+            if(currencyName != currency.getName(userDeposits[menu - 1])){
+                system("cls");
+                cout << "Waluta konta nie zgadza sie z waluta lokaty." << endl;
+            }else{
+                // Zakończenie lokaty i przelew środków
+                deposit.endDeposit(depositIndex);
+                account.increaseBalance(userAccounts[konto - 1], payoutAmount);
 
-            // Usunięcie lokaty
-            deposit.removeDeposit(depositIndex);
-            userDeposits.erase(userDeposits.begin() + (menu - 1)); // Usuwamy wskaźnik z wektora
-            cout << "Deposit splacony i usuniety." << endl;
+                // Usunięcie lokaty
+                deposit.removeDeposit(depositIndex);
+                userDeposits.erase(userDeposits.begin() + (menu - 1)); // Usuwamy wskaźnik z wektora
+                cout << "Deposit splacony i usuniety." << endl;
 
-            // Dodawanie logów
-            txt_log("User:" + to_string(user.getId(courent_user)) + " zakonczyl lokate. Wypłacono: " + to_string(payoutAmount));
-            txt_log("Do konta nr: " + account.getAccountNumber(userAccounts[konto - 1]) + " wpłynęło: " + to_string(payoutAmount));
+                // Dodawanie logów
+                txt_log("User:" + to_string(user.getId(courent_user)) + " zakonczyl lokate. Wypłacono: " + to_string(payoutAmount));
+                txt_log("Do konta nr: " + account.getAccountNumber(userAccounts[konto - 1]) + " wpłynęło: " + to_string(payoutAmount));
+            }
         }
 
         // Założenie nowej lokaty
