@@ -48,23 +48,26 @@ void txt_log(string logs)
 }
 // Michal Wierzbicki
 // Funkcja do liczenia pozostalego czasu
+
 int calculateRemainingTime(int durationMonths, tm &startDate) {
-            time_t now = time(0);
-            tm currentDate;
-            localtime_s(&currentDate, &now);
-
-            int yearsPassed = currentDate.tm_year - startDate.tm_year;
-            int monthsPassed = yearsPassed * 12 + (currentDate.tm_mon - startDate.tm_mon);
-
-            int remainingMonths = durationMonths - monthsPassed;
-            return remainingMonths > 0 ? remainingMonths : 0;
-}
-tm getCurrentDate() {
-    time_t actual_time = time(0);
+    time_t now = time(0); //Pobieranie czasu w sekundach 
     tm currentDate;
-    localtime_s(&currentDate, &actual_time);
-    return currentDate;
+    localtime_s(&currentDate, &now); //Przeksztalcanie now na lokalna date i zapis do currentDate
+
+    int yearsPassed = currentDate.tm_year - startDate.tm_year;
+    int monthsPassed = yearsPassed * 12 + (currentDate.tm_mon - startDate.tm_mon);
+
+    int remainingMonths = durationMonths - monthsPassed;
+    return remainingMonths > 0 ? remainingMonths : 0; //Zwraca remainingMonths a jesli remainingMonths sa ujemne zwraca 0
 }
+
+tm getCurrentDate() {
+    time_t actual_time = time(0); //Pobieranie czasu w sekundach 
+    tm currentDate; 
+    localtime_s(&currentDate, &actual_time); //Przeksztalcanie actual_time na lokalna date i zapis do currentDate
+    return currentDate; //Zwraca currentDate
+}
+
 // Michal Wierzbicki
 // Funkcja obslugujaca menu kredytow
 void loansMenu() {
