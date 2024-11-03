@@ -48,7 +48,7 @@ void txt_log(string logs)
 }
 // Michal Wierzbicki
 // Funkcja do liczenia pozostalego czasu
-int calculateRemainingTime(int durationMonths, tm startDate) {
+int calculateRemainingTime(int durationMonths, tm &startDate) {
             time_t now = time(0);
             tm currentDate;
             localtime_s(&currentDate, &now);
