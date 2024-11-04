@@ -2403,5 +2403,15 @@
 			<start_date>Aug</start_date>
 			<remaining_time>22</remaining_time>
 		</Deposit>
+		<Deposit>
+			<id>18467</id>
+			<owner_id>20</owner_id>
+			<deposit_amount>1030</deposit_amount>
+			<currency_name>Euro</currency_name>
+			<duration_months>10</duration_months>
+			<interest_rate>3</interest_rate>
+			<start_date>Mon Nov 04 23:29:10 2024</start_date>
+			<remaining_time>10</remaining_time>
+		</Deposit>
 	</Deposits>
 </Data>
