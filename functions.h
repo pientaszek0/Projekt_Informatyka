@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <ctime>
+#include <iomanip>
 
 #include "classes.h"
 #include "variables.h"
@@ -45,6 +46,37 @@ void txt_log(string logs)
         return;
     }
     log << czas() << " : " << logs << endl;
+}
+
+// Michal Wierzbicki
+// Funkcja do liczenia pozostalego czasu
+
+int calculateRemainingTime(int durationMonths, tm &startDate) {
+    time_t now = time(0); //Pobieranie czasu w sekundach 
+    tm currentDate;
+    localtime_s(&currentDate, &now); //Przeksztalcanie now na lokalna date i zapis do currentDate
+
+    int yearsPassed = currentDate.tm_year - startDate.tm_year;
+    int monthsPassed = yearsPassed * 12 + (currentDate.tm_mon - startDate.tm_mon);
+
+    int remainingMonths = durationMonths - monthsPassed;
+    return remainingMonths > 0 ? remainingMonths : 0; //Zwraca remainingMonths a jesli remainingMonths sa ujemne zwraca 0
+}
+tm getCurrentDate() {
+    time_t actual_time = time(0);       //Pobieranie czasu w sekundach 
+    tm currentDate; 
+    localtime_s(&currentDate, &actual_time); //Przeksztalcanie actual_time na lokalna date i zapis do currentDate
+    return currentDate;             //Zwraca currentDate
+}
+
+// Funkcja konvertująca string na tm
+tm convertStringToTm(const string &dateString) {
+
+    tm tm = {};         //Inicjalizowanie zmiennej tm
+    istringstream data(dateString);       //Tworzenie obiektu istringstream o nazwie data
+    data >> get_time(&tm, "%a %b %d %H:%M:%S %Y");        //Wydobywanie danych z string
+
+    return tm;
 }
 
 // Michal Wierzbicki
@@ -271,6 +303,13 @@ void depositsMenu() {
             if (deposit.getOwnerId(i) == user.getId(courent_user)) {
                 userDeposits.push_back(i);
                 depositCount++;
+
+                int durationM = deposit.getDurationMonths(i); // Pobierz czas trwania i datę rozpoczęcia lokaty
+                string startDateS = deposit.getStartDate(i);
+                tm startDate = convertStringToTm(startDateS); // Konwertuj string na tm
+                int remainingTime = calculateRemainingTime(durationM, startDate); // Oblicz aktualny pozostały czas
+                deposit.setRemainingTime(i, remainingTime); // Zmiana pozostałego czasu na aktualny
+
                 cout << depositCount << "      -      " << deposit.getDepositAmount(i) << "      -      " << deposit.getInterestRate(i) << "%      -      " 
                      << deposit.getDurationMonths(i) << " mies.      -      " << deposit.getCurrencyName(i) 
                      << "      -      " << deposit.getRemainingTime(i) << " mies." << endl;

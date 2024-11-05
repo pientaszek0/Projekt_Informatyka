@@ -310,6 +310,10 @@ class Deposit {
         int getRemainingTime(int index) {
             return this->remaining_time[index];
         }
+        // Metoda zmieniająca pozostały czas na aktualny
+        void setRemainingTime(int index, int time) {
+            this->remaining_time[index] = time; 
+        }
         // Metoda obliczająca odsetki dla lokaty
         double calculateInterest(int index) {
             return deposit_amount[index] * (interest_rate[index] / 100) * (duration_months[index] / 12.0);
