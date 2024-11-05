@@ -2200,7 +2200,7 @@
 			<currency_name>Euro</currency_name>
 			<duration_months>12</duration_months>
 			<interest_rate>37.21</interest_rate>
-			<start_date>Feb</start_date>
+			<start_date>Thu Feb 01 12:00:00 2024</start_date>
 			<remaining_time>3</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2210,7 +2210,7 @@
 			<currency_name>Zloty</currency_name>
 			<duration_months>12</duration_months>
 			<interest_rate>3.5</interest_rate>
-			<start_date>Jan</start_date>
+			<start_date>Mon Jan 01 01:00:00 2024</start_date>
 			<remaining_time>10</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2220,7 +2220,7 @@
 			<currency_name>Euro</currency_name>
 			<duration_months>6</duration_months>
 			<interest_rate>2</interest_rate>
-			<start_date>Feb</start_date>
+			<start_date>Thu Feb 01 05:03:00 2024</start_date>
 			<remaining_time>3</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2230,7 +2230,7 @@
 			<currency_name>Euro</currency_name>
 			<duration_months>24</duration_months>
 			<interest_rate>4</interest_rate>
-			<start_date>Mar</start_date>
+			<start_date>Fri Mar 01 10:30:00 2024</start_date>
 			<remaining_time>20</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2240,7 +2240,7 @@
 			<currency_name>Funt Brytyjski</currency_name>
 			<duration_months>12</duration_months>
 			<interest_rate>3</interest_rate>
-			<start_date>Apr</start_date>
+			<start_date>Mon Apr 01 09:05:00 2024</start_date>
 			<remaining_time>8</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2250,7 +2250,7 @@
 			<currency_name>Dolar Amerykanski</currency_name>
 			<duration_months>6</duration_months>
 			<interest_rate>2.5</interest_rate>
-			<start_date>May</start_date>
+			<start_date>Wed May 01 12:00:00 2024</start_date>
 			<remaining_time>4</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2260,7 +2260,7 @@
 			<currency_name>Dolar Amerykanski</currency_name>
 			<duration_months>18</duration_months>
 			<interest_rate>3.5</interest_rate>
-			<start_date>Jun</start_date>
+			<start_date>Sat Jun 01 18:00:00 2024</start_date>
 			<remaining_time>15</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2270,7 +2270,7 @@
 			<currency_name>Zloty</currency_name>
 			<duration_months>12</duration_months>
 			<interest_rate>2.5</interest_rate>
-			<start_date>Jul</start_date>
+			<start_date>Mon Jul 01 00:30:00 2024</start_date>
 			<remaining_time>10</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2280,7 +2280,7 @@
 			<currency_name>Zloty</currency_name>
 			<duration_months>6</duration_months>
 			<interest_rate>1.5</interest_rate>
-			<start_date>Aug</start_date>
+			<start_date>Thu Aug 01 11:00:00 2024</start_date>
 			<remaining_time>2</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2290,7 +2290,7 @@
 			<currency_name>Euro</currency_name>
 			<duration_months>24</duration_months>
 			<interest_rate>3.8</interest_rate>
-			<start_date>Sep</start_date>
+			<start_date>Sun Sep 01 23:00:00 2024</start_date>
 			<remaining_time>20</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2300,7 +2300,7 @@
 			<currency_name>Funt Brytyjski</currency_name>
 			<duration_months>36</duration_months>
 			<interest_rate>4</interest_rate>
-			<start_date>Oct</start_date>
+			<start_date>Tue Oct 01 20:00:00 2024</start_date>
 			<remaining_time>33</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2310,7 +2310,7 @@
 			<currency_name>Funt Brytyjski</currency_name>
 			<duration_months>12</duration_months>
 			<interest_rate>3</interest_rate>
-			<start_date>Nov</start_date>
+			<start_date>Fri Nov 01 04:00:00 2024</start_date>
 			<remaining_time>11</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2320,7 +2320,7 @@
 			<currency_name>Dolar Amerykanski</currency_name>
 			<duration_months>18</duration_months>
 			<interest_rate>4</interest_rate>
-			<start_date>Dec</start_date>
+			<start_date>Sun Dec 01 10:00:00 2024</start_date>
 			<remaining_time>15</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2330,7 +2330,7 @@
 			<currency_name>Funt Szwajcarski</currency_name>
 			<duration_months>6</duration_months>
 			<interest_rate>2.2</interest_rate>
-			<start_date>Jan</start_date>
+			<start_date>Mon Jan 01 06:00:00 2024</start_date>
 			<remaining_time>4</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2340,7 +2340,7 @@
 			<currency_name>Euro</currency_name>
 			<duration_months>24</duration_months>
 			<interest_rate>3.7</interest_rate>
-			<start_date>Feb</start_date>
+			<start_date>Thu Feb 01 03:00:00 2024</start_date>
 			<remaining_time>18</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2350,7 +2350,7 @@
 			<currency_name>Funt Szwajcarski</currency_name>
 			<duration_months>36</duration_months>
 			<interest_rate>4</interest_rate>
-			<start_date>Mar</start_date>
+			<start_date>Fri Mar 01 10:00:00 2024</start_date>
 			<remaining_time>32</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2360,7 +2360,7 @@
 			<currency_name>Zloty</currency_name>
 			<duration_months>24</duration_months>
 			<interest_rate>3.8</interest_rate>
-			<start_date>Apr</start_date>
+			<start_date>Mon Apr 01 07:00:00 2024</start_date>
 			<remaining_time>19</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2370,7 +2370,7 @@
 			<currency_name>Zloty</currency_name>
 			<duration_months>6</duration_months>
 			<interest_rate>2.5</interest_rate>
-			<start_date>May</start_date>
+			<start_date>Wed May 01 00:50:00 2024</start_date>
 			<remaining_time>4</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2380,7 +2380,7 @@
 			<currency_name>Frank Brytyjski</currency_name>
 			<duration_months>12</duration_months>
 			<interest_rate>3.1</interest_rate>
-			<start_date>Jun</start_date>
+			<start_date>Sat Jun 01 00:20:00 2024</start_date>
 			<remaining_time>8</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2390,7 +2390,7 @@
 			<currency_name>Dolar Amerykanski</currency_name>
 			<duration_months>18</duration_months>
 			<interest_rate>3.5</interest_rate>
-			<start_date>Jul</start_date>
+			<start_date>Mon Jul 01 10:00:00 2024</start_date>
 			<remaining_time>13</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2400,7 +2400,7 @@
 			<currency_name>Euro</currency_name>
 			<duration_months>24</duration_months>
 			<interest_rate>3.9</interest_rate>
-			<start_date>Aug</start_date>
+			<start_date>Thu Aug 01 10:20:00 2024</start_date>
 			<remaining_time>22</remaining_time>
 		</Deposit>
 		<Deposit>
@@ -2410,7 +2410,7 @@
 			<currency_name>Euro</currency_name>
 			<duration_months>10</duration_months>
 			<interest_rate>3</interest_rate>
-			<start_date>Mon Nov 04 23:29:10 2024</start_date>
+			<start_date>Mon Nov 04 23:00:00 2024</start_date>
 			<remaining_time>10</remaining_time>
 		</Deposit>
 	</Deposits>
