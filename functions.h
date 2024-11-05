@@ -46,27 +46,6 @@ void txt_log(string logs)
     }
     log << czas() << " : " << logs << endl;
 }
-// Michal Wierzbicki
-// Funkcja do liczenia pozostalego czasu
-
-int calculateRemainingTime(int durationMonths, tm &startDate) {
-    time_t now = time(0); //Pobieranie czasu w sekundach 
-    tm currentDate;
-    localtime_s(&currentDate, &now); //Przeksztalcanie now na lokalna date i zapis do currentDate
-
-    int yearsPassed = currentDate.tm_year - startDate.tm_year;
-    int monthsPassed = yearsPassed * 12 + (currentDate.tm_mon - startDate.tm_mon);
-
-    int remainingMonths = durationMonths - monthsPassed;
-    return remainingMonths > 0 ? remainingMonths : 0; //Zwraca remainingMonths a jesli remainingMonths sa ujemne zwraca 0
-}
-
-tm getCurrentDate() {
-    time_t actual_time = time(0); //Pobieranie czasu w sekundach 
-    tm currentDate; 
-    localtime_s(&currentDate, &actual_time); //Przeksztalcanie actual_time na lokalna date i zapis do currentDate
-    return currentDate; //Zwraca currentDate
-}
 
 // Michal Wierzbicki
 // Funkcja obslugujaca menu kredytow
@@ -453,11 +432,8 @@ void depositsMenu() {
             double interestAmount = depositAmount * interestFactor;
             double totalAmount = depositAmount + interestAmount;
 
-            // Inicjowanie daty
-            tm startDate = getCurrentDate();
-
             // Dodanie nowej lokaty
-            deposit.addDeposit(noweId, user.getId(courent_user), totalAmount, currencyName, durationMonths, interestRate, czas(), calculateRemainingTime(durationMonths, startDate));
+            deposit.addDeposit(noweId, user.getId(courent_user), totalAmount, currencyName, durationMonths, interestRate, czas(), durationMonths);
             account.decreaseBalance(userAccounts[konto-1], totalAmount);
             txt_log("User:"+to_string(user.getId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(totalAmount));
             txt_log("Z konta nr: " + account.getAccountNumber(userAccounts[konto-1]) + " pobrano: " + to_string(totalAmount));
