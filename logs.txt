@@ -1,52 +1,3 @@
-<<<<<<< HEAD
-Tue Oct 22 19:26:25 2024
- : TestTue Oct 22 19:26:31 2024
- : TestTue Oct 22 19:27:33 2024 : Test
-Tue Oct 22 19:27:37 2024 : Test
-Tue Oct 22 19:27:49 2024 : Test
-Tue Oct 22 19:50:38 2024 : Test
-Tue Oct 22 19:51:08 2024 : Test
-Tue Oct 22 19:51:23 2024 : Test
-Tue Oct 22 19:55:40 2024 : Test
-Tue Oct 22 19:56:31 2024 : Test
-Tue Oct 22 19:57:22 2024 : Test
-Tue Oct 22 19:58:03 2024 : Test
-Tue Oct 22 19:59:26 2024 : Test
-Tue Oct 22 20:00:22 2024 : Test
-Tue Oct 22 20:01:14 2024 : Test
-Tue Oct 22 20:05:34 2024 : Test
-Tue Oct 22 20:08:53 2024 : Test
-Tue Oct 22 20:10:07 2024 : Test
-Tue Oct 22 20:10:23 2024 : Test
-Tue Oct 22 20:12:56 2024 : Test
-Tue Oct 22 20:15:13 2024 : Test
-Tue Oct 22 20:17:12 2024 : Test
-Tue Oct 22 20:18:18 2024 : Test
-Tue Oct 22 20:19:15 2024 : Test
-Tue Oct 22 20:21:02 2024 : Test
-Tue Oct 22 20:21:52 2024 : Test
-Tue Oct 22 20:26:35 2024 : Test
-Tue Oct 22 20:26:58 2024 : Test
-Tue Oct 22 20:43:42 2024 : Test
-Wed Oct 23 07:38:46 2024 : Test
-Wed Oct 23 07:38:56 2024 : Test
-Wed Oct 23 07:39:19 2024 : Test
-Wed Oct 23 07:39:47 2024 : Test
-Wed Oct 23 07:40:52 2024 : Test
-Wed Oct 23 20:22:11 2024 : Test
-Wed Oct 23 20:22:13 2024 : Test
-Wed Oct 23 20:31:37 2024 : Test
-Wed Oct 23 20:31:45 2024 : Test
-Wed Oct 23 20:47:57 2024 : Test
-Thu Oct 24 18:40:04 2024 : Test
-Mon Oct 28 17:49:14 2024 : Test
-Mon Oct 28 17:50:32 2024 : Test
-Mon Oct 28 17:51:00 2024 : Test
-Mon Oct 28 17:53:14 2024 : Test
-Mon Oct 28 17:53:52 2024 : Test
-Mon Oct 28 17:58:00 2024 : Test
-Mon Oct 28 17:58:11 2024 : Test
-=======
 Sat Oct 26 10:39:07 2024 : Uzytkownik JanKowalski zalogowal sie.
 Sat Oct 26 10:41:39 2024 : Uzytkownik ID:Jan Kowalski zalogowal sie.
 Sat Oct 26 10:42:35 2024 : Uzytkownik ID:0 Jan Kowalski zalogowal sie.
@@ -62,5 +13,16 @@ Sat Oct 26 11:45:59 2024 : Administrator ID:0 - Jan KowalskiUtworzyl nowego uzyt
 Sat Oct 26 11:46:34 2024 : Administrator ID:0 - Jan Kowalskidokonal wplaty na konto PL17409488245517115276142322
 Sat Oct 26 11:46:54 2024 : Administrator ID:0 - Jan Kowalskidokonal wuplaty z konta PL17409488245517115276142322
 Sat Oct 26 11:46:59 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
->>>>>>> 5216a081adf70eae4c325300377f1f14d229c947
 Wed Oct 30 11:22:33 2024 : Uzytkownik ID:0 - Jan]] Kowalski zalogowal sie.
+Wed Nov  6 10:28:51 2024 : Uzytkownik ID:0 - Jan]] Kowalski zalogowal sie.
+Wed Nov  6 10:42:41 2024 : Uzytkownik ID:0 - Jan]] Kowalski zalogowal sie.
+Wed Nov  6 10:45:49 2024 : Uzytkownik ID:0 - Jan]] Kowalski zalogowal sie.
+Wed Nov  6 10:48:33 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Wed Nov  6 10:49:21 2024 : Administrator ID:0 - Jan Kowalski Utworzyl nowego uzytkownika Patryk Milowski
+Wed Nov  6 10:49:29 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Wed Nov  6 10:49:33 2024 : Uzytkownik ID:18467 - Patryk Milowski zalogowal sie.
+Wed Nov  6 10:49:40 2024 : Uzytkownik ID:18467 - Patryk Milowski Utworzyl konto: PL40948824551711527614232216
+Wed Nov  6 10:50:15 2024 : Uzytkownik ID:18467 - Patryk Milowski wylogowal sie i zapisal dane.
+Wed Nov  6 10:51:21 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Wed Nov  6 10:52:46 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Wed Nov  6 10:53:33 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.

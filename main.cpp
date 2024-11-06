@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 int main() {
     xml_chf(user); // Wywołanie funkcji do odczytu pliku xml 
     xml_giveData(user, account, currency, loan_type, loan, deposit); // Wywołanie funkcja która wczytuje dane z XML

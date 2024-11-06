@@ -4,10 +4,10 @@
 	<Users>
 		<User>
 			<id>0</id>
-			<first_name>Jan]]</first_name>
+			<first_name>Jan</first_name>
 			<last_name>Kowalski</last_name>
 			<login>admin</login>
-			<password>admin</password>
+			<password>dgplqdgplqdgplqdgplqdgplqdgplq</password>
 			<admin>true</admin>
 		</User>
 		<User>
@@ -15,7 +15,7 @@
 			<first_name>Pawel</first_name>
 			<last_name>Kowalczyk</last_name>
 			<login>user1</login>
-			<password>pass1</password>
+			<password>sdvv4sdvv4sdvv4sdvv4sdvv4sdvv4</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -23,7 +23,7 @@
 			<first_name>Ewa</first_name>
 			<last_name>Wójcik</last_name>
 			<login>user2</login>
-			<password>pass2</password>
+			<password>sdvv5sdvv5sdvv5sdvv5sdvv5sdvv5</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -31,7 +31,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Kozłowski</last_name>
 			<login>user3</login>
-			<password>pass3</password>
+			<password>sdvv6sdvv6sdvv6sdvv6sdvv6sdvv6</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -39,7 +39,7 @@
 			<first_name>Ewa</first_name>
 			<last_name>Kamiński</last_name>
 			<login>user4</login>
-			<password>pass4</password>
+			<password>sdvv7sdvv7sdvv7sdvv7sdvv7sdvv7</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -47,7 +47,7 @@
 			<first_name>Marek</first_name>
 			<last_name>Jankowski</last_name>
 			<login>user5</login>
-			<password>pass5</password>
+			<password>sdvv8sdvv8sdvv8sdvv8sdvv8sdvv8</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -55,7 +55,7 @@
 			<first_name>Krzysztof</first_name>
 			<last_name>Kozłowski</last_name>
 			<login>user6</login>
-			<password>pass6</password>
+			<password>sdvv9sdvv9sdvv9sdvv9sdvv9sdvv9</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -63,7 +63,7 @@
 			<first_name>Marek</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user7</login>
-			<password>pass7</password>
+			<password>sdvv:sdvv:sdvv:sdvv:sdvv:sdvv:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -71,7 +71,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user8</login>
-			<password>pass8</password>
+			<password>sdvv;sdvv;sdvv;sdvv;sdvv;sdvv;</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -79,7 +79,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Kamiński</last_name>
 			<login>user9</login>
-			<password>pass9</password>
+			<password>sdvv:sdvv:sdvv:sdvv:sdvv:sdvv:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -87,7 +87,7 @@
 			<first_name>Krzysztof</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user10</login>
-			<password>pass10</password>
+			<password>sdvv43sdvv43sdvv43sdvv43sdvv43</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -95,7 +95,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Kowalczyk</last_name>
 			<login>user11</login>
-			<password>pass11</password>
+			<password>sdvv44sdvv44sdvv44sdvv44sdvv44</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -103,7 +103,7 @@
 			<first_name>Ewa</first_name>
 			<last_name>Wiśniewski</last_name>
 			<login>user12</login>
-			<password>pass12</password>
+			<password>sdvv45sdvv45sdvv45sdvv45sdvv45</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -111,7 +111,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user13</login>
-			<password>pass13</password>
+			<password>sdvv46sdvv46sdvv46sdvv46sdvv46</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -119,7 +119,7 @@
 			<first_name>Anna</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user14</login>
-			<password>pass14</password>
+			<password>sdvv47sdvv47sdvv47sdvv47sdvv47</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -127,7 +127,7 @@
 			<first_name>Paweł</first_name>
 			<last_name>Kamiński</last_name>
 			<login>user15</login>
-			<password>pass15</password>
+			<password>sdvv48sdvv48sdvv48sdvv48sdvv48</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -135,7 +135,7 @@
 			<first_name>Ewa</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user16</login>
-			<password>pass16</password>
+			<password>sdvv49sdvv49sdvv49sdvv49sdvv49</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -143,7 +143,7 @@
 			<first_name>Monika</first_name>
 			<last_name>Kowalczyk</last_name>
 			<login>user17</login>
-			<password>pass17</password>
+			<password>sdvv4:sdvv4:sdvv4:sdvv4:sdvv4:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -151,7 +151,7 @@
 			<first_name>Anna</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user18</login>
-			<password>pass18</password>
+			<password>sdvv4;sdvv4;sdvv4;sdvv4;sdvv4;</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -159,7 +159,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Kamiński</last_name>
 			<login>user19</login>
-			<password>pass19</password>
+			<password>sdvv4:sdvv4:sdvv4:sdvv4:sdvv4:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -167,7 +167,7 @@
 			<first_name>Krzysztof</first_name>
 			<last_name>Kozłowski</last_name>
 			<login>user20</login>
-			<password>pass20</password>
+			<password>sdvv53sdvv53sdvv53sdvv53sdvv53</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -175,7 +175,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Wiśniewski</last_name>
 			<login>user21</login>
-			<password>pass21</password>
+			<password>sdvv54sdvv54sdvv54sdvv54sdvv54</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -183,7 +183,7 @@
 			<first_name>Marek</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user22</login>
-			<password>pass22</password>
+			<password>sdvv55sdvv55sdvv55sdvv55sdvv55</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -191,7 +191,7 @@
 			<first_name>Monika</first_name>
 			<last_name>Wójcik</last_name>
 			<login>user23</login>
-			<password>pass23</password>
+			<password>sdvv56sdvv56sdvv56sdvv56sdvv56</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -199,7 +199,7 @@
 			<first_name>Ewa</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user24</login>
-			<password>pass24</password>
+			<password>sdvv57sdvv57sdvv57sdvv57sdvv57</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -207,7 +207,7 @@
 			<first_name>Anna</first_name>
 			<last_name>Jankowski</last_name>
 			<login>user25</login>
-			<password>pass25</password>
+			<password>sdvv58sdvv58sdvv58sdvv58sdvv58</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -215,7 +215,7 @@
 			<first_name>Marek</first_name>
 			<last_name>Jankowski</last_name>
 			<login>user26</login>
-			<password>pass26</password>
+			<password>sdvv59sdvv59sdvv59sdvv59sdvv59</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -223,7 +223,7 @@
 			<first_name>Krzysztof</first_name>
 			<last_name>Kozłowski</last_name>
 			<login>user27</login>
-			<password>pass27</password>
+			<password>sdvv5:sdvv5:sdvv5:sdvv5:sdvv5:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -231,7 +231,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user28</login>
-			<password>pass28</password>
+			<password>sdvv5;sdvv5;sdvv5;sdvv5;sdvv5;</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -239,7 +239,7 @@
 			<first_name>Krzysztof</first_name>
 			<last_name>Wiśniewski</last_name>
 			<login>user29</login>
-			<password>pass29</password>
+			<password>sdvv5:sdvv5:sdvv5:sdvv5:sdvv5:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -247,7 +247,7 @@
 			<first_name>Monika</first_name>
 			<last_name>Jankowski</last_name>
 			<login>user30</login>
-			<password>pass30</password>
+			<password>sdvv63sdvv63sdvv63sdvv63sdvv63</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -255,7 +255,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Wiśniewski</last_name>
 			<login>user31</login>
-			<password>pass31</password>
+			<password>sdvv64sdvv64sdvv64sdvv64sdvv64</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -263,7 +263,7 @@
 			<first_name>Monika</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user32</login>
-			<password>pass32</password>
+			<password>sdvv65sdvv65sdvv65sdvv65sdvv65</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -271,7 +271,7 @@
 			<first_name>Anna</first_name>
 			<last_name>Kozłowski</last_name>
 			<login>user33</login>
-			<password>pass33</password>
+			<password>sdvv66sdvv66sdvv66sdvv66sdvv66</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -279,7 +279,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Wójcik</last_name>
 			<login>user34</login>
-			<password>pass34</password>
+			<password>sdvv67sdvv67sdvv67sdvv67sdvv67</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -287,7 +287,7 @@
 			<first_name>Krzysztof</first_name>
 			<last_name>Wiśniewski</last_name>
 			<login>user35</login>
-			<password>pass35</password>
+			<password>sdvv68sdvv68sdvv68sdvv68sdvv68</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -295,7 +295,7 @@
 			<first_name>Ewa</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user36</login>
-			<password>pass36</password>
+			<password>sdvv69sdvv69sdvv69sdvv69sdvv69</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -303,7 +303,7 @@
 			<first_name>Anna</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user37</login>
-			<password>pass37</password>
+			<password>sdvv6:sdvv6:sdvv6:sdvv6:sdvv6:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -311,7 +311,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Kowalczyk</last_name>
 			<login>user38</login>
-			<password>pass38</password>
+			<password>sdvv6;sdvv6;sdvv6;sdvv6;sdvv6;</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -319,7 +319,7 @@
 			<first_name>Krzysztof</first_name>
 			<last_name>Kamiński</last_name>
 			<login>user39</login>
-			<password>pass39</password>
+			<password>sdvv6:sdvv6:sdvv6:sdvv6:sdvv6:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -327,7 +327,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Kowalczyk</last_name>
 			<login>user40</login>
-			<password>pass40</password>
+			<password>sdvv73sdvv73sdvv73sdvv73sdvv73</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -335,7 +335,7 @@
 			<first_name>Paweł</first_name>
 			<last_name>Kamiński</last_name>
 			<login>user41</login>
-			<password>pass41</password>
+			<password>sdvv74sdvv74sdvv74sdvv74sdvv74</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -343,7 +343,7 @@
 			<first_name>Marek</first_name>
 			<last_name>Kozłowski</last_name>
 			<login>user42</login>
-			<password>pass42</password>
+			<password>sdvv75sdvv75sdvv75sdvv75sdvv75</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -351,7 +351,7 @@
 			<first_name>Paweł</first_name>
 			<last_name>Wójcik</last_name>
 			<login>user43</login>
-			<password>pass43</password>
+			<password>sdvv76sdvv76sdvv76sdvv76sdvv76</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -359,7 +359,7 @@
 			<first_name>Ewa</first_name>
 			<last_name>Wójcik</last_name>
 			<login>user44</login>
-			<password>pass44</password>
+			<password>sdvv77sdvv77sdvv77sdvv77sdvv77</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -367,7 +367,7 @@
 			<first_name>Paweł</first_name>
 			<last_name>Jankowski</last_name>
 			<login>user45</login>
-			<password>pass45</password>
+			<password>sdvv78sdvv78sdvv78sdvv78sdvv78</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -375,7 +375,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user46</login>
-			<password>pass46</password>
+			<password>sdvv79sdvv79sdvv79sdvv79sdvv79</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -383,7 +383,7 @@
 			<first_name>Marek</first_name>
 			<last_name>Kowalczyk</last_name>
 			<login>user47</login>
-			<password>pass47</password>
+			<password>sdvv7:sdvv7:sdvv7:sdvv7:sdvv7:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -391,7 +391,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Kamiński</last_name>
 			<login>user48</login>
-			<password>pass48</password>
+			<password>sdvv7;sdvv7;sdvv7;sdvv7;sdvv7;</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -399,7 +399,7 @@
 			<first_name>Marek</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user49</login>
-			<password>pass49</password>
+			<password>sdvv7:sdvv7:sdvv7:sdvv7:sdvv7:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -407,7 +407,7 @@
 			<first_name>Anna</first_name>
 			<last_name>Kamiński</last_name>
 			<login>user50</login>
-			<password>pass50</password>
+			<password>sdvv83sdvv83sdvv83sdvv83sdvv83</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -415,7 +415,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user51</login>
-			<password>pass51</password>
+			<password>sdvv84sdvv84sdvv84sdvv84sdvv84</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -423,7 +423,7 @@
 			<first_name>Anna</first_name>
 			<last_name>Wójcik</last_name>
 			<login>user52</login>
-			<password>pass52</password>
+			<password>sdvv85sdvv85sdvv85sdvv85sdvv85</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -431,7 +431,7 @@
 			<first_name>Ewa</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user53</login>
-			<password>pass53</password>
+			<password>sdvv86sdvv86sdvv86sdvv86sdvv86</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -439,7 +439,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Kamiński</last_name>
 			<login>user54</login>
-			<password>pass54</password>
+			<password>sdvv87sdvv87sdvv87sdvv87sdvv87</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -447,7 +447,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Kowalczyk</last_name>
 			<login>user55</login>
-			<password>pass55</password>
+			<password>sdvv88sdvv88sdvv88sdvv88sdvv88</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -455,7 +455,7 @@
 			<first_name>Krzysztof</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user56</login>
-			<password>pass56</password>
+			<password>sdvv89sdvv89sdvv89sdvv89sdvv89</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -463,7 +463,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Jankowski</last_name>
 			<login>user57</login>
-			<password>pass57</password>
+			<password>sdvv8:sdvv8:sdvv8:sdvv8:sdvv8:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -471,7 +471,7 @@
 			<first_name>Marek</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user58</login>
-			<password>pass58</password>
+			<password>sdvv8;sdvv8;sdvv8;sdvv8;sdvv8;</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -479,7 +479,7 @@
 			<first_name>Ewa</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user59</login>
-			<password>pass59</password>
+			<password>sdvv8:sdvv8:sdvv8:sdvv8:sdvv8:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -487,7 +487,7 @@
 			<first_name>Paweł</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user60</login>
-			<password>pass60</password>
+			<password>sdvv93sdvv93sdvv93sdvv93sdvv93</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -495,7 +495,7 @@
 			<first_name>Anna</first_name>
 			<last_name>Wójcik</last_name>
 			<login>user61</login>
-			<password>pass61</password>
+			<password>sdvv94sdvv94sdvv94sdvv94sdvv94</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -503,7 +503,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Wiśniewski</last_name>
 			<login>user62</login>
-			<password>pass62</password>
+			<password>sdvv95sdvv95sdvv95sdvv95sdvv95</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -511,7 +511,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Kozłowski</last_name>
 			<login>user63</login>
-			<password>pass63</password>
+			<password>sdvv96sdvv96sdvv96sdvv96sdvv96</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -519,7 +519,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Kowalczyk</last_name>
 			<login>user64</login>
-			<password>pass64</password>
+			<password>sdvv97sdvv97sdvv97sdvv97sdvv97</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -527,7 +527,7 @@
 			<first_name>Monika</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user65</login>
-			<password>pass65</password>
+			<password>sdvv98sdvv98sdvv98sdvv98sdvv98</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -535,7 +535,7 @@
 			<first_name>Krzysztof</first_name>
 			<last_name>Jankowski</last_name>
 			<login>user66</login>
-			<password>pass66</password>
+			<password>sdvv99sdvv99sdvv99sdvv99sdvv99</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -543,7 +543,7 @@
 			<first_name>Ewa</first_name>
 			<last_name>Wójcik</last_name>
 			<login>user67</login>
-			<password>pass67</password>
+			<password>sdvv9:sdvv9:sdvv9:sdvv9:sdvv9:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -551,7 +551,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Kamiński</last_name>
 			<login>user68</login>
-			<password>pass68</password>
+			<password>sdvv9;sdvv9;sdvv9;sdvv9;sdvv9;</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -559,7 +559,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Kamiński</last_name>
 			<login>user69</login>
-			<password>pass69</password>
+			<password>sdvv9:sdvv9:sdvv9:sdvv9:sdvv9:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -567,7 +567,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Jankowski</last_name>
 			<login>user70</login>
-			<password>pass70</password>
+			<password>sdvv:3sdvv:3sdvv:3sdvv:3sdvv:3</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -575,7 +575,7 @@
 			<first_name>Marek</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user71</login>
-			<password>pass71</password>
+			<password>sdvv:4sdvv:4sdvv:4sdvv:4sdvv:4</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -583,7 +583,7 @@
 			<first_name>Ewa</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user72</login>
-			<password>pass72</password>
+			<password>sdvv:5sdvv:5sdvv:5sdvv:5sdvv:5</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -591,7 +591,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Wiśniewski</last_name>
 			<login>user73</login>
-			<password>pass73</password>
+			<password>sdvv:6sdvv:6sdvv:6sdvv:6sdvv:6</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -599,7 +599,7 @@
 			<first_name>Marek</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user74</login>
-			<password>pass74</password>
+			<password>sdvv:7sdvv:7sdvv:7sdvv:7sdvv:7</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -607,7 +607,7 @@
 			<first_name>Anna</first_name>
 			<last_name>Wiśniewski</last_name>
 			<login>user75</login>
-			<password>pass75</password>
+			<password>sdvv:8sdvv:8sdvv:8sdvv:8sdvv:8</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -615,7 +615,7 @@
 			<first_name>Monika</first_name>
 			<last_name>Kowalczyk</last_name>
 			<login>user76</login>
-			<password>pass76</password>
+			<password>sdvv:9sdvv:9sdvv:9sdvv:9sdvv:9</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -623,7 +623,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user77</login>
-			<password>pass77</password>
+			<password>sdvv::sdvv::sdvv::sdvv::sdvv::</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -631,7 +631,7 @@
 			<first_name>Krzysztof</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user78</login>
-			<password>pass78</password>
+			<password>sdvv:;sdvv:;sdvv:;sdvv:;sdvv:;</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -639,7 +639,7 @@
 			<first_name>Anna</first_name>
 			<last_name>Jankowski</last_name>
 			<login>user79</login>
-			<password>pass79</password>
+			<password>sdvv::sdvv::sdvv::sdvv::sdvv::</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -647,7 +647,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Kozłowski</last_name>
 			<login>user80</login>
-			<password>pass80</password>
+			<password>sdvv;3sdvv;3sdvv;3sdvv;3sdvv;3</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -655,7 +655,7 @@
 			<first_name>Ewa</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user81</login>
-			<password>pass81</password>
+			<password>sdvv;4sdvv;4sdvv;4sdvv;4sdvv;4</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -663,7 +663,7 @@
 			<first_name>Monika</first_name>
 			<last_name>Kozłowski</last_name>
 			<login>user82</login>
-			<password>pass82</password>
+			<password>sdvv;5sdvv;5sdvv;5sdvv;5sdvv;5</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -671,7 +671,7 @@
 			<first_name>Monika</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user83</login>
-			<password>pass83</password>
+			<password>sdvv;6sdvv;6sdvv;6sdvv;6sdvv;6</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -679,7 +679,7 @@
 			<first_name>Marek</first_name>
 			<last_name>Nowicki</last_name>
 			<login>user84</login>
-			<password>pass84</password>
+			<password>sdvv;7sdvv;7sdvv;7sdvv;7sdvv;7</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -687,7 +687,7 @@
 			<first_name>Ewa</first_name>
 			<last_name>Jankowski</last_name>
 			<login>user85</login>
-			<password>pass85</password>
+			<password>sdvv;8sdvv;8sdvv;8sdvv;8sdvv;8</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -695,7 +695,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Kamiński</last_name>
 			<login>user86</login>
-			<password>pass86</password>
+			<password>sdvv;9sdvv;9sdvv;9sdvv;9sdvv;9</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -703,7 +703,7 @@
 			<first_name>Krzysztof</first_name>
 			<last_name>Kowalczyk</last_name>
 			<login>user87</login>
-			<password>pass87</password>
+			<password>sdvv;:sdvv;:sdvv;:sdvv;:sdvv;:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -711,7 +711,7 @@
 			<first_name>Krzysztof</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user88</login>
-			<password>pass88</password>
+			<password>sdvv;;sdvv;;sdvv;;sdvv;;sdvv;;</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -719,7 +719,7 @@
 			<first_name>Anna</first_name>
 			<last_name>Kozłowski</last_name>
 			<login>user89</login>
-			<password>pass89</password>
+			<password>sdvv;:sdvv;:sdvv;:sdvv;:sdvv;:</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -727,7 +727,7 @@
 			<first_name>Monika</first_name>
 			<last_name>Wójcik</last_name>
 			<login>user90</login>
-			<password>pass90</password>
+			<password>sdvv:3sdvv:3sdvv:3sdvv:3sdvv:3</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -735,7 +735,7 @@
 			<first_name>Marek</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user91</login>
-			<password>pass91</password>
+			<password>sdvv:4sdvv:4sdvv:4sdvv:4sdvv:4</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -743,7 +743,7 @@
 			<first_name>Piotr</first_name>
 			<last_name>Kowalczyk</last_name>
 			<login>user92</login>
-			<password>pass92</password>
+			<password>sdvv:5sdvv:5sdvv:5sdvv:5sdvv:5</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -751,7 +751,7 @@
 			<first_name>Tomasz</first_name>
 			<last_name>Zieliński</last_name>
 			<login>user93</login>
-			<password>pass93</password>
+			<password>sdvv:6sdvv:6sdvv:6sdvv:6sdvv:6</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -759,7 +759,7 @@
 			<first_name>Krzysztof</first_name>
 			<last_name>Wójcik</last_name>
 			<login>user94</login>
-			<password>pass94</password>
+			<password>sdvv:7sdvv:7sdvv:7sdvv:7sdvv:7</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -767,7 +767,7 @@
 			<first_name>Monika</first_name>
 			<last_name>Wiśniewski</last_name>
 			<login>user95</login>
-			<password>pass95</password>
+			<password>sdvv:8sdvv:8sdvv:8sdvv:8sdvv:8</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -775,7 +775,7 @@
 			<first_name>Monika</first_name>
 			<last_name>Kamiński</last_name>
 			<login>user96</login>
-			<password>pass96</password>
+			<password>sdvv:9sdvv:9sdvv:9sdvv:9sdvv:9</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -783,7 +783,7 @@
 			<first_name>Krzysztof</first_name>
 			<last_name>Jankowski</last_name>
 			<login>user97</login>
-			<password>pass97</password>
+			<password>sdvv::sdvv::sdvv::sdvv::sdvv::</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -791,7 +791,7 @@
 			<first_name>Anna</first_name>
 			<last_name>Kamiński</last_name>
 			<login>user98</login>
-			<password>pass98</password>
+			<password>sdvv:;sdvv:;sdvv:;sdvv:;sdvv:;</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -799,7 +799,7 @@
 			<first_name>Marek</first_name>
 			<last_name>Jankowski</last_name>
 			<login>user99</login>
-			<password>pass99</password>
+			<password>sdvv::sdvv::sdvv::sdvv::sdvv::</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -807,7 +807,7 @@
 			<first_name>Anna</first_name>
 			<last_name>Wiśniewski</last_name>
 			<login>user100</login>
-			<password>pass100</password>
+			<password>sdvv433sdvv433sdvv433sdvv433sd</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -815,7 +815,7 @@
 			<first_name>Jan</first_name>
 			<last_name>Jan</last_name>
 			<login>Jan</login>
-			<password>Jan</password>
+			<password>MdqMdqMdqMdqMdqMdqMdqMdqMdqMdq</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -823,7 +823,7 @@
 			<first_name>cos</first_name>
 			<last_name>cos</last_name>
 			<login>cos</login>
-			<password>cos</password>
+			<password>frvfrvfrvfrvfrvfrvfrvfrvfrvfrv</password>
 			<admin>false</admin>
 		</User>
 		<User>
@@ -831,7 +831,15 @@
 			<first_name>Jan</first_name>
 			<last_name>Pietka</last_name>
 			<login>Jan</login>
-			<password>Pietka</password>
+			<password>SlhwndSlhwndSlhwndSlhwndSlhwnd</password>
+			<admin>false</admin>
+		</User>
+		<User>
+			<id>18467</id>
+			<first_name>Patryk</first_name>
+			<last_name>Milowski</last_name>
+			<login>1234</login>
+			<password>456745674567456745674567456745</password>
 			<admin>false</admin>
 		</User>
 </Users>
@@ -1975,6 +1983,13 @@
 			<owner_id>32757</owner_id>
 			<currency_id>0</currency_id>
 			<account_number>PL79319865028602486509006138</account_number>
+			<balance>0</balance>
+		</Account>
+		<Account>
+			<id>19718</id>
+			<owner_id>18467</owner_id>
+			<currency_id>1</currency_id>
+			<account_number>PL40948824551711527614232216</account_number>
 			<balance>0</balance>
 		</Account>
 	</Accounts>

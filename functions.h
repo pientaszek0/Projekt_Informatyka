@@ -507,7 +507,11 @@ string hashowanie(string haslo) {
         }
         
         if (haslo[n] >= 33 && haslo[n] <= 123) {
-            ciag[i] = haslo[n] + 3;
+            if (haslo[n]+3 == 60 || haslo[n]+3 == 62) {
+                ciag[i] = haslo[n] + 1;
+            } else {
+                ciag[i] = haslo[n] + 3;
+            }
         } else {
             ciag[i] = haslo[n] - 91;
         }
@@ -534,7 +538,7 @@ void sign_in() {
 
         for (int i = 0 ; i < user.getElementUser(); i++) {
             cout << i;
-            if (login == user.getLogin(i) && password == user.getPassword(i)) { 
+            if (login == user.getLogin(i) && hashowanie(password) == user.getPassword(i)) { 
                 courent_user = i;
                 system("cls");
                 txt_log("Uzytkownik ID:" + to_string(user.getId(i))+ " - " + user.getFirst_name(i) + " " + user.getLast_name(i) + " zalogowal sie.");
@@ -565,7 +569,7 @@ void accountsMenu() {
             if (account.getOwner_id(i) == user.getId(courent_user)) {
                 userAccounts.push_back(i);
                 accountAmount++;
-                cout << accountAmount << "      -      " << account.getAccountNumber(i) << "      -      " << account.getBalance(i) << " ";
+                cout << accountAmount << " - " << account.getAccountNumber(i) << " - " << account.getBalance(i) << " ";
                 for (int n = 0; n < currency.getElementCurrency(); n++) {
                     if (account.getCurrency_id(i) == currency.getId(n)) {
                         cout << currency.getName(n) << endl;
@@ -726,7 +730,7 @@ void adminMenu() {
             cout << "Podaj haslo: ";
             cin >> password;
 
-            user.addUser(noweId, firstName, lastName, login, password, 0);
+            user.addUser(noweId, firstName, lastName, login, hashowanie(password), 0);
             txt_log("Administrator ID:" + to_string(user.getId(courent_user))+ " - " + user.getFirst_name(courent_user) + " " + user.getLast_name(courent_user) + " Utworzyl nowego uzytkownika " + firstName + " " + lastName);
             system("cls");
             cout << "Utworzono urzytkownika." << endl;
