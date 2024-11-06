@@ -6,6 +6,7 @@
 #include <fstream>
 #include <ctime>
 #include <iomanip>
+#include <sstream>
 
 #include "classes.h"
 #include "variables.h"
@@ -51,32 +52,26 @@ void txt_log(string logs)
 // Michal Wierzbicki
 // Funkcja do liczenia pozostalego czasu
 
-int calculateRemainingTime(int durationMonths, tm &startDate) {
-    time_t now = time(0); //Pobieranie czasu w sekundach 
+int calculateRemainingMonths(int durationMonths, tm &startDate) {
+    time_t actualTime = time(0); //Pobieranie czasu w sekundach 
     tm currentDate;
-    localtime_s(&currentDate, &now); //Przeksztalcanie now na lokalna date i zapis do currentDate
+    localtime_s(&currentDate, &actualTime); //Przeksztalcanie now na lokalna date i zapis do currentDate
 
-    int yearsPassed = currentDate.tm_year - startDate.tm_year;
-    int monthsPassed = yearsPassed * 12 + (currentDate.tm_mon - startDate.tm_mon);
+    int yearsP = currentDate.tm_year - startDate.tm_year;
+    int monthsP = yearsP * 12 + (currentDate.tm_mon - startDate.tm_mon);
 
-    int remainingMonths = durationMonths - monthsPassed;
+    int remainingMonths = durationMonths - monthsP;
     return remainingMonths > 0 ? remainingMonths : 0; //Zwraca remainingMonths a jesli remainingMonths sa ujemne zwraca 0
-}
-tm getCurrentDate() {
-    time_t actual_time = time(0);       //Pobieranie czasu w sekundach 
-    tm currentDate; 
-    localtime_s(&currentDate, &actual_time); //Przeksztalcanie actual_time na lokalna date i zapis do currentDate
-    return currentDate;             //Zwraca currentDate
 }
 
 // Funkcja konvertująca string na tm
 tm convertStringToTm(const string &dateString) {
 
-    tm tm = {};         //Inicjalizowanie zmiennej tm
-    istringstream data(dateString);       //Tworzenie obiektu istringstream o nazwie data
-    data >> get_time(&tm, "%a %b %d %H:%M:%S %Y");        //Wydobywanie danych z string
+    tm currentDate={};         //Inicjalizowanie zmiennej currentDate
+    istringstream stream(dateString);       //Tworzenie strumienia istringstream o nazwie stream
+    stream >> get_time(&currentDate, "%a %b %d %H:%M:%S %Y");        //Wydobywanie danych z string
 
-    return tm;
+    return currentDate;
 }
 
 // Michal Wierzbicki
