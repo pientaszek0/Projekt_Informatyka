@@ -2019,7 +2019,7 @@
 		<Loan_Type>
 			<id>1</id>
 			<interest>3.5</interest>
-			<loan_type_name>Hipoteczny</loan_type_name>
+			<loan_type_name>Hipoteczny  </loan_type_name>
 		</Loan_Type>
 		<Loan_Type>
 			<id>2</id>
@@ -2029,12 +2029,12 @@
 		<Loan_Type>
 			<id>3</id>
 			<interest>5</interest>
-			<loan_type_name>Samochodowy</loan_type_name>
+			<loan_type_name>Samochodowy </loan_type_name>
 		</Loan_Type>
 		<Loan_Type>
 			<id>4</id>
 			<interest>7.2</interest>
-			<loan_type_name>Gotowkowy</loan_type_name>
+			<loan_type_name>Gotowkowy   </loan_type_name>
 		</Loan_Type>
 	</Loan_Types>
 	<Loans>
@@ -2042,21 +2042,21 @@
 			<id>0</id>
 			<owner_id>0</owner_id>
 			<currency_name>Funt Brytyjski</currency_name>
-			<loan_type_name>Gotowkowy</loan_type_name>
+			<loan_type_name>Gotowkowy   </loan_type_name>
 			<balance_left>100000</balance_left>
 		</Loan>
 		<Loan>
 			<id>1</id>
 			<owner_id>1</owner_id>
 			<currency_name>Zloty</currency_name>
-			<loan_type_name>Hipoteczny</loan_type_name>
+			<loan_type_name>Hipoteczny  </loan_type_name>
 			<balance_left>100000</balance_left>
 		</Loan>
 		<Loan>
 			<id>2</id>
 			<owner_id>2</owner_id>
 			<currency_name>Euro</currency_name>
-			<loan_type_name>Hipoteczny</loan_type_name>
+			<loan_type_name>Hipoteczny  </loan_type_name>
 			<balance_left>2137</balance_left>
 		</Loan>
 		<Loan>
@@ -2070,14 +2070,14 @@
 			<id>4</id>
 			<owner_id>4</owner_id>
 			<currency_name>Funt Brytyjski</currency_name>
-			<loan_type_name>Samochodowy</loan_type_name>
+			<loan_type_name>Samochodowy </loan_type_name>
 			<balance_left>40000</balance_left>
 		</Loan>
 		<Loan>
 			<id>5</id>
 			<owner_id>5</owner_id>
 			<currency_name>Dolar Amerykanski</currency_name>
-			<loan_type_name>Gotowkowy</loan_type_name>
+			<loan_type_name>Gotowkowy   </loan_type_name>
 			<balance_left>1500</balance_left>
 		</Loan>
 		<Loan>
@@ -2091,21 +2091,21 @@
 			<id>7</id>
 			<owner_id>7</owner_id>
 			<currency_name>Zloty</currency_name>
-			<loan_type_name>Samochodowy</loan_type_name>
+			<loan_type_name>Samochodowy </loan_type_name>
 			<balance_left>75000</balance_left>
 		</Loan>
 		<Loan>
 			<id>8</id>
 			<owner_id>8</owner_id>
 			<currency_name>Euro</currency_name>
-			<loan_type_name>Gotowkowy</loan_type_name>
+			<loan_type_name>Gotowkowy   </loan_type_name>
 			<balance_left>3000</balance_left>
 		</Loan>
 		<Loan>
 			<id>9</id>
 			<owner_id>9</owner_id>
 			<currency_name>Euro</currency_name>
-			<loan_type_name>Hipoteczny</loan_type_name>
+			<loan_type_name>Hipoteczny  </loan_type_name>
 			<balance_left>300000</balance_left>
 		</Loan>
 		<Loan>
@@ -2119,28 +2119,28 @@
 			<id>11</id>
 			<owner_id>11</owner_id>
 			<currency_name>Funt Brytyjski</currency_name>
-			<loan_type_name>Samochodowy</loan_type_name>
+			<loan_type_name>Samochodowy </loan_type_name>
 			<balance_left>45000</balance_left>
 		</Loan>
 		<Loan>
 			<id>12</id>
 			<owner_id>12</owner_id>
 			<currency_name>Dolar Amerykanski</currency_name>
-			<loan_type_name>Hipoteczny</loan_type_name>
+			<loan_type_name>Hipoteczny  </loan_type_name>
 			<balance_left>120000</balance_left>
 		</Loan>
 		<Loan>
 			<id>13</id>
 			<owner_id>13</owner_id>
 			<currency_name>Funt Szwajcarski</currency_name>
-			<loan_type_name>Gotowkowy</loan_type_name>
+			<loan_type_name>Gotowkowy   </loan_type_name>
 			<balance_left>2000</balance_left>
 		</Loan>
 		<Loan>
 			<id>14</id>
 			<owner_id>14</owner_id>
 			<currency_name>Euro</currency_name>
-			<loan_type_name>Samochodowy</loan_type_name>
+			<loan_type_name>Samochodowy </loan_type_name>
 			<balance_left>38000</balance_left>
 		</Loan>
 		<Loan>
@@ -2154,21 +2154,21 @@
 			<id>16</id>
 			<owner_id>16</owner_id>
 			<currency_name>Zloty</currency_name>
-			<loan_type_name>Hipoteczny</loan_type_name>
+			<loan_type_name>Hipoteczny  </loan_type_name>
 			<balance_left>50000</balance_left>
 		</Loan>
 		<Loan>
 			<id>17</id>
 			<owner_id>17</owner_id>
 			<currency_name>Funt Szwajcarski</currency_name>
-			<loan_type_name>Samochodowy</loan_type_name>
+			<loan_type_name>Samochodowy </loan_type_name>
 			<balance_left>20000</balance_left>
 		</Loan>
 		<Loan>
 			<id>18</id>
 			<owner_id>18</owner_id>
 			<currency_name>Funt Brytyjski</currency_name>
-			<loan_type_name>Gotowkowy</loan_type_name>
+			<loan_type_name>Gotowkowy   </loan_type_name>
 			<balance_left>3500</balance_left>
 		</Loan>
 		<Loan>
@@ -2182,14 +2182,14 @@
 			<id>20</id>
 			<owner_id>20</owner_id>
 			<currency_name>Euro</currency_name>
-			<loan_type_name>Hipoteczny</loan_type_name>
+			<loan_type_name>Hipoteczny  </loan_type_name>
 			<balance_left>250000</balance_left>
 		</Loan>
 		<Loan>
 			<id>21</id>
 			<owner_id>0</owner_id>
 			<currency_name>Euro</currency_name>
-			<loan_type_name>Hipoteczny</loan_type_name>
+			<loan_type_name>Hipoteczny  </loan_type_name>
 			<balance_left>1800</balance_left>
 		</Loan>
 		<Loan>
@@ -2203,7 +2203,7 @@
 			<id>23</id>
 			<owner_id>0</owner_id>
 			<currency_name>Dolar Amerykanski</currency_name>
-			<loan_type_name>Samochodowy</loan_type_name>
+			<loan_type_name>Samochodowy </loan_type_name>
 			<balance_left>50000</balance_left>
 		</Loan>
 	</Loans>

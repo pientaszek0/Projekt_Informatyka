@@ -83,15 +83,15 @@ void loansMenu() {
         vector<int> userLoans;
         int loanCount = 0;
 
-        cout << "Twoje Kredyty:" << endl;
-        cout << "Lp.           Typ Kredytu          Pozostala Kwota do Splaty          Waluta" << endl;
+        cout << "Twoje Kredyty:" << endl;         
+        cout << "Lp. Typ Kredytu    Pozostala Kwota do Splaty" << endl;
 
         // Zbieranie kredytów użytkownika
         for (int i = 0; i < loan.getElementLoan(); i++) {
             if (loan.getOwnerId(i) == user.getId(courent_user)) {
                 userLoans.push_back(i);
                 loanCount++;
-                cout << loanCount << "      -      " << loan.getLoanTypeName(i) << "      -      " << loan.getBalanceLeft(i) << " ";
+                cout << loanCount << " - " << loan.getLoanTypeName(i) << " - " << loan.getBalanceLeft(i) << " ";
                 for (int n = 0; n < currency.getElementCurrency(); n++) {
                     if (loan.getCurrencyName(i) == currency.getName(n)) {
                         cout << currency.getName(n) << endl;
@@ -129,7 +129,7 @@ void loansMenu() {
                 if (account.getOwner_id(i) == user.getId(courent_user)) {
                     userAccounts.push_back(i);
                     accountAmount++;
-                    cout << accountAmount << "      -      " << account.getAccountNumber(i) << "      -      " << account.getBalance(i) << " ";
+                    cout << accountAmount << " - " << account.getAccountNumber(i) << " - " << account.getBalance(i) << " ";
                     for (int n = 0; n < currency.getElementCurrency(); n++) {
                         if (account.getCurrency_id(i) == currency.getId(n)) {
                             cout << currency.getName(n) << endl;
@@ -189,7 +189,7 @@ void loansMenu() {
                 if (account.getOwner_id(i) == user.getId(courent_user)) {
                     userAccounts.push_back(i);
                     accountAmount++;
-                    cout << accountAmount << "      -      " << account.getAccountNumber(i) << "      -      " << account.getBalance(i) << "       ";
+                    cout << accountAmount << " - " << account.getAccountNumber(i) << " - " << account.getBalance(i) << " ";
                     for (int n = 0; n < currency.getElementCurrency(); n++) {
                         if (account.getCurrency_id(i) == currency.getId(n)) {
                             cout << currency.getName(n) << endl;
@@ -291,7 +291,7 @@ void depositsMenu() {
         int depositCount = 0;
 
         cout << "Twoje Lokaty:" << endl;
-        cout << "Lp.           Kwota Lokaty          Oprocentowanie          Czas Trwania          Waluta          Pozostaly Czas" << endl;
+        cout << "Lp. Kwota Lokaty Oprocentowanie Czas Trwania Pozostaly Czas" << endl;
 
         // Wyświetlanie lokat użytkownika
         for (int i = 0; i < deposit.getElementDeposit(); i++) {
@@ -305,9 +305,8 @@ void depositsMenu() {
                 int remainingTime = calculateRemainingMonths(durationM, startDate); // Oblicz aktualny pozostały czas
                 deposit.setRemainingTime(i, remainingTime); // Zmiana pozostałego czasu na aktualny
 
-                cout << depositCount << "      -      " << deposit.getDepositAmount(i) << "      -      " << deposit.getInterestRate(i) << "%      -      " 
-                     << deposit.getDurationMonths(i) << " mies.      -      " << deposit.getCurrencyName(i) 
-                     << "      -      " << deposit.getRemainingTime(i) << " mies." << endl;
+                cout << depositCount << " - " << deposit.getDepositAmount(i)<< " " << deposit.getCurrencyName(i) << " - " << deposit.getInterestRate(i) << "% - " 
+                     << deposit.getDurationMonths(i) << " mies. - " << deposit.getRemainingTime(i) << " mies." << endl;
             }
         }
 
@@ -340,7 +339,7 @@ void depositsMenu() {
                 if (account.getOwner_id(i) == user.getId(courent_user)) {
                     userAccounts.push_back(i);
                     accountAmount++;
-                    cout << accountAmount << "      -      " << account.getAccountNumber(i) << "      -      " << account.getBalance(i) << " ";
+                    cout << accountAmount << " - " << account.getAccountNumber(i) << " - " << account.getBalance(i) << " ";
                     for (int n = 0; n < currency.getElementCurrency(); n++) {
                         if (account.getCurrency_id(i) == currency.getId(n)) {
                             cout << currency.getName(n) << endl;
@@ -395,7 +394,7 @@ void depositsMenu() {
                 if (account.getOwner_id(i) == user.getId(courent_user)) {
                     userAccounts.push_back(i);
                     accountAmount++;
-                    cout << accountAmount << "      -      " << account.getAccountNumber(i) << "      -      " << account.getBalance(i) << " ";
+                    cout << accountAmount << " - " << account.getAccountNumber(i) << " - " << account.getBalance(i) << " ";
                     for (int n = 0; n < currency.getElementCurrency(); n++) {
                         if (account.getCurrency_id(i) == currency.getId(n)) {
                             cout << currency.getName(n) << endl;
