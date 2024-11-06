@@ -302,7 +302,7 @@ void depositsMenu() {
                 int durationM = deposit.getDurationMonths(i); // Pobierz czas trwania i datę rozpoczęcia lokaty
                 string startDateS = deposit.getStartDate(i);
                 tm startDate = convertStringToTm(startDateS); // Konwertuj string na tm
-                int remainingTime = calculateRemainingTime(durationM, startDate); // Oblicz aktualny pozostały czas
+                int remainingTime = calculateRemainingMonths(durationM, startDate); // Oblicz aktualny pozostały czas
                 deposit.setRemainingTime(i, remainingTime); // Zmiana pozostałego czasu na aktualny
 
                 cout << depositCount << "      -      " << deposit.getDepositAmount(i) << "      -      " << deposit.getInterestRate(i) << "%      -      " 
