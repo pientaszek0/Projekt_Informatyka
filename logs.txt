@@ -26,3 +26,12 @@ Wed Nov  6 10:50:15 2024 : Uzytkownik ID:18467 - Patryk Milowski wylogowal sie i
 Wed Nov  6 10:51:21 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
 Wed Nov  6 10:52:46 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
 Wed Nov  6 10:53:33 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Wed Nov  6 10:55:27 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Wed Nov  6 10:56:33 2024 : Uzytkownik ID:0 - Jan Kowalski Wykonal przelew z konta PL82065675915228373650498393 na konto PL25223606416863469595524500
+Wed Nov  6 10:57:13 2024 : Administrator ID:0 - Jan Kowalski dokonal wplaty na konto PL25223606416863469595524500
+Wed Nov  6 10:57:48 2024 : Administrator ID:0 - Jan Kowalski dokonal wuplaty z konta PL25223606416863469595524500
+Wed Nov  6 10:57:59 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Wed Nov  6 10:58:03 2024 : Uzytkownik ID:18467 - Patryk Milowski zalogowal sie.
+Wed Nov  6 10:58:11 2024 : Uzytkownik ID:18467 - Patryk Milowski wylogowal sie i zapisal dane.
+Wed Nov  6 10:58:20 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Wed Nov  6 10:59:50 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.

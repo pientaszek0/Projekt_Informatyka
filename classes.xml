@@ -1577,7 +1577,7 @@
 			<owner_id>0</owner_id>
 			<currency_id>0</currency_id>
 			<account_number>PL82065675915228373650498393</account_number>
-			<balance>1000.48</balance>
+			<balance>700.48</balance>
 		</Account>
 		<Account>
 			<id>106</id>
@@ -1962,7 +1962,7 @@
 			<owner_id>0</owner_id>
 			<currency_id>0</currency_id>
 			<account_number>PL25223606416863469595524500</account_number>
-			<balance>36.01</balance>
+			<balance>436.01</balance>
 		</Account>
 		<Account>
 			<id>18716</id>
