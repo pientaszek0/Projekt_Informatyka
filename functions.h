@@ -263,9 +263,9 @@ void loansMenu() {
 
             // Dodanie nowego kredytu
             loan.addLoan(noweId, user.getId(courent_user), currencyName, loan_type.getLoanTypeName(loanTypeIndex) , totalLoanAmount);
-            account.increaseBalance(userAccounts[konto-1], totalLoanAmount);
+            account.increaseBalance(userAccounts[konto-1], newLoanAmount);
             txt_log("User:" + to_string(user.getId(courent_user)) + " zaciagnal nowy kredyt " + loan_type.getLoanTypeName(loanTypeIndex) + " w wysowosci:" + to_string(newLoanAmount));
-            txt_log("Na konto nr: " + account.getAccountNumber(userAccounts[konto-1]) + " wpłyneło: " + to_string(totalLoanAmount));
+            txt_log("Na konto nr: " + account.getAccountNumber(userAccounts[konto-1]) + " wpłyneło: " + to_string(newLoanAmount));
             system("cls");
             cout << "Zaciagnieto nowy kredyt w wysokosci: " << totalLoanAmount << endl;
             cout << "Typ kredytu: " << loan_type.getLoanTypeName(loanTypeIndex) << endl;
@@ -363,22 +363,27 @@ void depositsMenu() {
             int accountIndex = userAccounts[konto - 1];
             int currencyId = account.getCurrency_id(accountIndex);
             string currencyName = currency.getName(currencyId);
-            if(currencyName != deposit.getCurrencyName(userDeposits[menu - 1])){
+            if(deposit.getRemainingTime(depositIndex) != 0){
                 system("cls");
-                cout << "Waluta konta nie zgadza sie z waluta lokaty." << endl;
+                cout<< "Wybrana lokata nie dobiegla konca." <<endl;
             }else{
-                // Zakończenie lokaty i przelew środków
-                deposit.endDeposit(depositIndex);
-                account.increaseBalance(userAccounts[konto - 1], payoutAmount);
+                if(currencyName != deposit.getCurrencyName(depositIndex)){
+                    system("cls");
+                    cout << "Waluta konta nie zgadza sie z waluta lokaty." << endl;
+                }else{
+                    // Zakończenie lokaty i przelew środków
+                    deposit.endDeposit(depositIndex);
+                    account.increaseBalance(accountIndex, payoutAmount);
 
-                // Usunięcie lokaty
-                deposit.removeDeposit(depositIndex);
-                userDeposits.erase(userDeposits.begin() + (menu - 1)); // Usuwamy wskaźnik z wektora
-                cout << "Deposit splacony i usuniety." << endl;
+                    // Usunięcie lokaty
+                    deposit.removeDeposit(depositIndex);
+                    userDeposits.erase(userDeposits.begin() + (menu - 1)); // Usuwamy wskaźnik z wektora
+                    cout << "Deposit splacony i usuniety." << endl;
 
-                // Dodawanie logów
-                txt_log("User:" + to_string(user.getId(courent_user)) + " zakonczyl lokate. Wypłacono: " + to_string(payoutAmount));
-                txt_log("Do konta nr: " + account.getAccountNumber(userAccounts[konto - 1]) + " wpłynęło: " + to_string(payoutAmount));
+                    // Dodawanie logów
+                    txt_log("User:" + to_string(user.getId(courent_user)) + " zakonczyl lokate. Wypłacono: " + to_string(payoutAmount));
+                    txt_log("Do konta nr: " + account.getAccountNumber(accountIndex) + " wpłynęło: " + to_string(payoutAmount));
+                }
             }
         }
 
@@ -467,9 +472,9 @@ void depositsMenu() {
 
             // Dodanie nowej lokaty
             deposit.addDeposit(noweId, user.getId(courent_user), totalAmount, currencyName, durationMonths, interestRate, czas(), durationMonths);
-            account.decreaseBalance(userAccounts[konto-1], totalAmount);
+            account.decreaseBalance(accountIndex, depositAmount);
             txt_log("User:"+to_string(user.getId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(totalAmount));
-            txt_log("Z konta nr: " + account.getAccountNumber(userAccounts[konto-1]) + " pobrano: " + to_string(totalAmount));
+            txt_log("Z konta nr: " + account.getAccountNumber(accountIndex) + " pobrano: " + to_string(depositAmount));
             system("cls");
             cout << "Zalozono nowa lokate." << endl;
         }
