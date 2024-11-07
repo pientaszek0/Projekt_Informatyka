@@ -777,7 +777,7 @@ void adminMenu() {
                         cout << "Nieprawidlowa kwota." << endl;
                     } else {
                         account.decreaseBalance(i, amount);
-                        txt_log("Administrator ID:" + to_string(user.getId(courent_user))+ " - " + user.getFirst_name(courent_user) + " " + user.getLast_name(courent_user) + " dokonal wuplaty z konta " + account.getAccountNumber(i));
+                        txt_log("Administrator ID:" + to_string(user.getId(courent_user))+ " - " + user.getFirst_name(courent_user) + " " + user.getLast_name(courent_user) + " dokonal wplaty z konta " + account.getAccountNumber(i));
                         system("cls");
                         cout << "Dokonano wyplaty." << endl;;
                     }

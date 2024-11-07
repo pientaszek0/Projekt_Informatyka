@@ -1570,7 +1570,7 @@
 			<owner_id>0</owner_id>
 			<currency_id>1</currency_id>
 			<account_number>PL25413475623294381885982828</account_number>
-			<balance>2915.87</balance>
+			<balance>55.87</balance>
 		</Account>
 		<Account>
 			<id>105</id>
@@ -1976,7 +1976,7 @@
 			<owner_id>0</owner_id>
 			<currency_id>3</currency_id>
 			<account_number>PL16857618927954312334113874</account_number>
-			<balance>0</balance>
+			<balance>114500</balance>
 		</Account>
 		<Account>
 			<id>19629</id>
@@ -2038,13 +2038,6 @@
 		</Loan_Type>
 	</Loan_Types>
 	<Loans>
-		<Loan>
-			<id>0</id>
-			<owner_id>0</owner_id>
-			<currency_name>Funt Brytyjski</currency_name>
-			<loan_type_name>Gotowkowy   </loan_type_name>
-			<balance_left>100000</balance_left>
-		</Loan>
 		<Loan>
 			<id>1</id>
 			<owner_id>1</owner_id>
@@ -2205,6 +2198,13 @@
 			<currency_name>Dolar Amerykanski</currency_name>
 			<loan_type_name>Samochodowy </loan_type_name>
 			<balance_left>50000</balance_left>
+		</Loan>
+		<Loan>
+			<id>18467</id>
+			<owner_id>0</owner_id>
+			<currency_name>Funt Brytyjski</currency_name>
+			<loan_type_name>Konsumpcyjny</loan_type_name>
+			<balance_left>214500</balance_left>
 		</Loan>
 	</Loans>
 	<Deposits>
@@ -2427,6 +2427,16 @@
 			<interest_rate>3</interest_rate>
 			<start_date>Mon Nov 04 23:00:00 2024</start_date>
 			<remaining_time>10</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>6334</id>
+			<owner_id>0</owner_id>
+			<deposit_amount>2060</deposit_amount>
+			<currency_name>Dolar Amerykanski</currency_name>
+			<duration_months>12</duration_months>
+			<interest_rate>3</interest_rate>
+			<start_date>Thu Nov  7 09:45:46 2024</start_date>
+			<remaining_time>12</remaining_time>
 		</Deposit>
 	</Deposits>
 </Data>
