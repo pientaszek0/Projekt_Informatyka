@@ -267,7 +267,8 @@ void loansMenu() {
             txt_log("User:" + to_string(user.getId(courent_user)) + " zaciagnal nowy kredyt " + loan_type.getLoanTypeName(loanTypeIndex) + " w wysowosci:" + to_string(newLoanAmount));
             txt_log("Na konto nr: " + account.getAccountNumber(userAccounts[konto-1]) + " wpłyneło: " + to_string(newLoanAmount));
             system("cls");
-            cout << "Zaciagnieto nowy kredyt w wysokosci: " << totalLoanAmount << endl;
+            cout << "Zaciagnieto nowy kredyt w wysokosci: " << newLoanAmount << endl;
+            cout << "Do splaty z odsetkami" << totalLoanAmount << endl;
             cout << "Typ kredytu: " << loan_type.getLoanTypeName(loanTypeIndex) << endl;
             cout << "Waluta: " << currencyName << endl;
         }
@@ -473,7 +474,7 @@ void depositsMenu() {
             // Dodanie nowej lokaty
             deposit.addDeposit(noweId, user.getId(courent_user), totalAmount, currencyName, durationMonths, interestRate, czas(), durationMonths);
             account.decreaseBalance(accountIndex, depositAmount);
-            txt_log("User:"+to_string(user.getId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(totalAmount));
+            txt_log("User:"+to_string(user.getId(courent_user))+" zalozyl nowa lokate w wysowosci:"+to_string(depositAmount));
             txt_log("Z konta nr: " + account.getAccountNumber(accountIndex) + " pobrano: " + to_string(depositAmount));
             system("cls");
             cout << "Zalozono nowa lokate." << endl;
