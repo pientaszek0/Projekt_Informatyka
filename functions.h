@@ -268,7 +268,7 @@ void loansMenu() {
             txt_log("Na konto nr: " + account.getAccountNumber(userAccounts[konto-1]) + " wpłyneło: " + to_string(newLoanAmount));
             system("cls");
             cout << "Zaciagnieto nowy kredyt w wysokosci: " << newLoanAmount << endl;
-            cout << "Do splaty z odsetkami" << totalLoanAmount << endl;
+            cout << "Do splaty z odsetkami: " << totalLoanAmount << endl;
             cout << "Typ kredytu: " << loan_type.getLoanTypeName(loanTypeIndex) << endl;
             cout << "Waluta: " << currencyName << endl;
         }
