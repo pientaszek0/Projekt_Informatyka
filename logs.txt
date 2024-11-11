@@ -69,3 +69,4 @@ Mon Nov 11 19:29:35 2024 : Uzytkownik ID:22386 - Stanislawa Lokalna zalogowal si
 Mon Nov 11 19:29:40 2024 : Uzytkownik ID:22386 - Stanislawa Lokalna wylogowal sie i zapisal dane.
 Mon Nov 11 19:29:43 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
 Mon Nov 11 19:30:02 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Mon Nov 11 19:35:27 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.

@@ -14,7 +14,6 @@
 
 using namespace std;
 
-
 // Adrian Prymas
 // funckja do pobierania czasu
 string czas()
@@ -522,7 +521,7 @@ string hashowanie(string haslo) {
 
 
 // Jan Piętka
-// Funkcja logowania urzytkownika
+// Funkcja logowania uzytkownika
 void sign_in() {
     string login;
     string password;
@@ -696,7 +695,7 @@ void adminMenu() {
 
     while (true) {
         cout << "Panel Administratora:" << endl;
-        cout << "1 - Dodaj urzytkownika" << endl;
+        cout << "1 - Dodaj uzytkownika" << endl;
         cout << "2 - Wplac pieniadze" << endl;
         cout << "3 - Wyplac pieniadze" << endl;
         cout << "0 - Wyjdz do pulpitu" << endl;
@@ -733,7 +732,7 @@ void adminMenu() {
             user.addUser(noweId, firstName, lastName, login, hashowanie(password), 0);
             txt_log("Administrator ID:" + to_string(user.getId(courent_user))+ " - " + user.getFirst_name(courent_user) + " " + user.getLast_name(courent_user) + " Utworzyl nowego uzytkownika " + firstName + " " + lastName);
             system("cls");
-            cout << "Utworzono urzytkownika." << endl;
+            cout << "Utworzono uzytkownika." << endl;
             break;
         }
         case 2: { // Wplacanie pieniedzy na czyjes konto
