@@ -26,3 +26,24 @@ Thu Nov  7 09:45:46 2024 : Z konta nr: PL25413475623294381885982828 pobrano: 206
 Thu Nov  7 09:48:07 2024 : Administrator ID:0 - Jan Kowalski dokonal wplaty z konta PL25413475623294381885982828
 Thu Nov  7 09:48:48 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
 Thu Nov  7 09:49:01 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Mon Nov 11 18:41:28 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Mon Nov 11 18:41:48 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Mon Nov 11 18:41:55 2024 : Uzytkownik ID:2 - Ewa Wójcik zalogowal sie.
+Mon Nov 11 18:42:18 2024 : Uzytkownik ID:2 - Ewa Wójcik wylogowal sie i zapisal dane.
+Mon Nov 11 18:44:24 2024 : Uzytkownik ID:54 - Piotr Kamiński zalogowal sie.
+Mon Nov 11 18:44:58 2024 : Uzytkownik ID:54 - Piotr Kaminski zalogowal sie.
+Mon Nov 11 18:45:54 2024 : Uzytkownik ID:20 - Krzysztof Kozlowski zalogowal sie.
+Mon Nov 11 18:46:26 2024 : Uzytkownik ID:20 - Krzysztof Kozlowski Utworzyl konto: PL27793198650286024865090061
+Mon Nov 11 18:47:39 2024 : User:20 zaciagnal nowy kredyt Konsumpcyjny w wysowosci:10000.000000
+Mon Nov 11 18:47:39 2024 : Na konto nr: PL27793198650286024865090061 wpłyneło: 11720.000000
+Mon Nov 11 18:49:27 2024 : Uzytkownik ID:20 - Krzysztof Kozlowski wylogowal sie i zapisal dane.
+Mon Nov 11 18:49:37 2024 : Uzytkownik ID:62 - Piotr Wisniewski zalogowal sie.
+Mon Nov 11 18:49:58 2024 : Uzytkownik ID:62 - Piotr Wisniewski Utworzyl konto: PL93446066184963788291359840
+Mon Nov 11 18:50:24 2024 : User:62 zaciagnal nowy kredyt Konsumpcyjny w wysowosci:10000.000000
+Mon Nov 11 18:50:24 2024 : Na konto nr: PL93446066184963788291359840 wpłyneło: 11720.000000
+Mon Nov 11 18:52:03 2024 : User:62 zaciagnal nowy kredyt Samochodowy  w wysowosci:10000.000000
+Mon Nov 11 18:52:03 2024 : Na konto nr: PL93446066184963788291359840 wpłyneło: 10500.000000
+Mon Nov 11 18:54:37 2024 : Uzytkownik ID:62 - Piotr Wisniewski wylogowal sie i zapisal dane.
+Mon Nov 11 18:54:43 2024 : Uzytkownik ID:100 - Anna Wisniewski zalogowal sie.
+Mon Nov 11 18:56:12 2024 : Uzytkownik ID:100 - Anna Wisniewski wylogowal sie i zapisal dane.
+Mon Nov 11 18:56:27 2024 : Uzytkownik ID:76 - Monika Kowalczyk zalogowal sie.
