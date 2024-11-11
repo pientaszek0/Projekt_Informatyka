@@ -10,8 +10,6 @@
 
 using namespace std;
 
-
-
 // Funkjca która wczytyje dane z XML do klasy
 void xml_giveData(User &user, Account &account, Currency &currency, Loan_Type &loan_type, Loan &loan, Deposit &deposit)
 {

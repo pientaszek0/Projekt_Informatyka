@@ -1,15 +1,28 @@
-Sat Oct 26 10:39:07 2024 : Uzytkownik JanKowalski zalogowal sie.
-Sat Oct 26 10:41:39 2024 : Uzytkownik ID:Jan Kowalski zalogowal sie.
-Sat Oct 26 10:42:35 2024 : Uzytkownik ID:0 Jan Kowalski zalogowal sie.
-Sat Oct 26 10:45:59 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
-Sat Oct 26 10:46:07 2024 : Uzytkownik ID:18467 - Jan Jan zalogowal sie.
-Sat Oct 26 11:16:19 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
-Sat Oct 26 11:16:21 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
-Sat Oct 26 11:31:51 2024 : Uzytkownik ID:0 - Jan Kowalski Utworzyl konto: PL27793198650286024865090061
-Sat Oct 26 11:32:23 2024 : Uzytkownik ID:0 - Jan Kowalski Wykonal przelew z konta PL25413475623294381885982828 na konto PL27793198650286024865090061
-Sat Oct 26 11:39:53 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
-Sat Oct 26 11:45:43 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
-Sat Oct 26 11:45:59 2024 : Administrator ID:0 - Jan KowalskiUtworzyl nowego uzytkownika Jan Pietka
-Sat Oct 26 11:46:34 2024 : Administrator ID:0 - Jan Kowalskidokonal wplaty na konto PL17409488245517115276142322
-Sat Oct 26 11:46:54 2024 : Administrator ID:0 - Jan Kowalskidokonal wuplaty z konta PL17409488245517115276142322
-Sat Oct 26 11:46:59 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Wed Nov  6 10:48:33 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Wed Nov  6 10:49:21 2024 : Administrator ID:0 - Jan Kowalski Utworzyl nowego uzytkownika Patryk Milowski
+Wed Nov  6 10:49:29 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Wed Nov  6 10:49:33 2024 : Uzytkownik ID:18467 - Patryk Milowski zalogowal sie.
+Wed Nov  6 10:49:40 2024 : Uzytkownik ID:18467 - Patryk Milowski Utworzyl konto: PL40948824551711527614232216
+Wed Nov  6 10:50:15 2024 : Uzytkownik ID:18467 - Patryk Milowski wylogowal sie i zapisal dane.
+Wed Nov  6 10:51:21 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Wed Nov  6 10:52:46 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Wed Nov  6 10:53:33 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Wed Nov  6 10:55:27 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Wed Nov  6 10:56:33 2024 : Uzytkownik ID:0 - Jan Kowalski Wykonal przelew z konta PL82065675915228373650498393 na konto PL25223606416863469595524500
+Wed Nov  6 10:57:13 2024 : Administrator ID:0 - Jan Kowalski dokonal wplaty na konto PL25223606416863469595524500
+Wed Nov  6 10:57:48 2024 : Administrator ID:0 - Jan Kowalski dokonal wuplaty z konta PL25223606416863469595524500
+Wed Nov  6 10:57:59 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Wed Nov  6 10:58:03 2024 : Uzytkownik ID:18467 - Patryk Milowski zalogowal sie.
+Wed Nov  6 10:58:11 2024 : Uzytkownik ID:18467 - Patryk Milowski wylogowal sie i zapisal dane.
+Wed Nov  6 10:58:20 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Wed Nov  6 10:59:50 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Thu Nov  7 09:39:14 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Thu Nov  7 09:43:32 2024 : User:0 zaciagnal nowy kredyt Konsumpcyjny w wysowosci:150000.000000
+Thu Nov  7 09:43:32 2024 : Na konto nr: PL16857618927954312334113874 wpłyneło: 214500.000000
+Thu Nov  7 09:45:12 2024 : User:0 splacil:100000.000000 . -Kredyt
+Thu Nov  7 09:45:12 2024 : Z konta nr: PL16857618927954312334113874 pobrano: 100000.000000
+Thu Nov  7 09:45:46 2024 : User:0 zalozyl nowa lokate w wysowosci:2060.000000
+Thu Nov  7 09:45:46 2024 : Z konta nr: PL25413475623294381885982828 pobrano: 2060.000000
+Thu Nov  7 09:48:07 2024 : Administrator ID:0 - Jan Kowalski dokonal wplaty z konta PL25413475623294381885982828
+Thu Nov  7 09:48:48 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Thu Nov  7 09:49:01 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.

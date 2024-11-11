@@ -8,11 +8,11 @@
 
 using namespace std;
 
-
 int main() {
     xml_chf(user); // Wywołanie funkcji do odczytu pliku xml 
     xml_giveData(user, account, currency, loan_type, loan, deposit); // Wywołanie funkcja która wczytuje dane z XML
     xml_checkData(user, account, currency, loan_type, loan, deposit); // Wywołanie funkcji sparwdza poprawność czy dane zostały dobrze wczytane !!TYLKO "User!!"
+    cout <<"\n teste loan: "<<loan_type.getInterest(0) << endl;
     xml_save(user, account, currency, loan_type, loan, deposit);
     
     while (true) { // Nieskonczona petla zeby mozna bylo sie wylogowac i zalogowac na innego uzytkownika
