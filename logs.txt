@@ -47,3 +47,25 @@ Mon Nov 11 18:54:37 2024 : Uzytkownik ID:62 - Piotr Wisniewski wylogowal sie i z
 Mon Nov 11 18:54:43 2024 : Uzytkownik ID:100 - Anna Wisniewski zalogowal sie.
 Mon Nov 11 18:56:12 2024 : Uzytkownik ID:100 - Anna Wisniewski wylogowal sie i zapisal dane.
 Mon Nov 11 18:56:27 2024 : Uzytkownik ID:76 - Monika Kowalczyk zalogowal sie.
+Mon Nov 11 19:22:42 2024 : Uzytkownik ID:28 - Piotr Zielinski zalogowal sie.
+Mon Nov 11 19:22:54 2024 : Uzytkownik ID:28 - Piotr Zielinski Utworzyl konto: PL38934460661849637882913598
+Mon Nov 11 19:23:59 2024 : User:28 zaciagnal nowy kredyt Hipoteczny   w wysowosci:10000.000000
+Mon Nov 11 19:23:59 2024 : Na konto nr: PL38934460661849637882913598 wpłyneło: 20500.000000
+Mon Nov 11 19:25:47 2024 : Uzytkownik ID:28 - Piotr Zielinski zalogowal sie.
+Mon Nov 11 19:25:56 2024 : Uzytkownik ID:28 - Piotr Zielinski Utworzyl konto: PL38934460661849637882913598
+Mon Nov 11 19:26:16 2024 : User:28 zaciagnal nowy kredyt Hipoteczny   w wysowosci:100000.000000
+Mon Nov 11 19:26:16 2024 : Na konto nr: PL38934460661849637882913598 wpłyneło: 100000.000000
+Mon Nov 11 19:26:35 2024 : Uzytkownik ID:28 - Piotr Zielinski wylogowal sie i zapisal dane.
+Mon Nov 11 19:26:51 2024 : Uzytkownik ID:67 - Ewa Wojcik zalogowal sie.
+Mon Nov 11 19:27:20 2024 : User:67 zalozyl nowa lokate w wysowosci:3500.000000
+Mon Nov 11 19:27:20 2024 : Z konta nr: PL08127406805008175596308129 pobrano: 3500.000000
+Mon Nov 11 19:27:41 2024 : User:67 zalozyl nowa lokate w wysowosci:10.000000
+Mon Nov 11 19:27:41 2024 : Z konta nr: PL08127406805008175596308129 pobrano: 10.000000
+Mon Nov 11 19:27:57 2024 : Uzytkownik ID:67 - Ewa Wojcik wylogowal sie i zapisal dane.
+Mon Nov 11 19:28:00 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Mon Nov 11 19:29:21 2024 : Administrator ID:0 - Jan Kowalski Utworzyl nowego uzytkownika Stanislawa Lokalna
+Mon Nov 11 19:29:30 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Mon Nov 11 19:29:35 2024 : Uzytkownik ID:22386 - Stanislawa Lokalna zalogowal sie.
+Mon Nov 11 19:29:40 2024 : Uzytkownik ID:22386 - Stanislawa Lokalna wylogowal sie i zapisal dane.
+Mon Nov 11 19:29:43 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Mon Nov 11 19:30:02 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.

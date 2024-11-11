@@ -842,6 +842,14 @@
 			<password>456745674567456745674567456745</password>
 			<admin>false</admin>
 		</User>
+		<User>
+			<id>22386</id>
+			<first_name>Stanislawa</first_name>
+			<last_name>Lokalna</last_name>
+			<login>user220</login>
+			<password>sdvv553sdvv553sdvv553sdvv553sd</password>
+			<admin>false</admin>
+		</User>
 </Users>
 <Accounts>
 		<Account>
@@ -1584,7 +1592,7 @@
 			<owner_id>67</owner_id>
 			<currency_id>0</currency_id>
 			<account_number>PL08127406805008175596308129</account_number>
-			<balance>3572.96</balance>
+			<balance>62.96</balance>
 		</Account>
 		<Account>
 			<id>107</id>
@@ -2006,6 +2014,13 @@
 			<account_number>PL93446066184963788291359840</account_number>
 			<balance>22220</balance>
 		</Account>
+		<Account>
+			<id>22704</id>
+			<owner_id>28</owner_id>
+			<currency_id>4</currency_id>
+			<account_number>PL38934460661849637882913598</account_number>
+			<balance>100000</balance>
+		</Account>
 	</Accounts>
 	<Currencys>
 		<Currency>
@@ -2241,6 +2256,13 @@
 			<loan_type_name>Samochodowy </loan_type_name>
 			<balance_left>10500</balance_left>
 		</Loan>
+		<Loan>
+			<id>9930</id>
+			<owner_id>28</owner_id>
+			<currency_name>Frank Szwajcarski</currency_name>
+			<loan_type_name>Hipoteczny  </loan_type_name>
+			<balance_left>205000</balance_left>
+		</Loan>
 	</Loans>
 	<Deposits>
 		<Deposit>
@@ -2472,6 +2494,26 @@
 			<interest_rate>3</interest_rate>
 			<start_date>Thu Nov  7 09:45:46 2024</start_date>
 			<remaining_time>12</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>2306</id>
+			<owner_id>67</owner_id>
+			<deposit_amount>3605</deposit_amount>
+			<currency_name>Zloty</currency_name>
+			<duration_months>12</duration_months>
+			<interest_rate>3</interest_rate>
+			<start_date>Mon Nov 11 19:27:20 2024</start_date>
+			<remaining_time>12</remaining_time>
+		</Deposit>
+		<Deposit>
+			<id>31673</id>
+			<owner_id>67</owner_id>
+			<deposit_amount>10.2</deposit_amount>
+			<currency_name>Zloty</currency_name>
+			<duration_months>3</duration_months>
+			<interest_rate>2</interest_rate>
+			<start_date>Mon Nov 11 19:27:41 2024</start_date>
+			<remaining_time>3</remaining_time>
 		</Deposit>
 	</Deposits>
 </Data>
