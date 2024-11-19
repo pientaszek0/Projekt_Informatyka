@@ -490,6 +490,19 @@ void depositsMenu() {
 }
 
 // Jan Piętka
+// Funkcja zwracajaca liczbe zaokraglona do dwoch miejsc po przecinku
+double roundPoint2(double wartosc) {
+    if (((int)(wartosc*1000))%10 >= 5) {
+        wartosc = (int)((wartosc*100)+1);
+        wartosc = (double)(wartosc/100);
+    } else {
+        wartosc = (int)(wartosc*100);
+        wartosc = (double)(wartosc/100);
+    }
+    return wartosc;
+}
+
+// Jan Piętka
 // Funkcja zwracajaca zhashowany ciag znakow   ciag = hashowanie(haslo)
 string hashowanie(string haslo) {
     string ciag = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
@@ -673,7 +686,7 @@ void accountsMenu() {
                         account.increaseBalance(i, amount);
                         txt_log("Uzytkownik ID:" + to_string(user.getId(courent_user))+ " - " + user.getFirst_name(courent_user) + " " + user.getLast_name(courent_user) + " Wykonal przelew z konta " + account.getAccountNumber(userAccounts[menu-1]) + " na konto " + account.getAccountNumber(i));
                         system("cls");
-                        cout << "Wykonano przelew." << endl;;
+                        cout << "Wykonano przelew." << endl;
                     }
                     break;
 
@@ -810,6 +823,91 @@ void adminMenu() {
 }
 
 // Jan Piętka
+// Funkcja obslugujaca menu kantoru wymiany walut
+void exchangeMenu() {
+    system("cls");
+
+    while (true) {
+        vector<int> userAccounts; // Wektor indeksow kont nalezacych do aktualnego uzytkownika
+        vector<int> accountsCurrences; // Wektor indeksow walut poszczegolnych kont
+        int accountAmount = 0; // Ilosc kont posiadanych przez aktualnego uzytkownika
+
+        cout << "Twoje Konta:" << endl;
+        cout << "Lp.           Numer Konta          Stan Konta" << endl;
+
+        // Wyswietlenie wszystkich kont aktualnego uzytkownika
+        for (int i = 0; i < account.getElemenAccount(); i++) {
+            if (account.getOwner_id(i) == user.getId(courent_user)) {
+                userAccounts.push_back(i);
+                accountAmount++;
+                cout << accountAmount << " - " << account.getAccountNumber(i) << " - " << account.getBalance(i) << " ";
+                for (int n = 0; n < currency.getElementCurrency(); n++) {
+                    if (account.getCurrency_id(i) == currency.getId(n)) {
+                        accountsCurrences.push_back(n);
+                        cout << currency.getName(n) << endl;
+                    }
+                }
+            }
+        }
+
+        if (accountAmount == 0) {
+            cout << "Nie masz zadnych kont." << endl;
+        }
+        
+        cout << "0 - Wyjdz do pulpitu" << endl;
+
+        cout << "Aby wymienic walute wybierz konto zrodlowe wpisujac liczbe porzadkowa: ";
+        int menu;
+        cin >> menu;
+
+        if (menu == 0) { // Wyjscie do pulpitu
+            system("cls");
+            return;
+
+        } else if (menu<1 || menu>accountAmount) { // Nieprawidlowy wybor w menu kont
+            system("cls");
+            cout << "Nieprawidlowy wybor." << endl;
+
+        } else { // Wymiana waluty
+            int targetAccount; // Konto docelowe
+            cout << "Podaj liczbe porzadkowa konta docelowego: ";
+            cin >> targetAccount;
+
+            double amount; // Kwota waluty zrodlowej
+            cout << "Podaj kwote przewalutowania w walucie zrodlowej: ";
+            cin >> amount;
+
+            if ((amount*100)-int(amount*100) != 0 || amount <= 0) {
+                system("cls");
+                cout << "Nieprawidlowa kwota." << endl;
+            } else if (amount > account.getBalance(userAccounts[menu-1])) {
+                system("cls");
+                cout << "Niewystarczajace srodki na koncie." << endl;
+            } else {
+                double kurs = roundPoint2(currency.getValue(accountsCurrences[menu-1])/currency.getValue(accountsCurrences[targetAccount-1]));
+                double poKonwersji = roundPoint2(amount/kurs); // Kwota w walucie docelowej
+
+                cout << "Wymiana: " << amount << " " << currency.getName(accountsCurrences[menu-1]) << " --> " << poKonwersji << " " << currency.getName(accountsCurrences[targetAccount-1]) << endl;
+                cout << "Kurs: " << kurs << " " << currency.getName(accountsCurrences[targetAccount-1]) << "    Potwierdzenie (T/N): ";
+                char zgoda;
+                cin >> zgoda;
+                if (zgoda == 'T' || zgoda == 't') {
+                    account.decreaseBalance(userAccounts[menu-1], amount);
+                    account.increaseBalance(userAccounts[targetAccount-1], poKonwersji);
+                    txt_log("Uzytkownik ID:" + to_string(user.getId(courent_user))+ " - " + user.getFirst_name(courent_user) + " " + user.getLast_name(courent_user) + " Wykonal przewalutowanie z konta " + account.getAccountNumber(userAccounts[menu-1]) + " na konto " + account.getAccountNumber(userAccounts[targetAccount-1]));
+                    system("cls");
+                    cout << "Wykonano przewalutowanie." << endl;
+                } else {
+                    system("cls");
+                    cout << "Anulowano wymiane." << endl;
+                }
+            }
+        }
+    }
+    return;
+}
+
+// Jan Piętka
 // Funkcja wyświetlajaca i obslugujaca pupit aktualnie zalogowanego uzytkownika  destop(obiekt z wektorami, numer w wektorze zalogowanego uzytkownika)
 void desktop() {
     int menu;
@@ -821,6 +919,7 @@ void desktop() {
         cout << "1 - Konta" << endl;
         cout << "2 - Kredyty" << endl;
         cout << "3 - Lokaty" << endl;
+        cout << "4 - Kantor" << endl;
         cout << "0 - Wyloguj i zapisz zmiany" << endl;
         if (user.isAdmin(courent_user)) {
             cout << "10 - Menu Administratora" << endl;
@@ -839,6 +938,10 @@ void desktop() {
         }
         case 3: {
             depositsMenu();
+            break;
+        }
+        case 4: {
+            exchangeMenu();
             break;
         }
         case 0: { // Wylogowanie uzytkownika i zapisanie danych

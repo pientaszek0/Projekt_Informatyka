@@ -116,13 +116,14 @@ class Currency {
     private:
         vector<int> id;
         vector<string> name;
+        vector<double> value;
 
     public:
         //Metoda zwracająca ilosc walut
         int getElementCurrency() {
             return id.size();
         }
-        // Tymczasowa Metoda na potrzeby XML - zapsuje waluty;
+        // Metoda na potrzeby XML - zapsuje waluty;
         void addCurrency(int c_id, string c_name) {
             id.emplace_back(c_id);
             name.emplace_back(c_name);
@@ -132,9 +133,18 @@ class Currency {
         int getId(int index) {
             return this->id[index];
         }
-        // Metoda zwracająca ID właściciela
+        // Metoda zwracająca ID waluty
         string getName(int index) {
             return this->name[index];
+        }
+        // Metoda zwracająca wartosc waluty
+        double getValue(int index) {
+            return this->value[index];
+        }
+        // Metoda ustawiajaca wartosc waluty (tymczasowe rozwiazanie)
+        void setValue(double value) {
+            this->value.emplace_back(value);
+            return;
         }
 
 };
@@ -148,7 +158,7 @@ class Loan_Type {
         vector<double> interest;  // Stopa procentowa
         vector<string> loan_type;
     public:
-        // Tymczasowa Metoda na potrzeby XML - zapisuje Typy kerdytów;
+        // Metoda na potrzeby XML - zapisuje Typy kerdytów;
         void addLoanType(int lt_id, double lt_interest, string lt_loan_type) {
             id.emplace_back(lt_id);
             interest.emplace_back(lt_interest);

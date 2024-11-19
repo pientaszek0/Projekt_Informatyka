@@ -70,3 +70,15 @@ Mon Nov 11 19:29:40 2024 : Uzytkownik ID:22386 - Stanislawa Lokalna wylogowal si
 Mon Nov 11 19:29:43 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
 Mon Nov 11 19:30:02 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
 Mon Nov 11 19:35:27 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Tue Nov 19 17:25:37 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Tue Nov 19 17:32:37 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Tue Nov 19 17:36:23 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Tue Nov 19 17:38:52 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Tue Nov 19 18:30:21 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Tue Nov 19 18:35:07 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Tue Nov 19 18:35:58 2024 : Uzytkownik ID:0 - Jan Kowalski Wykonal przewalutowanie z konta PL82065675915228373650498393 na konto PL16857618927954312334113874
+Tue Nov 19 18:36:34 2024 : Uzytkownik ID:0 - Jan Kowalski Wykonal przewalutowanie z konta PL16857618927954312334113874 na konto PL82065675915228373650498393
+Tue Nov 19 18:38:31 2024 : Administrator ID:0 - Jan Kowalski dokonal wplaty z konta PL16857618927954312334113874
+Tue Nov 19 18:38:49 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Tue Nov 19 18:42:13 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Tue Nov 19 18:44:49 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
