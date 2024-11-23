@@ -124,9 +124,10 @@ class Currency {
             return id.size();
         }
         // Metoda na potrzeby XML - zapsuje waluty;
-        void addCurrency(int c_id, string c_name) {
+        void addCurrency(int c_id, string c_name, double c_value) {
             id.emplace_back(c_id);
             name.emplace_back(c_name);
+            value.emplace_back(c_value);
             return;
         }
         // Metoda zwracająca ID
@@ -140,11 +141,6 @@ class Currency {
         // Metoda zwracająca wartosc waluty
         double getValue(int index) {
             return this->value[index];
-        }
-        // Metoda ustawiajaca wartosc waluty (tymczasowe rozwiazanie)
-        void setValue(double value) {
-            this->value.emplace_back(value);
-            return;
         }
 
 };

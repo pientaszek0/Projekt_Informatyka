@@ -40,6 +40,7 @@ string xml_account_number;
 double xml_balance;
 // Dotyczy klasy Currency
 string xml_cName;
+double xml_cValue;
 // Dotyczy klasy Loan;
 double xml_interest;
 string xml_loan_type;

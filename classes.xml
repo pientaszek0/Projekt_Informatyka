@@ -1578,14 +1578,14 @@
 			<owner_id>0</owner_id>
 			<currency_id>1</currency_id>
 			<account_number>PL25413475623294381885982828</account_number>
-			<balance>55.87</balance>
+			<balance>4.87</balance>
 		</Account>
 		<Account>
 			<id>105</id>
 			<owner_id>0</owner_id>
 			<currency_id>0</currency_id>
 			<account_number>PL82065675915228373650498393</account_number>
-			<balance>695.8</balance>
+			<balance>908.3</balance>
 		</Account>
 		<Account>
 			<id>106</id>
@@ -2026,22 +2026,27 @@
 		<Currency>
 			<id>0</id>
 			<name>Zloty</name>
+			<value>1</value>
 		</Currency>
 		<Currency>
 			<id>1</id>
 			<name>Dolar Amerykanski</name>
+			<value>0.24</value>
 		</Currency>
 		<Currency>
 			<id>2</id>
 			<name>Euro</name>
+			<value>0.23</value>
 		</Currency>
 		<Currency>
 			<id>3</id>
 			<name>Funt Brytyjski</name>
+			<value>0.19</value>
 		</Currency>
 		<Currency>
 			<id>4</id>
 			<name>Frank Szwajcarski</name>
+			<value>0.22</value>
 		</Currency>
 	</Currencys>
 	<Loan_Types>
