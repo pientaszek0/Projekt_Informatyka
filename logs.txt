@@ -86,3 +86,6 @@ Sat Nov 23 20:49:47 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
 Sat Nov 23 20:50:32 2024 : Uzytkownik ID:0 - Jan Kowalski Wykonal przewalutowanie z konta PL25413475623294381885982828 na konto PL82065675915228373650498393
 Sat Nov 23 20:51:02 2024 : Uzytkownik ID:0 - Jan Kowalski Wykonal przewalutowanie z konta PL25413475623294381885982828 na konto PL82065675915228373650498393
 Sat Nov 23 20:51:15 2024 : Uzytkownik ID:0 - Jan Kowalski wylogowal sie i zapisal dane.
+Sat Nov 23 22:17:43 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.
+Sat Nov 23 22:18:38 2024 : Uzytkownik ID:0 - Jan Kowalski Wykonal przewalutowanie z konta PL82065675915228373650498393 na konto PL25413475623294381885982828
+Sat Nov 23 22:20:40 2024 : Uzytkownik ID:0 - Jan Kowalski zalogowal sie.

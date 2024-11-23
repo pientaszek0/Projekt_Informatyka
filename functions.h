@@ -888,7 +888,7 @@ void exchangeMenu() {
                 double poKonwersji = roundPoint2(amount/kurs); // Kwota w walucie docelowej
 
                 cout << "Wymiana: " << amount << " " << currency.getName(accountsCurrences[menu-1]) << " --> " << poKonwersji << " " << currency.getName(accountsCurrences[targetAccount-1]) << endl;
-                cout << "Kurs: " << kurs << " " << currency.getName(accountsCurrences[targetAccount-1]) << "    Potwierdzenie (T/N): ";
+                cout << "Kurs: " << kurs << " " << currency.getName(accountsCurrences[menu-1]) << " = 1 " << currency.getName(accountsCurrences[targetAccount-1]) << "    Potwierdzenie (T/N): ";
                 char zgoda;
                 cin >> zgoda;
                 if (zgoda == 'T' || zgoda == 't') {
