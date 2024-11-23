@@ -91,7 +91,7 @@ void xml_giveData(User &user, Account &account, Currency &currency, Loan_Type &l
         }
         else if(line.find("</Currency>") != string::npos) 
         {
-            currency.addCurrency(xml_id, xml_cName);
+            currency.addCurrency(xml_id, xml_cName, xml_cValue);
             cout << "---Dane zostałt wczytane dla klasy: \"Currency\"---\n"; 
         }
         // Dodawanie klasy Loan_Type
@@ -235,6 +235,11 @@ void xml_giveData(User &user, Account &account, Currency &currency, Loan_Type &l
             if(line.find("<name>") != string::npos) 
             {
                 xml_cName = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+            }
+             if(line.find("<value>") != string::npos) 
+            {
+                string c_valuetemp = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_cValue = stod(c_valuetemp); // konwersja na double
             } 
         }
         if(xml_isLoan_type)
@@ -499,10 +504,15 @@ void xml_checkData(User &user, Account &account, Currency &currency, Loan_Type &
             if(line.find("<name>") != string::npos) 
             {
                 xml_cName = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+            }
+             if(line.find("<value>") != string::npos) 
+            {
+                string c_valuetemp = line.substr(line.find(">") + 1, line.rfind("<") - line.find(">") - 1);
+                xml_cValue = stod(c_valuetemp); // konwersja na double
             } 
             if(line.find("</Currency>") != string::npos) 
             {
-                if (xml_id == currency.getId(licznik) && xml_cName == currency.getName(licznik))
+                if (xml_id == currency.getId(licznik) && xml_cName == currency.getName(licznik) && xml_cValue == currency.getValue(licznik))
                 {
                     cout << xml_id << "\tTEST PASSED: \"Currency\"" << endl;
                 } 
@@ -547,12 +557,13 @@ void xml_checkData(User &user, Account &account, Currency &currency, Loan_Type &
             }
             if(line.find("</Loan_Type>") != string::npos) 
             {
-                if (xml_id == loan_type.getId(licznik) && xml_interest == loan_type.getInterest(licznik) && 
-                xml_loan_type == loan_type.getLoanTypeName(licznik))
+                if ((xml_id == loan_type.getId(licznik)) && (xml_interest == loan_type.getInterest(licznik)) && 
+                (xml_loan_type == loan_type.getLoanTypeName(licznik)))
                 {
                     cout << xml_id << "\tTEST PASSED: \"Loan_Type\"" << endl;
                 } 
-                else cout << xml_id << "\tTEST FAILED: \"Loan_type\"" << endl;
+                else  cout << xml_id << "\tTEST FAILED: \"Loan_type\"" << endl;
+                
             }
         }
         
@@ -605,8 +616,8 @@ void xml_checkData(User &user, Account &account, Currency &currency, Loan_Type &
             if(line.find("</Loan>") != string::npos) 
             {
                 if (xml_id == loan.getId(licznik) && xml_owner_id == loan.getOwnerId(licznik) &&
-                xlm_currency_name == loan.getCurrencyName(licznik && xml_loan_type == loan.getLoanTypeName(licznik) &&
-                xlm_balance_left == loan.getBalanceLeft(licznik)))
+                xlm_currency_name == loan.getCurrencyName(licznik) && xml_loan_type == loan.getLoanTypeName(licznik) &&
+                xlm_balance_left == loan.getBalanceLeft(licznik))
                 {
                     cout << xml_id << "\tTEST PASSED: \"Loan\"" << endl;
                 } 
@@ -755,6 +766,7 @@ void xml_save(User user, Account account, Currency currency, Loan_Type loan_type
         db << "\t\t<Currency>\n"; 
         db << "\t\t\t<id>" << currency.getId(i) << "</id>\n";
         db << "\t\t\t<name>" << currency.getName(i) << "</name>\n";
+        db << "\t\t\t<value>" << currency.getValue(i) << "</value>\n";
         // Zamknięcie obiektu
         db << "\t\t</Currency>\n";
     }
